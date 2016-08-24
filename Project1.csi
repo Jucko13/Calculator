@@ -1,0 +1,5 @@
+[History]
+1=#P0#=mb	#P1#=Form_Load	#P2#=Project1/Form1/Form_Load	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160821222538	#P7#=0	#P8#=15	.
+2=#P0#=mb	#P1#=CheckCalculation	#P2#=Project1/Form1/CheckCalculation	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160821222622	#P7#=0	#P8#=132	.
+3=#P0#=mb	#P1#=cmdNumbers_MouseUp	#P2#=Project1/Form1/cmdNumbers_MouseUp	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160821222220	#P7#=0	#P8#=27	.
+4=#P0#=mb	#P1#=cmdNumbers_MouseMove	#P2#=Project1/Form1/cmdNumbers_MouseMove	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160821222207	#P7#=0	#P8#=0	.
