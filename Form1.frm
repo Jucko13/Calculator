@@ -1,5 +1,6 @@
 VERSION 5.00
 Begin VB.Form Form1 
+   AutoRedraw      =   -1  'True
    BackColor       =   &H00F1E4D9&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Calculator by Ricardo"
@@ -22,12 +23,16 @@ Begin VB.Form Form1
    ScaleHeight     =   4140
    ScaleWidth      =   8520
    WhatsThisHelp   =   -1  'True
-   Begin VB.TextBox Text3 
-      Alignment       =   1  'Right Justify
-      Appearance      =   0  'Flat
-      BackColor       =   &H00FFFFFF&
-      BorderStyle     =   0  'None
-      BeginProperty Font 
+   Begin Project1.uTextBox Text1 
+      Height          =   405
+      Left            =   90
+      TabIndex        =   41
+      Top             =   150
+      Width           =   8310
+      _ExtentX        =   14658
+      _ExtentY        =   714
+      BorderColor     =   16745771
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
          Size            =   14.25
          Charset         =   0
@@ -36,16 +41,7 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H00FF0000&
-      Height          =   330
-      HideSelection   =   0   'False
-      IMEMode         =   3  'DISABLE
-      Left            =   4290
-      TabIndex        =   44
-      TabStop         =   0   'False
-      Text            =   "x=0"
-      Top             =   525
-      Width           =   4080
+      ForeColor       =   16711680
    End
    Begin VB.PictureBox picNormal4 
       Appearance      =   0  'Flat
@@ -66,7 +62,7 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":0CCA
       ScaleHeight     =   330
       ScaleWidth      =   4005
-      TabIndex        =   41
+      TabIndex        =   39
       Top             =   7770
       Width           =   4005
    End
@@ -89,14 +85,14 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":68D6
       ScaleHeight     =   330
       ScaleWidth      =   4005
-      TabIndex        =   40
+      TabIndex        =   38
       Top             =   8190
       Width           =   4005
    End
    Begin Project1.LynxGrid List1 
       Height          =   2505
       Left            =   3375
-      TabIndex        =   38
+      TabIndex        =   36
       TabStop         =   0   'False
       Top             =   1065
       Width           =   5010
@@ -171,7 +167,7 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":C4E2
       ScaleHeight     =   750
       ScaleWidth      =   540
-      TabIndex        =   25
+      TabIndex        =   23
       Top             =   6510
       Width           =   540
    End
@@ -194,7 +190,7 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":E146
       ScaleHeight     =   750
       ScaleWidth      =   540
-      TabIndex        =   24
+      TabIndex        =   22
       Top             =   6510
       Width           =   540
    End
@@ -217,7 +213,7 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":FDAA
       ScaleHeight     =   330
       ScaleWidth      =   1170
-      TabIndex        =   22
+      TabIndex        =   20
       Top             =   7350
       Width           =   1170
    End
@@ -240,7 +236,7 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":118BE
       ScaleHeight     =   330
       ScaleWidth      =   1170
-      TabIndex        =   21
+      TabIndex        =   19
       Top             =   6930
       Width           =   1170
    End
@@ -263,7 +259,7 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":133D2
       ScaleHeight     =   330
       ScaleWidth      =   540
-      TabIndex        =   13
+      TabIndex        =   11
       Top             =   6510
       Width           =   540
    End
@@ -286,63 +282,15 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":14076
       ScaleHeight     =   330
       ScaleWidth      =   540
-      TabIndex        =   12
+      TabIndex        =   10
       Top             =   6510
       Width           =   540
-   End
-   Begin VB.TextBox Text2 
-      Alignment       =   1  'Right Justify
-      Appearance      =   0  'Flat
-      BackColor       =   &H00FFFFFF&
-      BorderStyle     =   0  'None
-      BeginProperty Font 
-         Name            =   "Jucko13"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H00FF0000&
-      Height          =   330
-      HideSelection   =   0   'False
-      IMEMode         =   3  'DISABLE
-      Left            =   135
-      TabIndex        =   1
-      TabStop         =   0   'False
-      Text            =   "0"
-      Top             =   525
-      Width           =   4080
-   End
-   Begin VB.TextBox Text1 
-      Alignment       =   1  'Right Justify
-      Appearance      =   0  'Flat
-      BackColor       =   &H00FFFFFF&
-      BorderStyle     =   0  'None
-      BeginProperty Font 
-         Name            =   "Jucko13"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H00FF0000&
-      Height          =   330
-      HideSelection   =   0   'False
-      Left            =   135
-      TabIndex        =   0
-      Text            =   "0"
-      Top             =   135
-      Width           =   8235
    End
    Begin Project1.TransPicBox cmdNumbers 
       Height          =   330
       Index           =   1
       Left            =   105
-      TabIndex        =   2
+      TabIndex        =   0
       TabStop         =   0   'False
       Top             =   2310
       Width           =   540
@@ -367,7 +315,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   2
       Left            =   735
-      TabIndex        =   3
+      TabIndex        =   1
       TabStop         =   0   'False
       Top             =   2310
       Width           =   540
@@ -392,7 +340,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   3
       Left            =   1365
-      TabIndex        =   4
+      TabIndex        =   2
       TabStop         =   0   'False
       Top             =   2310
       Width           =   540
@@ -417,7 +365,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   4
       Left            =   105
-      TabIndex        =   5
+      TabIndex        =   3
       TabStop         =   0   'False
       Top             =   1890
       Width           =   540
@@ -442,7 +390,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   5
       Left            =   735
-      TabIndex        =   6
+      TabIndex        =   4
       TabStop         =   0   'False
       Top             =   1890
       Width           =   540
@@ -467,7 +415,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   6
       Left            =   1365
-      TabIndex        =   7
+      TabIndex        =   5
       TabStop         =   0   'False
       Top             =   1890
       Width           =   540
@@ -492,7 +440,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   7
       Left            =   105
-      TabIndex        =   8
+      TabIndex        =   6
       TabStop         =   0   'False
       Top             =   1470
       Width           =   540
@@ -517,7 +465,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   8
       Left            =   735
-      TabIndex        =   9
+      TabIndex        =   7
       TabStop         =   0   'False
       Top             =   1470
       Width           =   540
@@ -542,7 +490,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   0
       Left            =   105
-      TabIndex        =   10
+      TabIndex        =   8
       TabStop         =   0   'False
       Top             =   2730
       Width           =   1170
@@ -567,7 +515,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   9
       Left            =   1365
-      TabIndex        =   11
+      TabIndex        =   9
       TabStop         =   0   'False
       Top             =   1470
       Width           =   540
@@ -592,7 +540,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   20
       Left            =   105
-      TabIndex        =   14
+      TabIndex        =   12
       TabStop         =   0   'False
       Top             =   1050
       Width           =   1170
@@ -617,7 +565,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   15
       Left            =   1365
-      TabIndex        =   15
+      TabIndex        =   13
       TabStop         =   0   'False
       Top             =   1050
       Width           =   1170
@@ -642,7 +590,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   11
       Left            =   1995
-      TabIndex        =   16
+      TabIndex        =   14
       TabStop         =   0   'False
       Top             =   1470
       Width           =   540
@@ -667,7 +615,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   12
       Left            =   1995
-      TabIndex        =   17
+      TabIndex        =   15
       TabStop         =   0   'False
       Top             =   1890
       Width           =   540
@@ -692,7 +640,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   13
       Left            =   1995
-      TabIndex        =   18
+      TabIndex        =   16
       TabStop         =   0   'False
       Top             =   2310
       Width           =   540
@@ -717,7 +665,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   14
       Left            =   1995
-      TabIndex        =   19
+      TabIndex        =   17
       TabStop         =   0   'False
       Top             =   2730
       Width           =   540
@@ -742,7 +690,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   16
       Left            =   1365
-      TabIndex        =   20
+      TabIndex        =   18
       TabStop         =   0   'False
       Top             =   2730
       Width           =   540
@@ -767,7 +715,7 @@ Begin VB.Form Form1
       Height          =   750
       Index           =   10
       Left            =   2625
-      TabIndex        =   23
+      TabIndex        =   21
       TabStop         =   0   'False
       Top             =   2310
       Width           =   540
@@ -792,7 +740,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   17
       Left            =   2625
-      TabIndex        =   26
+      TabIndex        =   24
       TabStop         =   0   'False
       Top             =   1890
       Width           =   540
@@ -817,7 +765,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   0
       Left            =   105
-      TabIndex        =   27
+      TabIndex        =   25
       TabStop         =   0   'False
       Top             =   3255
       Width           =   540
@@ -842,7 +790,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   1
       Left            =   105
-      TabIndex        =   28
+      TabIndex        =   26
       TabStop         =   0   'False
       Top             =   3675
       Width           =   540
@@ -867,7 +815,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   2
       Left            =   735
-      TabIndex        =   29
+      TabIndex        =   27
       TabStop         =   0   'False
       Top             =   3255
       Width           =   540
@@ -892,7 +840,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   3
       Left            =   735
-      TabIndex        =   30
+      TabIndex        =   28
       TabStop         =   0   'False
       Top             =   3675
       Width           =   540
@@ -917,7 +865,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   4
       Left            =   1365
-      TabIndex        =   31
+      TabIndex        =   29
       TabStop         =   0   'False
       Top             =   3255
       Width           =   540
@@ -942,7 +890,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   5
       Left            =   1365
-      TabIndex        =   32
+      TabIndex        =   30
       TabStop         =   0   'False
       Top             =   3675
       Width           =   540
@@ -967,7 +915,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   6
       Left            =   1995
-      TabIndex        =   33
+      TabIndex        =   31
       TabStop         =   0   'False
       Top             =   3255
       Width           =   540
@@ -992,7 +940,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   7
       Left            =   2625
-      TabIndex        =   34
+      TabIndex        =   32
       TabStop         =   0   'False
       Top             =   3255
       Width           =   540
@@ -1017,7 +965,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   18
       Left            =   1995
-      TabIndex        =   35
+      TabIndex        =   33
       TabStop         =   0   'False
       Top             =   3675
       Width           =   540
@@ -1042,7 +990,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   19
       Left            =   2625
-      TabIndex        =   36
+      TabIndex        =   34
       TabStop         =   0   'False
       Top             =   3675
       Width           =   540
@@ -1067,7 +1015,7 @@ Begin VB.Form Form1
       Height          =   330
       Index           =   8
       Left            =   2625
-      TabIndex        =   37
+      TabIndex        =   35
       TabStop         =   0   'False
       Top             =   1050
       Width           =   540
@@ -1091,7 +1039,7 @@ Begin VB.Form Form1
    Begin Project1.TransPicBox cmdClearList 
       Height          =   330
       Left            =   3900
-      TabIndex        =   39
+      TabIndex        =   37
       TabStop         =   0   'False
       Top             =   3675
       Width           =   4005
@@ -1112,77 +1060,11 @@ Begin VB.Form Form1
       Caption         =   "Clear List"
       ForeColor       =   16711680
    End
-   Begin VB.PictureBox Picture1 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BorderStyle     =   0  'None
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   375
-      Left            =   105
-      ScaleHeight     =   375
-      ScaleWidth      =   4140
-      TabIndex        =   42
-      Top             =   495
-      Width           =   4140
-   End
-   Begin VB.PictureBox Picture2 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BorderStyle     =   0  'None
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   375
-      Left            =   105
-      ScaleHeight     =   375
-      ScaleWidth      =   8295
-      TabIndex        =   43
-      Top             =   105
-      Width           =   8295
-   End
-   Begin VB.PictureBox Picture3 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BorderStyle     =   0  'None
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   375
-      Left            =   4260
-      ScaleHeight     =   375
-      ScaleWidth      =   4140
-      TabIndex        =   45
-      Top             =   495
-      Width           =   4140
-   End
    Begin Project1.TransPicBox cmdNumbers 
       Height          =   330
       Index           =   21
       Left            =   2625
-      TabIndex        =   46
+      TabIndex        =   40
       TabStop         =   0   'False
       Top             =   1470
       Width           =   540
@@ -1203,19 +1085,45 @@ Begin VB.Form Form1
       Caption         =   "b/c"
       ForeColor       =   16711680
    End
-   Begin VB.Line Line13 
-      BorderColor     =   &H00FF852B&
-      X1              =   90
-      X2              =   8400
-      Y1              =   480
-      Y2              =   480
+   Begin Project1.uTextBox Text2 
+      Height          =   405
+      Left            =   90
+      TabIndex        =   42
+      Top             =   540
+      Width           =   4080
+      _ExtentX        =   7197
+      _ExtentY        =   714
+      BorderColor     =   16745771
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16711680
    End
-   Begin VB.Line Line14 
-      BorderColor     =   &H00FF852B&
-      X1              =   4245
-      X2              =   4245
-      Y1              =   435
-      Y2              =   870
+   Begin Project1.uTextBox Text3 
+      Height          =   405
+      Left            =   4155
+      TabIndex        =   43
+      Top             =   540
+      Width           =   4245
+      _ExtentX        =   7488
+      _ExtentY        =   714
+      BorderColor     =   16745771
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16711680
    End
    Begin VB.Line Line12 
       BorderColor     =   &H00FF852B&
@@ -1244,34 +1152,6 @@ Begin VB.Form Form1
       X2              =   3360
       Y1              =   1065
       Y2              =   3585
-   End
-   Begin VB.Line Line7 
-      BorderColor     =   &H00FF852B&
-      X1              =   90
-      X2              =   8415
-      Y1              =   870
-      Y2              =   870
-   End
-   Begin VB.Line Line4 
-      BorderColor     =   &H00FF852B&
-      X1              =   8400
-      X2              =   8400
-      Y1              =   90
-      Y2              =   885
-   End
-   Begin VB.Line Line2 
-      BorderColor     =   &H00FF852B&
-      X1              =   90
-      X2              =   90
-      Y1              =   90
-      Y2              =   885
-   End
-   Begin VB.Line Line1 
-      BorderColor     =   &H00FF852B&
-      X1              =   105
-      X2              =   8400
-      Y1              =   90
-      Y2              =   90
    End
    Begin VB.Menu mnuFile 
       Caption         =   "File"
@@ -1406,8 +1286,8 @@ Private Sub cmdClearList_MouseMove(Button As Integer, Shift As Integer, X As Sin
         Set cmdClearList.Picture = picNormal4.Picture
 
         
-    ElseIf GetCapture() <> cmdClearList.hWnd Then
-        SetCapture cmdClearList.hWnd
+    ElseIf GetCapture() <> cmdClearList.hwnd Then
+        SetCapture cmdClearList.hwnd
         Set cmdClearList.Picture = PicHigh4.Picture
     End If
     List1.Redraw = True
@@ -1417,7 +1297,7 @@ Private Sub cmdClearList_MouseUp(Button As Integer, Shift As Integer, X As Singl
 Dim Result As Integer
 
 Result = MsgBox("Weet je zeker dat je de lijst wilt leeg maken?", vbYesNo, "Lijst Wissen.")
-If Result = vbYes Then List1.Clear
+If Result = vbYes Then List1.clear
 End Sub
 
 Private Sub cmdExtras_MouseMove(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
@@ -1435,29 +1315,29 @@ IIndex4 = cmdExtras(Index).Height
         ReleaseCapture
         If IIndex1 > 540 Then
                 Set cmdExtras(OldIndex2).Picture = picNormal2.Picture
-                cmdExtras(OldIndex2).Forecolor = vbBlue
+                cmdExtras(OldIndex2).ForeColor = vbBlue
         Else
             If IIndex3 > 330 Then
                 Set cmdExtras(OldIndex2).Picture = picNormal3.Picture
-                cmdExtras(OldIndex2).Forecolor = vbBlue
+                cmdExtras(OldIndex2).ForeColor = vbBlue
             Else
                 Set cmdExtras(OldIndex2).Picture = picNormal.Picture
-                cmdExtras(OldIndex2).Forecolor = vbBlue
+                cmdExtras(OldIndex2).ForeColor = vbBlue
             End If
         End If
         
-    ElseIf GetCapture() <> cmdExtras(OldIndex2).hWnd Then
-        SetCapture cmdExtras(Index).hWnd
+    ElseIf GetCapture() <> cmdExtras(OldIndex2).hwnd Then
+        SetCapture cmdExtras(Index).hwnd
         If IIndex2 > 540 Then
             Set cmdExtras(Index).Picture = picHigh2.Picture
-            cmdExtras(Index).Forecolor = &H6C00FF
+            cmdExtras(Index).ForeColor = &H6C00FF
         Else
             If IIndex4 > 330 Then
                 Set cmdExtras(Index).Picture = picHigh3.Picture
-                cmdExtras(Index).Forecolor = &H6C00FF
+                cmdExtras(Index).ForeColor = &H6C00FF
             Else
                 Set cmdExtras(Index).Picture = picHigh.Picture
-                cmdExtras(Index).Forecolor = &H6C00FF
+                cmdExtras(Index).ForeColor = &H6C00FF
             End If
         End If
         OldIndex2 = Index
@@ -1465,43 +1345,46 @@ IIndex4 = cmdExtras(Index).Height
 End Sub
 
 Private Sub SubAddText(NewStr As String)
-Dim selST As Integer
-Dim selLn As Integer
-Dim strText As String
+Text1.AddCharAtCursor NewStr
+Text1.Redraw
 
-Dim part1 As String
-Dim part2 As String
-
-Dim dimStr1 As String
-Dim dimStr2 As String
-
-selST = Text1.SelStart
-selLn = Text1.SelLength
-strText = Text1.Text
-
-If selST > 0 Then
-    dimStr1 = Mid(strText, selST, 1)
-    dimStr2 = Mid(strText, selST + 1, 1)
-End If
-
-part1 = Mid(strText, 1, selST)
-part2 = Mid(strText, selST + selLn + 1, (Len(strText) - selST - selLn))
-
-If NewStr = "/" Or NewStr = "*" Or NewStr = "-" Or NewStr = "+" Then
-    If dimStr1 = "/" Or dimStr1 = "*" Or dimStr1 = "-" Or dimStr1 = "+" Then
-        Text1.Text = Mid(strText, 1, selST - 1) & NewStr & Mid(strText, selST + 1, Len(strText) - selST - selLn)
-        Text1.SelStart = (selST)
-    ElseIf dimStr2 = "/" Or dimStr2 = "*" Or dimStr2 = "-" Or dimStr2 = "+" Then
-        Text1.Text = Mid(strText, 1, selST) & NewStr & Mid(strText, selST - 1, Len(strText) - selST - selLn)
-        Text1.SelStart = (selST)
-    Else
-        Text1.Text = part1 & NewStr & part2
-        Text1.SelStart = (selST + Len(NewStr))
-    End If
-Else
-        Text1.Text = part1 & NewStr & part2
-        Text1.SelStart = (selST + Len(NewStr))
-End If
+'Dim selST As Long
+'Dim selLn As Integer
+'Dim strText As String
+'
+'Dim part1 As String
+'Dim part2 As String
+'
+'Dim dimStr1 As String
+'Dim dimStr2 As String
+'
+'selST = Text1.SelStart
+'selLn = Text1.SelLength
+'strText = Text1.Text
+'
+'If selST > 0 Then
+'    dimStr1 = Mid(strText, selST, 1)
+'    dimStr2 = Mid(strText, selST + 1, 1)
+'End If
+'
+'part1 = Mid(strText, 1, selST)
+'part2 = Mid(strText, selST + selLn + 1, (Len(strText) - selST - selLn))
+'
+'If NewStr = "/" Or NewStr = "*" Or NewStr = "-" Or NewStr = "+" Then
+'    If dimStr1 = "/" Or dimStr1 = "*" Or dimStr1 = "-" Or dimStr1 = "+" Then
+'        Text1.Text = Mid(strText, 1, selST - 1) & NewStr & Mid(strText, selST + 1, Len(strText) - selST - selLn)
+'        Text1.SelStart = (selST)
+'    ElseIf dimStr2 = "/" Or dimStr2 = "*" Or dimStr2 = "-" Or dimStr2 = "+" Then
+'        Text1.Text = Mid(strText, 1, selST) & NewStr & Mid(strText, selST - 1, Len(strText) - selST - selLn)
+'        Text1.SelStart = (selST)
+'    Else
+'        Text1.Text = part1 & NewStr & part2
+'        Text1.SelStart = (selST + Len(NewStr))
+'    End If
+'Else
+'        Text1.Text = part1 & NewStr & part2
+'        Text1.SelStart = (selST + Len(NewStr))
+'End If
 End Sub
 
 Private Sub cmdExtras_MouseUp(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
@@ -1517,34 +1400,21 @@ Select Case Index
     Case 8
         If cmdExtras(Index).Caption = ">>>" Then
             Me.Width = 8610
-            Text1.Width = 8235
+            Text1.Width = 8310
             Text2.Width = 4080
-            Picture1.Width = 4125
-            Picture2.Width = 8295
-            Line1.X2 = 8415
-            Line7.X2 = 8415
-            Line13.X2 = 8415
-            Line14.X1 = 4245
-            Line14.X2 = 4245
-            Line4.X1 = 8400
-            Line4.X2 = 8400
             cmdExtras(Index).Caption = "<<<"
         Else
             Me.Width = 3360
-            Text1.Width = 3000
-            Text2.Width = 3000
-            Picture1.Width = 3060
-            Picture2.Width = 3060
-            Line1.X2 = 3165
-            Line7.X2 = 3165
-            Line13.X2 = 3165
-            Line4.X1 = 3165
-            Line4.X2 = 3165
+            Text1.Width = 3090
+            Text2.Width = 3090
             cmdExtras(Index).Caption = ">>>"
         End If
     Case 9
     
 End Select
+
+
+
 End Sub
 
 Private Sub cmdNumbers_MouseMove(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
@@ -1562,29 +1432,29 @@ IIndex4 = cmdNumbers(Index).Height
         ReleaseCapture
         If IIndex1 > 540 Then
                 Set cmdNumbers(OldIndex).Picture = picNormal2.Picture
-                cmdNumbers(OldIndex).Forecolor = vbBlue
+                cmdNumbers(OldIndex).ForeColor = vbBlue
         Else
             If IIndex3 > 330 Then
                 Set cmdNumbers(OldIndex).Picture = picNormal3.Picture
-                cmdNumbers(OldIndex).Forecolor = vbBlue
+                cmdNumbers(OldIndex).ForeColor = vbBlue
             Else
                 Set cmdNumbers(OldIndex).Picture = picNormal.Picture
-                cmdNumbers(OldIndex).Forecolor = vbBlue
+                cmdNumbers(OldIndex).ForeColor = vbBlue
             End If
         End If
         
-    ElseIf GetCapture() <> cmdNumbers(OldIndex).hWnd Then
-        SetCapture cmdNumbers(Index).hWnd
+    ElseIf GetCapture() <> cmdNumbers(OldIndex).hwnd Then
+        SetCapture cmdNumbers(Index).hwnd
         If IIndex2 > 540 Then
             Set cmdNumbers(Index).Picture = picHigh2.Picture
-            cmdNumbers(Index).Forecolor = &H40C0&
+            cmdNumbers(Index).ForeColor = &H40C0&
         Else
             If IIndex4 > 330 Then
                 Set cmdNumbers(Index).Picture = picHigh3.Picture
-                cmdNumbers(Index).Forecolor = &H40C0&
+                cmdNumbers(Index).ForeColor = &H40C0&
             Else
                 Set cmdNumbers(Index).Picture = picHigh.Picture
-                cmdNumbers(Index).Forecolor = &H40C0&
+                cmdNumbers(Index).ForeColor = &H40C0&
             End If
         End If
         OldIndex = Index
@@ -1623,7 +1493,7 @@ Select Case Index
         
         If List1.CellText(0, 0) <> Text1.Text Or List1.CellText(0, 1) <> Text2.Text Then
             ReleaseCapture
-            SetCapture List1.hWnd
+            SetCapture List1.hwnd
             DoEvents
             List1.AddItem Text1.Text & Chr(9) & Text2.Text, 0
             List1.Refresh
@@ -2093,18 +1963,18 @@ End If
 End Sub
 
 Private Sub mnuEditCopyAnsware_Click()
-Clipboard.Clear
+Clipboard.clear
 Clipboard.SetText Text2.Text
 End Sub
 
 Private Sub mnuEditCopyBoth_Click()
 
-Clipboard.Clear
+Clipboard.clear
 Clipboard.SetText Text1.Text & " = " & Text2.Text
 End Sub
 
 Private Sub mnuEditCopyCalc_Click()
-Clipboard.Clear
+Clipboard.clear
 Clipboard.SetText Text1.Text
 End Sub
 

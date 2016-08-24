@@ -1,5 +1,16 @@
 [History]
-1=#P0#=mb	#P1#=Form_Load	#P2#=Project1/Form1/Form_Load	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160821222538	#P7#=0	#P8#=15	.
-2=#P0#=mb	#P1#=CheckCalculation	#P2#=Project1/Form1/CheckCalculation	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160821222622	#P7#=0	#P8#=132	.
-3=#P0#=mb	#P1#=cmdNumbers_MouseUp	#P2#=Project1/Form1/cmdNumbers_MouseUp	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160821222220	#P7#=0	#P8#=27	.
-4=#P0#=mb	#P1#=cmdNumbers_MouseMove	#P2#=Project1/Form1/cmdNumbers_MouseMove	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160821222207	#P7#=0	#P8#=0	.
+1=#P0#=mb	#P1#=cmdExtras_MouseUp	#P2#=Project1/Form1/cmdExtras_MouseUp	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824144335	#P7#=0	#P8#=14	.
+2=#P0#=mb	#P1#=SubAddText	#P2#=Project1/Form1/SubAddText	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824142504	#P7#=0	#P8#=2	.
+3=#P0#=mb	#P1#=SelLength	#P2#=Project1/uTextBox/SelLength [Get]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132620	#P7#=0	#P8#=2	.
+4=#P0#=mb	#P1#=MarkupText	#P2#=Project1/uTextBox/MarkupText [Let]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132532	#P7#=0	#P8#=-1	.
+5=#P0#=mb	#P1#=SelStart	#P2#=Project1/uTextBox/SelStart [Get]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132531	#P7#=0	#P8#=1	.
+6=#P0#=mb	#P1#=SelStart	#P2#=Project1/uTextBox/SelStart [Let]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132503	#P7#=0	#P8#=-1	.
+7=#P0#=mb	#P1#=ByteArrayToString	#P2#=Project1/uTextBox/ByteArrayToString	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824142838	#P7#=0	#P8#=3	.
+8=#P0#=mb	#P1#=Font	#P2#=Project1/uTextBox/Font [Get]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132225	#P7#=0	#P8#=-3	.
+9=#P0#=mb	#P1#=Text	#P2#=Project1/uTextBox/Text [Let]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132828	#P7#=0	#P8#=2	.
+10=#P0#=mb	#P1#=UserControl_Initialize	#P2#=Project1/uTextBox/UserControl_Initialize	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824131953	#P7#=0	#P8#=7	.
+11=#P0#=mb	#P1#=Redraw	#P2#=Project1/uTextBox/Redraw	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824143536	#P7#=0	#P8#=427	.
+12=#P0#=mb	#P1#=CheckCalculation	#P2#=Project1/Form1/CheckCalculation	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160821222622	#P7#=0	#P8#=6	.
+13=#P0#=mb	#P1#=Form_Load	#P2#=Project1/Form1/Form_Load	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160821222538	#P7#=0	#P8#=1	.
+14=#P0#=mb	#P1#=cmdNumbers_MouseUp	#P2#=Project1/Form1/cmdNumbers_MouseUp	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824132145	#P7#=0	#P8#=15	.
+15=#P0#=mb	#P1#=cmdNumbers_MouseMove	#P2#=Project1/Form1/cmdNumbers_MouseMove	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160821222207	#P7#=0	#P8#=8	.
