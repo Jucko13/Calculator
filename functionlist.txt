@@ -1,0 +1,43 @@
+const PI = 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535
+
+
+Function Tand(X)
+	Tand = Tan(Rad(X))
+End Function
+
+Function Rad(X)
+	Rad = X * Atn(1) / 45
+End Function
+
+Function ArcSin(X) 
+	ArcSin = Atn(X / Sqr(-X * X + 1))
+End Function
+
+Function ArcCos(X)
+	ArcCos = Atn(-X / Sqr(-X * X + 1)) + 2 * Atn(1)
+End Function
+
+function binary(b)
+	binary = binaryC(b, 30)
+end function
+
+function binaryC(b, m)
+	Dim i, bin, x, maxpower
+	
+	maxpower = m-1
+	
+	bin = ""  'Build the desired binary number in this string, bin.
+	x = cdbl(b) 'Convert decimal string in text1 to long integer
+	
+	If x < 0 Then bin = bin + "1 " Else bin = bin + "0 "
+	
+	For i = maxpower To 0 Step -1
+		If x And (2 ^ i) Then   ' Use the logical "AND" operator.
+			bin = bin + "1"
+		Else
+			bin = bin + "0"
+		End If
+	Next
+	
+	binaryC = bin
+end function
