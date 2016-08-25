@@ -1,4 +1,5 @@
 VERSION 5.00
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form Form1 
    AutoRedraw      =   -1  'True
    BackColor       =   &H00F1E4D9&
@@ -7,7 +8,7 @@ Begin VB.Form Form1
    ClientHeight    =   4545
    ClientLeft      =   4065
    ClientTop       =   3345
-   ClientWidth     =   8520
+   ClientWidth     =   8505
    BeginProperty Font 
       Name            =   "Jucko13"
       Size            =   8.25
@@ -20,13 +21,82 @@ Begin VB.Form Form1
    Icon            =   "Form1.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
-   ScaleHeight     =   4545
-   ScaleWidth      =   8520
+   ScaleHeight     =   303
+   ScaleMode       =   3  'Pixel
+   ScaleWidth      =   567
    WhatsThisHelp   =   -1  'True
+   Begin MSComDlg.CommonDialog comm1 
+      Left            =   3165
+      Top             =   1350
+      _ExtentX        =   847
+      _ExtentY        =   847
+      _Version        =   393216
+   End
+   Begin Project1.uButton cmdClearList 
+      Height          =   330
+      Left            =   3360
+      TabIndex        =   12
+      Top             =   4080
+      Width           =   5040
+      _ExtentX        =   8890
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      CaptionBorderColor=   14737632
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "Clear"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":0CCA
+      PictureMouseOver=   "Form1.frx":1074
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uListBox List1 
+      Height          =   2535
+      Left            =   3360
+      TabIndex        =   11
+      Top             =   1440
+      Width           =   5040
+      _ExtentX        =   8890
+      _ExtentY        =   4471
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16711680
+      Text            =   "uFrame"
+      SelectionBackgroundColor=   16745771
+      SelectionBorderColor=   16745771
+      SelectionForeColor=   16777215
+      ItemHeight      =   33
+   End
    Begin Project1.uTextBox Text1 
       Height          =   315
       Left            =   90
-      TabIndex        =   41
+      TabIndex        =   8
       Top             =   150
       Width           =   8310
       _ExtentX        =   14658
@@ -59,10 +129,10 @@ Begin VB.Form Form1
       ForeColor       =   &H80000008&
       Height          =   330
       Left            =   420
-      Picture         =   "Form1.frx":0CCA
+      Picture         =   "Form1.frx":17E2
       ScaleHeight     =   330
       ScaleWidth      =   5040
-      TabIndex        =   39
+      TabIndex        =   7
       Top             =   7770
       Width           =   5040
    End
@@ -82,71 +152,12 @@ Begin VB.Form Form1
       ForeColor       =   &H80000008&
       Height          =   330
       Left            =   420
-      Picture         =   "Form1.frx":63AE
+      Picture         =   "Form1.frx":6EC6
       ScaleHeight     =   330
       ScaleWidth      =   5040
-      TabIndex        =   38
+      TabIndex        =   6
       Top             =   8190
       Width           =   5040
-   End
-   Begin Project1.LynxGrid List1 
-      Height          =   2505
-      Left            =   3375
-      TabIndex        =   36
-      TabStop         =   0   'False
-      Top             =   1470
-      Width           =   5010
-      _ExtentX        =   8837
-      _ExtentY        =   4419
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BeginProperty FontHeader {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BackColorEdit   =   16777215
-      BackColorSel    =   6934527
-      BackColorSel2   =   13034495
-      ForeColor       =   16711680
-      ForeColorEdit   =   0
-      ForeColorHdr    =   16711680
-      ForeColorSel    =   7078143
-      BackColorEvenRows=   15589589
-      CustomColorFrom =   16745771
-      CustomColorTo   =   15852761
-      GridColor       =   16745771
-      BorderStyle     =   0
-      DisplayEllipsis =   0   'False
-      FocusRectColor  =   9895934
-      FocusRectStyle  =   0
-      ThemeColor      =   5
-      ThemeStyle      =   6
-      CenterRowImage  =   0   'False
-      ColumnHeaderLines=   2
-      Caption         =   "Berekening Geshiedenis"
-      ColumnHeaderSmall=   -1  'True
-      ShowRowNumbers  =   -1  'True
-      ShowRowNumbersVary=   -1  'True
-      AllowColumnResizing=   -1  'True
-      AllowWordWrap   =   -1  'True
-      ColumnSort      =   -1  'True
-      AllowDelete     =   -1  'True
-      EditTrigger     =   2
-      FocusRowHighlightStyle=   1
-      HotHeaderTracking=   0   'False
-      AutoToolTips    =   0   'False
    End
    Begin VB.PictureBox picNormal3 
       Appearance      =   0  'Flat
@@ -164,10 +175,10 @@ Begin VB.Form Form1
       ForeColor       =   &H80000008&
       Height          =   750
       Left            =   1680
-      Picture         =   "Form1.frx":BA92
+      Picture         =   "Form1.frx":C5AA
       ScaleHeight     =   750
       ScaleWidth      =   540
-      TabIndex        =   23
+      TabIndex        =   5
       Top             =   6510
       Width           =   540
    End
@@ -187,10 +198,10 @@ Begin VB.Form Form1
       ForeColor       =   &H80000008&
       Height          =   750
       Left            =   2310
-      Picture         =   "Form1.frx":D6F6
+      Picture         =   "Form1.frx":E20E
       ScaleHeight     =   750
       ScaleWidth      =   540
-      TabIndex        =   22
+      TabIndex        =   4
       Top             =   6510
       Width           =   540
    End
@@ -210,10 +221,10 @@ Begin VB.Form Form1
       ForeColor       =   &H80000008&
       Height          =   330
       Left            =   420
-      Picture         =   "Form1.frx":F35A
+      Picture         =   "Form1.frx":FE72
       ScaleHeight     =   330
       ScaleWidth      =   1170
-      TabIndex        =   20
+      TabIndex        =   3
       Top             =   7350
       Width           =   1170
    End
@@ -233,10 +244,10 @@ Begin VB.Form Form1
       ForeColor       =   &H80000008&
       Height          =   330
       Left            =   420
-      Picture         =   "Form1.frx":10E6E
+      Picture         =   "Form1.frx":11986
       ScaleHeight     =   330
       ScaleWidth      =   1170
-      TabIndex        =   19
+      TabIndex        =   2
       Top             =   6930
       Width           =   1170
    End
@@ -256,10 +267,10 @@ Begin VB.Form Form1
       ForeColor       =   &H80000008&
       Height          =   330
       Left            =   1050
-      Picture         =   "Form1.frx":12982
+      Picture         =   "Form1.frx":1349A
       ScaleHeight     =   330
       ScaleWidth      =   540
-      TabIndex        =   11
+      TabIndex        =   1
       Top             =   6510
       Width           =   540
    End
@@ -279,816 +290,17 @@ Begin VB.Form Form1
       ForeColor       =   &H80000008&
       Height          =   330
       Left            =   420
-      Picture         =   "Form1.frx":13626
+      Picture         =   "Form1.frx":1413E
       ScaleHeight     =   330
       ScaleWidth      =   540
-      TabIndex        =   10
+      TabIndex        =   0
       Top             =   6510
       Width           =   540
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   1
-      Left            =   105
-      TabIndex        =   0
-      TabStop         =   0   'False
-      Top             =   2715
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "1"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   2
-      Left            =   735
-      TabIndex        =   1
-      TabStop         =   0   'False
-      Top             =   2715
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "2"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   3
-      Left            =   1365
-      TabIndex        =   2
-      TabStop         =   0   'False
-      Top             =   2715
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "3"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   4
-      Left            =   105
-      TabIndex        =   3
-      TabStop         =   0   'False
-      Top             =   2295
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "4"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   5
-      Left            =   735
-      TabIndex        =   4
-      TabStop         =   0   'False
-      Top             =   2295
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "5"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   6
-      Left            =   1365
-      TabIndex        =   5
-      TabStop         =   0   'False
-      Top             =   2295
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "6"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   7
-      Left            =   105
-      TabIndex        =   6
-      TabStop         =   0   'False
-      Top             =   1875
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "7"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   8
-      Left            =   735
-      TabIndex        =   7
-      TabStop         =   0   'False
-      Top             =   1875
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "8"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   0
-      Left            =   105
-      TabIndex        =   8
-      TabStop         =   0   'False
-      Top             =   3135
-      Width           =   1170
-      _ExtentX        =   2064
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "0"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   9
-      Left            =   1365
-      TabIndex        =   9
-      TabStop         =   0   'False
-      Top             =   1875
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   14.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "9"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   20
-      Left            =   105
-      TabIndex        =   12
-      TabStop         =   0   'False
-      Top             =   1455
-      Width           =   1170
-      _ExtentX        =   2064
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "<--"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   15
-      Left            =   1365
-      TabIndex        =   13
-      TabStop         =   0   'False
-      Top             =   1455
-      Width           =   1170
-      _ExtentX        =   2064
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "Clear"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   11
-      Left            =   1995
-      TabIndex        =   14
-      TabStop         =   0   'False
-      Top             =   1875
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "§("
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   12
-      Left            =   1995
-      TabIndex        =   15
-      TabStop         =   0   'False
-      Top             =   2295
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "/"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   13
-      Left            =   1995
-      TabIndex        =   16
-      TabStop         =   0   'False
-      Top             =   2715
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "*"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   14
-      Left            =   1995
-      TabIndex        =   17
-      TabStop         =   0   'False
-      Top             =   3135
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "-"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   16
-      Left            =   1365
-      TabIndex        =   18
-      TabStop         =   0   'False
-      Top             =   3135
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   ","
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   750
-      Index           =   10
-      Left            =   2625
-      TabIndex        =   21
-      TabStop         =   0   'False
-      Top             =   2715
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   1323
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "="
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   17
-      Left            =   2625
-      TabIndex        =   24
-      TabStop         =   0   'False
-      Top             =   2295
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "+"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdExtras 
-      Height          =   330
-      Index           =   0
-      Left            =   105
-      TabIndex        =   25
-      TabStop         =   0   'False
-      Top             =   3660
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "Tan("
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdExtras 
-      Height          =   330
-      Index           =   1
-      Left            =   105
-      TabIndex        =   26
-      TabStop         =   0   'False
-      Top             =   4080
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "aTan("
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdExtras 
-      Height          =   330
-      Index           =   2
-      Left            =   735
-      TabIndex        =   27
-      TabStop         =   0   'False
-      Top             =   3660
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "Sin("
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdExtras 
-      Height          =   330
-      Index           =   3
-      Left            =   735
-      TabIndex        =   28
-      TabStop         =   0   'False
-      Top             =   4080
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "aSin("
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdExtras 
-      Height          =   330
-      Index           =   4
-      Left            =   1365
-      TabIndex        =   29
-      TabStop         =   0   'False
-      Top             =   3660
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "Cos("
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdExtras 
-      Height          =   330
-      Index           =   5
-      Left            =   1365
-      TabIndex        =   30
-      TabStop         =   0   'False
-      Top             =   4080
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "aCos("
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdExtras 
-      Height          =   330
-      Index           =   6
-      Left            =   1995
-      TabIndex        =   31
-      TabStop         =   0   'False
-      Top             =   3660
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "^"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdExtras 
-      Height          =   330
-      Index           =   7
-      Left            =   2625
-      TabIndex        =   32
-      TabStop         =   0   'False
-      Top             =   3660
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "Pi"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   18
-      Left            =   1995
-      TabIndex        =   33
-      TabStop         =   0   'False
-      Top             =   4080
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "("
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   19
-      Left            =   2625
-      TabIndex        =   34
-      TabStop         =   0   'False
-      Top             =   4080
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   ")"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdExtras 
-      Height          =   330
-      Index           =   8
-      Left            =   2625
-      TabIndex        =   35
-      TabStop         =   0   'False
-      Top             =   1455
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "Rel"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdClearList 
-      Height          =   330
-      Left            =   3360
-      TabIndex        =   37
-      TabStop         =   0   'False
-      Top             =   4080
-      Width           =   5040
-      _ExtentX        =   8890
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "Clear List"
-      ForeColor       =   16711680
-   End
-   Begin Project1.TransPicBox cmdNumbers 
-      Height          =   330
-      Index           =   21
-      Left            =   2625
-      TabIndex        =   40
-      TabStop         =   0   'False
-      Top             =   1875
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackStyle       =   1
-      BackColor       =   16745771
-      MaskColor       =   255
-      BeginProperty FontName {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "b/c"
-      ForeColor       =   16711680
    End
    Begin Project1.uTextBox Text2 
       Height          =   570
       Left            =   90
-      TabIndex        =   42
+      TabIndex        =   9
       Top             =   450
       Width           =   8310
       _ExtentX        =   14658
@@ -1111,7 +323,7 @@ Begin VB.Form Form1
    Begin Project1.uTextBox Text3 
       Height          =   315
       Left            =   90
-      TabIndex        =   43
+      TabIndex        =   10
       Top             =   1005
       Width           =   8310
       _ExtentX        =   14658
@@ -1128,33 +340,1090 @@ Begin VB.Form Form1
       EndProperty
       ForeColor       =   16711680
    End
-   Begin VB.Line Line12 
-      BorderColor     =   &H00FF852B&
-      X1              =   8385
-      X2              =   8385
-      Y1              =   1470
-      Y2              =   3990
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   20
+      Left            =   105
+      TabIndex        =   13
+      Top             =   1455
+      Width           =   1170
+      _ExtentX        =   2064
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "<---"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":14DE2
+      PictureMouseOver=   "Form1.frx":1501F
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
    End
-   Begin VB.Line Line11 
-      BorderColor     =   &H00FF852B&
-      X1              =   3360
-      X2              =   8385
-      Y1              =   3975
-      Y2              =   3975
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   15
+      Left            =   1365
+      TabIndex        =   14
+      Top             =   1455
+      Width           =   1170
+      _ExtentX        =   2064
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "Clear"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":155C9
+      PictureMouseOver=   "Form1.frx":15806
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
    End
-   Begin VB.Line Line10 
-      BorderColor     =   &H00FF852B&
-      X1              =   3360
-      X2              =   8400
-      Y1              =   1455
-      Y2              =   1455
+   Begin Project1.uButton cmdExtras 
+      Height          =   330
+      Index           =   8
+      Left            =   2625
+      TabIndex        =   15
+      Top             =   1455
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "Rel"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":15DB0
+      PictureMouseOver=   "Form1.frx":15F0F
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
    End
-   Begin VB.Line Line9 
-      BorderColor     =   &H00FF852B&
-      X1              =   3360
-      X2              =   3360
-      Y1              =   1470
-      Y2              =   3990
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   21
+      Left            =   2625
+      TabIndex        =   16
+      Top             =   1875
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "b/c"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1643E
+      PictureMouseOver=   "Form1.frx":1659D
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   17
+      Left            =   2625
+      TabIndex        =   17
+      Top             =   2295
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "+"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":16ACC
+      PictureMouseOver=   "Form1.frx":16C2B
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   7
+      Left            =   105
+      TabIndex        =   18
+      Top             =   1875
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "7"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1715A
+      PictureMouseOver=   "Form1.frx":172B9
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   1
+      Left            =   105
+      TabIndex        =   19
+      Top             =   2715
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "1"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":177E8
+      PictureMouseOver=   "Form1.frx":17947
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   2
+      Left            =   735
+      TabIndex        =   20
+      Top             =   2715
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "2"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":17E76
+      PictureMouseOver=   "Form1.frx":17FD5
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   3
+      Left            =   1365
+      TabIndex        =   21
+      Top             =   2715
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "3"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":18504
+      PictureMouseOver=   "Form1.frx":18663
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   4
+      Left            =   105
+      TabIndex        =   22
+      Top             =   2295
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "4"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":18B92
+      PictureMouseOver=   "Form1.frx":18CF1
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   5
+      Left            =   735
+      TabIndex        =   23
+      Top             =   2295
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "5"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":19220
+      PictureMouseOver=   "Form1.frx":1937F
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   6
+      Left            =   1365
+      TabIndex        =   24
+      Top             =   2295
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "6"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":198AE
+      PictureMouseOver=   "Form1.frx":19A0D
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   8
+      Left            =   735
+      TabIndex        =   25
+      Top             =   1875
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "8"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":19F3C
+      PictureMouseOver=   "Form1.frx":1A09B
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   9
+      Left            =   1365
+      TabIndex        =   26
+      Top             =   1875
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "9"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1A5CA
+      PictureMouseOver=   "Form1.frx":1A729
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   11
+      Left            =   1995
+      TabIndex        =   27
+      Top             =   1875
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "§("
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1AC58
+      PictureMouseOver=   "Form1.frx":1ADB7
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   12
+      Left            =   1995
+      TabIndex        =   28
+      Top             =   2295
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "/"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1B2E6
+      PictureMouseOver=   "Form1.frx":1B445
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   13
+      Left            =   1995
+      TabIndex        =   29
+      Top             =   2715
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "*"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1B974
+      PictureMouseOver=   "Form1.frx":1BAD3
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   14
+      Left            =   1995
+      TabIndex        =   30
+      Top             =   3135
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "-"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1C002
+      PictureMouseOver=   "Form1.frx":1C161
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   16
+      Left            =   1365
+      TabIndex        =   31
+      Top             =   3135
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   ","
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1C690
+      PictureMouseOver=   "Form1.frx":1C7EF
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   0
+      Left            =   105
+      TabIndex        =   42
+      Top             =   3135
+      Width           =   1170
+      _ExtentX        =   2064
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "0"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1CD1E
+      PictureMouseOver=   "Form1.frx":1CF5B
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   750
+      Index           =   10
+      Left            =   2625
+      TabIndex        =   43
+      Top             =   2715
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   1323
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "="
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1D505
+      PictureMouseOver=   "Form1.frx":1D6DE
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdExtras 
+      Height          =   330
+      Index           =   0
+      Left            =   105
+      TabIndex        =   32
+      Top             =   3660
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "Tan"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1DD6E
+      PictureMouseOver=   "Form1.frx":1DECD
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdExtras 
+      Height          =   330
+      Index           =   1
+      Left            =   105
+      TabIndex        =   33
+      Top             =   4080
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "aTn"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1E3FC
+      PictureMouseOver=   "Form1.frx":1E55B
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdExtras 
+      Height          =   330
+      Index           =   2
+      Left            =   735
+      TabIndex        =   34
+      Top             =   3660
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "Sin"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1EA8A
+      PictureMouseOver=   "Form1.frx":1EBE9
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdExtras 
+      Height          =   330
+      Index           =   3
+      Left            =   735
+      TabIndex        =   35
+      Top             =   4080
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "aSn"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1F118
+      PictureMouseOver=   "Form1.frx":1F277
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdExtras 
+      Height          =   330
+      Index           =   4
+      Left            =   1365
+      TabIndex        =   36
+      Top             =   3660
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "Cos"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1F7A6
+      PictureMouseOver=   "Form1.frx":1F905
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdExtras 
+      Height          =   330
+      Index           =   5
+      Left            =   1365
+      TabIndex        =   37
+      Top             =   4080
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "aCs"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":1FE34
+      PictureMouseOver=   "Form1.frx":1FF93
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdExtras 
+      Height          =   330
+      Index           =   6
+      Left            =   1995
+      TabIndex        =   38
+      Top             =   3660
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "^"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":204C2
+      PictureMouseOver=   "Form1.frx":20621
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdExtras 
+      Height          =   330
+      Index           =   7
+      Left            =   2625
+      TabIndex        =   39
+      Top             =   3660
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "PI"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":20B50
+      PictureMouseOver=   "Form1.frx":20CAF
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   18
+      Left            =   1995
+      TabIndex        =   40
+      Top             =   4080
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   "("
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":211DE
+      PictureMouseOver=   "Form1.frx":2133D
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   19
+      Left            =   2625
+      TabIndex        =   41
+      Top             =   4080
+      Width           =   540
+      _ExtentX        =   953
+      _ExtentY        =   582
+      BackgroundColor =   15852761
+      BorderColor     =   16745771
+      ForeColor       =   16711680
+      MouseOverBackgroundColor=   15852761
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      Caption         =   ")"
+      Border          =   0   'False
+      BorderAnimation =   0
+      Picture         =   "Form1.frx":2186C
+      PictureMouseOver=   "Form1.frx":219CB
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
    End
    Begin VB.Menu mnuFile 
       Caption         =   "File"
@@ -1232,7 +1501,7 @@ Begin VB.Form Form1
          Caption         =   "Kopiëer Berekening"
       End
       Begin VB.Menu mnuEditCopyBoth 
-         Caption         =   "Kopiëer Bijde"
+         Caption         =   "Kopiëer Beide"
       End
    End
    Begin VB.Menu mnuAbout 
@@ -1258,8 +1527,8 @@ Option Explicit
 Private Const WM_HOTKEY As Integer = &H312
 
 Private Type POINTAPI
-    X As Long
-    Y As Long
+    x As Long
+    y As Long
 End Type
 
 Dim LastOver As Long
@@ -1281,69 +1550,35 @@ Private TotalCalculations As Long
 Private objWinApi As winapi
 
 
-Private Sub cmdClearList_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    If (X < 0) Or (Y < 0) Or (X > cmdClearList.Width) Or (Y > cmdClearList.Height) Then
-        ReleaseCapture
-        Set cmdClearList.Picture = picNormal4.Picture
+Private Sub cmdClearList_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
+    'If (x < 0) Or (y < 0) Or (x > cmdClearList.Width) Or (y > cmdClearList.Height) Then
+    '    ReleaseCapture
+    '    Set cmdClearList.Picture = picNormal4.Picture
 
         
-    ElseIf GetCapture() <> cmdClearList.hwnd Then
-        SetCapture cmdClearList.hwnd
-        Set cmdClearList.Picture = PicHigh4.Picture
-    End If
-    List1.Redraw = True
+    'ElseIf GetCapture() <> cmdClearList.hWnd Then
+    '    SetCapture cmdClearList.hWnd
+    '    Set cmdClearList.Picture = PicHigh4.Picture
+    'End If
+    'List1.Redraw = True
 End Sub
 
-Private Sub cmdClearList_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
-Dim result As Integer
-
-result = MsgBox("Weet je zeker dat je de lijst wilt leeg maken?", vbYesNo, "Lijst Wissen.")
-If result = vbYes Then List1.Clear
-End Sub
-
-Private Sub cmdExtras_MouseMove(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
-Dim IIndex1 As Integer
-Dim IIndex2 As Integer
-Dim IIndex3 As Integer
-Dim IIndex4 As Integer
-
-IIndex1 = cmdExtras(OldIndex2).Width
-IIndex2 = cmdExtras(Index).Width
-IIndex3 = cmdExtras(OldIndex2).Height
-IIndex4 = cmdExtras(Index).Height
-
-    If (X < 0) Or (Y < 0) Or (X > cmdExtras(Index).Width) Or (Y > cmdExtras(Index).Height) Then
-        ReleaseCapture
-        If IIndex1 > 540 Then
-                Set cmdExtras(OldIndex2).Picture = picNormal2.Picture
-                cmdExtras(OldIndex2).ForeColor = vbBlue
-        Else
-            If IIndex3 > 330 Then
-                Set cmdExtras(OldIndex2).Picture = picNormal3.Picture
-                cmdExtras(OldIndex2).ForeColor = vbBlue
-            Else
-                Set cmdExtras(OldIndex2).Picture = picNormal.Picture
-                cmdExtras(OldIndex2).ForeColor = vbBlue
-            End If
-        End If
+Private Sub cmdClearList_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
+    Dim result As Integer
+    Dim i As Long
+    
+    result = MsgBox("Weet je zeker dat je de lijst wilt leeg maken?", vbYesNo, "Lijst Wissen.")
+    If result = vbYes Then
+        For i = 0 To List1.ListCount - 1
+            DeleteSetting "Calculator", "Berekeningen", "Row" & i
+        Next i
         
-    ElseIf GetCapture() <> cmdExtras(OldIndex2).hwnd Then
-        SetCapture cmdExtras(Index).hwnd
-        If IIndex2 > 540 Then
-            Set cmdExtras(Index).Picture = picHigh2.Picture
-            cmdExtras(Index).ForeColor = &H6C00FF
-        Else
-            If IIndex4 > 330 Then
-                Set cmdExtras(Index).Picture = picHigh3.Picture
-                cmdExtras(Index).ForeColor = &H6C00FF
-            Else
-                Set cmdExtras(Index).Picture = picHigh.Picture
-                cmdExtras(Index).ForeColor = &H6C00FF
-            End If
-        End If
-        OldIndex2 = Index
+        SaveSetting "Calculator", "Berekeningen", "Rows", 0
+        
+        List1.Clear
     End If
 End Sub
+
 
 Private Sub SubAddText(NewStr As String)
 Text1.AddCharAtCursor NewStr
@@ -1389,7 +1624,7 @@ Text1.Redraw
 'End If
 End Sub
 
-Private Sub cmdExtras_MouseUp(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub cmdExtras_MouseUp(Index As Integer, Button As Integer, Shift As Integer, x As Single, y As Single)
 Select Case Index
     Case 0 To 7
         If Text1.Text = "0" Then
@@ -1409,51 +1644,8 @@ End Select
 
 End Sub
 
-Private Sub cmdNumbers_MouseMove(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
-Dim IIndex1 As Integer
-Dim IIndex2 As Integer
-Dim IIndex3 As Integer
-Dim IIndex4 As Integer
 
-IIndex1 = cmdNumbers(OldIndex).Width
-IIndex2 = cmdNumbers(Index).Width
-IIndex3 = cmdNumbers(OldIndex).Height
-IIndex4 = cmdNumbers(Index).Height
-
-    If (X < 0) Or (Y < 0) Or (X > cmdNumbers(Index).Width) Or (Y > cmdNumbers(Index).Height) Then
-        ReleaseCapture
-        If IIndex1 > 540 Then
-                Set cmdNumbers(OldIndex).Picture = picNormal2.Picture
-                cmdNumbers(OldIndex).ForeColor = vbBlue
-        Else
-            If IIndex3 > 330 Then
-                Set cmdNumbers(OldIndex).Picture = picNormal3.Picture
-                cmdNumbers(OldIndex).ForeColor = vbBlue
-            Else
-                Set cmdNumbers(OldIndex).Picture = picNormal.Picture
-                cmdNumbers(OldIndex).ForeColor = vbBlue
-            End If
-        End If
-        
-    ElseIf GetCapture() <> cmdNumbers(OldIndex).hwnd Then
-        SetCapture cmdNumbers(Index).hwnd
-        If IIndex2 > 540 Then
-            Set cmdNumbers(Index).Picture = picHigh2.Picture
-            cmdNumbers(Index).ForeColor = &H40C0&
-        Else
-            If IIndex4 > 330 Then
-                Set cmdNumbers(Index).Picture = picHigh3.Picture
-                cmdNumbers(Index).ForeColor = &H40C0&
-            Else
-                Set cmdNumbers(Index).Picture = picHigh.Picture
-                cmdNumbers(Index).ForeColor = &H40C0&
-            End If
-        End If
-        OldIndex = Index
-    End If
-End Sub
-
-Private Sub cmdNumbers_MouseUp(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub cmdNumbers_MouseUp(Index As Integer, Button As Integer, Shift As Integer, x As Single, y As Single)
 Dim tmpTx As String
 Static tmpVal As String
 
@@ -1483,14 +1675,12 @@ Select Case Index
         Text2.Text = CheckCalculation(Text1.Text)
         tmpVal = Text2.Text
         
-        If List1.CellText(0, 0) <> Text1.Text Or List1.CellText(0, 1) <> Text2.Text Then
-            ReleaseCapture
-            SetCapture List1.hwnd
-            DoEvents
-            List1.AddItem Text1.Text & Chr(9) & Text2.Text, 0
-            List1.Refresh
-            ReleaseCapture
-            List1.Redraw = True
+        If List1.ListCount > 0 Then
+            If List1.Cell(0, 0) <> Text1.Text Or List1.Cell(0, 1) <> Text2.Text Then
+                List1.AddItem Text1.Text & Chr(9) & vbCrLf & Text2.Text, 0
+            End If
+        Else
+            List1.AddItem Text1.Text & Chr(9) & vbCrLf & Text2.Text, 0
         End If
         
     Case 16
@@ -1558,6 +1748,7 @@ Sub initializeScript()
     objScript.Language = "VBScript"
     objScript.AddCode "setlocale ""en-us"""
     Set objWinApi = New winapi
+    objWinApi.initialize comm1
     
     objScript.AddObject "winapi", objWinApi
     objScript.AddCode GetFileContent("functionlist.txt")
@@ -1588,60 +1779,64 @@ Private Sub Form_Load()
     SetKeyValue "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts", "Jucko13 (lol Type)", "Jucko13.ttf", REG_SZ
     
     'Me.Width = 3360
-    For i = 1 To 9
-        Set cmdNumbers(i).Picture = picNormal.Picture
-    Next i
+    'For i = 1 To 9
+    '    Set cmdNumbers(i).Picture = picNormal.Picture
+    'Next i
     
-    Set cmdNumbers(11).Picture = picNormal.Picture
-    Set cmdNumbers(12).Picture = picNormal.Picture
-    Set cmdNumbers(13).Picture = picNormal.Picture
-    Set cmdNumbers(14).Picture = picNormal.Picture
-    Set cmdNumbers(16).Picture = picNormal.Picture
-    Set cmdNumbers(18).Picture = picNormal.Picture
-    Set cmdNumbers(19).Picture = picNormal.Picture
-    Set cmdNumbers(21).Picture = picNormal.Picture
-    
-    Set cmdNumbers(0).Picture = picNormal2.Picture
-    Set cmdNumbers(15).Picture = picNormal2.Picture
-    Set cmdNumbers(20).Picture = picNormal2.Picture
-    
-    Set cmdNumbers(10).Picture = picNormal3.Picture
-    Set cmdNumbers(17).Picture = picNormal.Picture
-    
-    Set cmdClearList.Picture = picNormal4.Picture
-    cmdClearList.BackStyle = Transparent
+'
+'    Set cmdNumbers(11).Picture = picNormal.Picture
+'    Set cmdNumbers(12).Picture = picNormal.Picture
+'    Set cmdNumbers(13).Picture = picNormal.Picture
+'    Set cmdNumbers(14).Picture = picNormal.Picture
+'    Set cmdNumbers(16).Picture = picNormal.Picture
+'    Set cmdNumbers(18).Picture = picNormal.Picture
+'    Set cmdNumbers(19).Picture = picNormal.Picture
+'    Set cmdNumbers(21).Picture = picNormal.Picture
+'
+'    Set cmdNumbers(0).Picture = picNormal2.Picture
+'    Set cmdNumbers(15).Picture = picNormal2.Picture
+'    Set cmdNumbers(20).Picture = picNormal2.Picture
+'
+'    Set cmdNumbers(10).Picture = picNormal3.Picture
+'    Set cmdNumbers(17).Picture = picNormal.Picture
+'
+'    Set cmdClearList.Picture = picNormal4.Picture
+    'cmdClearList.BackStyle = Transparent
     
     On Error Resume Next
     
-    For i = 0 To 21
-        cmdNumbers(i).BackStyle = Transparent
-    Next i
-    
-    For i = 0 To 8
-        cmdExtras(i).BackStyle = Transparent
-        Set cmdExtras(i).Picture = picNormal.Picture
-    Next i
+'    For i = 0 To 21
+'        cmdNumbers(i).BackStyle = Transparent
+'    Next i
+'
+'    For i = 0 To 8
+'        cmdExtras(i).BackStyle = Transparent
+'        Set cmdExtras(i).Picture = picNormal.Picture
+'    Next i
     'Set cmdNumbers(i).Picture = picNormal.Picture
     
-    List1.AddColumn "Berekening", List1.Width / 2 - 270, lgAlignCenterCenter, lgString, , , , True, , True, False
-    List1.AddColumn "Antwoord", List1.Width / 2 - 270, lgAlignCenterCenter, lgString, , , , True, , True, True
+    'List1.AddColumn "Berekening", List1.Width / 2 - 270, lgAlignCenterCenter, lgString, , , , True, , True, False
+    'List1.AddColumn "Antwoord", List1.Width / 2 - 270, lgAlignCenterCenter, lgString, , , , True, , True, True
     
-    List1.BackColorBkg = &HF1E4D9
-    List1.ForeColorHdr = &HFF0000
-    List1.Refresh
-    List1.Redraw = True
+    List1.BackgroundColor = &HF1E4D9
+    List1.setTabStop 0, 0, vbLeftJustify
+    List1.setTabStop 1, List1.Width - 4 - 20, vbRightJustify
+    
+    'List1.ForeColorHdr = &HFF0000
+    List1.Redraw
+    'List1.Redraw = True
     Text1.SelStart = 1
     
     TotalRows = GetSetting("Calculator", "Berekeningen", "Rows", -1)
     Text1.Text = GetSetting("Calculator", "Berekeningen", "Text1.text", 0)
     Text2.Text = GetSetting("Calculator", "Berekeningen", "Text2.text", 0)
-    Text3.Text = GetSetting("Calculator", "Berekeningen", "Text3.text", 0)
+    Text3.Text = GetSetting("Calculator", "Berekeningen", "Text3.text", "")
     Text1.SelStart = GetSetting("Calculator", "Berekeningen", "Text1.SelStart", 0)
     Text2.SelStart = GetSetting("Calculator", "Berekeningen", "Text2.SelStart", 0)
     
     'cmdExtras_MouseUp 8, 0, 0, 0, 0
     If TotalRows > -1 Then
-        For i = 0 To TotalRows
+        For i = 0 To TotalRows - 1
             List1.AddItem GetSetting("Calculator", "Berekeningen", "Row" & i)
         Next i
     End If
@@ -1679,11 +1874,11 @@ End Function
 
 
 Private Sub Form_Unload(Cancel As Integer)
-Dim i As Integer
+Dim i As Long
 
 RemoveKeyboardHook
 
-SaveSetting "Calculator", "Berekeningen", "Rows", List1.Rows
+SaveSetting "Calculator", "Berekeningen", "Rows", List1.ListCount
 
 SaveSetting "Calculator", "Berekeningen", "Text1.Text", Text1.Text
 SaveSetting "Calculator", "Berekeningen", "Text2.Text", Text2.Text
@@ -1692,8 +1887,8 @@ SaveSetting "Calculator", "Berekeningen", "Text3.Text", Text3.Text
 SaveSetting "Calculator", "Berekeningen", "Text1.SelStart", Text1.SelStart
 SaveSetting "Calculator", "Berekeningen", "Text2.SelStart", Text2.SelStart
 
-For i = 0 To List1.Rows
-    SaveSetting "Calculator", "Berekeningen", "Row" & i, List1.CellText(i, 0) & Chr(9) & List1.CellText(i, 1)
+For i = 0 To List1.ListCount - 1
+    SaveSetting "Calculator", "Berekeningen", "Row" & i, List1.Cell(i, 0) & Chr(9) & List1.Cell(i, 1)
 Next i
 End Sub
 
@@ -1703,14 +1898,18 @@ Private Sub List1_DblClick()
 Dim RowMouse As Long
 Dim RowStr() As String
 
-RowMouse = List1.MouseRow
-Text1.Text = List1.CellText(RowMouse, 0)
-Text2.Text = List1.CellText(RowMouse, 1)
-List1.Redraw = True
+RowMouse = List1.ListIndex
+Text1.Text = List1.Cell(RowMouse, 0)
+Text2.Text = Replace(List1.Cell(RowMouse, 1), vbCrLf, "")
 End Sub
 
-Private Sub List1_ItemAdded(ByVal Row As Long)
-'List1.SBVisible(efsVertical) = True
+Private Sub List1_ItemAdded(ItemIndex As Long)
+    If ItemIndex Mod 2 = 0 Then
+        List1.ItemColor(ItemIndex) = RGB(228, 235, 244)
+    Else
+        List1.ItemColor(ItemIndex) = -1
+    End If
+    
 End Sub
 
 Private Sub List1_MouseEnter()
@@ -1721,7 +1920,7 @@ Private Sub List1_MouseLeave()
 'List1.GridColor = &HFF852B
 End Sub
 
-Private Sub List1_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub List1_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
 Dim RowMouse As Long
 Dim i As Integer
 

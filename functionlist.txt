@@ -5,11 +5,19 @@ Function Tand(X)
 	Tand = Tan(Rad(X))
 End Function
 
+Function Sind(X)
+	Sind = sin(Rad(X))
+End Function
+
+Function Cosd(X)
+	Cosd = cos(Rad(X))
+End Function
+
 Function Rad(X)
 	Rad = X * Atn(1) / 45
 End Function
 
-Function ArcSin(X) 
+Function asn(X) 
 	ArcSin = Atn(X / Sqr(-X * X + 1))
 End Function
 
@@ -41,3 +49,15 @@ function binaryC(b, m)
 	
 	binaryC = bin
 end function
+
+
+function LongToRGB(byval c)
+	dim r,g,b
+	
+	r = c Mod &H100
+	c = c \ &H100
+	g = c Mod &H100
+	c = c \ &H100
+	b = c Mod &H100
+	LongToRGB = "rgb(" & r & ", " & g & ", " & b & ")"
+End function
