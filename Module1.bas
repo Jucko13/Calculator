@@ -31,17 +31,17 @@ End Sub
 
 ' This function is used by DecToFrac and DecToProperFact
 
-Function Frac(x As Double) As Double
-    Frac = Abs(Abs(x) - Int(Abs(x)))
+Function Frac(X As Double) As Double
+    Frac = Abs(Abs(X) - Int(Abs(X)))
 End Function
 
 ' This additional procedure handles "improper" fractions and returns
 ' them in mixed form (a b/c) when the numerator is larger than the denominator
 
-Sub DecToProperFrac(x As Double, a As Long, b As Long, c As Long)
-   If x > 1 Then a = Int(x)
-   If Frac(x) <> 0 Then
-      Call DecToFrac(Frac(x), b, c)
+Sub DecToProperFrac(X As Double, a As Long, b As Long, c As Long)
+   If X > 1 Then a = Int(X)
+   If Frac(X) <> 0 Then
+      Call DecToFrac(Frac(X), b, c)
    End If
 End Sub
 
@@ -72,9 +72,9 @@ EndIt:
 Dec2Frac = f
 End Function
 
+'convert the script from here, its the best!: http://www.mindspring.com/~alanh/fracs.html
 
 Function GetFraction(ByVal d As Double) As String
-        
         Dim Denom As Double
         Dim Numer As Double
         Dim a As Double
@@ -94,7 +94,7 @@ Function GetFraction(ByVal d As Double) As String
         Numer = (tmpStr)
         
         Dim i As Long
-        Dim x As Long
+        Dim X As Long
         
         
         Dim RepeatCheck As String
@@ -102,13 +102,13 @@ Function GetFraction(ByVal d As Double) As String
         If Len(tmpStr) > 7 Then
             For i = Len(tmpStr) / 2 To 1 Step -1
                 RepeatCheck = Mid(tmpStr, 1, i)
-                For x = i + 1 To Len(tmpStr) Step i
-                    If Mid(tmpStr, x, i) = RepeatCheck Then
+                For X = i + 1 To Len(tmpStr) Step i
+                    If Mid(tmpStr, X, i) = RepeatCheck Then
                         GoTo ReTime:
                     Else
                         Exit For
                     End If
-                Next x
+                Next X
             Next i
             GoTo NotPosible
         End If
@@ -121,12 +121,12 @@ Function GetFraction(ByVal d As Double) As String
         GoTo Euclidean:
         
 ReTime:
-        x = 10 ^ Len(RepeatCheck)
-        x = x - 1
+        X = 10 ^ Len(RepeatCheck)
+        X = X - 1
         
         
         a = CLng(RepeatCheck)
-        b = x
+        b = X
         Numer = a
         Denom = b
         t = 0
@@ -138,7 +138,7 @@ Euclidean:
         ' Euclidean algorithm
         While b <> 0
             t = b
-            b = a Mod b
+            b = FMod(a, b)
             a = t
         Wend
 
@@ -159,3 +159,13 @@ NotPosible:
         GetFraction = d
     End Function
     
+Public Function FMod(a As Double, b As Double) As Double
+    FMod = a - Fix(a / b) * b
+
+    'http://en.wikipedia.org/wiki/Machine_epsilon
+    'Unfortunately, this function can only be accurate when `a / b` is outside [-2.22E-16,+2.22E-16]
+    'Without this correction, FMod(.66, .06) = 5.55111512312578E-17 when it should be 0
+    If FMod >= -2 ^ -52 And FMod <= 2 ^ -52 Then '+/- 2.22E-16
+        FMod = 0
+    End If
+End Function

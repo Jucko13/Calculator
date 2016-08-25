@@ -1,16 +1,52 @@
 [History]
-1=#P0#=mb	#P1#=cmdExtras_MouseUp	#P2#=Project1/Form1/cmdExtras_MouseUp	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824144335	#P7#=0	#P8#=14	.
-2=#P0#=mb	#P1#=SubAddText	#P2#=Project1/Form1/SubAddText	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824142504	#P7#=0	#P8#=2	.
-3=#P0#=mb	#P1#=SelLength	#P2#=Project1/uTextBox/SelLength [Get]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132620	#P7#=0	#P8#=2	.
-4=#P0#=mb	#P1#=MarkupText	#P2#=Project1/uTextBox/MarkupText [Let]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132532	#P7#=0	#P8#=-1	.
-5=#P0#=mb	#P1#=SelStart	#P2#=Project1/uTextBox/SelStart [Get]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132531	#P7#=0	#P8#=1	.
-6=#P0#=mb	#P1#=SelStart	#P2#=Project1/uTextBox/SelStart [Let]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132503	#P7#=0	#P8#=-1	.
-7=#P0#=mb	#P1#=ByteArrayToString	#P2#=Project1/uTextBox/ByteArrayToString	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824142838	#P7#=0	#P8#=3	.
-8=#P0#=mb	#P1#=Font	#P2#=Project1/uTextBox/Font [Get]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132225	#P7#=0	#P8#=-3	.
-9=#P0#=mb	#P1#=Text	#P2#=Project1/uTextBox/Text [Let]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132828	#P7#=0	#P8#=2	.
-10=#P0#=mb	#P1#=UserControl_Initialize	#P2#=Project1/uTextBox/UserControl_Initialize	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824131953	#P7#=0	#P8#=7	.
-11=#P0#=mb	#P1#=Redraw	#P2#=Project1/uTextBox/Redraw	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824143536	#P7#=0	#P8#=427	.
-12=#P0#=mb	#P1#=CheckCalculation	#P2#=Project1/Form1/CheckCalculation	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160821222622	#P7#=0	#P8#=6	.
-13=#P0#=mb	#P1#=Form_Load	#P2#=Project1/Form1/Form_Load	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160821222538	#P7#=0	#P8#=1	.
-14=#P0#=mb	#P1#=cmdNumbers_MouseUp	#P2#=Project1/Form1/cmdNumbers_MouseUp	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824132145	#P7#=0	#P8#=15	.
-15=#P0#=mb	#P1#=cmdNumbers_MouseMove	#P2#=Project1/Form1/cmdNumbers_MouseMove	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160821222207	#P7#=0	#P8#=8	.
+1=#P0#=mb	#P1#=GetFraction	#P2#=Project1/FractionCalc/GetFraction	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160825024633	#P7#=0	#P8#=-2	.
+2=#P0#=mb	#P1#=FindWindow	#P2#=Project1/winapi/FindWindow	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160825020055	#P7#=0	#P8#=3	.
+3=#P0#=mb	#P1#=GetTickCount	#P2#=Project1/winapi/GetTickCount	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160825015938	#P7#=0	#P8#=1	.
+4=#P0#=mb	#P1#=cmdClearList_MouseMove	#P2#=Project1/Form1/cmdClearList_MouseMove	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160825015425	#P7#=0	#P8#=-2	.
+5=#P0#=mb	#P1#=mss	#P2#=Project1/Form1/mss	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160825014706	#P7#=0	#P8#=-1	.
+6=#P0#=mb	#P1#=Text3_Changed	#P2#=Project1/Form1/Text3_Changed	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824235847	#P7#=0	#P8#=2	.
+7=#P0#=mb	#P1#=Text2_Changed	#P2#=Project1/Form1/Text2_Changed	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824235837	#P7#=0	#P8#=1	.
+8=#P0#=mb	#P1#=formatTextBox	#P2#=Project1/Form1/formatTextBox	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160825020658	#P7#=0	#P8#=37	.
+9=#P0#=mb	#P1#=initializeScript	#P2#=Project1/Form1/initializeScript	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160825015525	#P7#=0	#P8#=4	.
+10=#P0#=mb	#P1#=UserControl_LostFocus	#P2#=Project1/uTextBox/UserControl_LostFocus	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824221947	#P7#=0	#P8#=2	.
+11=#P0#=mb	#P1#=GetFileContent	#P2#=Project1/mdlLogger/GetFileContent	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824214301	#P7#=0	#P8#=0	.
+12=#P0#=mb	#P1#=SetValueEx	#P2#=Project1/mdlLogger/SetValueEx	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824214156	#P7#=0	#P8#=-1	.
+13=#P0#=mb	#P1#=AddCharAtCursor	#P2#=Project1/uTextBox/AddCharAtCursor	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824213939	#P7#=0	#P8#=70	.
+14=#P0#=mb	#P1#=CheckCharSize	#P2#=Project1/uTextBox/CheckCharSize	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824210214	#P7#=0	#P8#=42	.
+15=#P0#=mb	#P1#=CheckCalculation	#P2#=Project1/Form1/CheckCalculation	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160825000917	#P7#=0	#P8#=10	.
+16=#P0#=mb	#P1#=Text1_Changed	#P2#=Project1/Form1/Text1_Changed	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824235829	#P7#=0	#P8#=1	.
+17=#P0#=mb	#P1#=UserControl_MouseMove	#P2#=Project1/uTextBox/UserControl_MouseMove	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824194530	#P7#=0	#P8#=12	.
+18=#P0#=mb	#P1#=UserControl_DblClick	#P2#=Project1/uTextBox/UserControl_DblClick	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824192122	#P7#=0	#P8#=1	.
+19=#P0#=mb	#P1#=ReCalculateWords	#P2#=Project1/uTextBox/ReCalculateWords	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824223709	#P7#=0	#P8#=5	.
+20=#P0#=mb	#P1#=Redraw	#P2#=Project1/uTextBox/Redraw	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160825024607	#P7#=0	#P8#=195	.
+21=#P0#=mb	#P1#=UserControl_MouseUp	#P2#=Project1/uTextBox/UserControl_MouseUp	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824191405	#P7#=0	#P8#=3	.
+22=#P0#=mb	#P1#=Clear	#P2#=Project1/uTextBox/Clear	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824182514	#P7#=0	#P8#=1	.
+23=#P0#=mb	#P1#=Text	#P2#=Project1/uTextBox/Text [Let]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160825023457	#P7#=0	#P8#=3	.
+24=#P0#=mb	#P1#=UserControl_KeyDown	#P2#=Project1/uTextBox/UserControl_KeyDown	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824222059	#P7#=0	#P8#=1	.
+25=#P0#=mb	#P1#=UserControl_KeyPress	#P2#=Project1/uTextBox/UserControl_KeyPress	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824222125	#P7#=0	#P8#=8	.
+26=#P0#=mb	#P1#=getCharAtCursor	#P2#=Project1/uTextBox/getCharAtCursor	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824171835	#P7#=0	#P8#=49	.
+27=#P0#=mb	#P1#=SubAddText	#P2#=Project1/Form1/SubAddText	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824161719	#P7#=0	#P8#=41	.
+28=#P0#=mb	#P1#=setCharBackColor	#P2#=Project1/uTextBox/setCharBackColor	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824160242	#P7#=0	#P8#=1	.
+29=#P0#=mb	#P1#=setCharForeColor	#P2#=Project1/uTextBox/setCharForeColor	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824160005	#P7#=0	#P8#=0	.
+30=#P0#=mb	#P1#=updateCaretPos	#P2#=Project1/uTextBox/updateCaretPos	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824160001	#P7#=0	#P8#=3	.
+31=#P0#=mb	#P1#=Text3_KeyPress	#P2#=Project1/Form1/Text3_KeyPress	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824235752	#P7#=0	#P8#=1	.
+32=#P0#=mb	#P1#=Text1_KeyPress	#P2#=Project1/Form1/Text1_KeyPress	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824220049	#P7#=0	#P8#=4	.
+33=#P0#=mb	#P1#=Text1_Change	#P2#=Project1/Form1/Text1_Change	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824153640	#P7#=0	#P8#=11	.
+34=#P0#=mb	#P1#=UserControl_WriteProperties	#P2#=Project1/uTextBox/UserControl_WriteProperties	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824153204	#P7#=0	#P8#=15	.
+35=#P0#=mb	#P1#=MultiLine	#P2#=Project1/uTextBox/MultiLine [Let]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824153149	#P7#=0	#P8#=1	.
+36=#P0#=mb	#P1#=UserControl_ReadProperties	#P2#=Project1/uTextBox/UserControl_ReadProperties	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824153137	#P7#=0	#P8#=-1	.
+37=#P0#=mb	#P1#=m_bMultiLine	#P2#=Project1/uTextBox/m_bMultiLine [Let]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824153121	#P7#=0	#P8#=0	.
+38=#P0#=mb	#P1#=MultiLine	#P2#=Project1/uTextBox/MultiLine [Get]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824153115	#P7#=0	#P8#=2	.
+39=#P0#=mb	#P1#=m_bMultiLine	#P2#=Project1/uTextBox/m_bMultiLine [Get]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824153114	#P7#=0	#P8#=0	.
+40=#P0#=mb	#P1#=RowNumberOnEveryLine	#P2#=Project1/uTextBox/RowNumberOnEveryLine [Get]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824153109	#P7#=0	#P8#=12	.
+41=#P0#=mb	#P1#=cmdExtras_MouseUp	#P2#=Project1/Form1/cmdExtras_MouseUp	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824223356	#P7#=0	#P8#=11	.
+42=#P0#=mb	#P1#=ByteArrayToString	#P2#=Project1/uTextBox/ByteArrayToString	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160824142838	#P7#=0	#P8#=3	.
+43=#P0#=mb	#P1#=SelLength	#P2#=Project1/uTextBox/SelLength [Get]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132620	#P7#=0	#P8#=2	.
+44=#P0#=mb	#P1#=MarkupText	#P2#=Project1/uTextBox/MarkupText [Let]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132532	#P7#=0	#P8#=-1	.
+45=#P0#=mb	#P1#=SelStart	#P2#=Project1/uTextBox/SelStart [Get]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132531	#P7#=0	#P8#=1	.
+46=#P0#=mb	#P1#=SelStart	#P2#=Project1/uTextBox/SelStart [Let]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132503	#P7#=0	#P8#=-1	.
+47=#P0#=mb	#P1#=Font	#P2#=Project1/uTextBox/Font [Get]	#P3#=	#P4#=	#P5#=MembProperty	#P6#=20160824132225	#P7#=0	#P8#=-3	.
+48=#P0#=mb	#P1#=cmdNumbers_MouseUp	#P2#=Project1/Form1/cmdNumbers_MouseUp	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160825021543	#P7#=0	#P8#=81	.
+49=#P0#=mb	#P1#=UserControl_Initialize	#P2#=Project1/uTextBox/UserControl_Initialize	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160824131953	#P7#=0	#P8#=16	.
+50=#P0#=mb	#P1#=Form_Load	#P2#=Project1/Form1/Form_Load	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160825015445	#P7#=0	#P8#=22	.
+51=#P0#=mb	#P1#=cmdNumbers_MouseMove	#P2#=Project1/Form1/cmdNumbers_MouseMove	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20160825020828	#P7#=0	#P8#=1	.
