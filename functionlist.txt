@@ -21,7 +21,7 @@ Function asn(X)
 	ArcSin = Atn(X / Sqr(-X * X + 1))
 End Function
 
-Function ArcCos(X)
+Function acs(X)
 	ArcCos = Atn(-X / Sqr(-X * X + 1)) + 2 * Atn(1)
 End Function
 

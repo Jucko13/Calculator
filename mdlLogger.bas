@@ -1,9 +1,13 @@
 Attribute VB_Name = "mdlLogger"
 Option Explicit
 
+Global ExternalCustomFunctions() As String
+Global ExternalConstants() As String
+Global ExternalOperators() As String
+Global ExternalFunctions() As String
 
 Declare Function ReleaseCapture Lib "user32" () As Long
-Declare Function SetCapture Lib "user32" (ByVal hwnd As Long) As Long
+Declare Function SetCapture Lib "user32" (ByVal hWnd As Long) As Long
 Declare Function GetCapture Lib "user32" () As Long
 
 Declare Function AddFontResource Lib "gdi32" Alias "AddFontResourceA" (ByVal lpFilename As String) As Long
@@ -12,7 +16,7 @@ Private Declare Function GetActiveWindow Lib "user32" () As Long
 
 Declare Function SetWindowsHookEx Lib "user32" Alias "SetWindowsHookExA" (ByVal idHook&, ByVal lpfn&, ByVal hmod&, ByVal dwThreadId&) As Long
 Declare Function CallNextHookEx Lib "user32" (ByVal hHook As Long, ByVal nCode As Long, ByVal wParam As Long, lParam As Any) As Long
-Declare Function CallWindowProc Lib "user32" Alias "CallWindowProcA" (ByVal lpPrevWndFunc As Long, ByVal hwnd As Long, ByVal msg As Long, ByVal wParam As Long, ByVal lParam As Long) As Long
+Declare Function CallWindowProc Lib "user32" Alias "CallWindowProcA" (ByVal lpPrevWndFunc As Long, ByVal hWnd As Long, ByVal msg As Long, ByVal wParam As Long, ByVal lParam As Long) As Long
 Declare Function UnhookWindowsHookEx Lib "user32" (ByVal hHook&) As Long
 
 Global Const PI As String = "3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535940812848111745028410270193852110555964462294895493038196442881097566593344612847564823378678316527120190914564856692346034861045432664821339360726024914127372458700660631558817488152092096282925409171536436789259036001133053054882046652138414695194151160943305727036575959195309218611738193261179310511854807446237996274956735188575272489122793818301194912983367336244065664308602139494639522473719070217986094370277053921717629317675238467481846766940513200056812714526356082778577134275778960917363717872146844090122495343014654958537105079227968925892354201995611212902196086403441815981362977477130996051870721134999999837297804995105973173281609631859502445945534690830264252230825334468503526193118817101000313783875288658753320838142061717766914730359825349042875546873115956286388235378759375195778185778053217122680661300192787661119"
@@ -536,10 +540,10 @@ End Function
 
 
 
-Function Asin(X As Double) As Double
+Function Asin(x As Double) As Double
 Dim ix As Double
 Dim tmpINSAS As Double
-ix = X
+ix = x
 
     tmpINSAS = Sqr((-ix * ix + 1))
     If tmpINSAS = 0 Then
@@ -550,9 +554,9 @@ ix = X
     'Asin = (X * 180) / Pi
 End Function
 
-Function aAcos(X As Double) As Double
+Function aAcos(x As Double) As Double
 'Dim ix As Double
 'ix = x '(x * Pi) / 180
 
-    aAcos = Atn(-X / Sqr(-X * X + 1)) + 2 * Atn(1)
+    aAcos = Atn(-x / Sqr(-x * x + 1)) + 2 * Atn(1)
 End Function
