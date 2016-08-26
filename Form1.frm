@@ -1567,13 +1567,14 @@ End Sub
 Private Sub cmdClearList_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
     Dim result As Integer
     Dim i As Long
+    On Error Resume Next
     
     result = MsgBox("Weet je zeker dat je de lijst wilt leeg maken?", vbYesNo, "Lijst Wissen.")
     If result = vbYes Then
         For i = 0 To List1.ListCount - 1
             DeleteSetting "Calculator", "Berekeningen", "Row" & i
         Next i
-        
+
         SaveSetting "Calculator", "Berekeningen", "Rows", 0
         
         List1.Clear
