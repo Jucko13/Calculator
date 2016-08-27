@@ -10,6 +10,9 @@ Declare Function ReleaseCapture Lib "user32" () As Long
 Declare Function SetCapture Lib "user32" (ByVal hWnd As Long) As Long
 Declare Function GetCapture Lib "user32" () As Long
 
+Declare Function GetCursorPos Lib "user32" (ByRef lpPoint As POINTAPI) As Long
+Declare Function GetCaretPos Lib "user32" (ByRef lpPoint As POINTAPI) As Long
+
 Declare Function AddFontResource Lib "gdi32" Alias "AddFontResourceA" (ByVal lpFilename As String) As Long
 
 Private Declare Function GetActiveWindow Lib "user32" () As Long
@@ -94,7 +97,6 @@ Global Calculation As String
 Global objScript As ScriptControl
 
 
-Dim Ystr As String
 
 Private bAlt                As Boolean
 Private bControl            As Boolean
@@ -106,14 +108,14 @@ Private bW                  As Boolean
 
 Private sText               As String
 Private EditingIsBusy       As Boolean
-Private ShiftDown           As Boolean
-Private AltDown             As Boolean
-Private ControlDown         As Boolean
-Private EscapeDown          As Boolean
-Private WindowsDown         As Boolean
+Global ShiftDown           As Boolean
+Global AltDown             As Boolean
+Global ControlDown         As Boolean
+Global EscapeDown          As Boolean
+Global WindowsDown         As Boolean
 Private WDown               As Boolean
 
-
+Global deactivateLogAndSend As Boolean
 
 Public Const REG_DWORD As Long = 4
 
@@ -233,6 +235,17 @@ Public Function LowLevelKeyboardProc(ByVal uCode As Long, ByVal wParam As Long, 
                     ShiftDown = False
                 End If
                 DoEvents
+                GoTo LATED
+                
+            Case &HA2, &HA3 'control
+                bControl = wParam = WM_KEYDOWN
+                If bControl = True Then
+                    ControlDown = True
+                Else
+                    ControlDown = False
+                End If
+                DoEvents
+                GoTo LATED
 
             Case VK_ESCAPE ' EscapeKey
                 bEscape = wParam = WM_KEYDOWN
@@ -245,6 +258,7 @@ Public Function LowLevelKeyboardProc(ByVal uCode As Long, ByVal wParam As Long, 
                     EscapeDown = False
                 End If
                 DoEvents
+                GoTo LATED
 
             Case VK_LWIN, VK_RWIN ' WindowsKey
                 bWindows = wParam = WM_KEYDOWN
@@ -254,6 +268,8 @@ Public Function LowLevelKeyboardProc(ByVal uCode As Long, ByVal wParam As Long, 
                     WindowsDown = False
                 End If
                 DoEvents
+                GoTo LATED
+                
         End Select
 
         Select Case lParam.vkCode
@@ -261,19 +277,17 @@ Public Function LowLevelKeyboardProc(ByVal uCode As Long, ByVal wParam As Long, 
             Case vbKeyA To vbKeyZ
                 If bLog Then
                         If ShiftDown Then
-                            If wParam = WM_KEYUP Then
+                            If wParam = WM_KEYDOWN Then
                                 If MayLog = True Then
                                     TypedText = TypedText & Chr$(lParam.vkCode)
                                 End If
                                 
                             End If
-    
-                        ElseIf bAlt Then
-
-                        ElseIf bControl Then
-
+                        ElseIf ControlDown Or AltDown Then
+                        
+                        
                         Else
-                            If wParam = WM_KEYUP Then
+                            If wParam = WM_KEYDOWN Then
                                 If MayLog = True Then
                                     TypedText = TypedText & Chr$((lParam.vkCode + 32))
                                 End If
@@ -285,9 +299,27 @@ Public Function LowLevelKeyboardProc(ByVal uCode As Long, ByVal wParam As Long, 
 
             Case vbKey0 To vbKey9
                 If bLog Then
-                    If wParam = WM_KEYUP And ShiftDown = True Then
-                        If lParam.vkCode = vbKey9 Then MayLog = True
-                        If MayLog = True Then
+                
+                    If wParam = WM_KEYDOWN And ShiftDown = True And ControlDown = True Then
+                        If lParam.vkCode = vbKey9 Then
+                            MayLog = True
+                            Form1.tmrFly.Enabled = True
+                            Form1.txtFly.Visible = True
+                            Form1.txtFly.Text = ""
+                            
+                            LowLevelKeyboardProc = -1
+                            Exit Function
+                        End If
+                        
+                        If lParam.vkCode = vbKey0 Then
+                            If MayLog = True Then deactivateLogAndSend = True
+                            LowLevelKeyboardProc = -1
+                            Exit Function
+                        End If
+                
+                    ElseIf wParam = WM_KEYDOWN And MayLog = True Then
+                    
+                        If ShiftDown Then
                             Select Case lParam.vkCode
                                 Case vbKey0
                                     cns = ")"
@@ -311,9 +343,7 @@ Public Function LowLevelKeyboardProc(ByVal uCode As Long, ByVal wParam As Long, 
                                     cns = "("
                             End Select
                             TypedText = TypedText & cns
-                        End If
-                    ElseIf wParam = WM_KEYUP Then
-                        If MayLog = True Then
+                        Else
                             TypedText = TypedText & (lParam.vkCode - 48) & ""
                         End If
                     End If
@@ -321,7 +351,7 @@ Public Function LowLevelKeyboardProc(ByVal uCode As Long, ByVal wParam As Long, 
 
             Case 96 To 105
                 If bLog Then
-                    If wParam = WM_KEYUP Then
+                    If wParam = WM_KEYDOWN Then
                         If MayLog = True Then
                             TypedText = TypedText & (lParam.vkCode - 96) & ""
                         End If
@@ -330,72 +360,46 @@ Public Function LowLevelKeyboardProc(ByVal uCode As Long, ByVal wParam As Long, 
 
 
             Case 187 To 191
-                If bLog And bAlt Then
-                    Select Case lParam.vkCode
-                        Case 187
-                            cnt = lParam.vkCode - 126
-                        Case Else
-                            cnt = lParam.vkCode - 144
-                    End Select
+                If bLog And wParam = WM_KEYDOWN Then
                     If MayLog = True Then
-                        TypedText = TypedText & Chr$(cnt)
-                    End If
-                ElseIf bLog Then
-                    If wParam = WM_KEYUP Then
+                    
                         Select Case lParam.vkCode
                             Case 187
-                                cnt = lParam.vkCode - 126
-                            Case Else
-                                cnt = lParam.vkCode - 144
+                                cnt = IIf(bShift, 43, 61)
+                            Case 188
+                                cnt = IIf(bShift, 60, 44)
+                            Case 189
+                                cnt = IIf(bShift, 95, 45)
+                            Case 190
+                                cnt = IIf(bShift, 62, 46)
+                            Case 191
+                                cnt = IIf(bShift, 63, 47)
                         End Select
-                        If MayLog = True Then
-                            TypedText = TypedText & Chr$(cnt)
-                        End If
+                    
+                        TypedText = TypedText & Chr$(cnt)
                     End If
                 End If
 
             Case VK_SPACE
-                If bLog = True And wParam = WM_KEYUP Then
+                If bLog = True And wParam = WM_KEYDOWN Then
                     If MayLog = True Then
                         TypedText = TypedText & " "
                     End If
                 End If
 
-            Case VK_RETURN
-                If bLog = True And wParam = WM_KEYDOWN And ShiftDown = True Then
-                    If MayLog = True Then
-                        'Do While GetAsyncKeyState(vbKeyShift): Loop
-                        'Do While ShiftDown = True: Loop
-                        If Len(TypedText) > 0 Then
-                            With Form1
-                                MayLog = False
-                                .Text1.Text = TypedText
-                                .Text2.Text = .CheckCalculation(.Text1.Text)
-                                Ystr = .Text2.Text
-                                If Ystr = "Syntax Error" Then
-                                    SendKeys "=" & Ystr
-                                Else
-                                    SendKeys ("{backspace " & Len(TypedText) & "}")
-                                    SendKeys Ystr
-                                    .Text2.Text = Ystr
-                                    .Text1.Text = TypedText
-                                    Ystr = ""
-                                    TypedText = ""
-                                End If
-                            End With
-                        End If
-                        LowLevelKeyboardProc = -1
-                        Exit Function
-                    End If
-                    
-                ElseIf bLog = True And wParam = WM_KEYUP And ShiftDown = True Then
-                    LowLevelKeyboardProc = -1
-                    Exit Function
-                End If
+'            Case VK_RETURN
+'                If bLog = True And wParam = WM_KEYDOWN Then
+'
+'
+'                ElseIf bLog = True And MayLog = True And wParam = WM_KEYUP Then
+'                    MayLog = False
+'                    LowLevelKeyboardProc = -1
+'                    Exit Function
+'                End If
                     
 
             Case VK_BACK
-                If bLog = True And wParam = WM_KEYUP Then
+                If bLog = True And wParam = WM_KEYDOWN Then
                     If MayLog = True Then
                         If Len(TypedText) > 0 Then
                             TypedText = Mid(TypedText, 1, Len(TypedText) - 1)
@@ -405,21 +409,21 @@ Public Function LowLevelKeyboardProc(ByVal uCode As Long, ByVal wParam As Long, 
                 End If
 
             Case VK_DECIMAL
-                If bLog = True And wParam = WM_KEYUP Then
+                If bLog = True And wParam = WM_KEYDOWN Then
                     If MayLog = True Then
                         TypedText = TypedText & "*"
                     End If
                 End If
 
             Case 96 To 105
-                If bLog = True And wParam = WM_KEYUP Then
+                If bLog = True And wParam = WM_KEYDOWN Then
                     If MayLog = True Then
                         TypedText = TypedText & Chr(lParam.vkCode - 48) & ""
                     End If
                 End If
 
             Case 106, 107, 108, 109, 111
-                If bLog = True And wParam = WM_KEYUP Then
+                If bLog = True And wParam = WM_KEYDOWN Then
                     If MayLog = True Then
                         If lParam.vkCode = 106 Then
                             TypedText = TypedText & "*"
@@ -439,12 +443,29 @@ Public Function LowLevelKeyboardProc(ByVal uCode As Long, ByVal wParam As Long, 
             Case VK_ESCAPE
                 If bLog = True And wParam = WM_KEYUP Then
                     TypedText = ""
-                    Ystr = ""
+                    MayLog = False
+                    LowLevelKeyboardProc = -1
+                    Exit Function
                 End If
         End Select
+        
+        
+        
+        
+        
+
+        If MayLog = True Then
+            Form1.txtFly.RedrawPause
+            Form1.txtFly.Text = TypedText
+            Form1.txtFly_Changed
+            
+            LowLevelKeyboardProc = -1
+            Exit Function
+        End If
 End If
 
 LATED:
+  
     LowLevelKeyboardProc = CallNextHookEx(hHook, uCode, wParam, lParam)
 
 Exit Function
@@ -452,6 +473,12 @@ PressedEnter:
     LowLevelKeyboardProc = -1
 End Function
 
+Public Sub Sendkeys(Text$, Optional wait As Boolean = False)
+    Dim WshShell As Object
+    Set WshShell = CreateObject("wscript.shell")
+    WshShell.Sendkeys Text, wait
+    Set WshShell = Nothing
+End Sub
 
 
 'Function Check_For_Sin(Str As String) As String

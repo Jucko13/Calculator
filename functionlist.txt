@@ -61,3 +61,11 @@ function LongToRGB(byval c)
 	b = c Mod &H100
 	LongToRGB = "rgb(" & r & ", " & g & ", " & b & ")"
 End function
+
+Function Factorial(a)
+	x=1
+	For i=1 to a
+	  x=x*i
+	next 
+	Factorial=x
+End Function

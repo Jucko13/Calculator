@@ -26,6 +26,35 @@ Begin VB.Form Form1
    ScaleMode       =   3  'Pixel
    ScaleWidth      =   567
    WhatsThisHelp   =   -1  'True
+   Begin VB.Timer tmrFly 
+      Enabled         =   0   'False
+      Interval        =   1
+      Left            =   3060
+      Top             =   2235
+   End
+   Begin Project1.uTextBox txtFly 
+      Height          =   270
+      Left            =   3195
+      TabIndex        =   44
+      Top             =   3705
+      Visible         =   0   'False
+      Width           =   90
+      _ExtentX        =   159
+      _ExtentY        =   476
+      BorderColor     =   16745771
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16711680
+      HideCursor      =   -1  'True
+      AutoResize      =   -1  'True
+   End
    Begin MSComDlg.CommonDialog comm1 
       Left            =   3165
       Top             =   1335
@@ -1525,29 +1554,34 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
+
+Private Type GUITHREADINFO
+    cbSize As Long
+    flags As Long
+    hwndActive As Long
+    hwndFocus As Long
+    hwndCapture As Long
+    hwndMenuOwner As Long
+    hwndMoveSize As Long
+    hwndCaret As Long
+    rcCaret As RECT
+End Type
+ 
+Private Declare Function GetGUIThreadInfo Lib "user32" (ByVal hThreadId As Long, pGuiThreadInfo As GUITHREADINFO) As Long
+ 
+Private Declare Function GetCurrentThreadId Lib "kernel32" () As Long
+
+Private Declare Function GetWindowThreadProcessId Lib "user32" (ByVal hWnd As Long, lpdwProcessId As Long) As Long
+
+Private Declare Function GetForegroundWindow Lib "user32" () As Long
+
+
+Private Declare Function GetWindowRect Lib "user32" (ByVal hWnd As Long, lpRect As RECT) As Long
+Private Declare Function ScreenToClient Lib "user32" (ByVal hWnd As Long, lpPoint As uGlobals.POINTAPI) As Long
+  
+
 Private Const WM_HOTKEY As Integer = &H312
 
-Private Type POINTAPI
-    x As Long
-    y As Long
-End Type
-
-Dim LastOver As Long
-Dim ClickBusy As Boolean
-
-Dim OldIndex As Integer
-Dim OldIndex2 As Integer
-
-Dim charLastAdded As Integer
-
-Const MAX_PATH = 260&
-
-Private Const Wortel As Long = &H221A
-
-Private Const MOD_SINGLE_KEY As Long = &H0
-Private Const MOD_SHIFT As Long = &H4
-
-Private TotalCalculations As Long
 Private objWinApi As winapi
 
 
@@ -1669,14 +1703,7 @@ Select Case Index
         TempStr = Text1.Text
     Case 10
     
-        If Text1.Text <> "" And (Text1.Text Like "*+" Or _
-            Text1.Text Like "*-" Or _
-            Text1.Text Like "*[*]" Or _
-            Text1.Text Like "*/") Then
-                SubAddText Text2.Text
-            'Text1.Text = Text1.Text & TempStr
-        End If
-        'Call DoIt
+
         Text2.Text = CheckCalculation(Text1.Text)
         tmpVal = Text2.Text
         
@@ -1691,22 +1718,9 @@ Select Case Index
     Case 16
         SubAddText ","
         'Text1.Text = Text1.Text & ","
-    Case 12, 13, 14, 17
-        If Len(Text1.Text) = 0 Then
-            SubAddText cmdNumbers(Index).Caption
-            'Text1.Text = Text1.Text & cmdNumbers(Index).Caption
-        Else
-            SubAddText cmdNumbers(Index).Caption
-        End If
-    Case 18, 11
-        If Text1.Text = "0" Then
-            Text1.Text = cmdNumbers(Index).Caption
-            Text1.SelStart = Len(cmdNumbers(Index).Caption)
-        Else
-            SubAddText cmdNumbers(Index).Caption
-        End If
-            
-
+    Case 11, 12, 13, 14, 17, 18
+        SubAddText cmdNumbers(Index).Caption
+        
         
     Case 19
         If Text2.Text = "0" Then
@@ -1739,9 +1753,10 @@ Select Case Index
         
     Case 15
         Text1.Text = ""
-        Text2.Text = "0"
+        Text2.Text = ""
         MayLog = False
         TypedText = ""
+        
 End Select
 
 End Sub
@@ -1819,7 +1834,13 @@ Private Sub Form_Load()
     Dim lphKey&
     Dim Reg As Object
     Dim strLast As String
-
+    
+    SetKeyboardHook
+    
+    'txtFly.Visible = False
+    
+    SetParent txtFly.hWnd, GetParent(Me.hWnd)
+    SetTopMostWindow txtFly.hWnd, True
     
     initializeScript
     'MsgBox objScript.Eval("Maths.asin(1)")
@@ -1970,10 +1991,10 @@ MsgBox "Dit is een simpele RekenMachine die geschreven is in Visual Basics 6.0" 
        "Gecodeert door: Ricardo de Roode." & vbCrLf & _
        vbCrLf & _
        "How To Use:" & vbCrLf & _
-       "        - Press ""Shift+9"" / ""("" to start loggin your calculation." & vbCrLf & _
-       "        - Press ""Shift+Enter"" to Finnish calculation, remove the " & vbCrLf & _
+       "        - Press ""Ctrl+Shift+9"" / ""("" to start loggin your calculation." & vbCrLf & _
+       "        - Press ""Ctrl+Shift+0"" to Finnish calculation, remove the " & vbCrLf & _
        "          calculation, and replace it with the answer." & vbCrLf & _
-       "        - Press ""Escape"" to Reset the logged calculation." & vbCrLf & _
+       "        - Press ""Escape"" to cancel the calculation." & vbCrLf & _
        vbCrLf & _
        "if you typed something wrong you can just press ""BackSpace"".", vbInformation, "About"
         
@@ -2165,8 +2186,7 @@ End Sub
 
 Sub formatTextBox(txt As uTextBox)
     Dim fColors(0 To 6) As Long
-    'Dim bColors(0 To 6) As Long
-    
+
     fColors(0) = RGB(60, 140, 255)
     fColors(1) = RGB(255, 126, 0)
     fColors(2) = RGB(55, 170, 0)
@@ -2174,14 +2194,6 @@ Sub formatTextBox(txt As uTextBox)
     fColors(4) = RGB(170, 98, 255)
     fColors(5) = RGB(0, 200, 242)
     fColors(6) = RGB(100, 100, 100)
-    
-'    bColors(0) = RGB()
-'    bColors(1) = -1
-'    bColors(2) = -1
-'    bColors(3) = -1
-'    bColors(4) = -1
-'    bColors(5) = -1
-'    bColors(6) = -1
     
     Dim i As Long
     Dim j As Long
@@ -2191,7 +2203,7 @@ Sub formatTextBox(txt As uTextBox)
     Dim TT As Long 'total tags
     Dim s As String
     Dim t As String
-    Dim lstart As Long
+    Dim lStart As Long
     Dim lend As Long
     Dim lStep As Long
     
@@ -2310,7 +2322,6 @@ Sub formatTextBox(txt As uTextBox)
         Next i
     Next K
     
-    
     txt.RedrawResume
 End Sub
 
@@ -2324,4 +2335,76 @@ End Sub
 Private Sub Text1_SelectionChanged()
 Text1_Changed
 End Sub
+
+Private Sub tmrFly_Timer()
+    Dim cur As RECT
+
+    If MayLog Then
+        GetGlobalCaretPos cur
+        txtFly.Left = cur.Left
+        txtFly.Top = cur.Top
+        
+        
+        If deactivateLogAndSend Then
+            If ControlDown = False And ShiftDown = False Then
+                deactivateLogAndSend = False
+                MayLog = False
+                If Len(TypedText) > 0 Then
+                    With Form1
+                        .Text1.Text = TypedText
+                        .Text2.Text = .CheckCalculation(TypedText)
+                        
+                        If InStr(1, LCase(.Text2.Text), "error") > 0 Then
+                            Sendkeys "ERROR"
+                        Else
+        
+                            'Sendkeys ("{backspace " & Len(TypedText) & "}")
+                            Sendkeys .Text2.Text
+                            
+                            TypedText = ""
+                        End If
+                        
+                    End With
+                End If
+                
+            End If
+        End If
+    Else
+        Form1.tmrFly.Enabled = False
+        Form1.txtFly.Visible = False
+    End If
+    
+End Sub
+
+Sub txtFly_Changed()
+    formatTextBox txtFly
+    tmrFly_Timer
+End Sub
+
+
+
+Private Sub GetGlobalCaretPos(ByRef lPos As RECT)
+    ' get the caret's position
+    Dim GUIInfo As GUITHREADINFO
+    Dim threadidhwnd As Long
+    Dim lres As Long
+    Dim crect As RECT
+    Dim wind As Long
+    
+    GUIInfo.cbSize = Len(GUIInfo)
+    wind = GetForegroundWindow
+    
+    lres = GetWindowThreadProcessId(wind, threadidhwnd)
+    GetGUIThreadInfo lres, GUIInfo
+    GetWindowRect GUIInfo.hwndCaret, crect
+    
+    crect.Top = crect.Top + GUIInfo.rcCaret.Top
+    crect.Left = crect.Left + GUIInfo.rcCaret.Left
+    
+    lPos = crect
+End Sub
+
+
+
+
 
