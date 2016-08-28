@@ -1677,6 +1677,9 @@ Select Case Index
         
     Case 8
         initializeScript
+        Text1_Changed
+        Text2_Changed
+        Text3_Changed
     Case 9
     
 End Select
@@ -1780,12 +1783,17 @@ Sub initializeScript()
     Set objWinApi = New winapi
     objWinApi.initialize comm1
     
+    ReDim ExternalFunctions(0) As String
+    ReDim ExternalCustomFunctions(0) As String
+    ReDim ExternalConstants(0) As String
+    ReDim ExternalOperators(0) As String
+    
     objScript.AddObject "winapi", objWinApi
     objScript.AddCode f
     objScript.AddCode "function help(): winapi.help(): end function "
     objScript.AllowUI = True
     
-    'ReDim ExternalFunctions(0 To 5) As String
+    '
     
     ExternalFunctions = Split("abs array asc atn cbool cbyte ccur cdate cdbl chr cint clng conversions cos createobject csng cstr date dateadd datediff datepart dateserial datevalue day escape eval exp filter formatcurrency formatdatetime formatnumber formatpercent getlocale getobject getref hex hour inputbox instr instrrev int fix isarray isdate isempty isnull isnumeric isobject join lbound lcase left len loadpicture log ltrim rtrim trim maths mid minute month monthname msgbox now oct replace rgb right rnd round scriptengine scriptenginebuildversion scriptenginemajorversion scriptengineminorversion second setlocale sgn sin space split sqr strcomp string strreverse tan time timer timeserial timevalue typename ubound ucase unescape vartype weekday weekdayname year", " ")
     
@@ -1889,7 +1897,7 @@ Function CheckCalculation(CalculateString As String, Optional ParentCall As Bool
     t.tStart
     
     objScript.AddCode Text3.Text
-    
+    MsgBox CharExecution(objScript.CodeObject)
     result = objScript.Eval(Replace(CalculateString, "§", "sqr"))
     If TypeName(result) = "Double" Then
         CheckCalculation = Replace(result, ",", ".")

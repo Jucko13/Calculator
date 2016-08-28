@@ -481,79 +481,6 @@ Public Sub Sendkeys(Text$, Optional wait As Boolean = False)
 End Sub
 
 
-'Function Check_For_Sin(Str As String) As String
-'Dim midTmp As Double
-'Dim midTmp123 As String
-'Dim MidEndstr As String
-'
-'MidEndstr = Str
-'        Do
-'            HowMany = HowMany + 1
-'            midTmp123 = midString(MidEndstr, "asin(", ")", HowMany)
-'            midTmp = objScript.Eval(midTmp123)
-'            If Len(midTmp123) <> 0 Then MidEndstr = Replace(MidEndstr, ("asin(" & midTmp123 & ")"), Round(Asin(midTmp), 15), , , vbTextCompare)
-'        Loop Until (midString(MidEndstr, "asin(", ")", HowMany)) = 0
-'HowMany = HowMany - 1
-'        Do
-'            HowMany = HowMany + 1
-'            midTmp123 = midString(MidEndstr, "sin(", ")", HowMany)
-'            midTmp = objScript.Eval(midTmp123)
-'            If Len(midTmp123) <> 0 Then MidEndstr = Replace(MidEndstr, ("sin(" & midTmp123 & ")"), Round(Sin(midTmp123 * Pi / 180), 15), , , vbTextCompare)
-'        Loop Until (midString(MidEndstr, "sin(", ")", HowMany)) = 0
-'HowMany = HowMany - 1
-'Check_For_Sin = MidEndstr
-'End Function
-'
-'
-'
-'Function Check_For_Cos(Str As String) As String
-'Dim midTmp As Double
-'Dim midTmp123 As String
-'Dim MidEndstr As String
-'
-'MidEndstr = Str
-'        Do
-'            HowMany = HowMany + 1
-'            midTmp123 = midString(MidEndstr, "acos(", ")", HowMany)
-'            midTmp = objScript.Eval(midTmp123)
-'            If Len(midTmp123) <> 0 Then MidEndstr = Replace(MidEndstr, "acos(" & midTmp123 & ")", Round((aAcos(objScript.Eval(midTmp)) / Pi) * 180, 15), , , vbTextCompare)
-'        Loop Until (midString(MidEndstr, "acos(", ")", HowMany)) = 0
-'HowMany = HowMany - 1
-'        Do
-'            HowMany = HowMany + 1
-'            midTmp123 = midString(MidEndstr, "cos(", ")", HowMany)
-'            midTmp = objScript.Eval(midTmp123)
-'            If Len(midTmp123) <> 0 Then MidEndstr = Replace(MidEndstr, ("cos(" & midTmp123 & ")"), Round(Cos((objScript.Eval(midTmp) * Pi) / 180), 15), , , vbTextCompare)
-'        Loop Until (midString(MidEndstr, "cos(", ")", HowMany)) = 0
-'HowMany = HowMany - 1
-'Check_For_Cos = MidEndstr
-'End Function
-'
-'
-'Function Check_For_Tan(Str As String) As String
-'Dim midTmp As Double
-'Dim midTmp123 As String
-'Dim MidEndstr As String
-'
-'MidEndstr = Str
-'        Do
-'            HowMany = HowMany + 1
-'            midTmp123 = midString(MidEndstr, "atan(", ")", HowMany)
-'            midTmp = objScript.Eval(midTmp123)
-'            If Len(midTmp123) <> 0 Then MidEndstr = ReplaceRev(MidEndstr, "atan(" & midTmp123 & ")", Round((Atn(midTmp) / Pi) * 180, 15))
-'        Loop Until (midString(MidEndstr, "atan(", ")", HowMany)) = 0
-'HowMany = HowMany - 1
-'        Do
-'        HowMany = HowMany + 1
-'            midTmp123 = midString(MidEndstr, "tan(", ")", HowMany)
-'            midTmp = objScript.Eval(midTmp123)
-'            If Len(midTmp123) <> 0 Then MidEndstr = ReplaceRev(MidEndstr, "tan(" & midTmp123 & ")", Round(Tan((midTmp / 180) * Pi), 15))
-'        Loop Until (midString(MidEndstr, "tan(", ")", HowMany)) = 0
-'HowMany = HowMany - 1
-'
-'Check_For_Tan = MidEndstr
-'End Function
-
 Function ReplaceRev(ExString As String, Find1 As String, Replace1 As String)
 Dim Place1 As Integer
 Dim Place2 As Integer
@@ -567,23 +494,3 @@ End Function
 
 
 
-Function Asin(x As Double) As Double
-Dim ix As Double
-Dim tmpINSAS As Double
-ix = x
-
-    tmpINSAS = Sqr((-ix * ix + 1))
-    If tmpINSAS = 0 Then
-        Asin = (Atn(ix) * 180) / PI * 2
-    Else
-        Asin = (Atn(ix / tmpINSAS) * 180) / PI
-    End If
-    'Asin = (X * 180) / Pi
-End Function
-
-Function aAcos(x As Double) As Double
-'Dim ix As Double
-'ix = x '(x * Pi) / 180
-
-    aAcos = Atn(-x / Sqr(-x * x + 1)) + 2 * Atn(1)
-End Function

@@ -17,6 +17,10 @@ Function Rad(X)
 	Rad = X * Atn(1) / 45
 End Function
 
+Function Deg(x)
+  Deg = x * 45 / Atn(1)
+End Function
+
 Function asn(X) 
 	ArcSin = Atn(X / Sqr(-X * X + 1))
 End Function
