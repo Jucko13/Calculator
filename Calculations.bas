@@ -1,26 +1,35 @@
 Attribute VB_Name = "Calculations"
 Option Explicit
 
-Public Function CharExecution(pObject As Object) As String
+Public Function CharExecution(pObject As Object, isclass As Boolean) As String
     CharExecution = ""
     Dim TLI         As TLIApplication
     Dim lInterface  As InterfaceInfo
     Dim lMember     As MemberInfo
-    Dim ClassInfo As Object
-    Dim FilteredMembers As Object
+    Dim ClassInfo As InterfaceInfo
+    Dim FilteredMembers As SearchResults
+    Dim FilteredItem As SearchItem
+    Dim ClassName As String
+    
+    
     
     Set TLI = New TLIApplication
     Set lInterface = TLI.InterfaceInfoFromObject(pObject)
 
     Set ClassInfo = TLI.InterfaceInfoFromObject(pObject)
     Set FilteredMembers = ClassInfo.Members.GetFilteredMembers
-
+    
+    ClassName = Replace$(ClassInfo.Name, "_", "")
+    
     For Each lMember In lInterface.Members
-        'If WhatIsIt(lMember) = "Property Get" Then
-            'CharExecution = CharExecution & "*****" & lMember.Name & " : " & TLI.InvokeHook(pObject, lMember.Name, INVOKE_PROPERTYGET)
-        'End If
-        CharExecution = CharExecution & lMember.Name & " : " & WhatIsIt(lMember) & vbCrLf
+        If lMember.Name <> "winapi" Then
+
+            
+            CharExecution = CharExecution & ParseMember(lMember, IIf(isclass, ClassName, "")) & vbCrLf
+        End If
     Next
+
+    
     Set pObject = Nothing
     Set lInterface = Nothing
     Set TLI = Nothing
@@ -28,29 +37,78 @@ Public Function CharExecution(pObject As Object) As String
 
    '================================================================================
 
- Private Function WhatIsIt(lMember As MemberInfo) As String
-  Select Case lMember.InvokeKind
-    Case INVOKE_FUNC
-        If lMember.ReturnType.VarType <> VT_VOID Then
-            WhatIsIt = "Function"
-        Else
-            WhatIsIt = "Method"
-        End If
-    Case INVOKE_PROPERTYGET
-        WhatIsIt = "Property Get"
-    Case INVOKE_PROPERTYPUT
-        WhatIsIt = "Property Let"
-    Case INVOKE_PROPERTYPUTREF
-        WhatIsIt = "Property Set"
-    Case INVOKE_CONST
-        WhatIsIt = "Const"
-    Case INVOKE_EVENTFUNC
-        WhatIsIt = "Event"
-    Case Else
-        
-        
-        WhatIsIt = lMember.InvokeKind & " (Unknown) " & TypeName(lMember)
- End Select
+Function GetVariableName(Index As Long) As String
+    Select Case Index
+        Case vbNull
+            GetVariableName = " As Null"
+        Case vbInteger
+            GetVariableName = " As Integer"
+        Case vbLong
+            GetVariableName = " As Long"
+        Case vbSingle
+            GetVariableName = " As Single"
+        Case vbDouble
+            GetVariableName = " As Double"
+        Case vbCurrency
+            GetVariableName = " As Currency"
+        Case vbDate
+            GetVariableName = " As Date"
+        Case vbString
+            GetVariableName = " As String"
+        Case vbObject
+            GetVariableName = " As Object"
+        Case vbError
+            GetVariableName = " As Error"
+        Case vbBoolean
+            GetVariableName = " As Boolean"
+        Case vbVariant
+            GetVariableName = "" '" As Variant"
+        Case vbDataObject
+            GetVariableName = " As DataObject"
+        Case vbDecimal
+            GetVariableName = " As Decimal"
+        Case vbByte
+            GetVariableName = " As Byte"
+        Case vbUserDefinedType
+            GetVariableName = " As UserDefinedType"
+        Case vbArray
+            GetVariableName = " As Array"
+        Case Else
+            GetVariableName = " As UNKNOWN"
+    End Select
+End Function
+
+Private Function ParseMember(lMember As MemberInfo, ClassName As String) As String
+
+    Dim Parameters As String
+    Dim ParameterInf As ParameterInfo
+    
+    For Each ParameterInf In lMember.Parameters
+       Parameters = Parameters & IIf(Parameters <> "", ", ", "") & ParameterInf.Name & GetVariableName(ParameterInf.VarTypeInfo)
+    Next
+    
+    If ClassName <> "" Then ClassName = ClassName & "."
+ 
+    Select Case lMember.InvokeKind
+        Case INVOKE_FUNC
+            If lMember.ReturnType.VarType <> VT_VOID Then
+                ParseMember = "Function " & ClassName & lMember.Name & "( " & Parameters & " )" & GetVariableName(lMember.ReturnType.VarType)
+            Else
+                ParseMember = "Sub " & ClassName & lMember.Name & "( " & Parameters & " )"
+            End If
+        Case INVOKE_PROPERTYGET
+            ParseMember = "Property Get" & ClassName & lMember.Name & "( " & Parameters & " )" & GetVariableName(lMember.ReturnType.VarType)
+        Case INVOKE_PROPERTYPUT
+            ParseMember = "Property Let" & ClassName & lMember.Name & "( " & Parameters & " )"
+        Case INVOKE_PROPERTYPUTREF
+            ParseMember = "Property Set" & ClassName & lMember.Name & "( " & Parameters & " )"
+        Case INVOKE_CONST
+            ParseMember = "Const " & ClassName
+        Case INVOKE_EVENTFUNC
+            ParseMember = "Event " & ClassName & lMember.Name & "( " & Parameters & " )"
+        Case Else
+            ParseMember = ClassName & lMember.Name
+    End Select
 End Function
 
 'Public Const PI As Double = 3.14159265358979

@@ -26,6 +26,32 @@ Begin VB.Form Form1
    ScaleMode       =   3  'Pixel
    ScaleWidth      =   850
    WhatsThisHelp   =   -1  'True
+   Begin Project1.uListBox lstComplete 
+      Height          =   2460
+      Left            =   3420
+      TabIndex        =   45
+      Top             =   400
+      Visible         =   0   'False
+      Width           =   2350
+      _ExtentX        =   4145
+      _ExtentY        =   4339
+      BorderColor     =   16711680
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Jucko13"
+         Size            =   8.5
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16711680
+      Text            =   ""
+      SelectionBackgroundColor=   16777152
+      SelectionBorderColor=   16761024
+      SelectionForeColor=   16711680
+      ItemHeight      =   48
+   End
    Begin VB.Timer tmrFly 
       Enabled         =   0   'False
       Interval        =   1
@@ -126,7 +152,7 @@ Begin VB.Form Form1
    Begin Project1.uTextBox Text1 
       Height          =   315
       Left            =   90
-      TabIndex        =   8
+      TabIndex        =   0
       Top             =   150
       Width           =   8310
       _ExtentX        =   14658
@@ -162,7 +188,7 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":17E2
       ScaleHeight     =   330
       ScaleWidth      =   5040
-      TabIndex        =   7
+      TabIndex        =   8
       Top             =   7770
       Width           =   5040
    End
@@ -185,7 +211,7 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":6EC6
       ScaleHeight     =   330
       ScaleWidth      =   5040
-      TabIndex        =   6
+      TabIndex        =   7
       Top             =   8190
       Width           =   5040
    End
@@ -208,7 +234,7 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":C5AA
       ScaleHeight     =   750
       ScaleWidth      =   540
-      TabIndex        =   5
+      TabIndex        =   6
       Top             =   6510
       Width           =   540
    End
@@ -231,7 +257,7 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":E20E
       ScaleHeight     =   750
       ScaleWidth      =   540
-      TabIndex        =   4
+      TabIndex        =   5
       Top             =   6510
       Width           =   540
    End
@@ -254,7 +280,7 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":FE72
       ScaleHeight     =   330
       ScaleWidth      =   1170
-      TabIndex        =   3
+      TabIndex        =   4
       Top             =   7350
       Width           =   1170
    End
@@ -277,7 +303,7 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":11986
       ScaleHeight     =   330
       ScaleWidth      =   1170
-      TabIndex        =   2
+      TabIndex        =   3
       Top             =   6930
       Width           =   1170
    End
@@ -300,7 +326,7 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":1349A
       ScaleHeight     =   330
       ScaleWidth      =   540
-      TabIndex        =   1
+      TabIndex        =   2
       Top             =   6510
       Width           =   540
    End
@@ -323,7 +349,7 @@ Begin VB.Form Form1
       Picture         =   "Form1.frx":1413E
       ScaleHeight     =   330
       ScaleWidth      =   540
-      TabIndex        =   0
+      TabIndex        =   1
       Top             =   6510
       Width           =   540
    End
@@ -1720,6 +1746,8 @@ Select Case Index
         Else
             List1.AddItem Text1.Text & Chr(9) & vbCrLf & Text2.Text
         End If
+        Text1.SetFocus
+        
         
     Case 16
         SubAddText ","
@@ -1775,18 +1803,18 @@ Sub initializeScript()
     Dim t As String
     Dim c As Long
     
-    f = GetFileContent("functionlist.txt")
+    ReDim ExternalFunctions(0) As String
+    ReDim ExternalCustomFunctions(0) As String
+    ReDim ExternalConstants(0) As String
+    ReDim ExternalOperators(0) As String
+    
+    f = GetFileContent(App.Path & "\functionlist.txt")
     
     Set objScript = CreateObject("MSScriptControl.ScriptControl")
     objScript.Language = "VBScript"
     objScript.AddCode "setlocale ""en-us"""
     Set objWinApi = New winapi
     objWinApi.initialize comm1
-    
-    ReDim ExternalFunctions(0) As String
-    ReDim ExternalCustomFunctions(0) As String
-    ReDim ExternalConstants(0) As String
-    ReDim ExternalOperators(0) As String
     
     objScript.AddObject "winapi", objWinApi
     objScript.AddCode f
@@ -1846,7 +1874,7 @@ Private Sub Form_Load()
     Dim Reg As Object
     Dim strLast As String
     
-    SetKeyboardHook
+    'SetKeyboardHook
     
     'txtFly.Visible = False
     
@@ -1889,6 +1917,7 @@ Function CheckCalculation(CalculateString As String, Optional ParentCall As Bool
     Dim result As Variant
     Dim t As clsTimer
     Dim tend As Double
+    Dim allfunctions As String
     
     Set t = New clsTimer
     
@@ -1897,7 +1926,11 @@ Function CheckCalculation(CalculateString As String, Optional ParentCall As Bool
     t.tStart
     
     objScript.AddCode Text3.Text
-    MsgBox CharExecution(objScript.CodeObject)
+    'allfunctions = CharExecution(objScript.CodeObject, False)
+    'allfunctions = allfunctions & CharExecution(objScript.CodeObject.winapi, True)
+    
+    'MsgBox allfunctions
+    ' MsgBox
     result = objScript.Eval(Replace(CalculateString, "§", "sqr"))
     If TypeName(result) = "Double" Then
         CheckCalculation = Replace(result, ",", ".")
@@ -2198,6 +2231,65 @@ Private Sub mnuFileHighDPI_Click()
     ApplyDPI
 End Sub
 
+Private Sub Text1_KeyDown(KeyCode As Integer, Shift As Integer)
+    If KeyCode = vbKeySpace And Shift = 2 Then
+        KeyCode = 0
+        Shift = 0
+        
+        Dim wordNr As Long
+        wordNr = RefillAutocomplete
+        
+        If lstComplete.ListCount = 1 Then
+            Text1.SelStart = Text1.getWordStart(wordNr)
+            Text1.SelLength = Text1.getWordLength(wordNr)
+            Text1.AddCharAtCursor lstComplete.List(0)
+        End If
+        
+        
+    End If
+End Sub
+
+Function RefillAutocomplete() As Long
+    Dim wordNr As Long
+    Dim wordS As String
+    Dim totalText As String
+    Dim i As Long
+    Dim foundCount As Long
+    Dim foundLast As Long
+    
+    totalText = Text1.Text
+    lstComplete.Clear
+    
+    wordNr = Text1.getWordFromChar(Text1.m_CursorPos)
+    If wordNr = -1 Then Exit Function
+    wordS = Mid$(totalText, Text1.getWordStart(wordNr) + 1, Text1.getWordLength(wordNr))
+    
+    
+    For i = 0 To UBound(ExternalCustomFunctions)
+        If ExternalCustomFunctions(i) <> "" Then
+        
+            If InStr(1, ExternalCustomFunctions(i), wordS) = 1 And ExternalCustomFunctions(i) <> wordS Then
+                lstComplete.AddItem (ExternalCustomFunctions(i))
+            End If
+            
+        End If
+        
+    Next i
+    
+    
+    If lstComplete.ListCount = 0 Then
+        lstComplete.Visible = False
+    Else
+        lstComplete.Visible = True
+        Dim cPos As RECT
+        GetGlobalCaretPos cPos, False
+        lstComplete.Left = cPos.Left + Text1.Left
+        lstComplete.Top = Text1.Top + Text1.Height - 1
+    End If
+    
+    RefillAutocomplete = wordNr
+End Function
+
 Private Sub Text1_KeyPress(KeyAscii As Integer)
 If KeyAscii = 13 Then
     cmdNumbers_MouseUp 10, 0, 0, 0, 0
@@ -2365,11 +2457,15 @@ End Sub
 Private Sub Text1_Changed()
 
     formatTextBox Text1
+    If lstComplete.Visible = True Then
+        RefillAutocomplete
+    End If
     
 End Sub
 
 Private Sub Text1_SelectionChanged()
 Text1_Changed
+lstComplete.Visible = False
 End Sub
 
 Private Sub tmrFly_Timer()
@@ -2419,7 +2515,7 @@ End Sub
 
 
 
-Private Sub GetGlobalCaretPos(ByRef lPos As RECT)
+Private Sub GetGlobalCaretPos(ByRef lPos As RECT, Optional RealPosition As Boolean = True)
     ' get the caret's position
     Dim GUIInfo As GUITHREADINFO
     Dim threadidhwnd As Long
@@ -2431,8 +2527,11 @@ Private Sub GetGlobalCaretPos(ByRef lPos As RECT)
     wind = GetForegroundWindow
     
     lres = GetWindowThreadProcessId(wind, threadidhwnd)
+    
     GetGUIThreadInfo lres, GUIInfo
-    GetWindowRect GUIInfo.hwndCaret, crect
+    If RealPosition Then
+        GetWindowRect GUIInfo.hwndCaret, crect
+    End If
     
     crect.Top = crect.Top + GUIInfo.rcCaret.Top
     crect.Left = crect.Left + GUIInfo.rcCaret.Left
