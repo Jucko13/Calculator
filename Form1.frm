@@ -47,7 +47,7 @@ Begin VB.Form Form1
       EndProperty
       ForeColor       =   16711680
       Text            =   ""
-      SelectionBackgroundColor=   16777152
+      SelectionBackgroundColor=   15852761
       SelectionBorderColor=   16761024
       SelectionForeColor=   16711680
       ItemHeight      =   48
@@ -1939,8 +1939,7 @@ Function CheckCalculation(CalculateString As String, Optional ParentCall As Bool
     End If
     
     tend = t.tStop
-    tend = tend * 1000
-    mnuExecTime.Caption = "ExecTime: " & Round(tend, 6) & " ms"
+    mnuExecTime.Caption = "ExecTime: " & mircoToTime(tend)
 
     Exit Function
 EndIt:
@@ -1954,6 +1953,36 @@ EndIt:
     t.tStop
     
     mnuExecTime.Caption = "ExecTime: -"
+End Function
+
+Function mircoToTime(ByVal lTime As Double) As String
+    Dim ltimes As Long
+    Dim newTime As Double
+    
+    If lTime = 0 Then mircoToTime = "Instant": Exit Function
+    
+    Do While lTime < 1
+        ltimes = ltimes + 1
+        lTime = lTime * 1000
+    Loop
+    
+    newTime = Round(lTime, 4)
+    
+    Select Case ltimes
+        Case 0
+            mircoToTime = newTime & " s"
+            
+        Case 1
+            mircoToTime = newTime & " ms"
+        
+        Case 2
+            mircoToTime = newTime & " us"
+        
+        Case Else
+            mircoToTime = newTime & " ?"
+    End Select
+    
+    
 End Function
 
 
@@ -2017,6 +2046,12 @@ Private Sub List1_ItemAdded(ItemIndex As Long)
     Next i
     
     List1.RedrawResume
+End Sub
+
+Private Sub lstComplete_DblClick()
+    If lstComplete.ListIndex <> -1 And lstComplete.ListCount > 0 Then
+        Text1.ReplaceWord lstComplete.List(lstComplete.ListIndex)
+    End If
 End Sub
 
 'Private Sub List1_MouseEnter()
@@ -2232,19 +2267,40 @@ Private Sub mnuFileHighDPI_Click()
 End Sub
 
 Private Sub Text1_KeyDown(KeyCode As Integer, Shift As Integer)
+    Dim wordNr As Long
+    
     If KeyCode = vbKeySpace And Shift = 2 Then
         KeyCode = 0
         Shift = 0
         
-        Dim wordNr As Long
+        
         wordNr = RefillAutocomplete
         
         If lstComplete.ListCount = 1 Then
-            Text1.SelStart = Text1.getWordStart(wordNr)
-            Text1.SelLength = Text1.getWordLength(wordNr)
-            Text1.AddCharAtCursor lstComplete.List(0)
+            Text1.ReplaceWord lstComplete.List(0), wordNr
         End If
         
+    ElseIf KeyCode = vbKeyDown Or KeyCode = vbKeyUp Then
+        If lstComplete.Visible Then
+            If KeyCode = vbKeyUp Then
+                If lstComplete.ListIndex > 0 Then lstComplete.ListIndex = lstComplete.ListIndex - 1
+            Else
+                If lstComplete.ListIndex < lstComplete.ListCount - 1 Then lstComplete.ListIndex = lstComplete.ListIndex + 1
+            End If
+            
+            KeyCode = 0
+            Shift = 0
+            
+        End If
+    ElseIf KeyCode = vbKeySpace Or KeyCode = vbKeyReturn Then
+        If lstComplete.Visible Then
+            KeyCode = 0
+            Shift = 0
+            
+            wordNr = Text1.getWordFromChar(Text1.m_CursorPos)
+            
+            Text1.ReplaceWord lstComplete.List(lstComplete.ListIndex), wordNr
+        End If
         
     End If
 End Sub
@@ -2261,7 +2317,11 @@ Function RefillAutocomplete() As Long
     lstComplete.Clear
     
     wordNr = Text1.getWordFromChar(Text1.m_CursorPos)
-    If wordNr = -1 Then Exit Function
+    If wordNr = -1 Then
+        lstComplete.Visible = False
+        Exit Function
+    End If
+    
     wordS = Mid$(totalText, Text1.getWordStart(wordNr) + 1, Text1.getWordLength(wordNr))
     
     
@@ -2280,11 +2340,14 @@ Function RefillAutocomplete() As Long
     If lstComplete.ListCount = 0 Then
         lstComplete.Visible = False
     Else
+        lstComplete.ListIndex = 0
         lstComplete.Visible = True
         Dim cPos As RECT
         GetGlobalCaretPos cPos, False
         lstComplete.Left = cPos.Left + Text1.Left
         lstComplete.Top = Text1.Top + Text1.Height - 1
+        lstComplete.Height = IIf(lstComplete.ListCount > 6, 6 * 30, lstComplete.ListCount * 30)
+        lstComplete.ItemsVisible = IIf(lstComplete.ListCount > 6, 6, lstComplete.ListCount)
     End If
     
     RefillAutocomplete = wordNr
