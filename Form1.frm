@@ -1,17 +1,17 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form Form1 
    AutoRedraw      =   -1  'True
    BackColor       =   &H00F1E4D9&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Calculator by Ricardo"
-   ClientHeight    =   4540
-   ClientLeft      =   4070
-   ClientTop       =   3350
-   ClientWidth     =   8500
+   ClientHeight    =   4545
+   ClientLeft      =   4065
+   ClientTop       =   3345
+   ClientWidth     =   8505
    BeginProperty Font 
       Name            =   "Jucko13"
-      Size            =   8.5
+      Size            =   8.25
       Charset         =   0
       Weight          =   400
       Underline       =   0   'False
@@ -22,9 +22,9 @@ Begin VB.Form Form1
    LinkTopic       =   "Form1"
    LockControls    =   -1  'True
    MaxButton       =   0   'False
-   ScaleHeight     =   454
+   ScaleHeight     =   303
    ScaleMode       =   3  'Pixel
-   ScaleWidth      =   850
+   ScaleWidth      =   567
    WhatsThisHelp   =   -1  'True
    Begin Project1.uListBox lstComplete 
       Height          =   2460
@@ -33,12 +33,12 @@ Begin VB.Form Form1
       Top             =   400
       Visible         =   0   'False
       Width           =   2350
-      _ExtentX        =   4145
+      _ExtentX        =   4154
       _ExtentY        =   4339
-      BorderColor     =   16711680
+      BorderColor     =   16745771
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   8.5
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -50,7 +50,7 @@ Begin VB.Form Form1
       SelectionBackgroundColor=   15852761
       SelectionBorderColor=   16761024
       SelectionForeColor=   16711680
-      ItemHeight      =   48
+      ItemHeight      =   32
    End
    Begin VB.Timer tmrFly 
       Enabled         =   0   'False
@@ -65,12 +65,12 @@ Begin VB.Form Form1
       Top             =   3710
       Visible         =   0   'False
       Width           =   60
-      _ExtentX        =   106
-      _ExtentY        =   388
+      _ExtentX        =   159
+      _ExtentY        =   397
       BorderColor     =   16745771
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -115,7 +115,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -130,12 +130,12 @@ Begin VB.Form Form1
       Top             =   1440
       Width           =   5040
       _ExtentX        =   8890
-      _ExtentY        =   4463
+      _ExtentY        =   4471
       BackgroundColor =   15852761
       BorderColor     =   16745771
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   8.5
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -147,7 +147,7 @@ Begin VB.Form Form1
       SelectionBackgroundColor=   16745771
       SelectionBorderColor=   16745771
       SelectionForeColor=   16711680
-      ItemHeight      =   50
+      ItemHeight      =   33
    End
    Begin Project1.uTextBox Text1 
       Height          =   315
@@ -156,11 +156,11 @@ Begin VB.Form Form1
       Top             =   150
       Width           =   8310
       _ExtentX        =   14658
-      _ExtentY        =   564
+      _ExtentY        =   556
       BorderColor     =   16745771
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -168,6 +168,7 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   16711680
+      MousePointer    =   3
    End
    Begin VB.PictureBox picNormal4 
       Appearance      =   0  'Flat
@@ -175,7 +176,7 @@ Begin VB.Form Form1
       BorderStyle     =   0  'None
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -198,7 +199,7 @@ Begin VB.Form Form1
       BorderStyle     =   0  'None
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -221,7 +222,7 @@ Begin VB.Form Form1
       BorderStyle     =   0  'None
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -244,7 +245,7 @@ Begin VB.Form Form1
       BorderStyle     =   0  'None
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -267,7 +268,7 @@ Begin VB.Form Form1
       BorderStyle     =   0  'None
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -290,7 +291,7 @@ Begin VB.Form Form1
       BorderStyle     =   0  'None
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -313,7 +314,7 @@ Begin VB.Form Form1
       BorderStyle     =   0  'None
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -336,7 +337,7 @@ Begin VB.Form Form1
       BorderStyle     =   0  'None
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -364,7 +365,7 @@ Begin VB.Form Form1
       BorderColor     =   16745771
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -372,6 +373,7 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   16711680
+      MousePointer    =   3
       RowNumberOnEveryLine=   -1  'True
       WordWrap        =   -1  'True
       MultiLine       =   -1  'True
@@ -383,11 +385,11 @@ Begin VB.Form Form1
       Top             =   1005
       Width           =   8310
       _ExtentX        =   14658
-      _ExtentY        =   564
+      _ExtentY        =   556
       BorderColor     =   16745771
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -395,6 +397,7 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   16711680
+      MousePointer    =   3
    End
    Begin Project1.uButton cmdNumbers 
       Height          =   330
@@ -423,7 +426,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -458,7 +461,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -493,7 +496,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -528,7 +531,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -563,7 +566,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -598,7 +601,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -633,7 +636,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -668,7 +671,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -703,7 +706,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -738,7 +741,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -773,7 +776,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -808,7 +811,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -843,7 +846,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -878,7 +881,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -913,7 +916,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -948,7 +951,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -983,7 +986,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1018,7 +1021,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1053,7 +1056,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1088,7 +1091,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1123,7 +1126,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1158,7 +1161,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1193,7 +1196,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1228,7 +1231,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1263,7 +1266,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1298,7 +1301,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1333,7 +1336,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1368,7 +1371,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1403,7 +1406,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1438,7 +1441,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1473,7 +1476,7 @@ Begin VB.Form Form1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Jucko13"
-         Size            =   10
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1851,6 +1854,8 @@ Sub initializeScript()
         End If
     Next i
     
+    MergeSort ExternalCustomFunctions
+    
     
     ExternalConstants = Split("vbabortretryignore vbapplicationmodal vbarray vbblack vbblue vbboolean vbbyte vbcr vbcritical vbcrlf vbcurrency vbcyan vbdataobject vbdate vbdecimal vbdefaultbutton1 vbdefaultbutton2 vbdefaultbutton3 vbdefaultbutton4 vbdouble vbempty vberror vbexclamation vbfalse vbformfeed vbgreen vbinformation vbinteger vblf vblong vbmagenta vbnewline vbnull vbnullchar vbnullstring vbobject vbokcancel vbokonly vbquestion vbred vbretrycancel vbsingle vbstring vbsystemmodal vbtab vbtrue vbusedefault vbvariant vbverticaltab vbwhite vbyellow vbyesno vbyesnocancel vbbinarycompare vbtextcompare", " ")
     
@@ -1874,7 +1879,7 @@ Private Sub Form_Load()
     Dim Reg As Object
     Dim strLast As String
     
-    'SetKeyboardHook
+    SetKeyboardHook
     
     'txtFly.Visible = False
     
@@ -1892,8 +1897,6 @@ Private Sub Form_Load()
     On Error Resume Next
     
     List1.Redraw
-    
-    
     
     TotalRows = GetSetting("Calculator", "Berekeningen", "Rows", -1)
     Text1.Text = GetSetting("Calculator", "Berekeningen", "Text1.text", 0)
@@ -1925,7 +1928,11 @@ Function CheckCalculation(CalculateString As String, Optional ParentCall As Bool
     
     t.tStart
     
+    initializeScript
+    
+    
     objScript.AddCode Text3.Text
+    
     'allfunctions = CharExecution(objScript.CodeObject, False)
     'allfunctions = allfunctions & CharExecution(objScript.CodeObject.winapi, True)
     
@@ -2180,7 +2187,8 @@ a = InputBox("Geef waarde voor A:")
 b = InputBox("Geef waarde voor B:")
 c = InputBox("Geef waarde voor C:")
 
-Text1.Text = "abc(" & a & "," & b & "," & c & ")"
+Text1.Text = """x: "" & iif(d < 0 , ""-"", (-b + §(iif(d<0,0,d))) / (2 * a)) & "" OF x:"" & iif(d < 0 , ""-"", (-b - §(iif(d<0,0,d))) / (2 * a))"
+Text3.Text = "const a = " & a & ":const b = " & b & ": const c = " & c & ": dim d: d = b^2 - 4*a*c"
 cmdNumbers_MouseUp 10, 0, 0, 0, 0
 End Sub
 
@@ -2267,12 +2275,12 @@ Private Sub mnuFileHighDPI_Click()
 End Sub
 
 Private Sub Text1_KeyDown(KeyCode As Integer, Shift As Integer)
+    Dim i As Long
     Dim wordNr As Long
     
     If KeyCode = vbKeySpace And Shift = 2 Then
         KeyCode = 0
         Shift = 0
-        
         
         wordNr = RefillAutocomplete
         
@@ -2302,6 +2310,12 @@ Private Sub Text1_KeyDown(KeyCode As Integer, Shift As Integer)
             Text1.ReplaceWord lstComplete.List(lstComplete.ListIndex), wordNr
         End If
         
+    ElseIf KeyCode = vbKeyEscape And lstComplete.Visible Then
+        KeyCode = 0
+        Shift = 0
+        
+        lstComplete.Visible = False
+
     End If
 End Sub
 
@@ -2340,6 +2354,7 @@ Function RefillAutocomplete() As Long
     If lstComplete.ListCount = 0 Then
         lstComplete.Visible = False
     Else
+
         lstComplete.ListIndex = 0
         lstComplete.Visible = True
         Dim cPos As RECT
@@ -2348,6 +2363,7 @@ Function RefillAutocomplete() As Long
         lstComplete.Top = Text1.Top + Text1.Height - 1
         lstComplete.Height = IIf(lstComplete.ListCount > 6, 6 * 30, lstComplete.ListCount * 30)
         lstComplete.ItemsVisible = IIf(lstComplete.ListCount > 6, 6, lstComplete.ListCount)
+
     End If
     
     RefillAutocomplete = wordNr

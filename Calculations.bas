@@ -1,6 +1,66 @@
 Attribute VB_Name = "Calculations"
 Option Explicit
 
+Public Sub MergeSort(ByRef pvarArray As Variant, Optional pvarMirror As Variant, Optional ByVal plngLeft As Long, Optional ByVal plngRight As Long)
+    Dim lngMid As Long
+    Dim L As Long
+    Dim r As Long
+    Dim O As Long
+    Dim varSwap As Variant
+ 
+    If plngRight = 0 Then
+        plngLeft = LBound(pvarArray)
+        plngRight = UBound(pvarArray)
+        ReDim pvarMirror(plngLeft To plngRight)
+    End If
+    lngMid = plngRight - plngLeft
+    Select Case lngMid
+        Case 0
+        Case 1
+            If pvarArray(plngLeft) > pvarArray(plngRight) Then
+                varSwap = pvarArray(plngLeft)
+                pvarArray(plngLeft) = pvarArray(plngRight)
+                pvarArray(plngRight) = varSwap
+            End If
+        Case Else
+            lngMid = lngMid \ 2 + plngLeft
+            MergeSort pvarArray, pvarMirror, plngLeft, lngMid
+            MergeSort pvarArray, pvarMirror, lngMid + 1, plngRight
+            ' Merge the resulting halves
+            L = plngLeft ' start of first (left) half
+            r = lngMid + 1 ' start of second (right) half
+            O = plngLeft ' start of output (mirror array)
+            Do
+                If pvarArray(r) < pvarArray(L) Then
+                    pvarMirror(O) = pvarArray(r)
+                    r = r + 1
+                    If r > plngRight Then
+                        For L = L To lngMid
+                            O = O + 1
+                            pvarMirror(O) = pvarArray(L)
+                        Next
+                        Exit Do
+                    End If
+                Else
+                    pvarMirror(O) = pvarArray(L)
+                    L = L + 1
+                    If L > lngMid Then
+                        For r = r To plngRight
+                            O = O + 1
+                            pvarMirror(O) = pvarArray(r)
+                        Next
+                        Exit Do
+                    End If
+                End If
+                O = O + 1
+            Loop
+            For O = plngLeft To plngRight
+                pvarArray(O) = pvarMirror(O)
+            Next
+    End Select
+End Sub
+
+
 Public Function CharExecution(pObject As Object, isclass As Boolean) As String
     CharExecution = ""
     Dim TLI         As TLIApplication

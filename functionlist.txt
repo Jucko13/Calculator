@@ -21,12 +21,13 @@ Function Deg(x)
   Deg = x * 45 / Atn(1)
 End Function
 
-Function asn(X) 
-	ArcSin = Atn(X / Sqr(-X * X + 1))
+Function asn(X)
+	if x = 1 then asn = pi /2: exit function
+	asn = Atn(X / Sqr(-X * X + 1))
 End Function
 
 Function acs(X)
-	ArcCos = Atn(-X / Sqr(-X * X + 1)) + 2 * Atn(1)
+	acs = Atn(-X / Sqr(-X * X + 1)) + 2 * Atn(1)
 End Function
 
 function binary(b)
@@ -72,4 +73,12 @@ Function Factorial(a)
 	  x=x*i
 	next 
 	Factorial=x
+End Function
+
+Function IIf(bClause, sTrue, sFalse)
+    If CBool(bClause) Then
+        IIf = sTrue
+    Else 
+        IIf = sFalse
+    End If
 End Function
