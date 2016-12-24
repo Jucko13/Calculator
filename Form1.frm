@@ -65,7 +65,7 @@ Begin VB.Form Form1
       Top             =   3710
       Visible         =   0   'False
       Width           =   60
-      _ExtentX        =   159
+      _ExtentX        =   529
       _ExtentY        =   397
       BorderColor     =   16745771
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1738,7 +1738,6 @@ Select Case Index
         TempStr = Text1.Text
     Case 10
     
-
         Text2.Text = CheckCalculation(Text1.Text)
         tmpVal = Text2.Text
         
@@ -1826,7 +1825,7 @@ Sub initializeScript()
     
     '
     
-    ExternalFunctions = Split("abs array asc atn cbool cbyte ccur cdate cdbl chr cint clng conversions cos createobject csng cstr date dateadd datediff datepart dateserial datevalue day escape eval exp filter formatcurrency formatdatetime formatnumber formatpercent getlocale getobject getref hex hour inputbox instr instrrev int fix isarray isdate isempty isnull isnumeric isobject join lbound lcase left len loadpicture log ltrim rtrim trim maths mid minute month monthname msgbox now oct replace rgb right rnd round scriptengine scriptenginebuildversion scriptenginemajorversion scriptengineminorversion second setlocale sgn sin space split sqr strcomp string strreverse tan time timer timeserial timevalue typename ubound ucase unescape vartype weekday weekdayname year", " ")
+    ExternalFunctions = Split("ans abs array asc atn cbool cbyte ccur cdate cdbl chr cint clng conversions cos createobject csng cstr date dateadd datediff datepart dateserial datevalue day escape eval exp filter formatcurrency formatdatetime formatnumber formatpercent getlocale getobject getref hex hour inputbox instr instrrev int fix isarray isdate isempty isnull isnumeric isobject join lbound lcase left len loadpicture log ltrim rtrim trim maths mid minute month monthname msgbox now oct replace rgb right rnd round scriptengine scriptenginebuildversion scriptenginemajorversion scriptengineminorversion second setlocale sgn sin space split sqr strcomp string strreverse tan time timer timeserial timevalue typename ubound ucase unescape vartype weekday weekdayname year", " ")
     
     c = 0
     
@@ -1930,6 +1929,9 @@ Function CheckCalculation(CalculateString As String, Optional ParentCall As Bool
     
     initializeScript
     
+    If InStr(1, LCase$(CalculateString), "ans") > 0 Then
+        objScript.AddCode "dim ans: ans = " & Text2.Text
+    End If
     
     objScript.AddCode Text3.Text
     

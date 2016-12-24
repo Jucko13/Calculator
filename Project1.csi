@@ -1,0 +1,7 @@
+[History]
+1=#P0#=mb	#P1#=formatTextBox	#P2#=Project1/Form1/formatTextBox	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20161224172946	#P7#=0	#P8#=8	.
+2=#P0#=mb	#P1#=initializeScript	#P2#=Project1/Form1/initializeScript	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20161020173902	#P7#=0	#P8#=28	.
+3=#P0#=mb	#P1#=CheckCalculation	#P2#=Project1/Form1/CheckCalculation	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20161020173841	#P7#=0	#P8#=16	.
+4=#P0#=mb	#P1#=cmdNumbers_MouseUp	#P2#=Project1/Form1/cmdNumbers_MouseUp	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20161020173728	#P7#=0	#P8#=19	.
+5=#P0#=mb	#P1#=ReCalculateMarkup	#P2#=Project1/uTextBox/ReCalculateMarkup	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160916223511	#P7#=0	#P8#=330	.
+6=#P0#=mb	#P1#=CheckCharSize	#P2#=Project1/uTextBox/CheckCharSize	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160916223346	#P7#=0	#P8#=78	.
