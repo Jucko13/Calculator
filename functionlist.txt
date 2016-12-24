@@ -82,3 +82,51 @@ Function IIf(bClause, sTrue, sFalse)
         IIf = sFalse
     End If
 End Function
+
+function printTime(lseconds)
+	lDays = lseconds \ 86400
+	lseconds = lseconds - lDays * 86400
+	
+	lHours = lseconds \ 3600
+	lseconds = lseconds - lHours * 3600
+	
+	lMinutes = lseconds \ 60
+	lseconds = lseconds - lMinutes * 60
+	
+	printTime = iif(lDays >= 10, lDays, "0" & lDays) & "  " & iif(lHours >= 10, lHours, "0" & lHours) & ":" & iif(lMinutes >= 10, lMinutes, "0" & lMinutes) & ":" & iif(lseconds >= 10, lseconds, "0" & lseconds)
+end function
+
+
+
+
+function str2char(sInput)
+	dim i, sOut
+	
+	sOut = "char str[] = {"
+	
+	for i = 1 to len(sInput)
+		if i > 1 then 
+			sOut = sOut & ","
+		end if
+		
+		sOut = sOut & "'" & mid(sInput,i,1) & "'"
+	next
+	
+	str2char = sOut & "};"
+end function
+
+function escape(sInput)
+	dim i, sOut, t
+	
+	for i = 1 to len(sInput)
+		t = mid(sInput,i,1)
+		if t = "\" or t = """" then 
+			sOut = sOut & "\" & t
+		else
+			sOut = sOut & t
+		end if
+		
+	next
+	
+	escape = sOut
+end function
