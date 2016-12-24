@@ -90,7 +90,7 @@ Function printTime(lSeconds)
  lSeconds = lSeconds - lDays * 86400
   
  lHours = lSeconds \ 3600
- lseconds = lSeconds - lHours * 3600
+ lSeconds = lSeconds - lHours * 3600
   
  lMinutes = lSeconds \ 60
  lSeconds = lSeconds - lMinutes * 60
@@ -100,3 +100,37 @@ Function printTime(lSeconds)
              IIf(lMinutes >= 10, lMinutes, "0" & lMinutes) & ":" & _
              IIf(lSeconds >= 10, lSeconds, "0" & lSeconds)
 End Function
+
+
+function str2char(sInput)
+	dim i, sOut
+	
+	sOut = "char str[] = {"
+	
+	for i = 1 to len(sInput)
+		if i > 1 then 
+			sOut = sOut & ","
+		end if
+		
+		sOut = sOut & "'" & mid(sInput,i,1) & "'"
+	next
+	
+	str2char = sOut & "};"
+end function
+
+function escape(sInput)
+	dim i, sOut, t
+	
+	for i = 1 to len(sInput)
+		t = mid(sInput,i,1)
+		if t = "\" or t = """" then 
+			sOut = sOut & "\" & t
+		else
+			sOut = sOut & t
+		end if
+		
+	next
+	
+	escape = sOut
+end function
+
