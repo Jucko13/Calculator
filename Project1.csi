@@ -1,7 +1,13 @@
 [History]
-1=#P0#=mb	#P1#=formatTextBox	#P2#=Project1/Form1/formatTextBox	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20161224172946	#P7#=0	#P8#=8	.
-2=#P0#=mb	#P1#=initializeScript	#P2#=Project1/Form1/initializeScript	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20161020173902	#P7#=0	#P8#=28	.
-3=#P0#=mb	#P1#=CheckCalculation	#P2#=Project1/Form1/CheckCalculation	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20161020173841	#P7#=0	#P8#=16	.
-4=#P0#=mb	#P1#=cmdNumbers_MouseUp	#P2#=Project1/Form1/cmdNumbers_MouseUp	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20161020173728	#P7#=0	#P8#=19	.
-5=#P0#=mb	#P1#=ReCalculateMarkup	#P2#=Project1/uTextBox/ReCalculateMarkup	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160916223511	#P7#=0	#P8#=330	.
-6=#P0#=mb	#P1#=CheckCharSize	#P2#=Project1/uTextBox/CheckCharSize	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160916223346	#P7#=0	#P8#=78	.
+1=#P0#=mb	#P1#=GetFraction	#P2#=Project1/Form1/GetFraction	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20170411020305	#P7#=0	#P8#=10	.
+2=#P0#=mb	#P1#=GetFractionSlow	#P2#=Project1/Form1/GetFractionSlow	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20170411015601	#P7#=0	#P8#=11	.
+3=#P0#=mb	#P1#=CheckCalculation	#P2#=Project1/Form1/CheckCalculation	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20170411015514	#P7#=0	#P8#=10	.
+4=#P0#=mb	#P1#=cmdNumbers_MouseUp	#P2#=Project1/Form1/cmdNumbers_MouseUp	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20170411001027	#P7#=0	#P8#=61	.
+5=#P0#=mb	#P1#=Frac	#P2#=Project1/FractionCalc/Frac	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20170411000051	#P7#=0	#P8#=1	.
+6=#P0#=mb	#P1#=GetFractionOld	#P2#=Project1/FractionCalc/GetFractionOld	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20170410235655	#P7#=0	#P8#=-2	.
+7=#P0#=mb	#P1#=ColorPicker	#P2#=Project1/winapi/ColorPicker	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20170410162902	#P7#=0	#P8#=18	.
+8=#P0#=mb	#P1#=LongToRGB	#P2#=Project1/winapi/LongToRGB	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20170410162816	#P7#=0	#P8#=5	.
+9=#P0#=mb	#P1#=formatTextBox	#P2#=Project1/Form1/formatTextBox	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20161224172946	#P7#=0	#P8#=8	.
+10=#P0#=mb	#P1#=initializeScript	#P2#=Project1/Form1/initializeScript	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20161020173902	#P7#=0	#P8#=28	.
+11=#P0#=mb	#P1#=ReCalculateMarkup	#P2#=Project1/uTextBox/ReCalculateMarkup	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160916223511	#P7#=0	#P8#=330	.
+12=#P0#=mb	#P1#=CheckCharSize	#P2#=Project1/uTextBox/CheckCharSize	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20160916223346	#P7#=0	#P8#=78	.

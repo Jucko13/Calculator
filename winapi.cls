@@ -107,32 +107,61 @@ Public Sub initialize(ByRef com As commondialog)
 End Sub
 
 
-Public Function ColorPicker(Optional cc As Long = 0) As String
-    commondialog.Color = cc
+Public Function ColorPicker(Optional cc As Variant) As String
+    Dim openColor As Long
+    
+    Select Case VarType(cc)
+    Case 8
+        If InStr(1, cc, "#") > 0 Then openColor = HexToColor(Replace(cc, "#", ""))
+        
+    Case 2, 3, 4, 5, 6, 17
+        openColor = CLng(cc)
+    Case Else
+        openColor = 0
+        
+    End Select
+    
+    commondialog.Color = openColor
     commondialog.flags = &H1 + &H2
     
     commondialog.ShowColor
     
-    ColorPicker = LongToRGB(commondialog.Color) & " : "
-    
-    Dim tmps As String
-    tmps = Hex(commondialog.Color)
-    If Len(tmps) < 6 Then
-        tmps = String(6 - Len(tmps), "0") & tmps
-    End If
-    
-    tmps = "#" & tmps
-    
-    ColorPicker = ColorPicker & tmps & " : " & commondialog.Color
+    ColorPicker = LongToRGB(commondialog.Color) & " : " & commondialog.Color & " : &H" & Hex(commondialog.Color)
 End Function
 
 Function LongToRGB(ByVal c As Long) As String
-    Dim r, g, b
+    Dim r As Long, g As Long, b As Long
     
     r = c Mod &H100
     c = c \ &H100
     g = c Mod &H100
     c = c \ &H100
     b = c Mod &H100
-    LongToRGB = "rgb(" & r & ", " & g & ", " & b & ")"
+    
+    LongToRGB = "rgb(" & r & ", " & g & ", " & b & ") : #" & IIf(r < 16, "0", "") & Hex(r) & IIf(g < 16, "0", "") & Hex(g) & IIf(b < 16, "0", "") & Hex(b)
 End Function
+
+Function HexToColor(ByRef HexColor As String) As Long
+    ' variable size byte array
+    Dim bytHex() As Byte
+    ' we only accept one length, 6 characters = 12 bytes
+    If LenB(HexColor) = 12 Then
+        ' convert string to byte array
+        bytHex = HexColor
+        ' if a value is now higher than 57, we reduce it by 7
+        If bytHex(0) > &H39 Then bytHex(0) = bytHex(0) - 7
+        If bytHex(2) > &H39 Then bytHex(2) = bytHex(2) - 7
+        If bytHex(4) > &H39 Then bytHex(4) = bytHex(4) - 7
+        If bytHex(6) > &H39 Then bytHex(6) = bytHex(6) - 7
+        If bytHex(8) > &H39 Then bytHex(8) = bytHex(8) - 7
+        If bytHex(10) > &H39 Then bytHex(10) = bytHex(10) - 7
+        ' this function is "stupid", it assumes it gets correct data...
+        '  makes it faster, but you can give it any string that is 6 characters long, no error, ever!
+        '  we take 4 bits for each six characters, and place it in the correct position of a Long,
+        '  making up 24 bits that are required to represent a color value
+        HexToColor = ((bytHex(0) And &HF&) * &H10&) Or (bytHex(2) And &HF&) _
+            Or ((bytHex(4) And &HF&) * &H1000&) Or ((bytHex(6) And &HF&) * &H100&) _
+            Or ((bytHex(8) And &HF&) * &H100000) Or ((bytHex(10) And &HF&) * &H10000)
+    End If
+End Function
+

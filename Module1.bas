@@ -3,7 +3,7 @@ Sub DecToFrac(DecimalNum As Double, Numerator As Long, Denom As Long)
     
     
    ' The BigNumber constant can be adjusted to handle larger fractional parts
-   Const BigNumber = 1000
+   Const bigNumber = 1000
    Const SmallNumber = 0.000000000001
 
    Dim Inverse As Double, FractionalPart As Double
@@ -13,7 +13,7 @@ Sub DecToFrac(DecimalNum As Double, Numerator As Long, Denom As Long)
    WholePart = Int(Inverse)
    FractionalPart = Frac(Inverse)
 
-   If 1 / (FractionalPart + SmallNumber) < BigNumber Then
+   If 1 / (FractionalPart + SmallNumber) < bigNumber Then
         ' Notice that DecToFrac is called recursively.
         Call DecToFrac(FractionalPart, Numerator, Denom)
         Numerator = Denom * WholePart + Numerator
@@ -31,17 +31,17 @@ End Sub
 
 ' This function is used by DecToFrac and DecToProperFact
 
-Function Frac(X As Double) As Double
-    Frac = Abs(Abs(X) - Int(Abs(X)))
+Function Frac(x As Double) As Double
+    Frac = Abs(Abs(x) - Int(Abs(x)))
 End Function
 
 ' This additional procedure handles "improper" fractions and returns
 ' them in mixed form (a b/c) when the numerator is larger than the denominator
 
-Sub DecToProperFrac(X As Double, a As Long, b As Long, c As Long)
-   If X > 1 Then a = Int(X)
-   If Frac(X) <> 0 Then
-      Call DecToFrac(Frac(X), b, c)
+Sub DecToProperFrac(x As Double, a As Long, b As Long, c As Long)
+   If x > 1 Then a = Int(x)
+   If Frac(x) <> 0 Then
+      Call DecToFrac(Frac(x), b, c)
    End If
 End Sub
 
@@ -74,7 +74,9 @@ End Function
 
 'convert the script from here, its the best!: http://www.mindspring.com/~alanh/fracs.html
 
-Function GetFraction(ByVal d As Double) As String
+
+
+Function GetFractionOld(ByVal d As Double) As String
         Dim Denom As Double
         Dim Numer As Double
         Dim a As Double
@@ -94,7 +96,7 @@ Function GetFraction(ByVal d As Double) As String
         Numer = (tmpStr)
         
         Dim i As Long
-        Dim X As Long
+        Dim x As Long
         
         
         Dim RepeatCheck As String
@@ -102,13 +104,13 @@ Function GetFraction(ByVal d As Double) As String
         If Len(tmpStr) > 7 Then
             For i = Len(tmpStr) / 2 To 1 Step -1
                 RepeatCheck = Mid(tmpStr, 1, i)
-                For X = i + 1 To Len(tmpStr) Step i
-                    If Mid(tmpStr, X, i) = RepeatCheck Then
+                For x = i + 1 To Len(tmpStr) Step i
+                    If Mid(tmpStr, x, i) = RepeatCheck Then
                         GoTo ReTime:
                     Else
                         Exit For
                     End If
-                Next X
+                Next x
             Next i
             GoTo NotPosible
         End If
@@ -121,12 +123,12 @@ Function GetFraction(ByVal d As Double) As String
         GoTo Euclidean:
         
 ReTime:
-        X = 10 ^ Len(RepeatCheck)
-        X = X - 1
+        x = 10 ^ Len(RepeatCheck)
+        x = x - 1
         
         
         a = CLng(RepeatCheck)
-        b = X
+        b = x
         Numer = a
         Denom = b
         t = 0

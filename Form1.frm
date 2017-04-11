@@ -1771,20 +1771,19 @@ Select Case Index
         End If
         
     Case 21
-        If InStr(1, Text2.Text, "/") > 0 Then
-            If tmpVal <> "" Then
-                Text2.Text = tmpVal
-            End If
-        Else
-            If Val(Text2.Text) Then
-                
-                tmpTx = GetFraction(Round(Val(Text2.Text), 14))
-                If tmpTx = Text2.Text Then
-                    tmpTx = Dec2Frac(Text2.Text)
-                End If
-                Text2.Text = tmpTx
-            End If
+        'If InStr(1, Text2.Text, "/") > 0 Then
+        '    If tmpVal <> "" Then
+        '        Text2.Text = tmpVal
+        '    End If
+        'Else
+        If Val(Text2.Text) Then
+            tmpTx = GetFraction(Text1.Text)
+            'If tmpTx = Text2.Text Then
+                'tmpTx = Dec2Frac(Text2.Text)
+            'End If
+            Text2.Text = tmpTx
         End If
+        'End If
         
         
     Case 15
@@ -1915,6 +1914,97 @@ Private Sub Form_Load()
 End Sub
 
 
+Function GetFraction(Calculation As String) As String
+    Dim dOne As Double
+    
+     Dim tend As Double
+    Dim tim As clsTimer
+    Set tim = New clsTimer
+    
+    tim.tStart
+    
+    dOne = Val(CheckCalculation("1 / (" & Calculation & ")"))
+    
+    Dim bigNumber As String
+    
+    bigNumber = dOne
+    
+    If InStr(1, LCase(bigNumber), "e") > 0 Then
+        GetFraction = "??"
+        Exit Function
+    End If
+    
+    Dim lPlace As Long
+    
+    lPlace = InStr(1, bigNumber, ",")
+    Dim toPowerOf As Long
+    
+    toPowerOf = Len(bigNumber) - lPlace
+    
+    If toPowerOf <= 0 Then
+        GetFraction = "??"
+        Exit Function
+    End If
+    
+    Dim upperBound As Double
+    Dim lowerBound As Double
+    
+    upperBound = 10 ^ toPowerOf
+    lowerBound = dOne * upperBound
+    
+    If upperBound >= 100000000 Then
+        GetFraction = GetFractionSlow(dOne, "1 / (" & Calculation & ")")
+    Else
+        Dim t As Double
+        Dim a As Double
+        Dim b As Double
+        
+        a = upperBound
+        b = lowerBound
+        While b <> 0
+            t = b
+            b = FMod(a, b)
+            a = t
+        Wend
+        
+        GetFraction = upperBound / a & " / " & lowerBound / a
+        
+    End If
+    
+    tend = tim.tStop
+    mnuExecTime.Caption = "ExecTime: " & mircoToTime(tend)
+End Function
+
+Function GetFractionSlow(startNum As Double, Calculation As String) As String
+    Dim i As Long
+    
+    'If startNum < 2 Then
+    '    GetFractionSlow = "??"
+    '    Exit Function
+    'End If
+    
+    
+    For i = 2 To 2000
+        Dim tmp As String
+        
+        'Debug.Assert i <> 86
+        
+        tmp = CheckCalculation("(" & Calculation & ")" & " * " & i)
+        If tmp = Fix(Val(tmp)) Then
+            Dim upperBound As Double
+            Dim lowerBound As Double
+            
+            upperBound = i
+            lowerBound = CheckCalculation("(" & Calculation & ")" & " * " & upperBound)
+    
+            GetFractionSlow = upperBound & " / " & lowerBound
+            Exit Function
+        End If
+        
+    Next i
+End Function
+
+
 Function CheckCalculation(CalculateString As String, Optional ParentCall As Boolean = True) As String
     Dim result As Variant
     Dim t As clsTimer
@@ -2038,6 +2128,8 @@ Dim RowMouse As Long
 Dim RowStr() As String
 
 RowMouse = List1.ListIndex
+If RowMouse = -1 Then Exit Sub
+
 Text1.Text = List1.Cell(RowMouse, 0)
 Text2.Text = Replace(List1.Cell(RowMouse, 1), vbCrLf, "")
 End Sub
