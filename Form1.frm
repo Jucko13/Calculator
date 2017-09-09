@@ -1,14 +1,14 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form Form1 
    AutoRedraw      =   -1  'True
-   BackColor       =   &H00F1E4D9&
+   BackColor       =   &H0024211E&
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Calculator by Ricardo"
-   ClientHeight    =   4545
+   ClientHeight    =   4965
    ClientLeft      =   4065
    ClientTop       =   3345
-   ClientWidth     =   8505
+   ClientWidth     =   9735
    BeginProperty Font 
       Name            =   "Jucko13"
       Size            =   8.25
@@ -22,54 +22,23 @@ Begin VB.Form Form1
    LinkTopic       =   "Form1"
    LockControls    =   -1  'True
    MaxButton       =   0   'False
-   ScaleHeight     =   303
+   ScaleHeight     =   331
    ScaleMode       =   3  'Pixel
-   ScaleWidth      =   567
+   ScaleWidth      =   649
    WhatsThisHelp   =   -1  'True
    Begin Project1.uListBox lstComplete 
-      Height          =   2460
-      Left            =   3420
-      TabIndex        =   45
-      Top             =   400
+      Height          =   2385
+      Left            =   4485
+      TabIndex        =   35
+      Top             =   2055
       Visible         =   0   'False
-      Width           =   2350
+      Width           =   2355
       _ExtentX        =   4154
-      _ExtentY        =   4339
-      BorderColor     =   16745771
+      _ExtentY        =   4207
+      BackgroundColor =   3551534
+      BorderColor     =   8421504
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   16711680
-      Text            =   ""
-      SelectionBackgroundColor=   15852761
-      SelectionBorderColor=   16761024
-      SelectionForeColor=   16711680
-      ItemHeight      =   32
-   End
-   Begin VB.Timer tmrFly 
-      Enabled         =   0   'False
-      Interval        =   1
-      Left            =   3060
-      Top             =   2235
-   End
-   Begin Project1.uTextBox txtFly 
-      Height          =   220
-      Left            =   3200
-      TabIndex        =   44
-      Top             =   3710
-      Visible         =   0   'False
-      Width           =   60
-      _ExtentX        =   529
-      _ExtentY        =   397
-      BorderColor     =   16745771
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -77,29 +46,63 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   16711680
+      ForeColor       =   16777215
+      Text            =   ""
+      SelectionBackgroundColor=   3551534
+      SelectionBorderColor=   16777215
+      SelectionForeColor=   8500547
+      ItemHeight      =   31
+   End
+   Begin VB.Timer tmrFly 
+      Enabled         =   0   'False
+      Interval        =   1
+      Left            =   3420
+      Top             =   2850
+   End
+   Begin Project1.uTextBox txtFly 
+      Height          =   330
+      Left            =   3315
+      TabIndex        =   34
+      Top             =   4065
+      Visible         =   0   'False
+      Width           =   285
+      _ExtentX        =   503
+      _ExtentY        =   582
+      BackgroundColor =   3551534
+      BorderColor     =   8421504
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Consolas"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      ConsoleColors   =   0   'False
       HideCursor      =   -1  'True
       AutoResize      =   -1  'True
    End
    Begin MSComDlg.CommonDialog comm1 
-      Left            =   3165
-      Top             =   1335
+      Left            =   3375
+      Top             =   2115
       _ExtentX        =   847
       _ExtentY        =   847
       _Version        =   393216
    End
    Begin Project1.uButton cmdClearList 
       Height          =   330
-      Left            =   3360
-      TabIndex        =   12
-      Top             =   4080
-      Width           =   5040
-      _ExtentX        =   8890
+      Left            =   3240
+      TabIndex        =   4
+      Top             =   4545
+      Width           =   6405
+      _ExtentX        =   11298
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   14322034
+      ForeColor       =   14322034
+      MouseOverBackgroundColor=   5913650
       CaptionBorderColor=   14737632
       FocusColor      =   0
       BackgroundColorDisabled=   0
@@ -107,14 +110,12 @@ Begin VB.Form Form1
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "Clear"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":0CCA
-      PictureMouseOver=   "Form1.frx":1074
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -124,308 +125,129 @@ Begin VB.Form Form1
       EndProperty
    End
    Begin Project1.uListBox List1 
-      Height          =   2535
-      Left            =   3360
-      TabIndex        =   11
-      Top             =   1440
-      Width           =   5040
-      _ExtentX        =   8890
-      _ExtentY        =   4471
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
+      Height          =   2445
+      Left            =   3240
+      TabIndex        =   3
+      Top             =   2025
+      Width           =   6405
+      _ExtentX        =   11298
+      _ExtentY        =   4313
+      BackgroundColor =   3551534
+      BorderColor     =   8421504
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   8.25
+         Name            =   "Courier"
+         Size            =   9.75
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   4210752
+      ForeColor       =   16777215
       Text            =   "uFrame"
-      SelectionBackgroundColor=   16745771
-      SelectionBorderColor=   16745771
-      SelectionForeColor=   16711680
-      ItemHeight      =   33
+      SelectionBackgroundColor=   3551534
+      SelectionBorderColor=   16777215
+      SelectionForeColor=   8500547
+      ItemHeight      =   40
+      VisibleItems    =   4
    End
    Begin Project1.uTextBox Text1 
-      Height          =   315
+      Height          =   465
       Left            =   90
       TabIndex        =   0
-      Top             =   150
-      Width           =   8310
-      _ExtentX        =   14658
-      _ExtentY        =   556
-      BorderColor     =   16745771
+      Top             =   90
+      Width           =   9555
+      _ExtentX        =   16854
+      _ExtentY        =   820
+      BackgroundColor =   3551534
+      BorderColor     =   8421504
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
+         Name            =   "Consolas"
+         Size            =   12
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   16711680
+      ForeColor       =   16777215
       MousePointer    =   3
-   End
-   Begin VB.PictureBox picNormal4 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BorderStyle     =   0  'None
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   330
-      Left            =   420
-      Picture         =   "Form1.frx":17E2
-      ScaleHeight     =   330
-      ScaleWidth      =   5040
-      TabIndex        =   8
-      Top             =   7770
-      Width           =   5040
-   End
-   Begin VB.PictureBox PicHigh4 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BorderStyle     =   0  'None
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   330
-      Left            =   420
-      Picture         =   "Form1.frx":6EC6
-      ScaleHeight     =   330
-      ScaleWidth      =   5040
-      TabIndex        =   7
-      Top             =   8190
-      Width           =   5040
-   End
-   Begin VB.PictureBox picNormal3 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BorderStyle     =   0  'None
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   750
-      Left            =   1680
-      Picture         =   "Form1.frx":C5AA
-      ScaleHeight     =   750
-      ScaleWidth      =   540
-      TabIndex        =   6
-      Top             =   6510
-      Width           =   540
-   End
-   Begin VB.PictureBox picHigh3 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BorderStyle     =   0  'None
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   750
-      Left            =   2310
-      Picture         =   "Form1.frx":E20E
-      ScaleHeight     =   750
-      ScaleWidth      =   540
-      TabIndex        =   5
-      Top             =   6510
-      Width           =   540
-   End
-   Begin VB.PictureBox picHigh2 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BorderStyle     =   0  'None
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   330
-      Left            =   420
-      Picture         =   "Form1.frx":FE72
-      ScaleHeight     =   330
-      ScaleWidth      =   1170
-      TabIndex        =   4
-      Top             =   7350
-      Width           =   1170
-   End
-   Begin VB.PictureBox picNormal2 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BorderStyle     =   0  'None
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   330
-      Left            =   420
-      Picture         =   "Form1.frx":11986
-      ScaleHeight     =   330
-      ScaleWidth      =   1170
-      TabIndex        =   3
-      Top             =   6930
-      Width           =   1170
-   End
-   Begin VB.PictureBox picHigh 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BorderStyle     =   0  'None
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   330
-      Left            =   1050
-      Picture         =   "Form1.frx":1349A
-      ScaleHeight     =   330
-      ScaleWidth      =   540
-      TabIndex        =   2
-      Top             =   6510
-      Width           =   540
-   End
-   Begin VB.PictureBox picNormal 
-      Appearance      =   0  'Flat
-      BackColor       =   &H80000005&
-      BorderStyle     =   0  'None
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H80000008&
-      Height          =   330
-      Left            =   420
-      Picture         =   "Form1.frx":1413E
-      ScaleHeight     =   330
-      ScaleWidth      =   540
-      TabIndex        =   1
-      Top             =   6510
-      Width           =   540
+      ConsoleColors   =   0   'False
    End
    Begin Project1.uTextBox Text2 
-      Height          =   570
+      Height          =   735
       Left            =   90
-      TabIndex        =   9
-      Top             =   450
-      Width           =   8310
-      _ExtentX        =   14658
-      _ExtentY        =   1005
-      BorderColor     =   16745771
+      TabIndex        =   1
+      Top             =   630
+      Width           =   9555
+      _ExtentX        =   16854
+      _ExtentY        =   1296
+      BackgroundColor =   3551534
+      BorderColor     =   8421504
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
+         Name            =   "Consolas"
+         Size            =   12
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   16711680
+      ForeColor       =   16777215
       MousePointer    =   3
+      ConsoleColors   =   0   'False
       RowNumberOnEveryLine=   -1  'True
       WordWrap        =   -1  'True
       MultiLine       =   -1  'True
    End
    Begin Project1.uTextBox Text3 
-      Height          =   315
+      Height          =   510
       Left            =   90
-      TabIndex        =   10
-      Top             =   1005
-      Width           =   8310
-      _ExtentX        =   14658
-      _ExtentY        =   556
-      BorderColor     =   16745771
+      TabIndex        =   2
+      Top             =   1440
+      Width           =   9555
+      _ExtentX        =   16854
+      _ExtentY        =   900
+      BackgroundColor =   3551534
+      BorderColor     =   8421504
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
+         Name            =   "Consolas"
+         Size            =   12
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   16711680
+      ForeColor       =   16777215
       MousePointer    =   3
+      ConsoleColors   =   0   'False
    End
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   20
-      Left            =   105
-      TabIndex        =   13
-      Top             =   1440
-      Width           =   1170
-      _ExtentX        =   2064
+      Left            =   90
+      TabIndex        =   5
+      Top             =   2025
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   14322034
+      ForeColor       =   14322034
+      MouseOverBackgroundColor=   5913650
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
-      Caption         =   "<---"
-      Border          =   0   'False
+      FocusVisible    =   0   'False
+      Caption         =   "<-"
       BorderAnimation =   0
-      Picture         =   "Form1.frx":14DE2
-      PictureMouseOver=   "Form1.frx":1501F
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -437,65 +259,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   15
-      Left            =   1365
-      TabIndex        =   14
-      Top             =   1440
-      Width           =   1170
-      _ExtentX        =   2064
+      Left            =   720
+      TabIndex        =   6
+      Top             =   2025
+      Width           =   1185
+      _ExtentX        =   2090
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   14322034
+      ForeColor       =   14322034
+      MouseOverBackgroundColor=   5913650
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "Clear"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":155C9
-      PictureMouseOver=   "Form1.frx":15806
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-   End
-   Begin Project1.uButton cmdExtras 
-      Height          =   330
-      Index           =   8
-      Left            =   2625
-      TabIndex        =   15
-      Top             =   1440
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
-      FocusColor      =   0
-      BackgroundColorDisabled=   0
-      BorderColorDisabled=   0
-      ForeColorDisabled=   0
-      CaptionBorderColorDisabled=   0
-      FocusColorDisabled=   0
-      Caption         =   "Rel"
-      Border          =   0   'False
-      BorderAnimation =   0
-      Picture         =   "Form1.frx":15DB0
-      PictureMouseOver=   "Form1.frx":15F0F
-      AlignPictureInCorner=   -1  'True
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -507,30 +292,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   21
-      Left            =   2625
-      TabIndex        =   16
-      Top             =   1860
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   2610
+      TabIndex        =   7
+      Top             =   2430
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   1746682
+      ForeColor       =   1746682
+      MouseOverBackgroundColor=   1584197
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "b/c"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1643E
-      PictureMouseOver=   "Form1.frx":1659D
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -542,30 +325,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   17
-      Left            =   2625
-      TabIndex        =   17
-      Top             =   2280
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   1980
+      TabIndex        =   8
+      Top             =   2430
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   11944815
+      ForeColor       =   11944815
+      MouseOverBackgroundColor=   6894151
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "+"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":16ACC
-      PictureMouseOver=   "Form1.frx":16C2B
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -577,30 +358,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   7
-      Left            =   105
-      TabIndex        =   18
-      Top             =   1860
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   90
+      TabIndex        =   9
+      Top             =   2430
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   4671472
+      ForeColor       =   4671472
+      MouseOverBackgroundColor=   2434394
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "7"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1715A
-      PictureMouseOver=   "Form1.frx":172B9
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -612,30 +391,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   1
-      Left            =   105
-      TabIndex        =   19
-      Top             =   2700
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   90
+      TabIndex        =   10
+      Top             =   3240
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   4671472
+      ForeColor       =   4671472
+      MouseOverBackgroundColor=   2434394
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "1"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":177E8
-      PictureMouseOver=   "Form1.frx":17947
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -647,30 +424,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   2
-      Left            =   735
-      TabIndex        =   20
-      Top             =   2700
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   720
+      TabIndex        =   11
+      Top             =   3240
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   4671472
+      ForeColor       =   4671472
+      MouseOverBackgroundColor=   2434394
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "2"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":17E76
-      PictureMouseOver=   "Form1.frx":17FD5
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -682,30 +457,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   3
-      Left            =   1365
-      TabIndex        =   21
-      Top             =   2700
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   1350
+      TabIndex        =   12
+      Top             =   3240
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   4671472
+      ForeColor       =   4671472
+      MouseOverBackgroundColor=   2434394
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "3"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":18504
-      PictureMouseOver=   "Form1.frx":18663
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -717,30 +490,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   4
-      Left            =   105
-      TabIndex        =   22
-      Top             =   2280
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   90
+      TabIndex        =   13
+      Top             =   2835
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   4671472
+      ForeColor       =   4671472
+      MouseOverBackgroundColor=   2434394
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "4"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":18B92
-      PictureMouseOver=   "Form1.frx":18CF1
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -752,30 +523,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   5
-      Left            =   735
-      TabIndex        =   23
-      Top             =   2280
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   720
+      TabIndex        =   14
+      Top             =   2835
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   4671472
+      ForeColor       =   4671472
+      MouseOverBackgroundColor=   2434394
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "5"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":19220
-      PictureMouseOver=   "Form1.frx":1937F
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -787,65 +556,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   6
-      Left            =   1365
-      TabIndex        =   24
-      Top             =   2280
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   1350
+      TabIndex        =   15
+      Top             =   2835
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   4671472
+      ForeColor       =   4671472
+      MouseOverBackgroundColor=   2434394
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "6"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":198AE
-      PictureMouseOver=   "Form1.frx":19A0D
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-   End
-   Begin Project1.uButton cmdNumbers 
-      Height          =   330
-      Index           =   8
-      Left            =   735
-      TabIndex        =   25
-      Top             =   1860
-      Width           =   540
-      _ExtentX        =   953
-      _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
-      FocusColor      =   0
-      BackgroundColorDisabled=   0
-      BorderColorDisabled=   0
-      ForeColorDisabled=   0
-      CaptionBorderColorDisabled=   0
-      FocusColorDisabled=   0
-      Caption         =   "8"
-      Border          =   0   'False
-      BorderAnimation =   0
-      Picture         =   "Form1.frx":19F3C
-      PictureMouseOver=   "Form1.frx":1A09B
-      AlignPictureInCorner=   -1  'True
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -857,30 +589,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   9
-      Left            =   1365
-      TabIndex        =   26
-      Top             =   1860
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   1350
+      TabIndex        =   16
+      Top             =   2430
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   4671472
+      ForeColor       =   4671472
+      MouseOverBackgroundColor=   2434394
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "9"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1A5CA
-      PictureMouseOver=   "Form1.frx":1A729
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -889,33 +619,31 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
    End
-   Begin Project1.uButton cmdNumbers 
+   Begin Project1.uButton cmdExtras 
       Height          =   330
       Index           =   11
-      Left            =   1995
-      TabIndex        =   27
-      Top             =   1860
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   1980
+      TabIndex        =   17
+      Top             =   4140
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   1746682
+      ForeColor       =   1746682
+      MouseOverBackgroundColor=   1584197
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
-      Caption         =   "§("
-      Border          =   0   'False
+      FocusVisible    =   0   'False
+      Caption         =   "sqr"
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1AC58
-      PictureMouseOver=   "Form1.frx":1ADB7
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -927,30 +655,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   12
-      Left            =   1995
-      TabIndex        =   28
-      Top             =   2280
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   1980
+      TabIndex        =   18
+      Top             =   2835
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   11944815
+      ForeColor       =   11944815
+      MouseOverBackgroundColor=   6894151
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "/"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1B2E6
-      PictureMouseOver=   "Form1.frx":1B445
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -962,30 +688,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   13
-      Left            =   1995
-      TabIndex        =   29
-      Top             =   2700
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   1980
+      TabIndex        =   19
+      Top             =   3240
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   11944815
+      ForeColor       =   11944815
+      MouseOverBackgroundColor=   6894151
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "*"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1B974
-      PictureMouseOver=   "Form1.frx":1BAD3
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -997,30 +721,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   14
-      Left            =   1995
-      TabIndex        =   30
-      Top             =   3120
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   1980
+      TabIndex        =   20
+      Top             =   3645
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   11944815
+      ForeColor       =   11944815
+      MouseOverBackgroundColor=   6894151
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "-"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1C002
-      PictureMouseOver=   "Form1.frx":1C161
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -1032,30 +754,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   16
-      Left            =   1365
-      TabIndex        =   31
-      Top             =   3120
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   1350
+      TabIndex        =   21
+      Top             =   3645
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   4671472
+      ForeColor       =   4671472
+      MouseOverBackgroundColor=   2434394
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "."
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1C690
-      PictureMouseOver=   "Form1.frx":1C7EF
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -1067,30 +787,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   0
-      Left            =   105
-      TabIndex        =   42
-      Top             =   3120
-      Width           =   1170
-      _ExtentX        =   2064
+      Left            =   90
+      TabIndex        =   32
+      Top             =   3645
+      Width           =   1185
+      _ExtentX        =   2090
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   4671472
+      ForeColor       =   4671472
+      MouseOverBackgroundColor=   2434394
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "0"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1CD1E
-      PictureMouseOver=   "Form1.frx":1CF5B
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -1102,30 +820,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   750
       Index           =   10
-      Left            =   2630
-      TabIndex        =   43
-      Top             =   2700
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   2610
+      TabIndex        =   33
+      Top             =   3240
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   1323
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   8500547
+      ForeColor       =   8500547
+      MouseOverBackgroundColor=   3425832
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "="
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1D505
-      PictureMouseOver=   "Form1.frx":1D6DE
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -1137,30 +853,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdExtras 
       Height          =   330
       Index           =   0
-      Left            =   105
-      TabIndex        =   32
-      Top             =   3660
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   90
+      TabIndex        =   22
+      Top             =   4140
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   1746682
+      ForeColor       =   1746682
+      MouseOverBackgroundColor=   1584197
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "Tan"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1DD6E
-      PictureMouseOver=   "Form1.frx":1DECD
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -1172,30 +886,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdExtras 
       Height          =   330
       Index           =   1
-      Left            =   105
-      TabIndex        =   33
-      Top             =   4080
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   90
+      TabIndex        =   23
+      Top             =   4545
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   1746682
+      ForeColor       =   1746682
+      MouseOverBackgroundColor=   1584197
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "aTn"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1E3FC
-      PictureMouseOver=   "Form1.frx":1E55B
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -1207,30 +919,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdExtras 
       Height          =   330
       Index           =   2
-      Left            =   735
-      TabIndex        =   34
-      Top             =   3660
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   720
+      TabIndex        =   24
+      Top             =   4140
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   1746682
+      ForeColor       =   1746682
+      MouseOverBackgroundColor=   1584197
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "Sin"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1EA8A
-      PictureMouseOver=   "Form1.frx":1EBE9
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -1242,30 +952,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdExtras 
       Height          =   330
       Index           =   3
-      Left            =   735
-      TabIndex        =   35
-      Top             =   4080
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   720
+      TabIndex        =   25
+      Top             =   4545
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   1746682
+      ForeColor       =   1746682
+      MouseOverBackgroundColor=   1584197
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "aSn"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1F118
-      PictureMouseOver=   "Form1.frx":1F277
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -1277,30 +985,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdExtras 
       Height          =   330
       Index           =   4
-      Left            =   1365
-      TabIndex        =   36
-      Top             =   3660
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   1350
+      TabIndex        =   26
+      Top             =   4140
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   1746682
+      ForeColor       =   1746682
+      MouseOverBackgroundColor=   1584197
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "Cos"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1F7A6
-      PictureMouseOver=   "Form1.frx":1F905
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -1312,30 +1018,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdExtras 
       Height          =   330
       Index           =   5
-      Left            =   1365
-      TabIndex        =   37
-      Top             =   4080
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   1350
+      TabIndex        =   27
+      Top             =   4545
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   1746682
+      ForeColor       =   1746682
+      MouseOverBackgroundColor=   1584197
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "aCs"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":1FE34
-      PictureMouseOver=   "Form1.frx":1FF93
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -1347,30 +1051,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdExtras 
       Height          =   330
       Index           =   6
-      Left            =   1995
-      TabIndex        =   38
-      Top             =   3660
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   2610
+      TabIndex        =   28
+      Top             =   2835
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   1746682
+      ForeColor       =   1746682
+      MouseOverBackgroundColor=   1584197
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "^"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":204C2
-      PictureMouseOver=   "Form1.frx":20621
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -1378,34 +1080,33 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      CaptionOffsetTop=   4
    End
    Begin Project1.uButton cmdExtras 
       Height          =   330
       Index           =   7
-      Left            =   2625
-      TabIndex        =   39
-      Top             =   3660
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   2610
+      TabIndex        =   29
+      Top             =   4140
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   1746682
+      ForeColor       =   1746682
+      MouseOverBackgroundColor=   1584197
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "PI"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":20B50
-      PictureMouseOver=   "Form1.frx":20CAF
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -1417,30 +1118,28 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   18
-      Left            =   1995
-      TabIndex        =   40
-      Top             =   4080
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   1980
+      TabIndex        =   30
+      Top             =   4545
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   1746682
+      ForeColor       =   1746682
+      MouseOverBackgroundColor=   1584197
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   "("
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":211DE
-      PictureMouseOver=   "Form1.frx":2133D
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -1452,30 +1151,94 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdNumbers 
       Height          =   330
       Index           =   19
-      Left            =   2625
-      TabIndex        =   41
-      Top             =   4080
-      Width           =   540
-      _ExtentX        =   953
+      Left            =   2610
+      TabIndex        =   31
+      Top             =   4545
+      Width           =   555
+      _ExtentX        =   979
       _ExtentY        =   582
-      BackgroundColor =   15852761
-      BorderColor     =   16745771
-      ForeColor       =   16711680
-      MouseOverBackgroundColor=   15852761
+      BackgroundColor =   2367774
+      BorderColor     =   1746682
+      ForeColor       =   1746682
+      MouseOverBackgroundColor=   1584197
       FocusColor      =   0
       BackgroundColorDisabled=   0
       BorderColorDisabled=   0
       ForeColorDisabled=   0
       CaptionBorderColorDisabled=   0
       FocusColorDisabled=   0
+      FocusVisible    =   0   'False
       Caption         =   ")"
-      Border          =   0   'False
       BorderAnimation =   0
-      Picture         =   "Form1.frx":2186C
-      PictureMouseOver=   "Form1.frx":219CB
       AlignPictureInCorner=   -1  'True
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Jucko13"
+         Name            =   "Courier"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdNumbers 
+      Height          =   330
+      Index           =   8
+      Left            =   720
+      TabIndex        =   36
+      Top             =   2430
+      Width           =   555
+      _ExtentX        =   979
+      _ExtentY        =   582
+      BackgroundColor =   2367774
+      BorderColor     =   4671472
+      ForeColor       =   4671472
+      MouseOverBackgroundColor=   2434394
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      FocusVisible    =   0   'False
+      Caption         =   "8"
+      BorderAnimation =   0
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Courier"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin Project1.uButton cmdExtras 
+      Height          =   330
+      Index           =   8
+      Left            =   1980
+      TabIndex        =   37
+      Top             =   2025
+      Width           =   1185
+      _ExtentX        =   2090
+      _ExtentY        =   582
+      BackgroundColor =   2367774
+      BorderColor     =   1746682
+      ForeColor       =   1746682
+      MouseOverBackgroundColor=   1584197
+      FocusColor      =   0
+      BackgroundColorDisabled=   0
+      BorderColorDisabled=   0
+      ForeColorDisabled=   0
+      CaptionBorderColorDisabled=   0
+      FocusColorDisabled=   0
+      FocusVisible    =   0   'False
+      Caption         =   " & "" "" & "
+      BorderAnimation =   0
+      AlignPictureInCorner=   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Courier"
          Size            =   9.75
          Charset         =   0
          Weight          =   400
@@ -1492,6 +1255,12 @@ Begin VB.Form Form1
       Begin VB.Menu mnuFileOpslaan 
          Caption         =   "Geschiedenis Opslaan"
          Enabled         =   0   'False
+      End
+      Begin VB.Menu mnuFileOpenFuncties 
+         Caption         =   "Open Functies"
+      End
+      Begin VB.Menu mnuFileReloadFunctions 
+         Caption         =   "Herlaad functies"
       End
       Begin VB.Menu mnuFileSerp1 
          Caption         =   "-"
@@ -1617,7 +1386,7 @@ Private Const WM_HOTKEY As Integer = &H312
 Private objWinApi As winapi
 
 
-Private Sub cmdClearList_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub cmdClearList_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     'If (x < 0) Or (y < 0) Or (x > cmdClearList.Width) Or (y > cmdClearList.Height) Then
     '    ReleaseCapture
     '    Set cmdClearList.Picture = picNormal4.Picture
@@ -1630,7 +1399,7 @@ Private Sub cmdClearList_MouseMove(Button As Integer, Shift As Integer, x As Sin
     'List1.Redraw = True
 End Sub
 
-Private Sub cmdClearList_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub cmdClearList_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Dim result As Integer
     Dim i As Long
     On Error Resume Next
@@ -1692,25 +1461,26 @@ Text1.Redraw
 'End If
 End Sub
 
-Private Sub cmdExtras_MouseUp(Index As Integer, Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub cmdExtras_MouseUp(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
 Dim selection As Long
 
 Select Case Index
-    Case 0 To 6
-        selection = Text1.SelStart
-        Text1.AddCharAtCursor cmdExtras(Index).Caption & "()"
-        Text1.SelStart = selection + Len(cmdExtras(Index).Caption) + 1
-
-    Case 7
+    Case 0 To 6, 11
+        If Text1.SelLength > 0 Then
+            Dim tmpStr As String
+            selection = Text1.SelStart
+            tmpStr = Text1.GetSelectionText
+            Text1.AddCharAtCursor cmdExtras(Index).Caption & "(" & tmpStr & ")"
+            Text1.SelStart = selection + Len(cmdExtras(Index).Caption) + Len(tmpStr) + 1
+        Else
+            selection = Text1.SelStart
+            Text1.AddCharAtCursor cmdExtras(Index).Caption & "()"
+            Text1.SelStart = selection + Len(cmdExtras(Index).Caption) + 1
+        End If
+        
+    Case 7 To 8
         Text1.AddCharAtCursor cmdExtras(Index).Caption
         
-    Case 8
-        initializeScript
-        Text1_Changed
-        Text2_Changed
-        Text3_Changed
-    Case 9
-    
 End Select
 
 Text1.SetFocus
@@ -1719,7 +1489,7 @@ Text1.SetFocus
 End Sub
 
 
-Private Sub cmdNumbers_MouseUp(Index As Integer, Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub cmdNumbers_MouseUp(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
 Dim tmpTx As String
 Static tmpVal As String
 
@@ -1736,8 +1506,9 @@ Select Case Index
             'Text1.Text = Text1.Text & Index
         End If
         TempStr = Text1.Text
+        
+        
     Case 10
-    
         Text2.Text = CheckCalculation(Text1.Text)
         tmpVal = Text2.Text
         
@@ -1766,9 +1537,28 @@ Select Case Index
         End If
         
     Case 20
-        If Len(Text1.Text) > 0 Then
-            Text1.Text = Mid(Text1.Text, 1, Len(Text1.Text) - 1)
+        If Text1.TextLength > 0 Then
+            If Text1.SelLength > 0 Then
+                Text1.AddCharAtCursor ""
+                Text1.SetFocus
+            
+            ElseIf Text1.SelStart > 0 Then
+                Text1.SelStart = Text1.SelStart - 1
+                Text1.SelLength = 1
+                Text1.AddCharAtCursor ""
+                Text1.SetFocus
+            Else
+                Text1.SelStart = 0
+                Text1.SelLength = 1
+                Text1.AddCharAtCursor ""
+                Text1.SetFocus
+                'Text1.SelStart = 0
+            End If
+            'Text1.Text = Mid(Text1.Text, 1, Text1.TextLength - 1)
+        Else
+            'Text1.SetFocus
         End If
+        
         
     Case 21
         'If InStr(1, Text2.Text, "/") > 0 Then
@@ -1849,22 +1639,67 @@ Sub initializeScript()
             ReDim Preserve ExternalCustomFunctions(0 To c) As String
             ExternalCustomFunctions(c) = t
             c = c + 1
+        Else
+            t = Text1.GetMidText(tmpLines(i), "sub ", "(")
+            If t <> "" Then
+                ReDim Preserve ExternalCustomFunctions(0 To c) As String
+                ExternalCustomFunctions(c) = t
+                c = c + 1
+            End If
         End If
     Next i
     
     MergeSort ExternalCustomFunctions
     
     
-    ExternalConstants = Split("vbabortretryignore vbapplicationmodal vbarray vbblack vbblue vbboolean vbbyte vbcr vbcritical vbcrlf vbcurrency vbcyan vbdataobject vbdate vbdecimal vbdefaultbutton1 vbdefaultbutton2 vbdefaultbutton3 vbdefaultbutton4 vbdouble vbempty vberror vbexclamation vbfalse vbformfeed vbgreen vbinformation vbinteger vblf vblong vbmagenta vbnewline vbnull vbnullchar vbnullstring vbobject vbokcancel vbokonly vbquestion vbred vbretrycancel vbsingle vbstring vbsystemmodal vbtab vbtrue vbusedefault vbvariant vbverticaltab vbwhite vbyellow vbyesno vbyesnocancel vbbinarycompare vbtextcompare", " ")
+    ExternalConstants = Split("pi e integer string double float long byte vbabortretryignore vbapplicationmodal vbarray vbblack vbblue vbboolean vbbyte vbcr vbcritical vbcrlf vbcurrency vbcyan vbdataobject vbdate vbdecimal vbdefaultbutton1 vbdefaultbutton2 vbdefaultbutton3 vbdefaultbutton4 vbdouble vbempty vberror vbexclamation vbfalse vbformfeed vbgreen vbinformation vbinteger vblf vblong vbmagenta vbnewline vbnull vbnullchar vbnullstring vbobject vbokcancel vbokonly vbquestion vbred vbretrycancel vbsingle vbstring vbsystemmodal vbtab vbtrue vbusedefault vbvariant vbverticaltab vbwhite vbyellow vbyesno vbyesnocancel vbbinarycompare vbtextcompare", " ")
     
     
-    ExternalOperators = Split("xor and or not is * - + / :", " ")
+    ExternalOperators = Split("xor and or not is * - + / ^ : false true", " ")
     
     Exit Sub
 Err:
     MsgBox Err.Description, vbOKOnly Or vbCritical, "ERROR: " & Err.Number
     
 End Sub
+
+Sub drawMenu()
+    Dim mi As MENUINFO
+    Dim lbBrushInfo As LOGBRUSH
+    Dim ret As Long
+    
+    Dim menuColor As Long
+    Dim lRGBColor As Long
+    
+    menuColor = &H36312E
+    OleTranslateColor menuColor, 0, lRGBColor
+    
+    mi.cbSize = Len(mi)
+    
+    ret = GetMenuInfo(GetMenu(Me.hWnd), mi) ' 0 means failure
+    
+    
+    With mi
+        .dwMenuData = 900
+        .fMask = MIM_BACKGROUND Or MIM_STYLE Or MIM_APPLYTOSUBMENUS
+        
+        .dwStyle = MNS_NOCHECK Or MNS_NOTIFYBYPOS
+        
+        lbBrushInfo.lbStyle = 0
+        lbBrushInfo.lbColor = RGB(155, 100, 200)
+        lbBrushInfo.lbHatch = 0
+        
+        
+        .hbrBack = CreateBrushIndirect(lbBrushInfo)
+        
+        
+        SetMenuInfo GetMenu(Me.hWnd), mi  'main menu bar
+        
+    End With
+    
+    'DrawMenuBar Me.hWnd
+End Sub
+
 
 Private Sub Form_Load()
     Dim i As Integer
@@ -2024,13 +1859,15 @@ Function CheckCalculation(CalculateString As String, Optional ParentCall As Bool
     End If
     
     objScript.AddCode Text3.Text
+    objScript.AddObject "Me", Me, True
+    objScript.AllowUI = True
     
     'allfunctions = CharExecution(objScript.CodeObject, False)
     'allfunctions = allfunctions & CharExecution(objScript.CodeObject.winapi, True)
     
     'MsgBox allfunctions
     ' MsgBox
-    result = objScript.Eval(Replace(CalculateString, "§", "sqr"))
+    result = objScript.Eval(CalculateString)
     If TypeName(result) = "Double" Then
         CheckCalculation = Replace(result, ",", ".")
     Else
@@ -2140,9 +1977,9 @@ Private Sub List1_ItemAdded(ItemIndex As Long)
     
     For i = 0 To List1.ListCount - 1
         If i Mod 2 = 0 Then
-            List1.ItemColor(i) = RGB(241, 244, 250)
+            List1.ItemBackColor(i) = &H3F3936
         Else
-            List1.ItemColor(i) = &HF1E4D9
+            List1.ItemBackColor(i) = -1
         End If
     Next i
     
@@ -2368,6 +2205,17 @@ Private Sub mnuFileHighDPI_Click()
     ApplyDPI
 End Sub
 
+Private Sub mnuFileOpenFuncties_Click()
+    ShellExecute Me.hWnd, "open", App.Path & "/functionlist.txt", "", "", vbNormalFocus
+End Sub
+
+Private Sub mnuFileReloadFunctions_Click()
+    initializeScript
+    Text1_Changed
+    Text2_Changed
+    Text3_Changed
+End Sub
+
 Private Sub Text1_KeyDown(KeyCode As Integer, Shift As Integer)
     Dim i As Long
     Dim wordNr As Long
@@ -2474,6 +2322,23 @@ Private Sub Text2_Changed()
 formatTextBox Text2
 End Sub
 
+Private Sub Text2_SelectionChanged()
+    Dim tmpStr As String
+    
+    tmpStr = Replace(Text2.GetSelectionText, " ", "")
+    
+    If Text2.BackgroundColor <> 3551534 Then Text2.BackgroundColor = 3551534
+    
+    If tmpStr Like "rgb(*,*,*)" Then
+        Dim tmpSplit() As String
+        tmpSplit = Split(Mid$(tmpStr, 5, Len(tmpStr) - 5), ",")
+        If IsNumeric(tmpSplit(0)) And IsNumeric(tmpSplit(1)) And IsNumeric(tmpSplit(2)) Then
+            Text2.BackgroundColor = RGB(tmpSplit(0), tmpSplit(1), tmpSplit(2))
+        End If
+    End If
+    
+End Sub
+
 Private Sub Text3_Changed()
     formatTextBox Text3
 End Sub
@@ -2488,22 +2353,24 @@ End Sub
 Sub formatTextBox(txt As uTextBox)
     Dim fColors(0 To 6) As Long
 
-    fColors(0) = RGB(60, 140, 255)
-    fColors(1) = RGB(255, 126, 0)
-    fColors(2) = RGB(55, 170, 0)
-    fColors(3) = RGB(191, 112, 0)
-    fColors(4) = RGB(170, 98, 255)
-    fColors(5) = RGB(0, 200, 242)
-    fColors(6) = RGB(100, 100, 100)
+    fColors(0) = RGB(60, 140, 255) 'light blue
+    fColors(1) = RGB(255, 126, 0) 'bright orange
+    fColors(2) = &H81B543 'very soft green/cyan    'RGB(55, 170, 0)
+    fColors(3) = RGB(191, 112, 0) 'dark orange
+    fColors(4) = RGB(170, 98, 255) 'soft light purple
+    fColors(5) = RGB(0, 200, 242) 'bright light blue/cyan
+    fColors(6) = &HDA8972 'light/soft blue/purple
     
     Dim i As Long
     Dim j As Long
-    Dim K As Long
+    Dim k As Long
     
     Dim OT As Long 'opened tags
     Dim TT As Long 'total tags
-    Dim s As String
-    Dim t As String
+    Dim s As String 'string
+    Dim sl As Long 'string length
+    Dim t As String 'text
+    Dim tn As String 't next
     Dim lStart As Long
     Dim lend As Long
     Dim lStep As Long
@@ -2512,30 +2379,48 @@ Sub formatTextBox(txt As uTextBox)
     Dim CFT As Boolean 'colored first tag
     Dim CS As Boolean 'color string
     Dim CD As Boolean 'color dim
+    Dim CH As Boolean 'color hex
+    Dim cc As Boolean 'color comment
     
     s = LCase(txt.Text)
+    sl = Len(s)
+    
     txt.RedrawPause
     txt.ReCalculateWords
     
-    For i = 1 To Len(s)
+    For i = 1 To sl
         t = Mid$(s, i, 1)
+        If i + 1 < sl Then tn = Mid$(s, i + 1, 1)
         
-        txt.setCharBold i - 1, False
+        txt.setCharBold i - 1, True
         txt.setCharBackColor i - 1, -1
-        txt.setCharForeColor i - 1, IIf(CS, fColors(3), IIf(CD, fColors(4), -1))
+        txt.setCharForeColor i - 1, IIf(CS, fColors(1), IIf(CD, fColors(4), IIf(CH, fColors(4), IIf(cc, fColors(2), -1))))
         
-        If t = Chr(34) Then
-            CS = Not CS
-            txt.setCharForeColor i - 1, fColors(3)
+        
+        If t = "'" And Not cc And Not CS Then
+            cc = Not cc
+            txt.setCharForeColor i - 1, fColors(2)
         End If
         
         
-        If (t = "[" Or t = "]") And Not CS Then
+        If t = Chr(34) And Not CH And Not CD Then
+            CS = Not CS
+            txt.setCharForeColor i - 1, fColors(1)
+        End If
+        
+        
+        If (t = "[" Or t = "]") And Not CS And Not CH Then
             CD = Not CD
             txt.setCharForeColor i - 1, fColors(4)
         End If
         
-        If Not CS And Not CD Then
+        If ((t = "&" And tn = "h" And Not CH) Or (t = "&" And CH)) And Not CS And Not CD Then
+            CH = Not CH
+            txt.setCharForeColor i - 1, fColors(4)
+        End If
+        
+        
+        If Not CS And Not CD And Not CH Then
             Select Case t
                 Case "(", ")"
                     If t = ")" Then
@@ -2555,10 +2440,13 @@ Sub formatTextBox(txt As uTextBox)
                     End If
     
                 Case "0" To "9", "."
-                    txt.setCharForeColor i - 1, vbMagenta
+                    txt.setCharForeColor i - 1, &H4747F0
                 
-                Case "/", "-", "+", "*"
-                    txt.setCharForeColor i - 1, RGB(100, 100, 100)
+                Case "="
+                    txt.setCharForeColor i - 1, &H81B543
+                    
+                Case "/", "-", "+", "*", "^"
+                    txt.setCharForeColor i - 1, &HFF62AA
                     
                 Case Else
             End Select
@@ -2573,17 +2461,17 @@ Sub formatTextBox(txt As uTextBox)
     
     
     
-    For K = 0 To 3
-        If K = 0 Then
+    For k = 0 To 3
+        If k = 0 Then
             External = ExternalFunctions
             ExternalColor = 2
-        ElseIf K = 1 Then
+        ElseIf k = 1 Then
             External = ExternalConstants
             ExternalColor = 5
-        ElseIf K = 2 Then
+        ElseIf k = 2 Then
             External = ExternalOperators
             ExternalColor = 6
-        ElseIf K = 3 Then
+        ElseIf k = 3 Then
             External = ExternalCustomFunctions
             ExternalColor = 2
         End If
@@ -2596,10 +2484,13 @@ Sub formatTextBox(txt As uTextBox)
                 While (instrstart > 0)
                     maypaint = True
                     
-                    If instrstart - 2 >= 0 Then
-                        If txt.getWordFromChar(instrstart - 2) = txt.getWordFromChar(instrstart - 1) Then
+                    If instrstart - 3 >= 0 Then
+                        'Debug.Print txt.getWordFromChar(instrstart - 3)
+                        If txt.getWordFromChar(instrstart - 2) = txt.getWordFromChar(instrstart - 3) Then
                             maypaint = False
                         End If
+                    ElseIf instrstart > 2 Then
+                        maypaint = False
                     End If
                     
                     If instrstart + Len(External(i)) - 1 < Len(s) Then
@@ -2621,7 +2512,7 @@ Sub formatTextBox(txt As uTextBox)
                 instrstart = 0
             End If
         Next i
-    Next K
+    Next k
     
     txt.RedrawResume
 End Sub
