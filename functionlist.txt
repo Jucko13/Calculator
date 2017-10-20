@@ -85,20 +85,20 @@ End Function
 
 
 Function printTime(lSeconds)
- Dim lMinutes, lHours, lDays
- lDays = lSeconds \ 86400
- lSeconds = lSeconds - lDays * 86400
-  
- lHours = lSeconds \ 3600
- lSeconds = lSeconds - lHours * 3600
-  
- lMinutes = lSeconds \ 60
- lSeconds = lSeconds - lMinutes * 60
-  
- printTime = IIf(lDays >= 10, lDays, "0" & lDays) & " " & _
-             IIf(lHours >= 10, lHours, "0" & lHours) & ":" & _
-             IIf(lMinutes >= 10, lMinutes, "0" & lMinutes) & ":" & _
-             IIf(lSeconds >= 10, lSeconds, "0" & lSeconds)
+	Dim lMinutes, lHours, lDays
+	lDays = lSeconds \ 86400
+	lSeconds = lSeconds - lDays * 86400
+
+	lHours = lSeconds \ 3600
+	lSeconds = lSeconds - lHours * 3600
+
+	lMinutes = lSeconds \ 60
+	lSeconds = lSeconds - lMinutes * 60
+
+	printTime = IIf(lDays >= 10, lDays, "0" & lDays) & " " & _
+			 IIf(lHours >= 10, lHours, "0" & lHours) & ":" & _
+			 IIf(lMinutes >= 10, lMinutes, "0" & lMinutes) & ":" & _
+			 IIf(lSeconds >= 10, lSeconds, "0" & lSeconds)
 End Function
 
 
