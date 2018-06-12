@@ -1,4 +1,4 @@
-Form1 = 52, 52, 1326, 547, Z, 26, 26, 1304, 547, C
+Form1 = 40, 54, 1314, 549, Z, 26, 26, 1304, 547, C
 mdlLogger = 0, 0, 0, 0, C
 VirtualKeys = 0, 0, 0, 0, C
 TransPicBox = 0, 0, 0, 0, C, 0, 0, 1274, 495, C
@@ -6,7 +6,7 @@ FractionCalc = 0, 0, 0, 0, C
 Calculations = 0, 0, 0, 0, C
 uTextBox = 182, 182, 1456, 677, , 26, 26, 1300, 521, C
 uGlobals = 0, 0, 0, 0, C
-winapi = 0, 0, 0, 0, C
+winapi = 104, 104, 1493, 681, 
 uListBox = 0, 0, 0, 0, C, 52, 52, 1326, 547, C
 uButton = 0, 0, 0, 0, C, 78, 78, 1352, 573, C
 uMouseWheel = 0, 0, 0, 0, C

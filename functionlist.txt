@@ -1,6 +1,7 @@
 const PI = 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535
 const e = 2.71828182845904523536028747135266249775724709369995
 
+
 Function Tand(X)
 	Tand = Tan(Rad(X))
 End Function
@@ -133,4 +134,55 @@ function escape(sInput)
 	
 	escape = sOut
 end function
+
+function increase(start, added, increments)
+	dim i, j, s
+	j = start
+	for i = 0 to increments - 1
+		j = j + int(added ^ (i / 1.8))
+		s = s & ", " & j
+	next
+	
+	increase = s
+end function
+
+Function Val( myString )
+' Val Function for VBScript (aka ParseInt Function in VBScript).
+' By Denis St-Pierre.
+' Natively VBScript has no function to extract numbers from a string.
+' Based shamelessly on MS' Helpfile example on RegExp object.
+' CAVEAT: Returns only the *last* match found
+'         (or, with objRE.Global = False, only the *first* match)
+
+    Dim colMatches, objMatch, objRE, strPattern
+
+    ' Default if no numbers are found
+    Val = 0
+
+    strPattern = "[-+0-9]+"       ' Numbers positive and negative; use
+                                  ' "ˆ[-+0-9]+" to emulate Rexx' Value()
+                                  ' function, which returns 0 unless the
+                                  ' string starts with a number or sign.
+    Set objRE = New RegExp        ' Create regular expression object.
+    objRE.Pattern    = strPattern ' Set pattern.
+    objRE.IgnoreCase = True       ' Set case insensitivity.
+    objRE.Global     = True       ' Set global applicability:
+                                  '   True  => return last match only,
+                                  '   False => return first match only.
+    Set colMatches = objRE.Execute( myString )  ' Execute search.
+    For Each objMatch In colMatches             ' Iterate Matches collection.
+        Val = objMatch.Value
+    Next
+    Set objRE= Nothing
+End Function
+
+function stopwatch(answer)
+	dim a
+	a = winapi.gettickcount()
+	s = split(answer," ")(2)
+	stopwatch = printtime(round((a-val(s))/1000)) & " " & a
+	
+end function
+
+
 
