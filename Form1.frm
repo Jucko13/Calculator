@@ -1667,6 +1667,36 @@ Begin VB.Form Form1
          Caption         =   "Kopiëer Beide"
       End
    End
+   Begin VB.Menu mnuSettings 
+      Caption         =   "Settings"
+      Begin VB.Menu mnuSettingsPrec 
+         Caption         =   "Precision"
+         Begin VB.Menu mnuSettingsPrecision 
+            Caption         =   "0"
+            Index           =   0
+         End
+         Begin VB.Menu mnuSettingsPrecision 
+            Caption         =   "1"
+            Index           =   1
+         End
+         Begin VB.Menu mnuSettingsPrecision 
+            Caption         =   "5"
+            Index           =   2
+         End
+         Begin VB.Menu mnuSettingsPrecision 
+            Caption         =   "10"
+            Index           =   3
+         End
+         Begin VB.Menu mnuSettingsPrecision 
+            Caption         =   "15"
+            Index           =   4
+         End
+         Begin VB.Menu mnuSettingsPrecision 
+            Caption         =   "none"
+            Index           =   5
+         End
+      End
+   End
    Begin VB.Menu mnuAbout 
       Caption         =   "Help"
    End
@@ -1826,6 +1856,8 @@ End Sub
 Private Sub cmdNumbers_MouseUp(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
 Dim tmpTx As String
 Static tmpVal As String
+Dim i As Long
+
 
 Select Case Index
     
@@ -1843,7 +1875,18 @@ Select Case Index
         
         
     Case 10
-        Text2.Text = CheckCalculation(Text1.Text)
+        Dim calcresult As Variant
+        
+        calcresult = CheckCalculation(Text1.Text)
+        Dim prec As Long
+        prec = getPrecision
+        If prec <> -1 Then
+            Text2.Text = f(calcresult, prec)
+        Else
+            Text2.Text = calcresult
+        End If
+        
+        
         tmpVal = Text2.Text
         
         If List1.ListCount > 0 Then
@@ -2418,7 +2461,7 @@ Dim mm1 As String
 mm1 = InputBox("Hier de lengte van 1 zijde", "Oppervlakte van een: " & mnuEditAreaZeshoek.Caption)
 
 If mm1 <> "" Then
-    Text1.Text = "(2,5*" & mm1 & "*§(§(3)-3)"
+    Text1.Text = "(2,5*" & mm1 & "*sqr(sqr(3)-3)"
     Text2.Text = CheckCalculation(Text1.Text)
 End If
 End Sub
@@ -2429,7 +2472,7 @@ Dim mm1 As String
 mm1 = InputBox("Hier de lengte van 1 zijde", "Oppervlakte van een: " & mnuEditAreaZeshoek.Caption)
 
 If mm1 <> "" Then
-    Text1.Text = "((3/2)*" & mm1 & "^2)*§(3)"
+    Text1.Text = "((3/2)*" & mm1 & "^2)*sqr(3)"
     Text2.Text = CheckCalculation(Text1.Text)
 End If
 End Sub
@@ -2459,7 +2502,7 @@ a = InputBox("Geef waarde voor A:")
 b = InputBox("Geef waarde voor B:")
 c = InputBox("Geef waarde voor C:")
 
-Text1.Text = """x: "" & iif(d < 0 , ""-"", (-b + §(iif(d<0,0,d))) / (2 * a)) & "" OF x:"" & iif(d < 0 , ""-"", (-b - §(iif(d<0,0,d))) / (2 * a))"
+Text1.Text = """x: "" & iif(d < 0 , ""-"", (-b + sqr(iif(d<0,0,d))) / (2 * a)) & "" OF x:"" & iif(d < 0 , ""-"", (-b - sqr(iif(d<0,0,d))) / (2 * a))"
 Text3.Text = "const a = " & a & ":const b = " & b & ": const c = " & c & ": dim d: d = b^2 - 4*a*c"
 cmdNumbers_MouseUp 10, 0, 0, 0, 0
 End Sub
@@ -2555,6 +2598,14 @@ Private Sub mnuFileReloadFunctions_Click()
     Text1_Changed
     Text2_Changed
     Text3_Changed
+End Sub
+
+Private Sub mnuSettingsPrecision_Click(Index As Integer)
+    Dim i As Long
+    
+    For i = 0 To mnuSettingsPrecision.UBound
+        mnuSettingsPrecision(i).Checked = IIf(Index = i, True, False)
+    Next i
 End Sub
 
 Private Sub Text1_KeyDown(KeyCode As Integer, Shift As Integer)
@@ -2917,6 +2968,27 @@ Sub txtFly_Changed()
     formatTextBox txtFly
     tmrFly_Timer
 End Sub
+
+Function f(inp As Variant, Optional zeroes As Long = 20)
+    If zeroes < 0 Then zeroes = 0
+    f = Replace(Format(Replace(inp, ".", ","), "#########################0." & String(zeroes, "0")), ",", ".")
+End Function
+
+Function getPrecision() As Long
+    Dim i As Long
+    
+    If mnuSettingsPrecision(mnuSettingsPrecision.UBound).Checked = True Then
+        getPrecision = -1
+        Exit Function
+    End If
+    
+    For i = 0 To mnuSettingsPrecision.UBound - 1
+        If mnuSettingsPrecision(i).Checked Then
+            getPrecision = Val(mnuSettingsPrecision(i).Caption)
+            Exit Function
+        End If
+    Next i
+End Function
 
 
 
