@@ -1,10 +1,10 @@
 [History]
-1=#P0#=mb	#P1#=getPrecision	#P2#=Project1/Form1/getPrecision	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20171124032849	#P7#=0	#P8#=12	.
-2=#P0#=mb	#P1#=GetGlobalCaretPos	#P2#=Project1/Form1/GetGlobalCaretPos	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20171124032231	#P7#=0	#P8#=22	.
-3=#P0#=mb	#P1#=cmdNumbers_MouseUp	#P2#=Project1/Form1/cmdNumbers_MouseUp	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20171124035541	#P7#=0	#P8#=43	.
-4=#P0#=mb	#P1#=CheckCalculation	#P2#=Project1/Form1/CheckCalculation	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20171124005136	#P7#=0	#P8#=0	.
-5=#P0#=mb	#P1#=mnuSettingsPrecision_Click	#P2#=Project1/Form1/mnuSettingsPrecision_Click	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20171124005113	#P7#=0	#P8#=3	.
-6=#P0#=mb	#P1#=f	#P2#=Project1/Form1/f	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20171124033433	#P7#=0	#P8#=0	.
+1=#P0#=mb	#P1#=cmdNumbers_MouseUp	#P2#=Project1/Form1/cmdNumbers_MouseUp	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20171124035541	#P7#=0	#P8#=43	.
+2=#P0#=mb	#P1#=f	#P2#=Project1/Form1/f	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20171124033433	#P7#=0	#P8#=0	.
+3=#P0#=mb	#P1#=getPrecision	#P2#=Project1/Form1/getPrecision	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20171124032849	#P7#=0	#P8#=12	.
+4=#P0#=mb	#P1#=GetGlobalCaretPos	#P2#=Project1/Form1/GetGlobalCaretPos	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20171124032231	#P7#=0	#P8#=22	.
+5=#P0#=mb	#P1#=CheckCalculation	#P2#=Project1/Form1/CheckCalculation	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20171124005136	#P7#=0	#P8#=0	.
+6=#P0#=mb	#P1#=mnuSettingsPrecision_Click	#P2#=Project1/Form1/mnuSettingsPrecision_Click	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20171124005113	#P7#=0	#P8#=3	.
 7=#P0#=mb	#P1#=Form_Load	#P2#=Project1/Form1/Form_Load	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20171021003314	#P7#=0	#P8#=1	.
 8=#P0#=mb	#P1#=ApplyDPI	#P2#=Project1/Form1/ApplyDPI	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20171021003235	#P7#=0	#P8#=11	.
 9=#P0#=mb	#P1#=cmdExtras_MouseUp	#P2#=Project1/Form1/cmdExtras_MouseUp	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20171020235445	#P7#=0	#P8#=1	.
