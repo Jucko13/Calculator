@@ -21,7 +21,11 @@ Public commondialog As commondialog
 Attribute commondialog.VB_VarHelpID = -1
 
 
-Public Function GetTickCount() As Long: GetTickCount = GetTickCountA: End Function
+Public Function GetTickCount() As Long
+    GetTickCount = GetTickCountA()
+End Function
+
+
 Public Function FindWindow(ByVal lpClassName As String, ByVal lpWindowName As String) As Long: FindWindow = FindWindowA(lpClassName, lpWindowName): End Function
 
 Public Sub help(Optional Index As Long = 0)
