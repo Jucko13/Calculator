@@ -185,4 +185,21 @@ function stopwatch(answer)
 end function
 
 
+'Converts capacity in bytes to a readable format like 100.4KB
+function capacity(inp)
+	dim capacityNames
+	dim i
+	
+	capacityNames = split(",K,M,G,T,P,E,Z,Y,B,GEOP", ",")
+	
+	i = 0
+	
+	while(inp > 1024 and i < ubound(capacityNames))
+		inp = inp / 1024
+		i = i + 1
+	wend
+	
+	capacity = round(inp,2) & capacityNames(i) & "B"
+
+end function
 
