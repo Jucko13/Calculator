@@ -177,7 +177,7 @@ Function Val( myString )
 End Function
 
 function stopwatch(answer)
-	dim a
+	dim a, s
 	a = winapi.gettickcount()
 	s = split(answer," ")(2)
 	stopwatch = printtime(round((a-val(s))/1000)) & " " & a
@@ -203,3 +203,16 @@ function capacity(inp)
 
 end function
 
+
+
+function uniquestring(inp)
+	dim st, i
+	
+	for i = 1 to len(inp)
+		if instr(1, st, mid(inp,i,1)) = 0 then
+			st = st & mid(inp,i,1)
+		end if
+	next
+	
+	uniquestring = st
+end function
