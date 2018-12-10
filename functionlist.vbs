@@ -69,19 +69,20 @@ function LongToRGB(byval c)
 End function
 
 Function Factorial(a)
+	dim x, i
 	x=1
 	For i=1 to a
-	  x=x*i
+		x=x*i
 	next 
 	Factorial=x
 End Function
 
 Function IIf(bClause, sTrue, sFalse)
-    If CBool(bClause) Then
-        IIf = sTrue
-    Else 
-        IIf = sFalse
-    End If
+	If CBool(bClause) Then
+		IIf = sTrue
+	Else 
+		IIf = sFalse
+	End If
 End Function
 
 
@@ -147,33 +148,22 @@ function increase(start, added, increments)
 end function
 
 Function Val( myString )
-' Val Function for VBScript (aka ParseInt Function in VBScript).
-' By Denis St-Pierre.
-' Natively VBScript has no function to extract numbers from a string.
-' Based shamelessly on MS' Helpfile example on RegExp object.
-' CAVEAT: Returns only the *last* match found
-'         (or, with objRE.Global = False, only the *first* match)
+	Dim colMatches, objMatch, objRE, strPattern
 
-    Dim colMatches, objMatch, objRE, strPattern
+	' Default if no numbers are found
+	Val = 0
 
-    ' Default if no numbers are found
-    Val = 0
+	strPattern = "[-+0-9]+"
+	Set objRE = New RegExp
+	objRE.Pattern = strPattern
+	objRE.IgnoreCase = True
+	objRE.Global = True
 
-    strPattern = "[-+0-9]+"       ' Numbers positive and negative; use
-                                  ' "ˆ[-+0-9]+" to emulate Rexx' Value()
-                                  ' function, which returns 0 unless the
-                                  ' string starts with a number or sign.
-    Set objRE = New RegExp        ' Create regular expression object.
-    objRE.Pattern    = strPattern ' Set pattern.
-    objRE.IgnoreCase = True       ' Set case insensitivity.
-    objRE.Global     = True       ' Set global applicability:
-                                  '   True  => return last match only,
-                                  '   False => return first match only.
-    Set colMatches = objRE.Execute( myString )  ' Execute search.
-    For Each objMatch In colMatches             ' Iterate Matches collection.
-        Val = objMatch.Value
-    Next
-    Set objRE= Nothing
+	Set colMatches = objRE.Execute( myString )
+	For Each objMatch In colMatches
+		Val = objMatch.Value
+	Next
+	Set objRE= Nothing
 End Function
 
 function stopwatch(answer)
@@ -216,3 +206,34 @@ function uniquestring(inp)
 	
 	uniquestring = st
 end function
+
+
+function speachlist()
+	dim objVoice, strVoice
+	
+	Set objVoice = CreateObject("SAPI.SpVoice")
+	
+	For Each strVoice in objVoice.GetVoices
+		speachlist = speachlist & iif(speachlist = "", "",", ") & strVoice.GetDescription
+	Next
+end function
+
+
+
+function speach(num, s)
+	dim objVoice, strVoice
+	
+	Const SVSFlagsAsync = 0
+	
+	Set objVoice = CreateObject("SAPI.SpVoice")
+	
+	Set objVoice.Voice = objVoice.GetVoices.item(num)
+	
+	objVoice.Speak s, SVSFlagsAsync
+end function
+
+
+
+
+
+

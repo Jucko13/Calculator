@@ -28,8 +28,8 @@ End Function
 
 Public Function FindWindow(ByVal lpClassName As String, ByVal lpWindowName As String) As Long: FindWindow = FindWindowA(lpClassName, lpWindowName): End Function
 
-Public Sub help(Optional Index As Long = 0)
-    Select Case Index
+Public Sub help(Optional index As Long = 0)
+    Select Case index
         Case 0
             MsgBox "Gebruik winapi.help(0 tot 2) voor het vinden van alle keywords en functions." & vbCrLf & _
             vbCrLf & "1 - List of Custom Commands (functionlist.txt)" & _
