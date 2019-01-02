@@ -4,10 +4,10 @@ Begin VB.Form Form1
    AutoRedraw      =   -1  'True
    BackColor       =   &H0024211E&
    Caption         =   "Calculator by Ricardo"
-   ClientHeight    =   4965
+   ClientHeight    =   5445
    ClientLeft      =   4140
    ClientTop       =   3420
-   ClientWidth     =   15945
+   ClientWidth     =   9720
    BeginProperty Font 
       Name            =   "Jucko13"
       Size            =   8.25
@@ -20,9 +20,9 @@ Begin VB.Form Form1
    Icon            =   "Form1.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
-   ScaleHeight     =   331
+   ScaleHeight     =   363
    ScaleMode       =   3  'Pixel
-   ScaleWidth      =   1063
+   ScaleWidth      =   648
    WhatsThisHelp   =   -1  'True
    Begin VB.Timer tmrResize 
       Enabled         =   0   'False
@@ -42,9 +42,9 @@ Begin VB.Form Form1
       BackColor       =   &H0024211E&
       BorderStyle     =   0  'None
       ForeColor       =   &H80000008&
-      Height          =   2850
+      Height          =   3360
       Left            =   90
-      ScaleHeight     =   190
+      ScaleHeight     =   224
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   289
       TabIndex        =   8
@@ -74,8 +74,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "<-"
          borderanimation =   0
-         font            =   "Form1.frx":0CCA
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0CCA
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -100,8 +100,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "Clear"
          borderanimation =   0
-         font            =   "Form1.frx":0CF2
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0CF2
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -126,8 +126,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "b/c"
          borderanimation =   0
-         font            =   "Form1.frx":0D1A
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0D1A
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -152,8 +152,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "+"
          borderanimation =   0
-         font            =   "Form1.frx":0D42
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0D42
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -178,8 +178,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "7"
          borderanimation =   0
-         font            =   "Form1.frx":0D6A
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0D6A
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -204,8 +204,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "1"
          borderanimation =   0
-         font            =   "Form1.frx":0D92
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0D92
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -230,8 +230,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "2"
          borderanimation =   0
-         font            =   "Form1.frx":0DBA
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0DBA
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -256,8 +256,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "3"
          borderanimation =   0
-         font            =   "Form1.frx":0DE2
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0DE2
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -282,8 +282,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "4"
          borderanimation =   0
-         font            =   "Form1.frx":0E0A
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0E0A
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -308,8 +308,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "5"
          borderanimation =   0
-         font            =   "Form1.frx":0E32
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0E32
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -334,8 +334,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "6"
          borderanimation =   0
-         font            =   "Form1.frx":0E5A
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0E5A
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -360,8 +360,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "9"
          borderanimation =   0
-         font            =   "Form1.frx":0E82
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0E82
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -386,8 +386,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "Sqr"
          borderanimation =   0
-         font            =   "Form1.frx":0EAA
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0EAA
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -412,8 +412,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "/"
          borderanimation =   0
-         font            =   "Form1.frx":0ED2
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0ED2
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -438,8 +438,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "*"
          borderanimation =   0
-         font            =   "Form1.frx":0EFA
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0EFA
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -464,8 +464,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "-"
          borderanimation =   0
-         font            =   "Form1.frx":0F22
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0F22
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -490,8 +490,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "."
          borderanimation =   0
-         font            =   "Form1.frx":0F4A
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0F4A
          captionoffsettop=   -5
       End
       Begin Project1.uButton cmdNumbers 
@@ -517,8 +517,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "0"
          borderanimation =   0
-         font            =   "Form1.frx":0F72
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0F72
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   735
@@ -543,8 +543,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "="
          borderanimation =   0
-         font            =   "Form1.frx":0F9A
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0F9A
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -569,8 +569,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "Tan"
          borderanimation =   0
-         font            =   "Form1.frx":0FC2
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0FC2
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -595,8 +595,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "aTn"
          borderanimation =   0
-         font            =   "Form1.frx":0FEA
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":0FEA
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -621,8 +621,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "Sin"
          borderanimation =   0
-         font            =   "Form1.frx":1012
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":1012
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -647,8 +647,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "aSn"
          borderanimation =   0
-         font            =   "Form1.frx":103A
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":103A
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -673,8 +673,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "Cos"
          borderanimation =   0
-         font            =   "Form1.frx":1062
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":1062
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -699,8 +699,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "aCs"
          borderanimation =   0
-         font            =   "Form1.frx":108A
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":108A
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -725,8 +725,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "^"
          borderanimation =   0
-         font            =   "Form1.frx":10B2
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":10B2
          captionoffsettop=   4
       End
       Begin Project1.uButton cmdExtras 
@@ -752,8 +752,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "PI"
          borderanimation =   0
-         font            =   "Form1.frx":10DA
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":10DA
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -778,8 +778,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "("
          borderanimation =   0
-         font            =   "Form1.frx":1102
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":1102
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -804,8 +804,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   ")"
          borderanimation =   0
-         font            =   "Form1.frx":112A
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":112A
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -830,8 +830,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "8"
          borderanimation =   0
-         font            =   "Form1.frx":1152
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":1152
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -856,8 +856,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   " & "" "" & "
          borderanimation =   0
-         font            =   "Form1.frx":117A
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":117A
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -882,8 +882,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "Round"
          borderanimation =   0
-         font            =   "Form1.frx":11A2
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":11A2
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -908,8 +908,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "Fix"
          borderanimation =   0
-         font            =   "Form1.frx":11CA
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":11CA
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -934,8 +934,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "Chr"
          borderanimation =   0
-         font            =   "Form1.frx":11F2
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":11F2
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -960,8 +960,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "Asc"
          borderanimation =   0
-         font            =   "Form1.frx":121A
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":121A
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -986,8 +986,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   ","
          borderanimation =   0
-         font            =   "Form1.frx":1242
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":1242
          captionoffsettop=   -5
       End
       Begin Project1.uButton cmdNumbers 
@@ -1013,8 +1013,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "_"
          borderanimation =   0
-         font            =   "Form1.frx":126A
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":126A
          captionoffsettop=   -3
       End
       Begin Project1.uButton cmdExtras 
@@ -1040,8 +1040,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "Deg"
          borderanimation =   0
-         font            =   "Form1.frx":1292
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":1292
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -1066,8 +1066,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "Rad"
          borderanimation =   0
-         font            =   "Form1.frx":12BA
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":12BA
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -1092,8 +1092,8 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   "<"
          borderanimation =   0
-         font            =   "Form1.frx":12E2
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":12E2
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -1118,14 +1118,41 @@ Begin VB.Form Form1
          focusvisible    =   0   'False
          caption         =   ">"
          borderanimation =   0
-         font            =   "Form1.frx":130A
          alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":130A
+      End
+      Begin Project1.uButton cmdCustom 
+         Height          =   330
+         Index           =   0
+         Left            =   0
+         TabIndex        =   50
+         TabStop         =   0   'False
+         Top             =   3015
+         Visible         =   0   'False
+         Width           =   555
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   8500547
+         forecolor       =   8500547
+         mouseoverbackgroundcolor=   3425832
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "aTn"
+         borderanimation =   0
+         alignpictureincorner=   -1  'True
+         font            =   "Form1.frx":1332
       End
    End
    Begin Project1.uListBox lstComplete 
       Height          =   2400
-      Left            =   4590
-      TabIndex        =   6
+      Left            =   4575
+      TabIndex        =   7
       TabStop         =   0   'False
       Top             =   2070
       Visible         =   0   'False
@@ -1134,7 +1161,7 @@ Begin VB.Form Form1
       _extenty        =   4233
       backgroundcolor =   3551534
       bordercolor     =   8421504
-      font            =   "Form1.frx":1332
+      font            =   "Form1.frx":135A
       forecolor       =   16777215
       text            =   ""
       selectionbackgroundcolor=   3551534
@@ -1151,7 +1178,7 @@ Begin VB.Form Form1
    Begin Project1.uTextBox txtFly 
       Height          =   330
       Left            =   7470
-      TabIndex        =   5
+      TabIndex        =   6
       TabStop         =   0   'False
       Top             =   3825
       Visible         =   0   'False
@@ -1160,7 +1187,7 @@ Begin VB.Form Form1
       _extenty        =   582
       backgroundcolor =   3551534
       bordercolor     =   8421504
-      font            =   "Form1.frx":135A
+      font            =   "Form1.frx":1382
       forecolor       =   16777215
       consolecolors   =   0   'False
       hidecursor      =   -1  'True
@@ -1176,9 +1203,9 @@ Begin VB.Form Form1
    Begin Project1.uButton cmdClearList 
       Height          =   330
       Left            =   4500
-      TabIndex        =   4
+      TabIndex        =   5
       TabStop         =   0   'False
-      Top             =   4545
+      Top             =   5085
       Width           =   5145
       _extentx        =   9075
       _extenty        =   582
@@ -1196,33 +1223,33 @@ Begin VB.Form Form1
       focusvisible    =   0   'False
       caption         =   "Clear"
       borderanimation =   0
-      font            =   "Form1.frx":1382
       alignpictureincorner=   -1  'True
+      font            =   "Form1.frx":13AA
    End
    Begin Project1.uListBox List1 
-      Height          =   2445
+      Height          =   2955
       Left            =   4500
-      TabIndex        =   3
+      TabIndex        =   4
       TabStop         =   0   'False
       Top             =   2025
       Width           =   5145
       _extentx        =   9075
-      _extenty        =   4313
+      _extenty        =   5212
       backgroundcolor =   3551534
       bordercolor     =   8421504
-      font            =   "Form1.frx":13AA
+      font            =   "Form1.frx":13D2
       forecolor       =   16777215
       text            =   "uFrame"
       selectionbackgroundcolor=   3551534
       selectionbordercolor=   16777215
       selectionforecolor=   8500547
-      itemheight      =   40
+      itemheight      =   48
       visibleitems    =   4
    End
    Begin Project1.uTextBox Text1 
       Height          =   465
       Left            =   90
-      TabIndex        =   0
+      TabIndex        =   1
       TabStop         =   0   'False
       Top             =   90
       Width           =   9555
@@ -1230,7 +1257,7 @@ Begin VB.Form Form1
       _extenty        =   820
       backgroundcolor =   3551534
       bordercolor     =   8421504
-      font            =   "Form1.frx":13D2
+      font            =   "Form1.frx":13FA
       forecolor       =   16777215
       mousepointer    =   3
       consolecolors   =   0   'False
@@ -1238,7 +1265,7 @@ Begin VB.Form Form1
    Begin Project1.uTextBox Text2 
       Height          =   735
       Left            =   90
-      TabIndex        =   1
+      TabIndex        =   2
       TabStop         =   0   'False
       Top             =   630
       Width           =   9555
@@ -1246,18 +1273,17 @@ Begin VB.Form Form1
       _extenty        =   1296
       backgroundcolor =   3551534
       bordercolor     =   8421504
-      font            =   "Form1.frx":13FA
+      font            =   "Form1.frx":1422
       forecolor       =   16777215
       mousepointer    =   3
       consolecolors   =   0   'False
-      rownumberoneveryline=   -1  'True
       wordwrap        =   -1  'True
       multiline       =   -1  'True
    End
    Begin Project1.uTextBox Text3 
       Height          =   510
       Left            =   90
-      TabIndex        =   2
+      TabIndex        =   3
       TabStop         =   0   'False
       Top             =   1440
       Width           =   9555
@@ -1265,27 +1291,31 @@ Begin VB.Form Form1
       _extenty        =   900
       backgroundcolor =   3551534
       bordercolor     =   8421504
-      font            =   "Form1.frx":1422
+      font            =   "Form1.frx":144A
       forecolor       =   16777215
       mousepointer    =   3
+      linenumberforecolor=   8421504
+      linenumberbackground=   2367774
       consolecolors   =   0   'False
    End
    Begin Project1.uTextBox utxtFunctionList 
-      Height          =   3435
+      Height          =   3945
       Left            =   9720
-      TabIndex        =   7
+      TabIndex        =   0
       TabStop         =   0   'False
       Top             =   1440
       Width           =   11565
       _extentx        =   20399
-      _extenty        =   6059
+      _extenty        =   6959
       backgroundcolor =   3551534
       bordercolor     =   8421504
-      font            =   "Form1.frx":144A
+      font            =   "Form1.frx":1472
       forecolor       =   16777215
       mousepointer    =   3
+      linenumbers     =   -1  'True
+      linenumberforecolor=   8421504
+      linenumberbackground=   2367774
       consolecolors   =   0   'False
-      rownumberoneveryline=   -1  'True
       wordwrap        =   -1  'True
       multiline       =   -1  'True
       scrollbars      =   1
@@ -1316,6 +1346,7 @@ Begin VB.Form Form1
       Caption         =   "Edit"
       Begin VB.Menu mnuEditOmtrek 
          Caption         =   "Omtrek van:"
+         Visible         =   0   'False
          Begin VB.Menu mnuEditOmtrekCirkel 
             Caption         =   "Cirkel"
          End
@@ -1328,6 +1359,7 @@ Begin VB.Form Form1
       End
       Begin VB.Menu mnuEditArea 
          Caption         =   "Oppervlakte van:"
+         Visible         =   0   'False
          Begin VB.Menu mnuEditAreaCircle 
             Caption         =   "Cirkel"
          End
@@ -1346,6 +1378,7 @@ Begin VB.Form Form1
       End
       Begin VB.Menu mnuEditInhoud 
          Caption         =   "Inhoud van:"
+         Visible         =   0   'False
          Begin VB.Menu mnuEditInhoudCirkel 
             Caption         =   "Cilinder"
          End
@@ -1361,12 +1394,14 @@ Begin VB.Form Form1
       End
       Begin VB.Menu mnuEditFormules 
          Caption         =   "Formules"
+         Visible         =   0   'False
          Begin VB.Menu mnuEditFormulesABC 
             Caption         =   "ABC"
          End
       End
       Begin VB.Menu mnuEditSerp1 
          Caption         =   "-"
+         Visible         =   0   'False
       End
       Begin VB.Menu mnuEditCopyAnsware 
          Caption         =   "Kopiëer Antwoord          "
@@ -1380,6 +1415,7 @@ Begin VB.Form Form1
    End
    Begin VB.Menu mnuSettings 
       Caption         =   "Settings"
+      Visible         =   0   'False
       Begin VB.Menu mnuSettingsPrec 
          Caption         =   "Precision"
          Begin VB.Menu mnuSettingsPrecision 
@@ -1458,6 +1494,23 @@ Private Const WM_HOTKEY As Integer = &H312
 
 Private objWinApi As winapi
 
+Private Type ErrorObj
+    errNum As Long
+    errLine As Long
+    errColumn As Long
+End Type
+
+Private functionListError As ErrorObj
+
+Private m_decimalPrecision As Long
+
+Sub SetDecimalPrecision(newPrecision As Long)
+    If newPrecision < 0 Then
+        m_decimalPrecision = -1
+    Else
+        m_decimalPrecision = newPrecision
+    End If
+End Sub
 
 Private Sub cmdClearList_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
     'If (x < 0) Or (y < 0) Or (x > cmdClearList.Width) Or (y > cmdClearList.Height) Then
@@ -1490,49 +1543,31 @@ Private Sub cmdClearList_MouseUp(Button As Integer, Shift As Integer, X As Singl
 End Sub
 
 
-Private Sub SubAddText(NewStr As String)
-Text1.AddCharAtCursor NewStr
-Text1.updateCaretPos
-Text1.Redraw
-
-'Dim selST As Long
-'Dim selLn As Integer
-'Dim strText As String
-'
-'Dim part1 As String
-'Dim part2 As String
-'
-'Dim dimStr1 As String
-'Dim dimStr2 As String
-'
-'selST = Text1.SelStart
-'selLn = Text1.SelLength
-'strText = Text1.Text
-'
-'If selST > 0 Then
-'    dimStr1 = Mid(strText, selST, 1)
-'    dimStr2 = Mid(strText, selST + 1, 1)
-'End If
-'
-'part1 = Mid(strText, 1, selST)
-'part2 = Mid(strText, selST + selLn + 1, (Len(strText) - selST - selLn))
-'
-'If NewStr = "/" Or NewStr = "*" Or NewStr = "-" Or NewStr = "+" Then
-'    If dimStr1 = "/" Or dimStr1 = "*" Or dimStr1 = "-" Or dimStr1 = "+" Then
-'        Text1.Text = Mid(strText, 1, selST - 1) & NewStr & Mid(strText, selST + 1, Len(strText) - selST - selLn)
-'        Text1.SelStart = (selST)
-'    ElseIf dimStr2 = "/" Or dimStr2 = "*" Or dimStr2 = "-" Or dimStr2 = "+" Then
-'        Text1.Text = Mid(strText, 1, selST) & NewStr & Mid(strText, selST - 1, Len(strText) - selST - selLn)
-'        Text1.SelStart = (selST)
-'    Else
-'        Text1.Text = part1 & NewStr & part2
-'        Text1.SelStart = (selST + Len(NewStr))
-'    End If
-'Else
-'        Text1.Text = part1 & NewStr & part2
-'        Text1.SelStart = (selST + Len(NewStr))
-'End If
+Sub AddTextAtCursor(strAdd As String, Optional boolAddParentheses As Boolean = False)
+    Dim tmpStr As String
+    Dim selectionIndex As Long
+    
+    If boolAddParentheses Then
+        If Text1.SelLength > 0 Then
+    
+            selectionIndex = Text1.SelStart
+            tmpStr = Text1.GetSelectionText
+            Text1.AddCharAtCursor strAdd & "(" & tmpStr & ")"
+            Text1.SelStart = selectionIndex + Len(strAdd) + Len(tmpStr) + 1
+        Else
+            selectionIndex = Text1.SelStart
+            Text1.AddCharAtCursor strAdd & "()"
+            Text1.SelStart = selectionIndex + Len(strAdd) + 1
+        End If
+    Else
+        Text1.AddCharAtCursor strAdd
+    End If
+    
+    Text1.updateCaretPos
+    Text1.Redraw
 End Sub
+
+
 
 Private Sub cmdExtras_MouseUp(index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
 Dim selection As Long
@@ -1540,20 +1575,10 @@ Dim selection As Long
 Select Case index
 
     Case 7 To 8
-        Text1.AddCharAtCursor cmdExtras(index).Caption
+        AddTextAtCursor cmdExtras(index).Caption
         
     Case Else '0 To 6, 11
-        If Text1.SelLength > 0 Then
-            Dim tmpStr As String
-            selection = Text1.SelStart
-            tmpStr = Text1.GetSelectionText
-            Text1.AddCharAtCursor cmdExtras(index).Caption & "(" & tmpStr & ")"
-            Text1.SelStart = selection + Len(cmdExtras(index).Caption) + Len(tmpStr) + 1
-        Else
-            selection = Text1.SelStart
-            Text1.AddCharAtCursor cmdExtras(index).Caption & "()"
-            Text1.SelStart = selection + Len(cmdExtras(index).Caption) + 1
-        End If
+        AddTextAtCursor cmdExtras(index).Caption, True
         
         
 End Select
@@ -1574,93 +1599,40 @@ Select Case index
     
     Case 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
         PressedCalc = ""
-        If Text1.Text = "0" Then
-            'SubAddText Index & ""
-            Text1.Text = index
-            Text1.SelStart = 1
-        Else
-            SubAddText index & ""
-            'Text1.Text = Text1.Text & Index
-        End If
+        AddTextAtCursor index & ""
         TempStr = Text1.Text
         
-        
     Case 10
-        Dim calcresult As Variant
-        
-        calcresult = CheckCalculation(Text1.Text)
-        Dim prec As Long
-        prec = getPrecision
-        If prec <> -1 Then
-            Text2.Text = f(calcresult, prec)
-        Else
-            Text2.Text = calcresult
-        End If
-        
-        
-        tmpVal = Text2.Text
-        
-        If List1.ListCount > 0 Then
-            If List1.Cell(0, 0) <> Text1.Text Or List1.Cell(0, 1) <> vbCrLf & Text2.Text Then
-                List1.AddItem Text1.Text & Chr(9) & vbCrLf & Text2.Text, , 0
-            End If
-        Else
-            List1.AddItem Text1.Text & Chr(9) & vbCrLf & Text2.Text
-        End If
-        Text1.SetFocus
-        
+       
+        StartCalculation
         
     Case 22
-        SubAddText " "
+        AddTextAtCursor " "
         'Text1.Text = Text1.Text & ","
     Case 11, 12, 13, 14, 16, 17, 18
-        SubAddText cmdNumbers(index).Caption
+        AddTextAtCursor cmdNumbers(index).Caption
         
         
     Case 19
-        If Text2.Text = "0" Then
-            SubAddText cmdNumbers(index).Caption
-        Else
-            SubAddText cmdNumbers(index).Caption
-        End If
+        AddTextAtCursor cmdNumbers(index).Caption
         
     Case 20
-        If Text1.TextLength > 0 Then
-            If Text1.SelLength > 0 Then
-                Text1.AddCharAtCursor ""
-                Text1.SetFocus
-            
-            ElseIf Text1.SelStart > 0 Then
-                Text1.SelStart = Text1.SelStart - 1
-                Text1.SelLength = 1
-                Text1.AddCharAtCursor ""
-                Text1.SetFocus
-            Else
-                Text1.SelStart = 0
-                Text1.SelLength = 1
-                Text1.AddCharAtCursor ""
-                Text1.SetFocus
-                'Text1.SelStart = 0
-            End If
-            'Text1.Text = Mid(Text1.Text, 1, Text1.TextLength - 1)
-        Else
-            'Text1.SetFocus
-        End If
+        AddTextAtCursor ""
         
         
-    Case 21
-        'If InStr(1, Text2.Text, "/") > 0 Then
-        '    If tmpVal <> "" Then
-        '        Text2.Text = tmpVal
-        '    End If
-        'Else
-        If val(Text2.Text) Then
-            tmpTx = GetFraction(Text1.Text)
-            'If tmpTx = Text2.Text Then
-                'tmpTx = Dec2Frac(Text2.Text)
-            'End If
-            Text2.Text = tmpTx
-        End If
+'    Case 21
+'        'If InStr(1, Text2.Text, "/") > 0 Then
+'        '    If tmpVal <> "" Then
+'        '        Text2.Text = tmpVal
+'        '    End If
+'        'Else
+'        If val(Text2.Text) Then
+'            tmpTx = GetFraction(Text1.Text)
+'            'If tmpTx = Text2.Text Then
+'                'tmpTx = Dec2Frac(Text2.Text)
+'            'End If
+'            Text2.Text = tmpTx
+'        End If
         'End If
         
         
@@ -1688,9 +1660,56 @@ Public Function Execute(inp)
     objScript.Eval "ExecuteMe" & functionCallNumber & "()"
 End Function
 
+Private Sub callScriptMain()
+    On Error Resume Next
+    
+    objScript.Error.Clear
+    'Execute the main function to initialize the commands of the user
+    objScript.ExecuteStatement "main"
+    
+    If objScript.Error.Number <> 0 Then
+        functionListError.errNum = objScript.Error.Number
+        functionListError.errLine = objScript.Error.Line
+        functionListError.errColumn = objScript.Error.column
+        
+        PrintError objScript.Error.Number, objScript.Error.Description, "Main", objScript.Error.Description
+    End If
+End Sub
 
-Sub initializeScript()
-    On Error GoTo Err:
+
+Sub PrintError(errNumber As Long, errDescription As String, Optional strMethod As String = "", Optional lngLine As Long = -1)
+    Dim output As String
+    
+    output = "Error"
+    
+    If strMethod <> "" Then
+        output = output & " in " & strMethod
+    End If
+    
+    If lngLine <> -1 Then
+        output = output & " on line " & lngLine
+    End If
+    
+    output = output & ": "
+    
+    If errNumber = 6 Or errNumber = 1031 Then
+        output = output & "Overflow"
+    Else
+        output = output & errDescription & " [" & errNumber & "]"
+    End If
+    
+    Text2.Text = output
+End Sub
+
+'
+'Sub LoadFileScript(ByRef strFunctions As String)
+'    On Error Resume Next
+'
+'
+'End Sub
+
+Private Function initializeScript() As Boolean
+    On Error Resume Next:
     Dim f As String
     Dim i As Long
     Dim tmpLines() As String
@@ -1702,6 +1721,9 @@ Sub initializeScript()
     ReDim ExternalConstants(0) As String
     ReDim ExternalOperators(0) As String
     
+    
+    functionListError.errNum = 0
+    
     f = GetFileContent(App.Path & "\functionlist.vbs")
     
     Set objScript = CreateObject("MSScriptControl.ScriptControl")
@@ -1711,18 +1733,39 @@ Sub initializeScript()
     objWinApi.initialize comm1
     
     objScript.AddObject "winapi", objWinApi
-    objScript.AddCode f
+    
     objScript.AddCode "function help(): winapi.help(): end function"
     objScript.AllowUI = True
     
     objScript.AddObject "Form1", Me, True
     '
     
+    objScript.Error.Clear
+    objScript.AddCode f
+    If objScript.Error.Number <> 0 Then
+        functionListError.errNum = objScript.Error.Number
+        functionListError.errLine = objScript.Error.Line
+        functionListError.errColumn = objScript.Error.column
+    End If
+    
+    'Execute the main function to initialize the commands of the user
+    callScriptMain
+    
+    
+    
+    
+    
     ExternalFunctions = Split("ans anq abs array asc atn cbool cbyte ccur cdate cdbl chr cint clng conversions cos createobject csng cstr date dateadd datediff datepart dateserial datevalue day escape eval exp filter formatcurrency formatdatetime formatnumber formatpercent getlocale getobject getref hex hour inputbox instr instrrev int fix isarray isdate isempty isnull isnumeric isobject join lbound lcase left len loadpicture log ltrim rtrim trim maths mid minute month monthname msgbox now oct replace rgb right rnd round scriptengine scriptenginebuildversion scriptenginemajorversion scriptengineminorversion second setlocale sgn sin space split sqr strcomp string strreverse tan time timer timeserial timevalue typename ubound ucase unescape vartype weekday weekdayname year execute", " ")
+    
+    
+    'MsgBox CharExecution(objScript.CodeObject, False)
+    'MsgBox CharExecution("Form1", False)
+    
+    
     
     c = 0
     
-    ReDim ExternalCustomFunctions(0 To 7) As String
+    ReDim ExternalCustomFunctions(0 To 9) As String
 
     ExternalCustomFunctions(0) = "winapi"
     ExternalCustomFunctions(1) = "colorpicker"
@@ -1732,9 +1775,12 @@ Sub initializeScript()
     ExternalCustomFunctions(5) = "findwindow"
     ExternalCustomFunctions(6) = "commondialog"
     ExternalCustomFunctions(7) = "showcommands"
+    ExternalCustomFunctions(8) = "form1"
+    ExternalCustomFunctions(9) = "me"
 
     c = UBound(ExternalCustomFunctions) + 1
     
+    'use the getmidtext function of my textboxes to find the function and sub names in the vbs file
     tmpLines = Split(LCase(f), vbCrLf)
     For i = 0 To UBound(tmpLines)
         t = Text1.GetMidText(tmpLines(i), "function ", "(")
@@ -1759,10 +1805,13 @@ Sub initializeScript()
     ExternalConstants = Split("pi e integer string double float long byte vbabortretryignore vbapplicationmodal vbarray vbblack vbblue vbboolean vbbyte vbcr vbcritical vbcrlf vbcurrency vbcyan vbdataobject vbdate vbdecimal vbdefaultbutton1 vbdefaultbutton2 vbdefaultbutton3 vbdefaultbutton4 vbdouble vbempty vberror vbexclamation vbfalse vbformfeed vbgreen vbinformation vbinteger vblf vblong vbmagenta vbnewline vbnull vbnullchar vbnullstring vbobject vbokcancel vbokonly vbquestion vbred vbretrycancel vbsingle vbstring vbsystemmodal vbtab vbtrue vbusedefault vbvariant vbverticaltab vbwhite vbyellow vbyesno vbyesnocancel vbbinarycompare vbtextcompare", " ")
     
     
-    ExternalOperators = Split("xor and or not is * - + / ^ : false true if then dim select case end exit function sub for to next while do wend until else as const mod in", " ")
+    ExternalOperators = Split("xor and or not is * - + / ^ : false true if then dim select case end exit function sub for each to next while do wend until else as const mod in", " ")
     
     Dim tmpScrollTop As Long
+    Dim tmpCursorPos As Long
+    
     tmpScrollTop = utxtFunctionList.ScrollTop
+    utxtFunctionList.SaveCaretPosition
     
     'redraw the textbox as last
     utxtFunctionList.RedrawPause
@@ -1772,12 +1821,18 @@ Sub initializeScript()
     utxtFunctionList.ReCalculateRowMap
     tmrColorRedraw_Timer
     utxtFunctionList.ScrollTop = tmpScrollTop
+    utxtFunctionList.LoadCaretPosition
     utxtFunctionList.RedrawResume
-    Exit Sub
-Err:
-    MsgBox Err.Description, vbOKOnly Or vbCritical, "ERROR: " & Err.Number
     
-End Sub
+    If objScript.Error.Number <> 0 Then
+        initializeScript = False
+        PrintError objScript.Error.Number, objScript.Error.Description, "", objScript.Error.Line
+    Else
+        initializeScript = True
+    End If
+    
+    
+End Function
 
 Sub drawMenu()
     Dim mi As MENUINFO
@@ -1818,7 +1873,7 @@ End Sub
 
 
 Private Sub Form_Load()
-    Dim i As Integer
+    Dim i As Long
     Dim TotalRows As Integer
     Dim sKeyName As String
     Dim sKeyValue As String
@@ -1836,6 +1891,7 @@ Private Sub Form_Load()
     SetTopMostWindow txtFly.hWnd, True
     
     initializeScript
+
     'MsgBox objScript.Eval("Maths.asin(1)")
     
     'LoadDataIntoFile 101, ("C:\windows\fonts\" & "Jucko13.ttf")
@@ -1854,6 +1910,8 @@ Private Sub Form_Load()
     Text1.SelStart = GetSetting("Calculator", "Berekeningen", "Text1.SelStart", 0)
     Text2.SelStart = GetSetting("Calculator", "Berekeningen", "Text2.SelStart", 0)
     
+    
+    
     mnuFileHighDPI.Checked = GetSetting("Calculator", "Settings", "high dpi", False)
     'If mnuFileHighDPI.Checked Then
     ApplyDPI
@@ -1867,102 +1925,106 @@ Private Sub Form_Load()
 End Sub
 
 
-Function GetFraction(Calculation As String) As String
-    Dim dOne As Double
-    
-     Dim tend As Double
-    Dim tim As clsTimer
-    Set tim = New clsTimer
-    
-    tim.tStart
-    
-    dOne = val(CheckCalculation("1 / (" & Calculation & ")"))
-    
-    Dim bigNumber As String
-    
-    bigNumber = dOne
-    
-    If InStr(1, LCase(bigNumber), "e") > 0 Then
-        GetFraction = "??"
-        Exit Function
-    End If
-    
-    Dim lPlace As Long
-    
-    lPlace = InStr(1, bigNumber, ",")
-    Dim toPowerOf As Long
-    
-    toPowerOf = Len(bigNumber) - lPlace
-    
-    If toPowerOf <= 0 Then
-        GetFraction = "??"
-        Exit Function
-    End If
-    
-    Dim upperBound As Double
-    Dim lowerBound As Double
-    
-    upperBound = 10 ^ toPowerOf
-    lowerBound = dOne * upperBound
-    
-    If upperBound >= 100000000 Then
-        GetFraction = GetFractionSlow(dOne, "1 / (" & Calculation & ")")
-    Else
-        Dim t As Double
-        Dim a As Double
-        Dim b As Double
-        
-        a = upperBound
-        b = lowerBound
-        While b <> 0
-            t = b
-            b = FMod(a, b)
-            a = t
-        Wend
-        
-        GetFraction = upperBound / a & " / " & lowerBound / a
-        
-    End If
-    
-    tend = tim.tStop
-    mnuExecTime.Caption = "ExecTime: " & mircoToTime(tend)
-End Function
+'Function GetFraction(Calculation As String) As String
+'    Dim dOne As Double
+'
+'     Dim tend As Double
+'    Dim tim As clsTimer
+'    Set tim = New clsTimer
+'
+'    tim.tStart
+'
+'    dOne = val(CheckCalculation("1 / (" & Calculation & ")"))
+'
+'    Dim bigNumber As String
+'
+'    bigNumber = dOne
+'
+'    If InStr(1, LCase(bigNumber), "e") > 0 Then
+'        GetFraction = "??"
+'        Exit Function
+'    End If
+'
+'    Dim lPlace As Long
+'
+'    lPlace = InStr(1, bigNumber, ",")
+'    Dim toPowerOf As Long
+'
+'    toPowerOf = Len(bigNumber) - lPlace
+'
+'    If toPowerOf <= 0 Then
+'        GetFraction = "??"
+'        Exit Function
+'    End If
+'
+'    Dim upperBound As Double
+'    Dim lowerBound As Double
+'
+'    upperBound = 10 ^ toPowerOf
+'    lowerBound = dOne * upperBound
+'
+'    If upperBound >= 100000000 Then
+'        GetFraction = GetFractionSlow(dOne, "1 / (" & Calculation & ")")
+'    Else
+'        Dim t As Double
+'        Dim a As Double
+'        Dim b As Double
+'
+'        a = upperBound
+'        b = lowerBound
+'        While b <> 0
+'            t = b
+'            b = FMod(a, b)
+'            a = t
+'        Wend
+'
+'        GetFraction = upperBound / a & " / " & lowerBound / a
+'
+'    End If
+'
+'    tend = tim.tStop
+'    mnuExecTime.Caption = "ExecTime: " & mircoToTime(tend)
+'End Function
 
-Function GetFractionSlow(startNum As Double, Calculation As String) As String
-    Dim i As Long
-    
-    'If startNum < 2 Then
-    '    GetFractionSlow = "??"
-    '    Exit Function
-    'End If
-    
-    
-    For i = 2 To 2000
-        Dim tmp As String
-        
-        'Debug.Assert i <> 86
-        
-        tmp = CheckCalculation("(" & Calculation & ")" & " * " & i)
-        If tmp = Fix(val(tmp)) Then
-            Dim upperBound As Double
-            Dim lowerBound As Double
-            
-            upperBound = i
-            lowerBound = CheckCalculation("(" & Calculation & ")" & " * " & upperBound)
-    
-            GetFractionSlow = upperBound & " / " & lowerBound
-            Exit Function
-        End If
-        
-    Next i
-End Function
+'Function GetFractionSlow(startNum As Double, Calculation As String) As String
+'    Dim i As Long
+'
+'    'If startNum < 2 Then
+'    '    GetFractionSlow = "??"
+'    '    Exit Function
+'    'End If
+'
+'
+'    For i = 2 To 2000
+'        Dim tmp As String
+'
+'        'Debug.Assert i <> 86
+'
+'        tmp = CheckCalculation("(" & Calculation & ")" & " * " & i)
+'        If tmp = Fix(val(tmp)) Then
+'            Dim upperBound As Double
+'            Dim lowerBound As Double
+'
+'            upperBound = i
+'            lowerBound = CheckCalculation("(" & Calculation & ")" & " * " & upperBound)
+'
+'            GetFractionSlow = upperBound & " / " & lowerBound
+'            Exit Function
+'        End If
+'
+'    Next i
+'End Function
 
 
-Function CheckCalculation(CalculateString As String, Optional ParentCall As Boolean = True) As String
+Sub StartCalculation()
     Dim result As Variant
+    Dim resultString As String
+    
     Dim t As clsTimer
     Dim tend As Double
     Dim allfunctions As String
+    Dim prec As Long
+    Dim CalculateString As String
     
     Set t = New clsTimer
     
@@ -1970,7 +2032,13 @@ Function CheckCalculation(CalculateString As String, Optional ParentCall As Bool
     
     t.tStart
     
-    initializeScript
+    If initializeScript = False Then
+        Exit Sub
+    End If
+    
+    
+    
+    CalculateString = Text1.Text
     
     If InStr(1, LCase$(CalculateString), "anq") > 0 Then
         objScript.AddCode "const anq = """ & Text2.Text & """"
@@ -1980,12 +2048,9 @@ Function CheckCalculation(CalculateString As String, Optional ParentCall As Bool
         objScript.AddCode "dim ans: ans = """ & Text2.Text & """"
     End If
     
-    
-    
-    
     objScript.AddCode Text3.Text
-    objScript.AddObject "Me", Me, True
-    objScript.AllowUI = True
+    'objScript.AddObject "Me", Me, True
+    'objScript.AllowUI = True
     
     'allfunctions = CharExecution(objScript.CodeObject, False)
     'allfunctions = allfunctions & CharExecution(objScript.CodeObject.winapi, True)
@@ -1993,28 +2058,54 @@ Function CheckCalculation(CalculateString As String, Optional ParentCall As Bool
     'MsgBox allfunctions
     ' MsgBox
     result = objScript.Eval(CalculateString)
+    
+    'Debug.Print CharExecution(Me.Image, False)
+    
+
+    tend = t.tStop
+    
+        
     If TypeName(result) = "Double" Then
-        CheckCalculation = Replace(result, ",", ".")
+        If prec <> -1 Then
+            resultString = f(m_decimalPrecision, prec)
+        Else
+            resultString = result
+        End If
+    
+        resultString = Replace(resultString, ",", ".")
     Else
-        CheckCalculation = result
+        resultString = result
     End If
     
-    tend = t.tStop
     mnuExecTime.Caption = "ExecTime: " & mircoToTime(tend)
 
-    Exit Function
-EndIt:
     
-    If Err.Number = 6 Or Err.Number = 1031 Then
-        CheckCalculation = "Error: Overflow"
+    
+    Text2.Text = resultString
+    
+    
+    If List1.ListCount > 0 Then
+        If List1.Cell(0, 0) <> Text1.Text Or List1.Cell(0, 1) <> vbCrLf & Text2.Text Then
+            List1.AddItem Text1.Text & Chr(9) & vbCrLf & Text2.Text, , 0
+        End If
     Else
-        CheckCalculation = "Error: " & Err.Description & " [" & Err.Number & "]"
+        List1.AddItem Text1.Text & Chr(9) & vbCrLf & Text2.Text
     End If
+    Text1.SetFocus
+    
+        
+    Exit Sub
+EndIt:
+
+
+    With objScript.Error
+        PrintError .Number, .Description
+    End With
     
     t.tStop
     
     mnuExecTime.Caption = "ExecTime: -"
-End Function
+End Sub
 
 Function mircoToTime(ByVal lTime As Double) As String
     Dim ltimes As Long
@@ -2045,6 +2136,56 @@ Function mircoToTime(ByVal lTime As Double) As String
     
     
 End Function
+
+Private Sub cmdCustom_Click(index As Integer, Button As Integer, X As Single, Y As Single)
+    Dim buttonCommand As String
+    
+    buttonCommand = cmdCustom(index).Tag
+    
+    initializeScript
+    
+    On Error GoTo WrongCommand
+    
+    objScript.ExecuteStatement (buttonCommand)
+    
+    Exit Sub
+WrongCommand:
+    PrintError Err.Number, Err.Description
+    
+End Sub
+
+
+Sub AddCustomButton(strButtonText As String, strButtonCommand As String, lngWidth As Long)
+    Dim buttonIndex As Long
+    
+    buttonIndex = cmdCustom.UBound
+    
+    With cmdCustom(buttonIndex)
+        If buttonIndex = 0 Then
+            .Left = 0
+        Else
+            .Left = cmdCustom(buttonIndex - 1).Left + cmdCustom(buttonIndex - 1).Width + 5
+        End If
+        
+        .Width = lngWidth
+        .Visible = True
+        .Caption = strButtonText
+        .Tag = strButtonCommand
+    End With
+    
+    Load cmdCustom(buttonIndex + 1)
+End Sub
+
+
+Sub ClearButtons()
+    Dim i As Long
+    
+    For i = cmdCustom.UBound To 1 Step -1
+        Unload cmdCustom(i)
+    Next i
+    
+    cmdCustom(0).Visible = False
+End Sub
 
 
 Sub ApplyDPI()
@@ -2105,9 +2246,9 @@ Private Sub Form_Resize()
     
     Dim diff As Long
     
-    If Me.ScaleHeight < 331 Then
+    If Me.ScaleHeight < 364 Then
         diff = Me.Height - Me.ScaleY(Me.ScaleHeight, vbPixels, vbTwips)
-        Me.Height = Me.ScaleY(331, vbPixels, vbTwips) + diff
+        Me.Height = Me.ScaleY(364, vbPixels, vbTwips) + diff
         Exit Sub
     End If
     
@@ -2126,12 +2267,13 @@ Private Sub Form_Resize()
     Text3.Height = IIf(tmpHeight < 34, 34, tmpHeight)
     
     Text3.MultiLine = tmpHeight > 50
+    Text3.LineNumbers = tmpHeight > 50
     Text3.ScrollBars = IIf(tmpHeight > 50, lVertical, lNone)
     
     Text1.Width = Me.ScaleWidth - Text1.Left - 5
     Text2.Width = Me.ScaleWidth - Text2.Left - 5
     
-
+    
     
     
     On Error Resume Next
@@ -2242,62 +2384,62 @@ MsgBox "This Calculator is made in Visual Basics 6.0 and uses the MSScripting li
 End Sub
 
 Private Sub mnuEditAreaCircle_Click()
-Dim mm As String
-
-mm = InputBox("Hier de Diameter", "Oppervlakte van een: " & mnuEditAreaCircle.Caption)
-
-If mm <> "" Then
-    Text1.Text = "(0.25*Pi)*" & mm & "*" & mm
-    Text2.Text = CheckCalculation(Text1.Text)
-End If
+'Dim mm As String
+'
+'mm = InputBox("Hier de Diameter", "Oppervlakte van een: " & mnuEditAreaCircle.Caption)
+'
+'If mm <> "" Then
+'    Text1.Text = "(0.25*Pi)*" & mm & "*" & mm
+'    Text2.Text = CheckCalculation(Text1.Text)
+'End If
 End Sub
 
 Private Sub mnuEditAreaDriehoek_Click()
-Dim mm1 As String
-Dim mm2 As String
-
-mm1 = InputBox("Hier de Basis", "Oppervlakte van een: " & mnuEditAreaSquare.Caption)
-mm2 = InputBox("Hier de hoogte", "Oppervlakte van een: " & mnuEditAreaSquare.Caption)
-
-If mm1 <> "" And mm2 <> "" Then
-    Text1.Text = "(" & mm1 & "*" & mm2 & ")/2"
-    Text2.Text = CheckCalculation(Text1.Text)
-End If
+'Dim mm1 As String
+'Dim mm2 As String
+'
+'mm1 = InputBox("Hier de Basis", "Oppervlakte van een: " & mnuEditAreaSquare.Caption)
+'mm2 = InputBox("Hier de hoogte", "Oppervlakte van een: " & mnuEditAreaSquare.Caption)
+'
+'If mm1 <> "" And mm2 <> "" Then
+'    Text1.Text = "(" & mm1 & "*" & mm2 & ")/2"
+'    Text2.Text = CheckCalculation(Text1.Text)
+'End If
 End Sub
 
 Private Sub mnuEditAreaSquare_Click()
-Dim mm1 As String
-Dim mm2 As String
-
-mm1 = InputBox("Hier de breedte", "Oppervlakte van een: " & mnuEditAreaSquare.Caption)
-mm2 = InputBox("Hier de hoogte", "Oppervlakte van een: " & mnuEditAreaSquare.Caption)
-
-If mm1 <> "" And mm2 <> "" Then
-    Text1.Text = "(" & mm1 & "*" & mm2 & ")"
-    Text2.Text = CheckCalculation(Text1.Text)
-End If
+'Dim mm1 As String
+'Dim mm2 As String
+'
+'mm1 = InputBox("Hier de breedte", "Oppervlakte van een: " & mnuEditAreaSquare.Caption)
+'mm2 = InputBox("Hier de hoogte", "Oppervlakte van een: " & mnuEditAreaSquare.Caption)
+'
+'If mm1 <> "" And mm2 <> "" Then
+'    Text1.Text = "(" & mm1 & "*" & mm2 & ")"
+'    Text2.Text = CheckCalculation(Text1.Text)
+'End If
 End Sub
 
 Private Sub mnuEditAreaVijfhoek_Click()
-Dim mm1 As String
-
-mm1 = InputBox("Hier de lengte van 1 zijde", "Oppervlakte van een: " & mnuEditAreaZeshoek.Caption)
-
-If mm1 <> "" Then
-    Text1.Text = "(2,5*" & mm1 & "*sqr(sqr(3)-3)"
-    Text2.Text = CheckCalculation(Text1.Text)
-End If
+'Dim mm1 As String
+'
+'mm1 = InputBox("Hier de lengte van 1 zijde", "Oppervlakte van een: " & mnuEditAreaZeshoek.Caption)
+'
+'If mm1 <> "" Then
+'    Text1.Text = "(2,5*" & mm1 & "*sqr(sqr(3)-3)"
+'    Text2.Text = CheckCalculation(Text1.Text)
+'End If
 End Sub
 
 Private Sub mnuEditAreaZeshoek_Click()
-Dim mm1 As String
-
-mm1 = InputBox("Hier de lengte van 1 zijde", "Oppervlakte van een: " & mnuEditAreaZeshoek.Caption)
-
-If mm1 <> "" Then
-    Text1.Text = "((3/2)*" & mm1 & "^2)*sqr(3)"
-    Text2.Text = CheckCalculation(Text1.Text)
-End If
+'Dim mm1 As String
+'
+'mm1 = InputBox("Hier de lengte van 1 zijde", "Oppervlakte van een: " & mnuEditAreaZeshoek.Caption)
+'
+'If mm1 <> "" Then
+'    Text1.Text = "((3/2)*" & mm1 & "^2)*sqr(3)"
+'    Text2.Text = CheckCalculation(Text1.Text)
+'End If
 End Sub
 
 Private Sub mnuEditCopyAnsware_Click()
@@ -2331,72 +2473,72 @@ cmdNumbers_MouseUp 10, 0, 0, 0, 0
 End Sub
 
 Private Sub mnuEditInhoudPrisma_Click()
-Dim mm1 As String
-Dim mm2 As String
-Dim mm3 As String
-
-mm1 = InputBox("Hier de Breedte", "Oppervlakte van een: " & mnuEditInhoudVierkant.Caption)
-mm2 = InputBox("Hier de Hoogte", "Oppervlakte van een: " & mnuEditOmtrekDriehoek.Caption)
-mm3 = InputBox("Hier de Diepte", "Oppervlakte van een: " & mnuEditOmtrekDriehoek.Caption)
-
-If mm1 <> "" And mm2 <> "" Then
-    Text1.Text = "(" & mm1 & "*" & mm2 & "*" & mm3 & ")"
-    Text2.Text = CheckCalculation(Text1.Text)
-End If
+'Dim mm1 As String
+'Dim mm2 As String
+'Dim mm3 As String
+'
+'mm1 = InputBox("Hier de Breedte", "Oppervlakte van een: " & mnuEditInhoudVierkant.Caption)
+'mm2 = InputBox("Hier de Hoogte", "Oppervlakte van een: " & mnuEditOmtrekDriehoek.Caption)
+'mm3 = InputBox("Hier de Diepte", "Oppervlakte van een: " & mnuEditOmtrekDriehoek.Caption)
+'
+'If mm1 <> "" And mm2 <> "" Then
+'    Text1.Text = "(" & mm1 & "*" & mm2 & "*" & mm3 & ")"
+'    Text2.Text = CheckCalculation(Text1.Text)
+'End If
 End Sub
 
 Private Sub mnuEditInhoudVierkant_Click()
-Dim mm1 As String
-Dim mm2 As String
-Dim mm3 As String
-
-mm1 = InputBox("Hier de Breedte", "Oppervlakte van een: " & mnuEditInhoudVierkant.Caption)
-mm2 = InputBox("Hier de Hoogte", "Oppervlakte van een: " & mnuEditOmtrekDriehoek.Caption)
-mm3 = InputBox("Hier de Diepte", "Oppervlakte van een: " & mnuEditOmtrekDriehoek.Caption)
-
-If mm1 <> "" And mm2 <> "" Then
-    Text1.Text = "(" & mm1 & "*" & mm2 & "*" & mm3 & ")"
-    Text2.Text = CheckCalculation(Text1.Text)
-End If
+'Dim mm1 As String
+'Dim mm2 As String
+'Dim mm3 As String
+'
+'mm1 = InputBox("Hier de Breedte", "Oppervlakte van een: " & mnuEditInhoudVierkant.Caption)
+'mm2 = InputBox("Hier de Hoogte", "Oppervlakte van een: " & mnuEditOmtrekDriehoek.Caption)
+'mm3 = InputBox("Hier de Diepte", "Oppervlakte van een: " & mnuEditOmtrekDriehoek.Caption)
+'
+'If mm1 <> "" And mm2 <> "" Then
+'    Text1.Text = "(" & mm1 & "*" & mm2 & "*" & mm3 & ")"
+'    Text2.Text = CheckCalculation(Text1.Text)
+'End If
 End Sub
 
 Private Sub mnuEditOmtrekCirkel_Click()
-Dim mm1 As String
-
-mm1 = InputBox("Diameter van de Circel:", "Omtrek van een: " & mnuEditOmtrekCirkel.Caption)
-
-If mm1 <> "" Then
-    Text1.Text = "(2" & "*" & "Pi*" & (mm1 / 2) & ")"
-    Text2.Text = CheckCalculation(Text1.Text)
-End If
+'Dim mm1 As String
+'
+'mm1 = InputBox("Diameter van de Circel:", "Omtrek van een: " & mnuEditOmtrekCirkel.Caption)
+'
+'If mm1 <> "" Then
+'    Text1.Text = "(2" & "*" & "Pi*" & (mm1 / 2) & ")"
+'    Text2.Text = CheckCalculation(Text1.Text)
+'End If
 End Sub
 
 Private Sub mnuEditOmtrekDriehoek_Click()
-Dim mm1 As String
-Dim mm2 As String
-Dim mm3 As String
-
-mm1 = InputBox("Hier Zijde 1", "Oppervlakte van een: " & mnuEditOmtrekDriehoek.Caption)
-mm2 = InputBox("Hier Zijde 2", "Oppervlakte van een: " & mnuEditOmtrekDriehoek.Caption)
-mm3 = InputBox("Hier Zijde 3", "Oppervlakte van een: " & mnuEditOmtrekDriehoek.Caption)
-
-If mm1 <> "" And mm2 <> "" Then
-    Text1.Text = "(" & mm1 & "+" & mm2 & "+" & mm3 & ")"
-    Text2.Text = CheckCalculation(Text1.Text)
-End If
+'Dim mm1 As String
+'Dim mm2 As String
+'Dim mm3 As String
+'
+'mm1 = InputBox("Hier Zijde 1", "Oppervlakte van een: " & mnuEditOmtrekDriehoek.Caption)
+'mm2 = InputBox("Hier Zijde 2", "Oppervlakte van een: " & mnuEditOmtrekDriehoek.Caption)
+'mm3 = InputBox("Hier Zijde 3", "Oppervlakte van een: " & mnuEditOmtrekDriehoek.Caption)
+'
+'If mm1 <> "" And mm2 <> "" Then
+'    Text1.Text = "(" & mm1 & "+" & mm2 & "+" & mm3 & ")"
+'    Text2.Text = CheckCalculation(Text1.Text)
+'End If
 End Sub
 
 Private Sub mnuEditOmtrekVierkant_Click()
-Dim mm1 As String
-Dim mm2 As String
-
-mm1 = InputBox("Hier de breedte", "Oppervlakte van een: " & mnuEditOmtrekVierkant.Caption)
-mm2 = InputBox("Hier de hoogte", "Oppervlakte van een: " & mnuEditOmtrekVierkant.Caption)
-
-If mm1 <> "" And mm2 <> "" Then
-    Text1.Text = "((" & mm1 & "+" & mm2 & ")*2)"
-    Text2.Text = CheckCalculation(Text1.Text)
-End If
+'Dim mm1 As String
+'Dim mm2 As String
+'
+'mm1 = InputBox("Hier de breedte", "Oppervlakte van een: " & mnuEditOmtrekVierkant.Caption)
+'mm2 = InputBox("Hier de hoogte", "Oppervlakte van een: " & mnuEditOmtrekVierkant.Caption)
+'
+'If mm1 <> "" And mm2 <> "" Then
+'    Text1.Text = "((" & mm1 & "+" & mm2 & ")*2)"
+'    Text2.Text = CheckCalculation(Text1.Text)
+'End If
 End Sub
 
 Private Sub mnuFileExit_Click()
@@ -2534,7 +2676,7 @@ End If
 End Sub
 
 Private Sub Text1_OnCursorPositionChanged(ByVal charIndex As Long, ByVal charRow As Long, ByVal charCol As Long, ByVal charVal As Byte)
-    Debug.Print Text1.getWordFromChar(charIndex) & " " & Text1.getWordStart(Text1.getWordFromChar(charIndex)) & " " & charIndex
+    'Debug.Print Text1.getWordFromChar(charIndex) & " " & Text1.getWordStart(Text1.getWordFromChar(charIndex)) & " " & charIndex
 End Sub
 
 Private Sub Text2_Changed()
@@ -2563,14 +2705,14 @@ Private Sub Text3_Changed()
 End Sub
 
 Private Sub Text3_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = 13 And Shift = 0 Then
+    If (KeyCode = 13 And Shift = 0 And Text3.MultiLine = False) Or (KeyCode = 13 And Shift = 1 And Text3.MultiLine = True) Then
         cmdNumbers_MouseUp 10, 0, 0, 0, 0
         KeyCode = 0
     End If
 End Sub
 
 Sub formatTextBox(txt As uTextBox)
-    Dim fColors(0 To 6) As Long
+    Dim fColors(0 To 7) As Long
 
     fColors(0) = RGB(60, 140, 255) 'light blue
     fColors(1) = RGB(255, 126, 0) 'bright orange
@@ -2579,6 +2721,8 @@ Sub formatTextBox(txt As uTextBox)
     fColors(4) = RGB(170, 98, 255) 'soft light purple
     fColors(5) = RGB(0, 200, 242) 'bright light blue/cyan
     fColors(6) = &HDA8972 'light/soft blue/purple
+    
+    fColors(7) = &H808080    'light gray
     
     Dim i As Long
     Dim j As Long
@@ -2614,12 +2758,14 @@ Sub formatTextBox(txt As uTextBox)
         
         txt.setCharBold i - 1, True
         txt.setCharBackColor i - 1, -1
-        txt.setCharForeColor i - 1, IIf(CS, fColors(1), IIf(CD, fColors(4), IIf(CH, fColors(4), IIf(cc, fColors(2), -1))))
+        txt.setCharForeColor i - 1, IIf(CS, fColors(1), IIf(CD, fColors(4), IIf(CH, fColors(4), IIf(cc, fColors(7), -1))))
+        'txt.setCharUnderlineColor i - 1, RGB(Rnd * 255, Rnd * 255, Rnd * 255)
+        'txt.setCharUnderline i - 1, 0 'Rnd * 5
         
         
         If t = "'" And Not cc And Not CS Then
             cc = Not cc
-            txt.setCharForeColor i - 1, fColors(2)
+            txt.setCharForeColor i - 1, fColors(7)
             GoTo NextChar
         End If
         
@@ -2778,8 +2924,35 @@ lstComplete.Visible = False
 End Sub
 
 Private Sub tmrColorRedraw_Timer()
-    formatTextBox utxtFunctionList
     tmrColorRedraw.Enabled = False
+    
+    formatTextBox utxtFunctionList
+    
+    
+    
+    If functionListError.errNum <> 0 Then
+        Dim i As Long, j As Long, k As Long
+        Dim errLine As Long, errColumn As Long
+        
+        errLine = functionListError.errLine
+        errColumn = functionListError.errColumn
+        
+        For i = 0 To utxtFunctionList.getRowUbound
+            j = utxtFunctionList.getRealRowNumber(i)
+            If j = errLine - 1 Then
+                
+                
+                utxtFunctionList.setCharUnderline utxtFunctionList.getRowStartCharacter(i) + errColumn, 2
+                utxtFunctionList.setCharUnderlineColor utxtFunctionList.getRowStartCharacter(i) + errColumn, vbRed
+                Exit For
+                
+            ElseIf j >= errLine Then
+                Exit For
+            End If
+        Next i
+    End If
+    
+    'utxtFunctionList.Redraw
 End Sub
 
 Private Sub tmrFly_Timer()
@@ -2796,21 +2969,22 @@ Private Sub tmrFly_Timer()
                 deactivateLogAndSend = False
                 MayLog = False
                 If Len(TypedText) > 0 Then
-                    With Form1
-                        .Text1.Text = TypedText
-                        .Text2.Text = .CheckCalculation(TypedText)
+                    
+                        Text1.Text = TypedText
+                        'Text2.Text = CheckCalculation(TypedText)
+                        StartCalculation
                         
-                        If InStr(1, LCase(.Text2.Text), "error") > 0 Then
+                        If InStr(1, LCase(Text2.Text), "error") > 0 Then
                             Sendkeys "ERROR"
                         Else
         
                             'Sendkeys ("{backspace " & Len(TypedText) & "}")
-                            Sendkeys .Text2.Text
+                            Sendkeys Text2.Text
                             
                             TypedText = ""
                         End If
                         
-                    End With
+                    
                 End If
                 
             End If
@@ -2899,21 +3073,25 @@ Function getRegionalDotComma() As String
     
 End Function
 
-Function getPrecision() As Long
-    Dim i As Long
-    
-    If mnuSettingsPrecision(mnuSettingsPrecision.UBound).Checked = True Then
-        getPrecision = -1
-        Exit Function
-    End If
-    
-    For i = 0 To mnuSettingsPrecision.UBound - 1
-        If mnuSettingsPrecision(i).Checked Then
-            getPrecision = val(mnuSettingsPrecision(i).Caption)
-            Exit Function
-        End If
-    Next i
-End Function
+
+'Function getPrecision() As Long
+'    Dim i As Long
+'
+'    If mnuSettingsPrecision(mnuSettingsPrecision.ubound).Checked = True Then
+'        getPrecision = -1
+'        Exit Function
+'    End If
+'
+'    For i = 0 To mnuSettingsPrecision.ubound - 1
+'        If mnuSettingsPrecision(i).Checked Then
+'            getPrecision = val(mnuSettingsPrecision(i).Caption)
+'            Exit Function
+'        End If
+'    Next i
+'
+'    getPrecision = -1
+'
+'End Function
 
 
 
@@ -2951,6 +3129,16 @@ Private Sub utxtFunctionList_Changed()
     
 End Sub
 
+Private Sub utxtFunctionList_KeyDown(KeyCode As Integer, Shift As Integer)
+    If KeyCode = vbKeyS And Shift = 2 Then
+        SetFileContent App.Path & "/functionlist.vbs", utxtFunctionList.Text
+        initializeScript
+        utxtFunctionList.SetFocus
+        
+    End If
+    
+End Sub
+
 Private Sub utxtFunctionList_OnCursorPositionChanged(ByVal charIndex As Long, ByVal charRow As Long, ByVal charCol As Long, ByVal charVal As Byte)
-    Debug.Print utxtFunctionList.getWordFromChar(charIndex) & " " & utxtFunctionList.getWordStart(utxtFunctionList.getWordFromChar(charIndex)) & " " & charIndex
+    'Debug.Print utxtFunctionList.getWordFromChar(charIndex) & " " & utxtFunctionList.getWordStart(utxtFunctionList.getWordFromChar(charIndex)) & " " & charIndex
 End Sub

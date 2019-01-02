@@ -154,6 +154,15 @@ Function GetFileContent(strFileName As String) As String
     Close #iFile
 End Function
 
+Sub SetFileContent(strFileName As String, strContents As String)
+    Dim iFile As Integer
+    iFile = FreeFile()
+    
+    Open strFileName For Output As #iFile
+        Print #iFile, strContents;
+    Close #iFile
+End Sub
+
 Function SetValueEx(ByVal hKey As Long, sValueName As String, _
 lType As Long, vValue As Variant) As Long
     Dim lValue As Long

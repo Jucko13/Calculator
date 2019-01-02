@@ -2,6 +2,16 @@ const PI = 3.1415926535897932384626433832795028841971693993751058209749445923078
 const e = 2.71828182845904523536028747135266249775724709369995
 
 
+sub main()
+	randomize()
+
+	Me.SetDecimalPrecision -1 '-1 is off
+
+	Me.ClearButtons
+	Me.AddCustomButton "MyButton","msgbox ""hi""", 79
+end sub
+
+
 Function Tand(X)
 	Tand = Tan(Rad(X))
 End Function
@@ -58,7 +68,7 @@ end function
 
 
 function LongToRGB(byval c)
-	dim r,g,b
+	dim r, g, b
 	
 	r = c Mod &H100
 	c = c \ &H100
@@ -70,10 +80,10 @@ End function
 
 Function Factorial(a)
 	dim x, i
-	x=1
+	x = 1
 	For i=1 to a
-		x=x*i
-	next 
+		x=x * i
+	next
 	Factorial=x
 End Function
 
@@ -163,7 +173,7 @@ Function Val( myString )
 	For Each objMatch In colMatches
 		Val = objMatch.Value
 	Next
-	Set objRE= Nothing
+	Set objRE = Nothing
 End Function
 
 function stopwatch(answer)
@@ -231,9 +241,5 @@ function speach(num, s)
 	
 	objVoice.Speak s, SVSFlagsAsync
 end function
-
-
-
-
 
 

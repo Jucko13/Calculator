@@ -1,10 +1,10 @@
-Form1 = 755, 0, 1512, 659, Z, 0, 0, 1490, 659, C
-mdlLogger = 104, 104, 1404, 529, C
+Form1 = 755, 0, 1512, 659, , 0, 0, 1490, 659, C
+mdlLogger = 104, 104, 1404, 529, 
 VirtualKeys = 0, 0, 0, 0, C
 TransPicBox = 0, 0, 0, 0, C, 0, 0, 1274, 495, C
 FractionCalc = 0, 0, 0, 0, C
-Calculations = 0, 0, 0, 0, C
-uTextBox = 182, 182, 1456, 677, , 26, 26, 1300, 521, C
+Calculations = 104, 104, 1404, 529, 
+uTextBox = 182, 182, 1456, 677, Z, 26, 26, 1300, 521, C
 uGlobals = 0, 0, 0, 0, C
 winapi = 104, 104, 1493, 681, C
 uListBox = 0, 0, 0, 0, C, 52, 52, 1326, 547, C
