@@ -11,6 +11,19 @@ sub main()
 	Me.AddCustomButton "MyButton","msgbox ""hi""", 79
 end sub
 
+function halcon2c(inp)
+	dim s, res, i
+	s = split(inp, "_")
+	res = ""
+	
+	for i = 0 to ubound(s)
+		if(len(s(i)) > 0) then
+			res = res & ucase(left(s(i), 1)) & right(s(i),len(s(i))-1) ' &  '
+		end if
+		
+	next
+	halcon2c = res
+end function
 
 Function Tand(X)
 	Tand = Tan(Rad(X))
