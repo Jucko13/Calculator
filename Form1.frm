@@ -1965,6 +1965,9 @@ Sub AddTextAtCursor(strAdd As String, Optional boolAddParentheses As Boolean = F
     
     Text1.updateCaretPos
     Text1.Redraw
+    
+    Text1.SetFocus
+    
 End Sub
 
 
