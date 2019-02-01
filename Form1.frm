@@ -8,15 +8,6 @@ Begin VB.Form Form1
    ClientLeft      =   4140
    ClientTop       =   3420
    ClientWidth     =   9720
-   BeginProperty Font 
-      Name            =   "Jucko13"
-      Size            =   8.25
-      Charset         =   0
-      Weight          =   400
-      Underline       =   0   'False
-      Italic          =   0   'False
-      Strikethrough   =   0   'False
-   EndProperty
    Icon            =   "Form1.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
@@ -1804,13 +1795,13 @@ Begin VB.Form Form1
          Visible         =   0   'False
       End
       Begin VB.Menu mnuEditCopyAnsware 
-         Caption         =   "Kopiëer Antwoord          "
+         Caption         =   "Kopiï¿½er Antwoord          "
       End
       Begin VB.Menu mnuEditCopyCalc 
-         Caption         =   "Kopiëer Berekening"
+         Caption         =   "Kopiï¿½er Berekening"
       End
       Begin VB.Menu mnuEditCopyBoth 
-         Caption         =   "Kopiëer Beide"
+         Caption         =   "Kopiï¿½er Beide"
       End
    End
    Begin VB.Menu mnuSettings 

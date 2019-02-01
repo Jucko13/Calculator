@@ -13,6 +13,19 @@ sub main()
 	Me.AddCustomButton "LogB","Form1.AddTextAtCursor ""logB"", true", 79
 end sub
 
+function halcon2c(inp)
+	dim s, res, i
+	s = split(inp, "_")
+	res = ""
+	
+	for i = 0 to ubound(s)
+		if(len(s(i)) > 0) then
+			res = res & ucase(left(s(i), 1)) & right(s(i),len(s(i))-1) ' &  '
+		end if
+		
+	next
+	halcon2c = res
+end function
 
 ' Calculate the number of bits needed for n characters
 function BitsForDigit(d)
