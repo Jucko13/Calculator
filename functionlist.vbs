@@ -6,9 +6,11 @@ sub main()
 	randomize()
 
 	Me.SetDecimalPrecision -1 '-1 is off
+	'me.backcolor = vbred
 
 	Me.ClearButtons
 	Me.AddCustomButton "MyButton","msgbox ""hi""", 79
+	Me.AddCustomButton "MyButton","text1.text = ""hoi""", 79
 end sub
 
 function halcon2c(inp)
@@ -23,6 +25,23 @@ function halcon2c(inp)
 		
 	next
 	halcon2c = res
+end function
+
+
+function regex(expression, strInput)
+dim myRegExp, myMatches, res
+	Set myRegExp = New RegExp
+	myRegExp.IgnoreCase = True
+	myRegExp.Global = True
+	myRegExp.Pattern = expression
+
+	Set myMatches = myRegExp.Execute(strInput)
+	For Each myMatch in myMatches
+		if(res <> "") then res = res & " | " end if
+		res = res & myMatch.Value
+
+	Next
+regex = res
 end function
 
 Function Tand(X)
