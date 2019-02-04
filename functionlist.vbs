@@ -10,9 +10,13 @@ sub main()
 	Me.SetDecimalPrecision -1 '-1 is off
 	'me.backcolor = me.text1.backgroundcolor
 	Me.ClearButtons
-	Me.AddCustomButton "LogB","Form1.AddTextAtCursor ""logB"", true", 79
+	Me.AddCustomButton "LogB","Form1.AddTextAtCursor ""logB"", true", 37
 end sub
 
+
+
+
+'Renames halcon functions to C# function names with UpperCamelCase
 function halcon2c(inp)
 	dim s, res, i
 	s = split(inp, "_")
@@ -20,7 +24,7 @@ function halcon2c(inp)
 	
 	for i = 0 to ubound(s)
 		if(len(s(i)) > 0) then
-			res = res & ucase(left(s(i), 1)) & right(s(i),len(s(i))-1) ' &  '
+			res = res & ucase(left(s(i), 1)) & right(s(i),len(s(i))-1) 
 		end if
 		
 	next
@@ -124,6 +128,7 @@ Function Factorial(a)
 	Factorial=x
 End Function
 
+'Inline If statement from vb6
 Function IIf(bClause, sTrue, sFalse)
 	If CBool(bClause) Then
 		IIf = sTrue
