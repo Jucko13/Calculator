@@ -1,16 +1,16 @@
 const PI = 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535
 const e = 2.71828182845904523536028747135266249775724709369995
 
+' functions to implement: double dabble
+
 
 sub main()
 	randomize()
 
 	Me.SetDecimalPrecision -1 '-1 is off
-	'me.backcolor = vbred
-
+	'me.backcolor = me.text1.backgroundcolor
 	Me.ClearButtons
-	Me.AddCustomButton "MyButton","msgbox ""hi""", 79
-	Me.AddCustomButton "MyButton","text1.text = ""hoi""", 79
+	Me.AddCustomButton "LogB","Form1.AddTextAtCursor ""logB"", true", 79
 end sub
 
 function halcon2c(inp)
@@ -43,6 +43,28 @@ dim myRegExp, myMatches, res
 	Next
 regex = res
 end function
+
+' Calculate the number of bits needed for n characters
+function BitsForDigit(d)
+	BitsForDigit = ceil(d*(logB(2, 10)))
+End Function
+
+function floor(n)
+	floor = fix(n)
+end function
+
+Function ceil(n)
+    If Not Int(n) = n Then
+        ceil = Int(n) + 1
+    Else
+        ceil = n
+    End If
+End Function
+
+Function LogB(base, num)
+	LogB = log(num) / log(base)
+end function
+
 
 Function Tand(X)
 	Tand = Tan(Rad(X))

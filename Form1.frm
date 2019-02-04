@@ -681,7 +681,7 @@ Begin VB.Form Form1
          AlignPictureInCorner=   -1  'True
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Courier"
-            Size            =   15
+            Size            =   18.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1795,13 +1795,13 @@ Begin VB.Form Form1
          Visible         =   0   'False
       End
       Begin VB.Menu mnuEditCopyAnsware 
-         Caption         =   "Kopiëer Antwoord          "
+         Caption         =   "Kopiï¿½er Antwoord          "
       End
       Begin VB.Menu mnuEditCopyCalc 
-         Caption         =   "Kopiëer Berekening"
+         Caption         =   "Kopiï¿½er Berekening"
       End
       Begin VB.Menu mnuEditCopyBoth 
-         Caption         =   "Kopiëer Beide"
+         Caption         =   "Kopiï¿½er Beide"
       End
    End
    Begin VB.Menu mnuSettings 
@@ -1956,6 +1956,9 @@ Sub AddTextAtCursor(strAdd As String, Optional boolAddParentheses As Boolean = F
     
     Text1.updateCaretPos
     Text1.Redraw
+    
+    Text1.SetFocus
+    
 End Sub
 
 
@@ -2414,7 +2417,6 @@ Sub StartCalculation()
     Dim t As clsTimer
     Dim tend As Double
     Dim allfunctions As String
-    Dim prec As Long
     Dim CalculateString As String
     
     Set t = New clsTimer
