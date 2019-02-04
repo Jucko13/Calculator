@@ -31,6 +31,23 @@ function halcon2c(inp)
 	halcon2c = res
 end function
 
+
+function regex(expression, strInput)
+dim myRegExp, myMatches, res
+	Set myRegExp = New RegExp
+	myRegExp.IgnoreCase = True
+	myRegExp.Global = True
+	myRegExp.Pattern = expression
+
+	Set myMatches = myRegExp.Execute(strInput)
+	For Each myMatch in myMatches
+		if(res <> "") then res = res & " | " end if
+		res = res & myMatch.Value
+
+	Next
+regex = res
+end function
+
 ' Calculate the number of bits needed for n characters
 function BitsForDigit(d)
 	BitsForDigit = ceil(d*(logB(2, 10)))
