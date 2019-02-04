@@ -169,3 +169,6 @@ Function HexToColor(ByRef HexColor As String) As Long
     End If
 End Function
 
+Function GetProperties(obj As Variant, isClass As Boolean) As String
+    GetProperties = ObjectProperties(obj, isClass)
+End Function

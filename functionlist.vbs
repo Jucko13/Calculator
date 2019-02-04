@@ -3,6 +3,45 @@ const e = 2.71828182845904523536028747135266249775724709369995
 
 ' functions to implement: double dabble
 
+dim regex
+
+' Starting class for regular expressions and easily accessible methods
+class RegularExpression
+	
+	function noNumbers(strInput)
+		noNumbers = toString(executeExpression("[^\d]", strInput), false)
+	end function
+
+	function onlyNumbers(strInput)
+		onlyNumbers = toString(executeExpression("[\d]", strInput), false)
+	end function
+
+	function toString(matches, asArray)
+		dim res, myMatch
+		res = ""
+		For Each myMatch in matches
+			
+			if asArray = true then
+				if res <> "" then 
+					res = res & " | "
+				end if
+			end if
+			res = res & myMatch.Value
+		Next
+		toString = res
+	end function
+
+	function executeExpression(expression, strInput)
+		dim myRegExp, myMatches
+		Set myRegExp = New RegExp
+		myRegExp.IgnoreCase = True
+		myRegExp.Global = True
+		myRegExp.Pattern = expression
+	
+		set executeExpression = myRegExp.Execute(strInput)
+	end function
+end class
+
 
 sub main()
 	randomize()
@@ -11,6 +50,12 @@ sub main()
 	'me.backcolor = me.text1.backgroundcolor
 	Me.ClearButtons
 	Me.AddCustomButton "LogB","Form1.AddTextAtCursor ""logB"", true", 37
+
+	set regex = new RegularExpression
+	'me.text2.text = winapi.HexToColor("00ff00")
+	'msgbox regex.executeexpression("[^\d]", "test123test")
+	'msgbox winapi.GetProperties(regex, false) & " "
+	'Me.StartCalculation
 end sub
 
 
@@ -32,21 +77,7 @@ function halcon2c(inp)
 end function
 
 
-function regex(expression, strInput)
-dim myRegExp, myMatches, res
-	Set myRegExp = New RegExp
-	myRegExp.IgnoreCase = True
-	myRegExp.Global = True
-	myRegExp.Pattern = expression
 
-	Set myMatches = myRegExp.Execute(strInput)
-	For Each myMatch in myMatches
-		if(res <> "") then res = res & " | " end if
-		res = res & myMatch.Value
-
-	Next
-regex = res
-end function
 
 ' Calculate the number of bits needed for n characters
 function BitsForDigit(d)

@@ -1,19 +1,19 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form Form1 
    AutoRedraw      =   -1  'True
    BackColor       =   &H0024211E&
    Caption         =   "Calculator by Ricardo"
-   ClientHeight    =   5445
+   ClientHeight    =   9780
    ClientLeft      =   4140
    ClientTop       =   3420
-   ClientWidth     =   9720
+   ClientWidth     =   21765
    Icon            =   "Form1.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
-   ScaleHeight     =   363
+   ScaleHeight     =   652
    ScaleMode       =   3  'Pixel
-   ScaleWidth      =   648
+   ScaleWidth      =   1451
    WhatsThisHelp   =   -1  'True
    Begin VB.Timer tmrResize 
       Enabled         =   0   'False
@@ -2132,7 +2132,8 @@ Private Function initializeScript() As Boolean
     objScript.AllowUI = True
     
     objScript.AddObject "Form1", Me, True
-    '
+    'objScript.AddObject "namesof", ObjectProperties, True
+    
     
     objScript.Error.Clear
     objScript.AddCode f
@@ -2152,10 +2153,10 @@ Private Function initializeScript() As Boolean
     ExternalFunctions = Split("ans anq abs array asc atn cbool cbyte ccur cdate cdbl chr cint clng conversions cos createobject csng cstr date dateadd datediff datepart dateserial datevalue day escape eval exp filter formatcurrency formatdatetime formatnumber formatpercent getlocale getobject getref hex hour inputbox instr instrrev int fix isarray isdate isempty isnull isnumeric isobject join lbound lcase left len loadpicture log ltrim rtrim trim maths mid minute month monthname msgbox now oct replace rgb right rnd round scriptengine scriptenginebuildversion scriptenginemajorversion scriptengineminorversion second setlocale sgn sin space split sqr strcomp string strreverse tan time timer timeserial timevalue typename ubound ucase unescape vartype weekday weekdayname year execute", " ")
     
     
-    'MsgBox CharExecution(objScript.CodeObject, False)
+    'MsgBox CharExecution(Me, False)
     'MsgBox CharExecution("Form1", False)
     
-    
+    'MsgBox CharExecution(objScript.CodeObject.regex, False)
     
     c = 0
     
@@ -2193,13 +2194,35 @@ Private Function initializeScript() As Boolean
         End If
     Next i
     
+    Dim tmpControlNames As String
+    Dim d As Control
+    
+    For Each d In Me.Controls
+        If tmpControlNames <> "" Then tmpControlNames = tmpControlNames & ","
+        
+        If InStr(1, tmpControlNames, d.Name) = 0 Then
+            tmpControlNames = tmpControlNames & LCase(d.Name)
+'            If d.Name = "Text2" Then
+'                MsgBox "tesdt"
+'            End If
+        End If
+            
+    Next d
+    
+    tmpLines = Split(tmpControlNames, ",")
+    c = UBound(ExternalCustomFunctions) + 1
+    ReDim Preserve ExternalCustomFunctions(0 To UBound(ExternalCustomFunctions) + UBound(tmpLines))
+    For i = 0 To UBound(tmpLines)
+        ExternalCustomFunctions(c + i) = tmpLines(i)
+    Next i
+    
     MergeSort ExternalCustomFunctions
     
     
     ExternalConstants = Split("pi e integer string double float long byte vbabortretryignore vbapplicationmodal vbarray vbblack vbblue vbboolean vbbyte vbcr vbcritical vbcrlf vbcurrency vbcyan vbdataobject vbdate vbdecimal vbdefaultbutton1 vbdefaultbutton2 vbdefaultbutton3 vbdefaultbutton4 vbdouble vbempty vberror vbexclamation vbfalse vbformfeed vbgreen vbinformation vbinteger vblf vblong vbmagenta vbnewline vbnull vbnullchar vbnullstring vbobject vbokcancel vbokonly vbquestion vbred vbretrycancel vbsingle vbstring vbsystemmodal vbtab vbtrue vbusedefault vbvariant vbverticaltab vbwhite vbyellow vbyesno vbyesnocancel vbbinarycompare vbtextcompare", " ")
     
     
-    ExternalOperators = Split("xor and or not is * - + / ^ : false true if then dim select case end exit function sub for each to next while do wend until else as const mod in", " ")
+    ExternalOperators = Split("xor and or not is * - + / ^ : false true if then dim select case end exit function sub for each to next while do wend until else as const mod in class set", " ")
     
     Dim tmpScrollTop As Long
     Dim tmpCursorPos As Long
@@ -3524,6 +3547,7 @@ End Sub
 
 Private Sub utxtFunctionList_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyS And Shift = 2 Then
+        Text2.Text = ""
         SetFileContent App.Path & "/functionlist.vbs", utxtFunctionList.Text
         initializeScript
         utxtFunctionList.SetFocus

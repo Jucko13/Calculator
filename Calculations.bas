@@ -61,8 +61,8 @@ Public Sub MergeSort(ByRef pvarArray As Variant, Optional pvarMirror As Variant,
 End Sub
 
 
-Public Function CharExecution(pObject As Object, isclass As Boolean) As String
-    CharExecution = ""
+Public Function ObjectProperties(pObject As Variant, isClass As Boolean) As String
+    ObjectProperties = ""
     Dim TLI         As TLIApplication
     Dim lInterface  As InterfaceInfo
     Dim lMember     As MemberInfo
@@ -96,11 +96,11 @@ Public Function CharExecution(pObject As Object, isclass As Boolean) As String
     
     For Each lMember In lInterface.Members
         'If lMember.Name <> "winapi" Then
-            CharExecution = CharExecution & ParseMember(lMember, IIf(isclass, ClassName, "")) & vbCrLf
+            ObjectProperties = ObjectProperties & ParseMember(lMember, IIf(isClass, ClassName, "")) & vbCrLf
         'End If
     Next
     
-    Debug.Print CharExecution
+    Debug.Print ObjectProperties
     
     Set pObject = Nothing
     Set lInterface = Nothing
