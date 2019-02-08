@@ -78,6 +78,42 @@ end function
 
 
 
+function TimeDifference(inpTime1, inpTime2)
+	dim t, s, m
+	t = DateDiff("s", inpTime1, inpTime2)
+	
+	m = t < 0
+	if m then t = -t
+
+	s = t mod 60
+	TimeDifference = string(2-len(s), "0") & s
+
+	t = t / 60
+	if t > 0 then
+		s = t mod 60
+		TimeDifference = string(2-len(s), "0") & s & ":" &  TimeDifference
+	end if
+
+	t = t / 60
+	if t > 0 then
+		s = t mod 24
+		TimeDifference = string(2-len(s), "0") & s & ":" &  TimeDifference
+	end if
+	
+	if m then TimeDifference = "- " & TimeDifference
+	'dim i, s1, s2
+	
+	'const time
+	
+	's1 = split(inpTime1, ":")
+	's2 = split(inpTime2, ":")
+	
+	
+	'for i = ubound(s1) to 0 step -1
+	
+	'next i
+end function
+
 
 ' Calculate the number of bits needed for n characters
 function BitsForDigit(d)
