@@ -21,8 +21,67 @@ Public commondialog As commondialog
 Attribute commondialog.VB_VarHelpID = -1
 
 
+
+
+
+'Private Declare Sub RtlMoveMemory Lib "kernel32" (dest As Any, src As Any, ByVal L As Long)
+'Private Declare Function CallWindowProcA Lib "user32" (ByVal addr As Long, ByVal p1 As Long, ByVal p2 As Long, ByVal p3 As Long, ByVal p4 As Long) As Long
+'Private Declare Function GetProcAddress Lib "kernel32" (ByVal hModule As Long, ByVal lpProcName As String) As Long
+'Private Declare Function LoadLibraryA Lib "kernel32" (ByVal lpLibFileName As String) As Long
+'
+'Function CallApiByName(ByVal sLib As String, ByVal sMod As String, ParamArray Params() As Variant) As Long
+'On Error Resume Next
+'    Dim lPtr                As Long
+'    Dim bvASM(&HEC00& - 1)  As Byte
+'    Dim I                   As Long
+'    Dim lMod                As Long
+'
+'    lMod = GetProcAddress(LoadLibraryA(sLib), sMod)
+'    If lMod = 0 Then Exit Function
+'
+'    lPtr = VarPtr(bvASM(0))
+'    RtlMoveMemory ByVal lPtr, &H59595958, &H4:              lPtr = lPtr + 4
+'    RtlMoveMemory ByVal lPtr, &H5059, &H2:                  lPtr = lPtr + 2
+'
+'
+'
+'    For I = UBound(Params) To 0 Step -1
+'    Debug.Print VarType(Params(I)(0))
+'
+'        RtlMoveMemory ByVal lPtr, &H68, &H1:                lPtr = lPtr + 1
+'        RtlMoveMemory ByVal lPtr, CLng(Params(I)), &H4:     lPtr = lPtr + 4
+'    Next
+'    RtlMoveMemory ByVal lPtr, &HE8, &H1:                    lPtr = lPtr + 1
+'    RtlMoveMemory ByVal lPtr, lMod - lPtr - 4, &H4:         lPtr = lPtr + 4
+'    RtlMoveMemory ByVal lPtr, &HC3, &H1:                    lPtr = lPtr + 1
+'    CallApiByName = CallWindowProcA(VarPtr(bvASM(0)), 0, 0, 0, 0)
+'
+'End Function
+'
+'Public Function ParamArrayDelegated(ParamArray prms() As Variant) As Variant
+'Dim arrPrms() As Variant, arrWrk() As Variant
+''When prms(0) is Array, supposed is delegated from another function
+'  arrPrms = prms
+'  Do While VarType(arrPrms(0)) >= vbArray And UBound(arrPrms) < 1
+'    arrWrk = arrPrms(0)
+'    arrPrms = arrWrk
+'  Loop
+'  ParamArrayDelegated = arrPrms
+'End Function
+'
+'Function CallApiByName2(ByVal sLib As String, ByVal sMod As String, ParamArray Params() As Variant) As Long
+' CallApiByName2 = CallApiByName(sLib, sMod, Params(0))
+'End Function
+
+
 Public Function GetTickCount() As Long
     GetTickCount = GetTickCountA()
+End Function
+
+
+Public Function NewApiCall(strDllName As String, strApiName As String, lngNumParameters As Long) As ApiCall
+    Set NewApiCall = New ApiCall
+    NewApiCall.Init strDllName, strApiName, lngNumParameters
 End Function
 
 
@@ -56,39 +115,39 @@ End Sub
 
 Public Sub showkeywords()
     Dim s As String
-    Dim i As Long
+    Dim I As Long
     
-    For i = 0 To UBound(ExternalConstants)
-        s = s & ExternalConstants(i) & "   "
-        If (i + 1) Mod 4 = 0 Then
+    For I = 0 To UBound(ExternalConstants)
+        s = s & ExternalConstants(I) & "   "
+        If (I + 1) Mod 4 = 0 Then
             s = s & vbCrLf
         End If
-    Next i
+    Next I
     
     MsgBox s, vbInformation, "List of Constants and Keywords"
 End Sub
 
 Public Sub showcommands()
     Dim s As String
-    Dim i As Long
+    Dim I As Long
     
-    For i = 0 To UBound(ExternalFunctions)
-        s = s & ExternalFunctions(i) & "   "
-        If (i + 1) Mod 4 = 0 Then
+    For I = 0 To UBound(ExternalFunctions)
+        s = s & ExternalFunctions(I) & "   "
+        If (I + 1) Mod 4 = 0 Then
             s = s & vbCrLf
         End If
-    Next i
+    Next I
     
     MsgBox s, vbInformation, "List of Integrated VB Commands"
 End Sub
 
 Public Sub showoperators()
     Dim s As String
-    Dim i As Long
+    Dim I As Long
     
-    For i = 0 To UBound(ExternalOperators)
-        s = s & ExternalOperators(i) & "   "
-    Next i
+    For I = 0 To UBound(ExternalOperators)
+        s = s & ExternalOperators(I) & "   "
+    Next I
     
     MsgBox s, vbInformation, "List of Operators"
 End Sub
@@ -96,11 +155,11 @@ End Sub
 
 Public Sub showcustomcommands()
     Dim s As String
-    Dim i As Long
+    Dim I As Long
     
-    For i = 0 To UBound(ExternalCustomFunctions)
-        s = s & ExternalCustomFunctions(i) & vbCrLf
-    Next i
+    For I = 0 To UBound(ExternalCustomFunctions)
+        s = s & ExternalCustomFunctions(I) & vbCrLf
+    Next I
     
     MsgBox s, vbInformation, "List of Custom Commands"
     

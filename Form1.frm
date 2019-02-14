@@ -7,13 +7,22 @@ Begin VB.Form Form1
    ClientHeight    =   9780
    ClientLeft      =   4140
    ClientTop       =   3420
-   ClientWidth     =   21765
+   ClientWidth     =   15960
+   BeginProperty Font 
+      Name            =   "Consolas"
+      Size            =   12
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    Icon            =   "Form1.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    ScaleHeight     =   652
    ScaleMode       =   3  'Pixel
-   ScaleWidth      =   1451
+   ScaleWidth      =   1064
    WhatsThisHelp   =   -1  'True
    Begin VB.Timer tmrResize 
       Enabled         =   0   'False
@@ -32,6 +41,15 @@ Begin VB.Form Form1
       AutoRedraw      =   -1  'True
       BackColor       =   &H0024211E&
       BorderStyle     =   0  'None
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   3360
       Left            =   90
@@ -1582,7 +1600,7 @@ Begin VB.Form Form1
       Left            =   4500
       TabIndex        =   4
       TabStop         =   0   'False
-      Top             =   2025
+      Top             =   2040
       Width           =   5145
       _ExtentX        =   9075
       _ExtentY        =   5212
@@ -1710,6 +1728,149 @@ Begin VB.Form Form1
       WordWrap        =   -1  'True
       MultiLine       =   -1  'True
       ScrollBars      =   1
+   End
+   Begin Project1.uListBox uListErrors 
+      Height          =   975
+      Left            =   6255
+      TabIndex        =   52
+      Top             =   6480
+      Width           =   12375
+      _ExtentX        =   21828
+      _ExtentY        =   1720
+      BackgroundColor =   3551534
+      BorderColor     =   8421504
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Consolas"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Text            =   ""
+      SelectionBackgroundColor=   2367774
+      SelectionBorderColor=   8421504
+      SelectionForeColor=   14737632
+      ItemHeight      =   20
+      VisibleItems    =   3
+   End
+   Begin Project1.uFrame ufrmErrors 
+      Height          =   1590
+      Left            =   5670
+      TabIndex        =   51
+      TabStop         =   0   'False
+      Top             =   6030
+      Width           =   12855
+      _ExtentX        =   22675
+      _ExtentY        =   2805
+      BackgroundColor =   2367774
+      BorderColor     =   8421504
+      ForeColor       =   16777215
+      Caption         =   "Code Errors"
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Consolas"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Begin VB.Label lblErrorNames 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Col"
+         BeginProperty Font 
+            Name            =   "Consolas"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H0036312E&
+         Height          =   195
+         Index           =   3
+         Left            =   9720
+         TabIndex        =   56
+         Top             =   330
+         Width           =   270
+      End
+      Begin VB.Label lblErrorNames 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Line"
+         BeginProperty Font 
+            Name            =   "Consolas"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H0036312E&
+         Height          =   195
+         Index           =   2
+         Left            =   7875
+         TabIndex        =   55
+         Top             =   330
+         Width           =   360
+      End
+      Begin VB.Label lblErrorNames 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Number"
+         BeginProperty Font 
+            Name            =   "Consolas"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H0036312E&
+         Height          =   195
+         Index           =   1
+         Left            =   8835
+         TabIndex        =   54
+         Top             =   330
+         Width           =   540
+      End
+      Begin VB.Label lblErrorNames 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Description"
+         BeginProperty Font 
+            Name            =   "Consolas"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H0036312E&
+         Height          =   195
+         Index           =   0
+         Left            =   105
+         TabIndex        =   53
+         Top             =   330
+         Width           =   990
+      End
+      Begin VB.Label lblErrorNames 
+         BackColor       =   &H00808080&
+         Height          =   255
+         Index           =   4
+         Left            =   1710
+         TabIndex        =   57
+         Top             =   150
+         Width           =   2175
+      End
    End
    Begin VB.Menu mnuFile 
       Caption         =   "File"
@@ -2050,7 +2211,7 @@ Public Function Execute(inp)
     Static functionCallNumber As Long
     functionCallNumber = functionCallNumber + 1
     
-    objScript.AddCode "function ExecuteMe" & functionCallNumber & "():" & inp & ": end function"
+    objScript.AddCode "function ExecuteMe" & functionCallNumber & "()" & vbCrLf & inp & vbCrLf & "end function"
     objScript.Eval "ExecuteMe" & functionCallNumber & "()"
 End Function
 
@@ -2065,9 +2226,14 @@ Private Sub callScriptMain()
         functionListError.errNum = objScript.Error.Number
         functionListError.errLine = objScript.Error.Line
         functionListError.errColumn = objScript.Error.column
+        'Debug.Print objScript.Error.Source
+        PrintError objScript.Error.Number, objScript.Error.Description, "Main", objScript.Error.Line
         
-        PrintError objScript.Error.Number, objScript.Error.Description, "Main", objScript.Error.Description
+        uListErrors.AddItem objScript.Error.Description & vbTab & objScript.Error.Number & vbTab & objScript.Error.Line & vbTab & objScript.Error.column, objScript.Error.Line
+        
     End If
+    
+    
 End Sub
 
 
@@ -2108,12 +2274,15 @@ Private Function initializeScript() As Boolean
     Dim i As Long
     Dim tmpLines() As String
     Dim t As String
-    Dim c As Long
+    Dim countFunctions As Long
+    Dim countConstants As Long
     
     ReDim ExternalFunctions(0) As String
     ReDim ExternalCustomFunctions(0) As String
     ReDim ExternalConstants(0) As String
     ReDim ExternalOperators(0) As String
+    
+    uListErrors.Clear
     
     
     functionListError.errNum = 0
@@ -2128,6 +2297,7 @@ Private Function initializeScript() As Boolean
     
     objScript.AddObject "winapi", objWinApi
     
+    
     objScript.AddCode "function help(): winapi.help(): end function"
     objScript.AllowUI = True
     
@@ -2138,27 +2308,37 @@ Private Function initializeScript() As Boolean
     objScript.Error.Clear
     objScript.AddCode f
     If objScript.Error.Number <> 0 Then
-        functionListError.errNum = objScript.Error.Number
-        functionListError.errLine = objScript.Error.Line
-        functionListError.errColumn = objScript.Error.column
+        With objScript.Error
+            functionListError.errNum = .Number
+            functionListError.errLine = .Line
+            functionListError.errColumn = .column
+            
+            PrintError .Number, .Description
+            
+            uListErrors.AddItem .Description & vbTab & .Number & vbTab & .Line & vbTab & .column, .Line
+        End With
+        
+    Else
+        'Execute the main function to initialize the commands of the user
+        callScriptMain
     End If
     
-    'Execute the main function to initialize the commands of the user
-    callScriptMain
+    
     
     
     
     
     
     ExternalFunctions = Split("ans anq abs array asc atn cbool cbyte ccur cdate cdbl chr cint clng conversions cos createobject csng cstr date dateadd datediff datepart dateserial datevalue day escape eval exp filter formatcurrency formatdatetime formatnumber formatpercent getlocale getobject getref hex hour inputbox instr instrrev int fix isarray isdate isempty isnull isnumeric isobject join lbound lcase left len loadpicture log ltrim rtrim trim maths mid minute month monthname msgbox now oct replace rgb right rnd round scriptengine scriptenginebuildversion scriptenginemajorversion scriptengineminorversion second setlocale sgn sin space split sqr strcomp string strreverse tan time timer timeserial timevalue typename ubound ucase unescape vartype weekday weekdayname year execute", " ")
-    
+    ExternalConstants = Split("integer string double float long byte vbabortretryignore vbapplicationmodal vbarray vbblack vbblue vbboolean vbbyte vbcr vbcritical vbcrlf vbcurrency vbcyan vbdataobject vbdate vbdecimal vbdefaultbutton1 vbdefaultbutton2 vbdefaultbutton3 vbdefaultbutton4 vbdouble vbempty vberror vbexclamation vbfalse vbformfeed vbgreen vbinformation vbinteger vblf vblong vbmagenta vbnewline vbnull vbnullchar vbnullstring vbobject vbokcancel vbokonly vbquestion vbred vbretrycancel vbsingle vbstring vbsystemmodal vbtab vbtrue vbusedefault vbvariant vbverticaltab vbwhite vbyellow vbyesno vbyesnocancel vbbinarycompare vbtextcompare", " ")
+    'pi e
     
     'MsgBox CharExecution(Me, False)
     'MsgBox CharExecution("Form1", False)
     
     'MsgBox CharExecution(objScript.CodeObject.regex, False)
     
-    c = 0
+    countFunctions = 0
     
     ReDim ExternalCustomFunctions(0 To 9) As String
 
@@ -2173,7 +2353,8 @@ Private Function initializeScript() As Boolean
     ExternalCustomFunctions(8) = "form1"
     ExternalCustomFunctions(9) = "me"
 
-    c = UBound(ExternalCustomFunctions) + 1
+    countFunctions = UBound(ExternalCustomFunctions) + 1
+    countConstants = UBound(ExternalConstants) + 1
     
     'use the getmidtext function of my textboxes to find the function and sub names in the vbs file
     tmpLines = Split(LCase(f), vbCrLf)
@@ -2181,15 +2362,22 @@ Private Function initializeScript() As Boolean
         t = Text1.GetMidText(tmpLines(i), "function ", "(")
         
         If t <> "" Then
-            ReDim Preserve ExternalCustomFunctions(0 To c) As String
-            ExternalCustomFunctions(c) = t
-            c = c + 1
+            ReDim Preserve ExternalCustomFunctions(0 To countFunctions) As String
+            ExternalCustomFunctions(countFunctions) = t
+            countFunctions = countFunctions + 1
         Else
             t = Text1.GetMidText(tmpLines(i), "sub ", "(")
             If t <> "" Then
-                ReDim Preserve ExternalCustomFunctions(0 To c) As String
-                ExternalCustomFunctions(c) = t
-                c = c + 1
+                ReDim Preserve ExternalCustomFunctions(0 To countFunctions) As String
+                ExternalCustomFunctions(countFunctions) = t
+                countFunctions = countFunctions + 1
+            Else
+                t = Text1.GetMidText(tmpLines(i), "const ", "=")
+                If t <> "" Then
+                    ReDim Preserve ExternalConstants(0 To countConstants) As String
+                    ExternalConstants(countConstants) = Trim$(t)
+                    countConstants = countConstants + 1
+                End If
             End If
         End If
     Next i
@@ -2210,19 +2398,18 @@ Private Function initializeScript() As Boolean
     Next d
     
     tmpLines = Split(tmpControlNames, ",")
-    c = UBound(ExternalCustomFunctions) + 1
+    countFunctions = UBound(ExternalCustomFunctions) + 1
     ReDim Preserve ExternalCustomFunctions(0 To UBound(ExternalCustomFunctions) + UBound(tmpLines))
     For i = 0 To UBound(tmpLines)
-        ExternalCustomFunctions(c + i) = tmpLines(i)
+        ExternalCustomFunctions(countFunctions + i) = tmpLines(i)
     Next i
     
     MergeSort ExternalCustomFunctions
     
     
-    ExternalConstants = Split("pi e integer string double float long byte vbabortretryignore vbapplicationmodal vbarray vbblack vbblue vbboolean vbbyte vbcr vbcritical vbcrlf vbcurrency vbcyan vbdataobject vbdate vbdecimal vbdefaultbutton1 vbdefaultbutton2 vbdefaultbutton3 vbdefaultbutton4 vbdouble vbempty vberror vbexclamation vbfalse vbformfeed vbgreen vbinformation vbinteger vblf vblong vbmagenta vbnewline vbnull vbnullchar vbnullstring vbobject vbokcancel vbokonly vbquestion vbred vbretrycancel vbsingle vbstring vbsystemmodal vbtab vbtrue vbusedefault vbvariant vbverticaltab vbwhite vbyellow vbyesno vbyesnocancel vbbinarycompare vbtextcompare", " ")
+
     
-    
-    ExternalOperators = Split("xor and or not is * - + / ^ : false true if then dim select case end exit function sub for each to next while do wend until else as const mod in class set", " ")
+    ExternalOperators = Split("xor and or not eqv imp is * - + / ^ : false true if then dim select case end exit function sub for each to next while do wend until else as const mod in class set let null nothing empty private public redim", " ")
     
     Dim tmpScrollTop As Long
     Dim tmpCursorPos As Long
@@ -2230,20 +2417,31 @@ Private Function initializeScript() As Boolean
     tmpScrollTop = utxtFunctionList.ScrollTop
     utxtFunctionList.SaveCaretPosition
     
+    tmrColorRedraw.Enabled = False
+    
     'redraw the textbox as last
     utxtFunctionList.RedrawPause
     utxtFunctionList.Text = f
     'recalculate the words and rowmap ourselves before redrawing to prevent flicker
     utxtFunctionList.ReCalculateWords
     utxtFunctionList.ReCalculateRowMap
-    tmrColorRedraw_Timer
+    '
+    formatTextBox utxtFunctionList, False
+    visualizeErrors
+    
     utxtFunctionList.ScrollTop = tmpScrollTop
     utxtFunctionList.LoadCaretPosition
     utxtFunctionList.RedrawResume
     
+    
+    
+    
     If objScript.Error.Number <> 0 Then
         initializeScript = False
-        PrintError objScript.Error.Number, objScript.Error.Description, "", objScript.Error.Line
+        'Debug.Print objScript.Error.Source
+        'PrintError objScript.Error.Number, objScript.Error.Description, "", objScript.Error.Line
+        'uListErrors.AddItem objScript.Error.Description & vbTab & objScript.Error.Number & vbTab & objScript.Error.Line & vbTab & objScript.Error.column, objScript.Error.Line
+        
     Else
         initializeScript = True
     End If
@@ -2327,8 +2525,6 @@ Private Sub Form_Load()
     Text1.SelStart = GetSetting("Calculator", "Berekeningen", "Text1.SelStart", 0)
     Text2.SelStart = GetSetting("Calculator", "Berekeningen", "Text2.SelStart", 0)
     
-    
-    
     mnuFileHighDPI.Checked = GetSetting("Calculator", "Settings", "high dpi", False)
     'If mnuFileHighDPI.Checked Then
     ApplyDPI
@@ -2338,7 +2534,14 @@ Private Sub Form_Load()
             List1.AddItem GetSetting("Calculator", "Berekeningen", "Row" & i)
         Next i
     End If
-
+    
+    
+    ' disable the tabstop for all the controls to be able to type the TAB character in textboxes
+    Dim c As Control
+    
+    For Each c In Me.Controls
+        c.TabStop = False
+    Next c
 End Sub
 
 
@@ -2513,9 +2716,19 @@ Sub StartCalculation()
     Exit Sub
 EndIt:
 
-
     With objScript.Error
+        functionListError.errNum = .Number
+        functionListError.errLine = .Line
+        functionListError.errColumn = .column
+        'Debug.Print .Source
         PrintError .Number, .Description
+        
+        tmrColorRedraw_Timer
+        utxtFunctionList.Redraw
+        
+        uListErrors.AddItem .Description & vbTab & .Number & vbTab & .Line & vbTab & .column, .Line
+        
+        
     End With
     
     t.tStop
@@ -2695,11 +2908,48 @@ Private Sub Form_Resize()
     On Error Resume Next
     List1.Top = cmdClearList.Top - List1.Height - 5
     
+    ufrmErrors.Top = Me.ScaleHeight - ufrmErrors.Height - 5
+    
+    
     utxtFunctionList.Width = Me.ScaleWidth - utxtFunctionList.Left - 5
     
-    utxtFunctionList.Height = Me.ScaleHeight - utxtFunctionList.Top - 5
+    utxtFunctionList.Height = ufrmErrors.Top - utxtFunctionList.Top - 1
+    
+    
+    ufrmErrors.Left = utxtFunctionList.Left
+    
+    
+    Dim textOffset As Long
+    
+    textOffset = TextWidth("999999")
+    
+    uListErrors.setTabStop 0, 1, vbLeftJustify
+    uListErrors.setTabStop 3, utxtFunctionList.Width - textOffset - 10, vbLeftJustify
+    lblErrorNames(3).Left = (utxtFunctionList.Width - textOffset - 5) * 15
+    
+    
+    textOffset = textOffset + TextWidth("999999")
+    uListErrors.setTabStop 2, utxtFunctionList.Width - textOffset - 10, vbLeftJustify
+    lblErrorNames(2).Left = (utxtFunctionList.Width - textOffset - 5) * 15
+    
 
-
+    textOffset = textOffset + TextWidth("999999")
+    uListErrors.setTabStop 1, utxtFunctionList.Width - textOffset - 10, vbLeftJustify
+    lblErrorNames(1).Left = (utxtFunctionList.Width - textOffset - 5) * 15
+    
+    
+    ufrmErrors.Width = utxtFunctionList.Width
+    uListErrors.Left = ufrmErrors.Left + 5
+    uListErrors.Top = ufrmErrors.Top + ufrmErrors.Height - uListErrors.Height - 5
+    uListErrors.Width = ufrmErrors.Width - 10
+    
+    Debug.Print ufrmErrors.Height; uListErrors.Height; lblErrorNames(4).Height
+    
+    lblErrorNames(4).Top = (ufrmErrors.Height - uListErrors.Height - 5 - lblErrorNames(4).Height / 15) * 15
+    Debug.Print (ufrmErrors.Height - uListErrors.Height - 5 - lblErrorNames(4).Height / 15)
+    lblErrorNames(4).Width = uListErrors.Width * 15
+    lblErrorNames(4).Left = 5 * 15
+    
     tmrResize.Enabled = False
     tmrResize.Enabled = True
 End Sub
@@ -3127,7 +3377,7 @@ Private Sub Text3_KeyDown(KeyCode As Integer, Shift As Integer)
     End If
 End Sub
 
-Sub formatTextBox(txt As uTextBox)
+Sub formatTextBox(txt As uTextBox, Optional preventRedraw As Boolean = False)
     Dim fColors(0 To 7) As Long
 
     fColors(0) = RGB(60, 140, 255) 'light blue
@@ -3235,11 +3485,12 @@ Sub formatTextBox(txt As uTextBox)
                 Case "0" To "9", "."
                     txt.setCharForeColor i - 1, &H4747F0
                 
-                Case "="
+                Case "=", "<", ">"
                     txt.setCharForeColor i - 1, &H81B543
                     
-                Case "/", "-", "+", "*", "^"
+                Case "/", "-", "+", "*", "^", "&"
                     txt.setCharForeColor i - 1, &HFF62AA
+  
                     
                 Case Else
             End Select
@@ -3321,7 +3572,9 @@ NextChar:
         Next i
     Next k
     
-    txt.RedrawResume
+    If Not preventRedraw Then
+        txt.RedrawResume
+    End If
 End Sub
 
 
@@ -3345,7 +3598,13 @@ Private Sub tmrColorRedraw_Timer()
     formatTextBox utxtFunctionList
     
     
+    visualizeErrors
+   
     
+    'utxtFunctionList.Redraw
+End Sub
+
+Private Sub visualizeErrors()
     If functionListError.errNum <> 0 Then
         Dim i As Long, j As Long, k As Long
         Dim errLine As Long, errColumn As Long
@@ -3367,8 +3626,6 @@ Private Sub tmrColorRedraw_Timer()
             End If
         Next i
     End If
-    
-    'utxtFunctionList.Redraw
 End Sub
 
 Private Sub tmrFly_Timer()
@@ -3539,6 +3796,18 @@ End Sub
 
 
 
+Private Sub uListErrors_ItemChange(itemIndex As Long)
+    Static testststs As Long
+    testststs = testststs + 1
+    Debug.Print itemIndex & " " & testststs
+    
+    Dim lineNumber As Long
+    
+    lineNumber = uListErrors.ItemData(itemIndex)
+    
+    utxtFunctionList.ScrollTopReal = lineNumber - 1
+End Sub
+
 Private Sub utxtFunctionList_Changed()
     tmrColorRedraw.Enabled = False
     tmrColorRedraw.Enabled = True
@@ -3558,4 +3827,7 @@ End Sub
 
 Private Sub utxtFunctionList_OnCursorPositionChanged(ByVal charIndex As Long, ByVal charRow As Long, ByVal charCol As Long, ByVal charVal As Byte)
     'Debug.Print utxtFunctionList.getWordFromChar(charIndex) & " " & utxtFunctionList.getWordStart(utxtFunctionList.getWordFromChar(charIndex)) & " " & charIndex
+    
+    Debug.Print utxtFunctionList.RealRowAtCursor
+    
 End Sub

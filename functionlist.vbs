@@ -1,33 +1,48 @@
 const PI = 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535
 const e = 2.71828182845904523536028747135266249775724709369995
 
+' constants for the ShellExecuteW api
+const SW_HIDE = 0
+const SW_SHOWNORMAL = 1
+const SW_SHOWMINIMIZED = 2
+const SW_SHOWMAXIMIZED = 3
+const SW_SHOWDEFAULT = 10
+
 ' functions to implement: double dabble
 
+
+
 dim regex
+
 
 ' Starting class for regular expressions and easily accessible methods
 class RegularExpression
 	
 	function noNumbers(strInput)
-		noNumbers = toString(executeExpression("[^\d]", strInput), false)
+		noNumbers = simpleExpression("[^\d]", strInput)
 	end function
 
 	function onlyNumbers(strInput)
-		onlyNumbers = toString(executeExpression("[\d]", strInput), false)
+		onlyNumbers = simpleExpression("[\d]", strInput)
+	end function
+	
+	function simpleExpression(expression, strInput)
+		simpleExpression = toString(executeExpression(expression, strInput), false)
 	end function
 
 	function toString(matches, asArray)
 		dim res, myMatch
 		res = ""
+
 		For Each myMatch in matches
-			
-			if asArray = true then
-				if res <> "" then 
-					res = res & " | "
-				end if
+			if res <> "" and asArray then 
+				res = res & ", "
 			end if
 			res = res & myMatch.Value
 		Next
+		if asArray then
+			res =  "[" & res & "]"
+		end if
 		toString = res
 	end function
 
@@ -42,23 +57,62 @@ class RegularExpression
 	end function
 end class
 
+dim apiSleep
+dim apiTick
+dim apiExecute
+
+dim linenumber
 
 sub main()
 	randomize()
 
 	Me.SetDecimalPrecision -1 '-1 is off
 	'me.backcolor = me.text1.backgroundcolor
-	Me.ClearButtons
-	Me.AddCustomButton "LogB","Form1.AddTextAtCursor ""logB"", true", 37
+	Me.ClearButtons 'remove current buttons
 
+	Me.AddCustomButton "LogB","Form1.AddTextAtCursor ""logB"", true", 37
+	
+	'linenumber = 1: msgbox("test")
+	'linenumber = 2: test = 1 / 0
+
+	
 	set regex = new RegularExpression
 	'me.text2.text = winapi.HexToColor("00ff00")
 	'msgbox regex.executeexpression("[^\d]", "test123test")
 	'msgbox winapi.GetProperties(regex, false) & " "
 	'Me.StartCalculation
+	set apiSleep = winapi.NewApiCall("kernel32", "Sleep", 1)
+	set apiTick = winapi.NewApiCall("kernel32", "GetTickCount", 0)
+	set apiExecute = winapi.NewApiCall("shell32", "ShellExecuteW", 6)
+
 end sub
 
 
+function OpenNotepadAndSendKeys()
+	'me.windowstate = 1 'Minimize the window
+	
+	'Call the ShellExecuteW API with the 6 parameters it operates on.
+	apiExecute.p(0).p("open").p("notepad.exe").p(0).p(SW_SHOWMAXIMIZED).e()
+	
+	'Call the Sleep API and sleep for 300ms
+	apiSleep.p(300).e()
+
+	dim s, i
+	s = "Dit is een test Dit is een test Dit is een test Dit is een test Dit is een test"
+	
+	for i = 1 to len(s)
+		SendKeys mid(s,i,1), 100
+		apiSleep.p(10).e()
+	next
+
+end function
+
+function SendKeys(text, wait)
+    Dim WshShell
+    Set WshShell = CreateObject("wscript.shell")
+    WshShell.Sendkeys text, wait
+    Set WshShell = Nothing
+End function
 
 
 'Renames halcon functions to C# function names with UpperCamelCase
@@ -75,8 +129,6 @@ function halcon2c(inp)
 	next
 	halcon2c = res
 end function
-
-
 
 
 ' Calculate the number of bits needed for n characters
@@ -122,7 +174,7 @@ Function Deg(x)
 End Function
 
 Function asn(X)
-	if x = 1 then asn = pi /2: exit function
+	if x = 1 then asn = pi / 2: exit function
 	asn = Atn(X / Sqr(-X * X + 1))
 End Function
 

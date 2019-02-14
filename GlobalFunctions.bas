@@ -42,7 +42,7 @@ Declare Function OleTranslateColor Lib "olepro32.dll" (ByVal OLE_COLOR As Long, 
 
 Sub main()
     
-    
+    uDontDrawDots = True
     uEnableMouseHooks = True
     
     
