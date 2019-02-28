@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form Form1 
    AutoRedraw      =   -1  'True
    BackColor       =   &H0024211E&
@@ -2078,14 +2078,14 @@ End Sub
 
 Private Sub cmdClearList_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Dim result As Integer
-    Dim I As Long
+    Dim i As Long
     On Error Resume Next
     
     result = MsgBox("Weet je zeker dat je de lijst wilt leeg maken?", vbYesNo, "Lijst Wissen.")
     If result = vbYes Then
-        For I = 0 To List1.ListCount - 1
-            DeleteSetting "Calculator", "Berekeningen", "Row" & I
-        Next I
+        For i = 0 To List1.ListCount - 1
+            DeleteSetting "Calculator", "Berekeningen", "Row" & i
+        Next i
 
         SaveSetting "Calculator", "Berekeningen", "Rows", 0
         
@@ -2143,7 +2143,7 @@ End Sub
 Private Sub cmdNumbers_MouseUp(index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
 Dim tmpTx As String
 Static tmpVal As String
-Dim I As Long
+Dim i As Long
 
 
 Select Case index
@@ -2266,7 +2266,7 @@ End Sub
 Private Function initializeScript() As Boolean
     On Error Resume Next:
     Dim f As String
-    Dim I As Long
+    Dim i As Long
     Dim tmpLines() As String
     Dim t As String
     Dim countFunctions As Long
@@ -2353,21 +2353,21 @@ Private Function initializeScript() As Boolean
     
     'use the getmidtext function of my textboxes to find the function and sub names in the vbs file
     tmpLines = Split(LCase(f), vbCrLf)
-    For I = 0 To UBound(tmpLines)
-        t = Text1.GetMidText(tmpLines(I), "function ", "(")
+    For i = 0 To UBound(tmpLines)
+        t = Text1.GetMidText(tmpLines(i), "function ", "(")
         
         If t <> "" Then
             ReDim Preserve ExternalCustomFunctions(0 To countFunctions) As String
             ExternalCustomFunctions(countFunctions) = t
             countFunctions = countFunctions + 1
         Else
-            t = Text1.GetMidText(tmpLines(I), "sub ", "(")
+            t = Text1.GetMidText(tmpLines(i), "sub ", "(")
             If t <> "" Then
                 ReDim Preserve ExternalCustomFunctions(0 To countFunctions) As String
                 ExternalCustomFunctions(countFunctions) = t
                 countFunctions = countFunctions + 1
             Else
-                t = Text1.GetMidText(tmpLines(I), "const ", "=")
+                t = Text1.GetMidText(tmpLines(i), "const ", "=")
                 If t <> "" Then
                     ReDim Preserve ExternalConstants(0 To countConstants) As String
                     ExternalConstants(countConstants) = Trim$(t)
@@ -2375,7 +2375,7 @@ Private Function initializeScript() As Boolean
                 End If
             End If
         End If
-    Next I
+    Next i
     
     Dim tmpControlNames As String
     Dim d As Control
@@ -2395,9 +2395,9 @@ Private Function initializeScript() As Boolean
     tmpLines = Split(tmpControlNames, ",")
     countFunctions = UBound(ExternalCustomFunctions) + 1
     ReDim Preserve ExternalCustomFunctions(0 To UBound(ExternalCustomFunctions) + UBound(tmpLines))
-    For I = 0 To UBound(tmpLines)
-        ExternalCustomFunctions(countFunctions + I) = tmpLines(I)
-    Next I
+    For i = 0 To UBound(tmpLines)
+        ExternalCustomFunctions(countFunctions + i) = tmpLines(i)
+    Next i
     
     MergeSort ExternalCustomFunctions
     
@@ -2483,7 +2483,7 @@ End Sub
 
 
 Private Sub Form_Load()
-    Dim I As Long
+    Dim i As Long
     Dim TotalRows As Integer
     Dim sKeyName As String
     Dim sKeyValue As String
@@ -2525,9 +2525,9 @@ Private Sub Form_Load()
     ApplyDPI
 
     If TotalRows > -1 Then
-        For I = 0 To TotalRows - 1
-            List1.AddItem GetSetting("Calculator", "Berekeningen", "Row" & I)
-        Next I
+        For i = 0 To TotalRows - 1
+            List1.AddItem GetSetting("Calculator", "Berekeningen", "Row" & i)
+        Next i
     End If
     
     
@@ -2805,11 +2805,11 @@ End Sub
 
 
 Sub ClearButtons()
-    Dim I As Long
+    Dim i As Long
     
-    For I = cmdCustom.UBound To 1 Step -1
-        Unload cmdCustom(I)
-    Next I
+    For i = cmdCustom.UBound To 1 Step -1
+        Unload cmdCustom(i)
+    Next i
     
     cmdCustom(0).Visible = False
 End Sub
@@ -2941,10 +2941,10 @@ Private Sub Form_Resize()
     uListErrors.Top = ufrmErrors.Top + ufrmErrors.Height - uListErrors.Height - 5
     uListErrors.Width = ufrmErrors.Width - 10
     
-    Debug.Print ufrmErrors.Height; uListErrors.Height; lblErrorNames(4).Height
+    'Debug.Print ufrmErrors.Height; uListErrors.Height; lblErrorNames(4).Height
     
     lblErrorNames(4).Top = (ufrmErrors.Height - uListErrors.Height - 5 - lblErrorNames(4).Height / 15) * 15
-    Debug.Print (ufrmErrors.Height - uListErrors.Height - 5 - lblErrorNames(4).Height / 15)
+    'Debug.Print (ufrmErrors.Height - uListErrors.Height - 5 - lblErrorNames(4).Height / 15)
     lblErrorNames(4).Width = uListErrors.Width * 15
     lblErrorNames(4).Left = 5 * 15
     
@@ -2953,7 +2953,7 @@ Private Sub Form_Resize()
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
-Dim I As Long
+Dim i As Long
 
 RemoveKeyboardHook
 
@@ -2966,9 +2966,9 @@ SaveSetting "Calculator", "Berekeningen", "Text3.Text", Text3.Text
 SaveSetting "Calculator", "Berekeningen", "Text1.SelStart", Text1.SelStart
 SaveSetting "Calculator", "Berekeningen", "Text2.SelStart", Text2.SelStart
 
-For I = 0 To List1.ListCount - 1
-    SaveSetting "Calculator", "Berekeningen", "Row" & I, List1.Cell(I, 0) & Chr(9) & List1.Cell(I, 1)
-Next I
+For i = 0 To List1.ListCount - 1
+    SaveSetting "Calculator", "Berekeningen", "Row" & i, List1.Cell(i, 0) & Chr(9) & List1.Cell(i, 1)
+Next i
 End Sub
 
 
@@ -2986,15 +2986,15 @@ End Sub
 
 Private Sub List1_ItemAdded(itemIndex As Long)
     List1.RedrawPause
-    Dim I As Long
+    Dim i As Long
     
-    For I = 0 To List1.ListCount - 1
-        If I Mod 2 = 0 Then
-            List1.ItemBackColor(I) = &H3F3936
+    For i = 0 To List1.ListCount - 1
+        If i Mod 2 = 0 Then
+            List1.ItemBackColor(i) = &H3F3936
         Else
-            List1.ItemBackColor(I) = -1
+            List1.ItemBackColor(i) = -1
         End If
-    Next I
+    Next i
     
     List1.RedrawResume
 End Sub
@@ -3124,15 +3124,15 @@ End Sub
 
 Private Sub mnuEditFormulesABC_Click()
 Dim a As String
-Dim b As String
+Dim B As String
 Dim c As String
 
 a = InputBox("Geef waarde voor A:")
-b = InputBox("Geef waarde voor B:")
+B = InputBox("Geef waarde voor B:")
 c = InputBox("Geef waarde voor C:")
 
 Text1.Text = """x: "" & iif(d < 0 , ""-"", (-b + sqr(iif(d<0,0,d))) / (2 * a)) & "" OF x:"" & iif(d < 0 , ""-"", (-b - sqr(iif(d<0,0,d))) / (2 * a))"
-Text3.Text = "const a = " & a & ":const b = " & b & ": const c = " & c & ": dim d: d = b^2 - 4*a*c"
+Text3.Text = "const a = " & a & ":const b = " & B & ": const c = " & c & ": dim d: d = b^2 - 4*a*c"
 cmdNumbers_MouseUp 10, 0, 0, 0, 0
 End Sub
 
@@ -3230,15 +3230,15 @@ Private Sub mnuFileReloadFunctions_Click()
 End Sub
 
 Private Sub mnuSettingsPrecision_Click(index As Integer)
-    Dim I As Long
+    Dim i As Long
     
-    For I = 0 To mnuSettingsPrecision.UBound
-        mnuSettingsPrecision(I).Checked = IIf(index = I, True, False)
-    Next I
+    For i = 0 To mnuSettingsPrecision.UBound
+        mnuSettingsPrecision(i).Checked = IIf(index = i, True, False)
+    Next i
 End Sub
 
 Private Sub Text1_KeyDown(KeyCode As Integer, Shift As Integer)
-    Dim I As Long
+    Dim i As Long
     Dim wordNr As Long
     
     If KeyCode = vbKeySpace And Shift = 2 Then
@@ -3286,7 +3286,7 @@ Function RefillAutocomplete() As Long
     Dim wordNr As Long
     Dim wordS As String
     Dim totalText As String
-    Dim I As Long
+    Dim i As Long
     Dim foundCount As Long
     Dim foundLast As Long
     
@@ -3302,16 +3302,16 @@ Function RefillAutocomplete() As Long
     wordS = Mid$(totalText, Text1.getWordStart(wordNr) + 1, Text1.getWordLength(wordNr))
     
     
-    For I = 0 To UBound(ExternalCustomFunctions)
-        If ExternalCustomFunctions(I) <> "" Then
+    For i = 0 To UBound(ExternalCustomFunctions)
+        If ExternalCustomFunctions(i) <> "" Then
         
-            If InStr(1, ExternalCustomFunctions(I), wordS) = 1 And ExternalCustomFunctions(I) <> wordS Then
-                lstComplete.AddItem (ExternalCustomFunctions(I))
+            If InStr(1, ExternalCustomFunctions(i), wordS) = 1 And ExternalCustomFunctions(i) <> wordS Then
+                lstComplete.AddItem (ExternalCustomFunctions(i))
             End If
             
         End If
         
-    Next I
+    Next i
     
     
     If lstComplete.ListCount = 0 Then
@@ -3388,7 +3388,7 @@ Sub formatTextBox(txt As uTextBox, Optional preventRedraw As Boolean = False)
     
     fColors(7) = &H808080    'light gray
     
-    Dim I As Long
+    Dim i As Long
     Dim j As Long
     Dim k As Long
     
@@ -3421,20 +3421,20 @@ Sub formatTextBox(txt As uTextBox, Optional preventRedraw As Boolean = False)
     txt.ReCalculateWords
     'txt.CheckCharSize 0, sl
     
-    For I = 1 To sl
-        t = Mid$(s, I, 1)
-        If I + 1 < sl Then tn = Mid$(s, I + 1, 1)
+    For i = 1 To sl
+        t = Mid$(s, i, 1)
+        If i + 1 < sl Then tn = Mid$(s, i + 1, 1)
         
-        txt.setCharBold I - 1, True
-        txt.setCharBackColor I - 1, -1
-        txt.setCharForeColor I - 1, IIf(CS, fColors(1), IIf(CD, fColors(4), IIf(CH, fColors(4), IIf(cc, fColors(7), -1))))
+        txt.setCharBold i - 1, True
+        txt.setCharBackColor i - 1, -1
+        txt.setCharForeColor i - 1, IIf(CS, fColors(1), IIf(CD, fColors(4), IIf(CH, fColors(4), IIf(cc, fColors(7), -1))))
         'txt.setCharUnderlineColor i - 1, RGB(Rnd * 255, Rnd * 255, Rnd * 255)
         'txt.setCharUnderline i - 1, 0 'Rnd * 5
         
         
         If t = "'" And Not cc And Not CS Then
             cc = Not cc
-            txt.setCharForeColor I - 1, fColors(7)
+            txt.setCharForeColor i - 1, fColors(7)
             GoTo NextChar
         End If
         
@@ -3447,21 +3447,21 @@ Sub formatTextBox(txt As uTextBox, Optional preventRedraw As Boolean = False)
         
         If t = Chr(34) And Not CH And Not CD And Not cc Then
             CS = Not CS
-            txt.setCharForeColor I - 1, fColors(1)
+            txt.setCharForeColor i - 1, fColors(1)
             GoTo NextChar
         End If
         
         
         If (t = "[" Or t = "]") And Not CS And Not CH And Not cc Then
             CD = Not CD
-            txt.setCharForeColor I - 1, fColors(4)
+            txt.setCharForeColor i - 1, fColors(4)
             GoTo NextChar
         End If
         
         
         If ((t = "&" And tn = "h" And Not CH) Or (CH And Not (val("&h" + tn) > 0 Or tn = "0" Or tn = "h" Or tn = "&")) Or (CH And t = "&")) And Not CS And Not CD Then
             CH = Not CH
-            txt.setCharForeColor I - 1, fColors(4)
+            txt.setCharForeColor i - 1, fColors(4)
             GoTo NextChar
         End If
         
@@ -3473,12 +3473,12 @@ Sub formatTextBox(txt As uTextBox, Optional preventRedraw As Boolean = False)
                         OT = OT - 1
                     End If
                     
-                    txt.setCharBold I - 1, True
+                    txt.setCharBold i - 1, True
                     
                     If OT < 0 Then
-                        txt.setCharForeColor I - 1, vbRed
+                        txt.setCharForeColor i - 1, vbRed
                     Else
-                        txt.setCharForeColor I - 1, fColors(OT Mod (UBound(fColors) + 1))
+                        txt.setCharForeColor i - 1, fColors(OT Mod (UBound(fColors) + 1))
                     End If
     
                     If t = "(" Then
@@ -3486,13 +3486,13 @@ Sub formatTextBox(txt As uTextBox, Optional preventRedraw As Boolean = False)
                     End If
     
                 Case "0" To "9", "."
-                    txt.setCharForeColor I - 1, &H4747F0
+                    txt.setCharForeColor i - 1, &H4747F0
                 
                 Case "=", "<", ">"
-                    txt.setCharForeColor I - 1, &H81B543
+                    txt.setCharForeColor i - 1, &H81B543
                     
                 Case "/", "-", "+", "*", "^", "&"
-                    txt.setCharForeColor I - 1, &HFF62AA
+                    txt.setCharForeColor i - 1, &HFF62AA
   
                     
                 Case Else
@@ -3501,7 +3501,7 @@ Sub formatTextBox(txt As uTextBox, Optional preventRedraw As Boolean = False)
         
 NextChar:
         
-    Next I
+    Next i
     
     Dim instrstart As Long
     Dim External() As String
@@ -3526,15 +3526,15 @@ NextChar:
         End If
         
     
-        For I = 0 To UBound(External)
-            If External(I) <> "" Then
-                instrstart = InStr(instrstart + 1, s, External(I))
+        For i = 0 To UBound(External)
+            If External(i) <> "" Then
+                instrstart = InStr(instrstart + 1, s, External(i))
                 
                 While (instrstart > 0)
                     maypaint = True
                     
-                    If instrstart + Len(External(I)) - 1 < sl Then
-                        If txt.getWordFromChar(instrstart - 1) = txt.getWordFromChar(instrstart + Len(External(I)) - 1) Then
+                    If instrstart + Len(External(i)) - 1 < sl Then
+                        If txt.getWordFromChar(instrstart - 1) = txt.getWordFromChar(instrstart + Len(External(i)) - 1) Then
                             maypaint = False
                         End If
                     End If
@@ -3563,16 +3563,16 @@ NextChar:
                     
                     
                     If maypaint And txt.getCharForeColor(instrstart - 1) = -1 Then
-                        For j = 0 To Len(External(I)) - 1
+                        For j = 0 To Len(External(i)) - 1
                             txt.setCharForeColor instrstart - 1 + j, fColors(ExternalColor)
                         Next j
                     End If
                             
-                    instrstart = InStr(instrstart + 1, s, External(I))
+                    instrstart = InStr(instrstart + 1, s, External(i))
                 Wend
                 instrstart = 0
             End If
-        Next I
+        Next i
     Next k
     
     If Not preventRedraw Then
@@ -3609,25 +3609,25 @@ End Sub
 
 Private Sub visualizeErrors()
     If functionListError.errNum <> 0 Then
-        Dim I As Long, j As Long, k As Long
+        Dim i As Long, j As Long, k As Long
         Dim errLine As Long, errColumn As Long
         
         errLine = functionListError.errLine
         errColumn = functionListError.errColumn
         
-        For I = 0 To utxtFunctionList.getRowUbound
-            j = utxtFunctionList.getRealRowNumber(I)
+        For i = 0 To utxtFunctionList.getRowUbound
+            j = utxtFunctionList.getRealRowNumber(i)
             If j = errLine - 1 Then
                 
                 
-                utxtFunctionList.setCharUnderline utxtFunctionList.getRowStartCharacter(I) + errColumn, 2
-                utxtFunctionList.setCharUnderlineColor utxtFunctionList.getRowStartCharacter(I) + errColumn, vbRed
+                utxtFunctionList.setCharUnderline utxtFunctionList.getRowStartCharacter(i) + errColumn, 2
+                utxtFunctionList.setCharUnderlineColor utxtFunctionList.getRowStartCharacter(i) + errColumn, vbRed
                 Exit For
                 
             ElseIf j >= errLine Then
                 Exit For
             End If
-        Next I
+        Next i
     End If
 End Sub
 
@@ -3802,7 +3802,7 @@ End Sub
 Private Sub uListErrors_ItemChange(itemIndex As Long)
     Static testststs As Long
     testststs = testststs + 1
-    Debug.Print itemIndex & " " & testststs
+    'Debug.Print itemIndex & " " & testststs
     
     Dim lineNumber As Long
     
@@ -3831,6 +3831,6 @@ End Sub
 Private Sub utxtFunctionList_OnCursorPositionChanged(ByVal charIndex As Long, ByVal charRow As Long, ByVal charCol As Long, ByVal charVal As Byte)
     'Debug.Print utxtFunctionList.getWordFromChar(charIndex) & " " & utxtFunctionList.getWordStart(utxtFunctionList.getWordFromChar(charIndex)) & " " & charIndex
     
-    Debug.Print utxtFunctionList.RealRowAtCursor
+    'Debug.Print utxtFunctionList.RealRowAtCursor
     
 End Sub

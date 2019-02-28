@@ -12,5 +12,5 @@ uButton = 52, 52, 1460, 539, , 78, 78, 1352, 573, C
 uMouseWheel = 0, 0, 0, 0, C
 clsTimer = 0, 0, 0, 0, C
 GlobalFunctions = 0, 0, 1341, 487, C
-ApiCall = 130, 130, 1445, 723, 
+ApiCall = 130, 130, 1445, 723, Z
 uFrame = 0, 0, 0, 0, C, 52, 52, 1393, 539, C
