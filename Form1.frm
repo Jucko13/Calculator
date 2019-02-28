@@ -1700,14 +1700,14 @@ Begin VB.Form Form1
       ConsoleColors   =   0   'False
    End
    Begin Project1.uTextBox utxtFunctionList 
-      Height          =   3945
+      Height          =   3975
       Left            =   9720
       TabIndex        =   0
       TabStop         =   0   'False
       Top             =   1440
       Width           =   11565
       _ExtentX        =   20399
-      _ExtentY        =   6959
+      _ExtentY        =   7011
       BackgroundColor =   3551534
       BorderColor     =   8421504
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -1731,9 +1731,9 @@ Begin VB.Form Form1
    End
    Begin Project1.uListBox uListErrors 
       Height          =   975
-      Left            =   6255
+      Left            =   6300
       TabIndex        =   52
-      Top             =   6480
+      Top             =   6675
       Width           =   12375
       _ExtentX        =   21828
       _ExtentY        =   1720
@@ -1758,10 +1758,10 @@ Begin VB.Form Form1
    End
    Begin Project1.uFrame ufrmErrors 
       Height          =   1590
-      Left            =   5670
+      Left            =   2535
       TabIndex        =   51
       TabStop         =   0   'False
-      Top             =   6030
+      Top             =   6150
       Width           =   12855
       _ExtentX        =   22675
       _ExtentY        =   2805
@@ -2095,24 +2095,21 @@ Private Sub cmdClearList_MouseUp(Button As Integer, Shift As Integer, X As Singl
 End Sub
 
 
-Sub AddTextAtCursor(strAdd As String, Optional boolAddParentheses As Boolean = False)
+Sub AddTextAtCursor(strPrefix As String, strSuffix As String)
     Dim tmpStr As String
     Dim selectionIndex As Long
     
-    If boolAddParentheses Then
-        If Text1.SelLength > 0 Then
-    
-            selectionIndex = Text1.SelStart
-            tmpStr = Text1.GetSelectionText
-            Text1.AddCharAtCursor strAdd & "(" & tmpStr & ")"
-            Text1.SelStart = selectionIndex + Len(strAdd) + Len(tmpStr) + 1
-        Else
-            selectionIndex = Text1.SelStart
-            Text1.AddCharAtCursor strAdd & "()"
-            Text1.SelStart = selectionIndex + Len(strAdd) + 1
-        End If
+
+    If Text1.SelLength > 0 Then
+
+        selectionIndex = Text1.SelStart
+        tmpStr = Text1.GetSelectionText
+        Text1.AddCharAtCursor strPrefix & tmpStr & strSuffix
+        Text1.SelStart = selectionIndex + Len(strPrefix) + Len(tmpStr)
     Else
-        Text1.AddCharAtCursor strAdd
+        selectionIndex = Text1.SelStart
+        Text1.AddCharAtCursor strPrefix & strSuffix
+        Text1.SelStart = selectionIndex + Len(strPrefix)
     End If
     
     Text1.updateCaretPos
@@ -2130,10 +2127,10 @@ Dim selection As Long
 Select Case index
 
     Case 7 To 8
-        AddTextAtCursor cmdExtras(index).Caption
+        AddTextAtCursor cmdExtras(index).Caption, ""
         
     Case Else '0 To 6, 11
-        AddTextAtCursor cmdExtras(index).Caption, True
+        AddTextAtCursor cmdExtras(index).Caption & "(", ")"
         
         
 End Select
@@ -2154,25 +2151,24 @@ Select Case index
     
     Case 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
         PressedCalc = ""
-        AddTextAtCursor index & ""
+        AddTextAtCursor index & "", ""
         TempStr = Text1.Text
         
     Case 10
-       
         StartCalculation
         
     Case 22
-        AddTextAtCursor " "
+        AddTextAtCursor " ", ""
         'Text1.Text = Text1.Text & ","
     Case 11, 12, 13, 14, 16, 17, 18
-        AddTextAtCursor cmdNumbers(index).Caption
+        AddTextAtCursor cmdNumbers(index).Caption, ""
         
         
     Case 19
-        AddTextAtCursor cmdNumbers(index).Caption
+        AddTextAtCursor cmdNumbers(index).Caption, ""
         
     Case 20
-        AddTextAtCursor ""
+        AddTextAtCursor "", ""
         
         
 '    Case 21

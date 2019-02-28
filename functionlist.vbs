@@ -66,11 +66,13 @@ dim linenumber
 sub main()
 	randomize()
 
-	Me.SetDecimalPrecision -1 '-1 is off
+	Me.SetDecimalPrecision 10 '-1 is off
 	'me.backcolor = me.text1.backgroundcolor
 	Me.ClearButtons 'remove current buttons
 
-	Me.AddCustomButton "LogB","Form1.AddTextAtCursor ""logB"", true", 37
+	Me.AddCustomButton "LogB","Form1.AddTextAtCursor ""logB("", "")""", 37
+
+	Me.AddCustomButton "SqrN","Form1.AddTextAtCursor ""SqrN("", "", n)""", 37
 	
 	'linenumber = 1: msgbox("test")
 	'linenumber = 2: test = 1 / 0
@@ -219,6 +221,11 @@ End Function
 Function acs(X)
 	acs = Atn(-X / Sqr(-X * X + 1)) + 2 * Atn(1)
 End Function
+
+function SqrN(inp, power)
+	SqrN = inp ^ (1 / power)
+end function
+
 
 function binary(b)
 	binary = binaryC(b, 30)
