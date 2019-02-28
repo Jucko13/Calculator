@@ -131,6 +131,61 @@ function halcon2c(inp)
 end function
 
 
+function printWokkelCart(sensors, wokkelLength, carts, cartLength, rosesPerHour)
+	dim i, j, k, res, colors, cartpos(), moveDistance, distanceToSensor
+	dim minDistance, maxDistance, distancePerSecond
+
+	colors = array("1", "2", "3", "5", "6", "0", "4")
+	
+	minDistance = wokkelLength
+	maxDistance = 0
+	
+	redim cartpos(carts)
+	for i = 0 to carts-1
+		cartpos(i) = -i * cartLength
+	next
+	
+	res = chr(&h1b) & "[3" & colors(0) & "m" & "1 "
+	
+	do while( cartpos(carts-1) < wokkelLength )
+
+		moveDistance = cartLength
+		for i = 0 to carts-1
+			for k = 0 to sensors-1
+				distanceToSensor = wokkelLength/(sensors-1) * k - cartpos(i)
+				if distanceToSensor < moveDistance and distanceToSensor > 0 then
+					moveDistance = distanceToSensor
+				end if
+			next
+		next
+		
+		minDistance = min(minDistance, moveDistance)
+		maxDistance = max(maxDistance, moveDistance)
+
+		for i = 0 to carts-1
+			cartpos(i) = cartpos(i) + moveDistance
+		next 
+
+		for k = 0 to sensors-1
+			for i = 0 to carts-1
+				if cartpos(i) = wokkelLength/(sensors-1)*k then
+					res = res & chr(&h1b) & "[3" & colors(i mod (ubound(colors)+1)) & "m" & (k+1)
+				end if
+			next
+		next
+
+		res = res & " " 'Separate all sensor triggers by a space
+	loop
+
+	distancePerSecond = rosesPerHour * cartLength / 3600
+
+	res = res & chr(&h1b) & "[31m "
+	res = res & " Min Distance: " & minDistance & "(" & (minDistance/distancePerSecond)*1000 & "ms)"
+	res = res & " Max Distance: " & maxDistance & "(" & (maxDistance/distancePerSecond)*1000 & "ms)"
+
+	printWokkelCart = res
+end function
+
 
 function TimeDifference(inpTime1, inpTime2)
 	dim t, s, m
@@ -190,6 +245,21 @@ Function LogB(base, num)
 	LogB = log(num) / log(base)
 end function
 
+Function Min(X, Y)
+	if X < Y then
+		Min = X
+	else
+		Min = Y
+	end if
+End Function
+
+Function Max(X, Y)
+	if X > Y then
+		Max = X
+	else
+		Max = Y
+	end if
+End Function
 
 Function Tand(X)
 	Tand = Tan(Rad(X))
