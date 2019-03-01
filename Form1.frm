@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form Form1 
    AutoRedraw      =   -1  'True
    BackColor       =   &H0024211E&
@@ -7,7 +7,7 @@ Begin VB.Form Form1
    ClientHeight    =   9780
    ClientLeft      =   4140
    ClientTop       =   3420
-   ClientWidth     =   15960
+   ClientWidth     =   19665
    BeginProperty Font 
       Name            =   "Consolas"
       Size            =   12
@@ -22,7 +22,7 @@ Begin VB.Form Form1
    LinkTopic       =   "Form1"
    ScaleHeight     =   652
    ScaleMode       =   3  'Pixel
-   ScaleWidth      =   1064
+   ScaleWidth      =   1311
    WhatsThisHelp   =   -1  'True
    Begin VB.Timer tmrResize 
       Enabled         =   0   'False
@@ -68,31 +68,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   0
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   14322034
-         ForeColor       =   14322034
-         MouseOverBackgroundColor=   5913650
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "<-"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   14322034
+         forecolor       =   14322034
+         mouseoverbackgroundcolor=   5913650
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "<-"
+         borderanimation =   0
+         font            =   "Form1.frx":0CCA
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -102,31 +94,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   0
          Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   14322034
-         ForeColor       =   14322034
-         MouseOverBackgroundColor=   5913650
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "Clear"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   2090
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   14322034
+         forecolor       =   14322034
+         mouseoverbackgroundcolor=   5913650
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "Clear"
+         borderanimation =   0
+         font            =   "Form1.frx":0CF2
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -136,31 +120,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   2520
          Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "b/c"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   2090
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "b/c"
+         borderanimation =   0
+         font            =   "Form1.frx":0D1A
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -170,31 +146,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   405
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   11944815
-         ForeColor       =   11944815
-         MouseOverBackgroundColor=   6894151
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "+"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   11944815
+         forecolor       =   11944815
+         mouseoverbackgroundcolor=   6894151
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "+"
+         borderanimation =   0
+         font            =   "Form1.frx":0D42
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -204,31 +172,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   405
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   4671472
-         ForeColor       =   4671472
-         MouseOverBackgroundColor=   2434394
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "7"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   4671472
+         forecolor       =   4671472
+         mouseoverbackgroundcolor=   2434394
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "7"
+         borderanimation =   0
+         font            =   "Form1.frx":0D6A
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -238,31 +198,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   1215
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   4671472
-         ForeColor       =   4671472
-         MouseOverBackgroundColor=   2434394
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "1"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   4671472
+         forecolor       =   4671472
+         mouseoverbackgroundcolor=   2434394
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "1"
+         borderanimation =   0
+         font            =   "Form1.frx":0D92
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -272,31 +224,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   1215
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   4671472
-         ForeColor       =   4671472
-         MouseOverBackgroundColor=   2434394
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "2"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   4671472
+         forecolor       =   4671472
+         mouseoverbackgroundcolor=   2434394
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "2"
+         borderanimation =   0
+         font            =   "Form1.frx":0DBA
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -306,31 +250,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   1215
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   4671472
-         ForeColor       =   4671472
-         MouseOverBackgroundColor=   2434394
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "3"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   4671472
+         forecolor       =   4671472
+         mouseoverbackgroundcolor=   2434394
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "3"
+         borderanimation =   0
+         font            =   "Form1.frx":0DE2
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -340,31 +276,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   810
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   4671472
-         ForeColor       =   4671472
-         MouseOverBackgroundColor=   2434394
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "4"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   4671472
+         forecolor       =   4671472
+         mouseoverbackgroundcolor=   2434394
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "4"
+         borderanimation =   0
+         font            =   "Form1.frx":0E0A
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -374,31 +302,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   810
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   4671472
-         ForeColor       =   4671472
-         MouseOverBackgroundColor=   2434394
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "5"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   4671472
+         forecolor       =   4671472
+         mouseoverbackgroundcolor=   2434394
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "5"
+         borderanimation =   0
+         font            =   "Form1.frx":0E32
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -408,31 +328,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   810
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   4671472
-         ForeColor       =   4671472
-         MouseOverBackgroundColor=   2434394
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "6"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   4671472
+         forecolor       =   4671472
+         mouseoverbackgroundcolor=   2434394
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "6"
+         borderanimation =   0
+         font            =   "Form1.frx":0E5A
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -442,31 +354,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   405
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   4671472
-         ForeColor       =   4671472
-         MouseOverBackgroundColor=   2434394
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "9"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   4671472
+         forecolor       =   4671472
+         mouseoverbackgroundcolor=   2434394
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "9"
+         borderanimation =   0
+         font            =   "Form1.frx":0E82
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -476,31 +380,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   2115
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "Sqr"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "Sqr"
+         borderanimation =   0
+         font            =   "Form1.frx":0EAA
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -510,31 +406,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   810
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   11944815
-         ForeColor       =   11944815
-         MouseOverBackgroundColor=   6894151
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "/"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   11944815
+         forecolor       =   11944815
+         mouseoverbackgroundcolor=   6894151
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "/"
+         borderanimation =   0
+         font            =   "Form1.frx":0ED2
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -544,31 +432,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   1215
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   11944815
-         ForeColor       =   11944815
-         MouseOverBackgroundColor=   6894151
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "*"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   11944815
+         forecolor       =   11944815
+         mouseoverbackgroundcolor=   6894151
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "*"
+         borderanimation =   0
+         font            =   "Form1.frx":0EFA
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -578,31 +458,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   1620
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   11944815
-         ForeColor       =   11944815
-         MouseOverBackgroundColor=   6894151
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "-"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   11944815
+         forecolor       =   11944815
+         mouseoverbackgroundcolor=   6894151
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "-"
+         borderanimation =   0
+         font            =   "Form1.frx":0F22
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -612,32 +484,24 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   1620
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   4671472
-         ForeColor       =   4671472
-         MouseOverBackgroundColor=   2434394
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "."
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   15
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         CaptionOffsetTop=   -5
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   4671472
+         forecolor       =   4671472
+         mouseoverbackgroundcolor=   2434394
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "."
+         borderanimation =   0
+         font            =   "Form1.frx":0F4A
+         alignpictureincorner=   -1  'True
+         captionoffsettop=   -5
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -647,31 +511,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   1620
          Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   4671472
-         ForeColor       =   4671472
-         MouseOverBackgroundColor=   2434394
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "0"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   2090
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   4671472
+         forecolor       =   4671472
+         mouseoverbackgroundcolor=   2434394
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "0"
+         borderanimation =   0
+         font            =   "Form1.frx":0F72
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   735
@@ -681,31 +537,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   1215
          Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   1296
-         BackgroundColor =   2367774
-         BorderColor     =   8500547
-         ForeColor       =   8500547
-         MouseOverBackgroundColor=   3425832
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "="
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   18.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   2090
+         _extenty        =   1296
+         backgroundcolor =   2367774
+         bordercolor     =   8500547
+         forecolor       =   8500547
+         mouseoverbackgroundcolor=   3425832
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "="
+         borderanimation =   0
+         font            =   "Form1.frx":0F9A
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -715,31 +563,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   2115
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "Tan"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "Tan"
+         borderanimation =   0
+         font            =   "Form1.frx":0FC2
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -749,31 +589,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   2520
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "aTn"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "aTn"
+         borderanimation =   0
+         font            =   "Form1.frx":0FEA
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -783,31 +615,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   2115
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "Sin"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "Sin"
+         borderanimation =   0
+         font            =   "Form1.frx":1012
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -817,31 +641,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   2520
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "aSn"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "aSn"
+         borderanimation =   0
+         font            =   "Form1.frx":103A
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -851,31 +667,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   2115
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "Cos"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "Cos"
+         borderanimation =   0
+         font            =   "Form1.frx":1062
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -885,31 +693,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   2520
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "aCs"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "aCs"
+         borderanimation =   0
+         font            =   "Form1.frx":108A
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -919,32 +719,24 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   0
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   11944815
-         ForeColor       =   11944815
-         MouseOverBackgroundColor=   6894151
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "^"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         CaptionOffsetTop=   4
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   11944815
+         forecolor       =   11944815
+         mouseoverbackgroundcolor=   6894151
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "^"
+         borderanimation =   0
+         font            =   "Form1.frx":10B2
+         alignpictureincorner=   -1  'True
+         captionoffsettop=   4
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -954,31 +746,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   2115
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "PI"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "PI"
+         borderanimation =   0
+         font            =   "Form1.frx":10DA
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -988,31 +772,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   1620
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   11944815
-         ForeColor       =   11944815
-         MouseOverBackgroundColor=   6894151
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "("
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   11944815
+         forecolor       =   11944815
+         mouseoverbackgroundcolor=   6894151
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "("
+         borderanimation =   0
+         font            =   "Form1.frx":1102
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -1022,31 +798,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   1215
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   11944815
-         ForeColor       =   11944815
-         MouseOverBackgroundColor=   6894151
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   ")"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   11944815
+         forecolor       =   11944815
+         mouseoverbackgroundcolor=   6894151
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   ")"
+         borderanimation =   0
+         font            =   "Form1.frx":112A
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -1056,31 +824,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   405
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   4671472
-         ForeColor       =   4671472
-         MouseOverBackgroundColor=   2434394
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "8"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   4671472
+         forecolor       =   4671472
+         mouseoverbackgroundcolor=   2434394
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "8"
+         borderanimation =   0
+         font            =   "Form1.frx":1152
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -1090,31 +850,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   810
          Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   " & "" "" & "
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   2090
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   " & "" "" & "
+         borderanimation =   0
+         font            =   "Form1.frx":117A
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -1124,31 +876,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   405
          Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "Round"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   2090
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "Round"
+         borderanimation =   0
+         font            =   "Form1.frx":11A2
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -1158,31 +902,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   0
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "Fix"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "Fix"
+         borderanimation =   0
+         font            =   "Form1.frx":11CA
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -1192,31 +928,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   0
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "Chr"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "Chr"
+         borderanimation =   0
+         font            =   "Form1.frx":11F2
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -1226,31 +954,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   0
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "Asc"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "Asc"
+         borderanimation =   0
+         font            =   "Form1.frx":121A
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -1260,32 +980,24 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   810
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   11944815
-         ForeColor       =   11944815
-         MouseOverBackgroundColor=   6894151
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   ","
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   15
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         CaptionOffsetTop=   -5
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   11944815
+         forecolor       =   11944815
+         mouseoverbackgroundcolor=   6894151
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   ","
+         borderanimation =   0
+         font            =   "Form1.frx":1242
+         alignpictureincorner=   -1  'True
+         captionoffsettop=   -5
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -1295,32 +1007,24 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   405
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   11944815
-         ForeColor       =   11944815
-         MouseOverBackgroundColor=   6894151
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "_"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   15
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         CaptionOffsetTop=   -3
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   11944815
+         forecolor       =   11944815
+         mouseoverbackgroundcolor=   6894151
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "_"
+         borderanimation =   0
+         font            =   "Form1.frx":126A
+         alignpictureincorner=   -1  'True
+         captionoffsettop=   -3
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -1330,31 +1034,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   2520
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "Deg"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "Deg"
+         borderanimation =   0
+         font            =   "Form1.frx":1292
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdExtras 
          Height          =   330
@@ -1364,31 +1060,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   2520
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   1746682
-         ForeColor       =   1746682
-         MouseOverBackgroundColor=   1584197
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "Rad"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   1746682
+         forecolor       =   1746682
+         mouseoverbackgroundcolor=   1584197
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "Rad"
+         borderanimation =   0
+         font            =   "Form1.frx":12BA
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -1398,31 +1086,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   2115
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   14322034
-         ForeColor       =   14322034
-         MouseOverBackgroundColor=   5913650
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "<"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   14322034
+         forecolor       =   14322034
+         mouseoverbackgroundcolor=   5913650
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "<"
+         borderanimation =   0
+         font            =   "Form1.frx":12E2
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdNumbers 
          Height          =   330
@@ -1432,31 +1112,23 @@ Begin VB.Form Form1
          TabStop         =   0   'False
          Top             =   2115
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   14322034
-         ForeColor       =   14322034
-         MouseOverBackgroundColor=   5913650
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   ">"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   14322034
+         forecolor       =   14322034
+         mouseoverbackgroundcolor=   5913650
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   ">"
+         borderanimation =   0
+         font            =   "Form1.frx":130A
+         alignpictureincorner=   -1  'True
       End
       Begin Project1.uButton cmdCustom 
          Height          =   330
@@ -1467,31 +1139,23 @@ Begin VB.Form Form1
          Top             =   3015
          Visible         =   0   'False
          Width           =   555
-         _ExtentX        =   979
-         _ExtentY        =   582
-         BackgroundColor =   2367774
-         BorderColor     =   8500547
-         ForeColor       =   8500547
-         MouseOverBackgroundColor=   3425832
-         FocusColor      =   0
-         BackgroundColorDisabled=   0
-         BorderColorDisabled=   0
-         ForeColorDisabled=   0
-         CaptionBorderColorDisabled=   0
-         FocusColorDisabled=   0
-         FocusVisible    =   0   'False
-         Caption         =   "aTn"
-         BorderAnimation =   0
-         AlignPictureInCorner=   -1  'True
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Courier"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
+         _extentx        =   979
+         _extenty        =   582
+         backgroundcolor =   2367774
+         bordercolor     =   8500547
+         forecolor       =   8500547
+         mouseoverbackgroundcolor=   3425832
+         focuscolor      =   0
+         backgroundcolordisabled=   0
+         bordercolordisabled=   0
+         forecolordisabled=   0
+         captionbordercolordisabled=   0
+         focuscolordisabled=   0
+         focusvisible    =   0   'False
+         caption         =   "aTn"
+         borderanimation =   0
+         font            =   "Form1.frx":1332
+         alignpictureincorner=   -1  'True
       End
    End
    Begin Project1.uListBox lstComplete 
@@ -1502,25 +1166,17 @@ Begin VB.Form Form1
       Top             =   2070
       Visible         =   0   'False
       Width           =   2355
-      _ExtentX        =   4154
-      _ExtentY        =   4233
-      BackgroundColor =   3551534
-      BorderColor     =   8421504
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Courier"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   16777215
-      Text            =   ""
-      SelectionBackgroundColor=   3551534
-      SelectionBorderColor=   16777215
-      SelectionForeColor=   8500547
-      ItemHeight      =   31
+      _extentx        =   4154
+      _extenty        =   4233
+      backgroundcolor =   3551534
+      bordercolor     =   8421504
+      font            =   "Form1.frx":135A
+      forecolor       =   16777215
+      text            =   ""
+      selectionbackgroundcolor=   3551534
+      selectionbordercolor=   16777215
+      selectionforecolor=   8500547
+      itemheight      =   31
    End
    Begin VB.Timer tmrFly 
       Enabled         =   0   'False
@@ -1536,23 +1192,15 @@ Begin VB.Form Form1
       Top             =   3825
       Visible         =   0   'False
       Width           =   285
-      _ExtentX        =   503
-      _ExtentY        =   582
-      BackgroundColor =   3551534
-      BorderColor     =   8421504
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Consolas"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   16777215
-      ConsoleColors   =   0   'False
-      HideCursor      =   -1  'True
-      AutoResize      =   -1  'True
+      _extentx        =   503
+      _extenty        =   582
+      backgroundcolor =   3551534
+      bordercolor     =   8421504
+      font            =   "Form1.frx":1382
+      forecolor       =   16777215
+      consolecolors   =   0   'False
+      hidecursor      =   -1  'True
+      autoresize      =   -1  'True
    End
    Begin MSComDlg.CommonDialog comm1 
       Left            =   7425
@@ -1568,32 +1216,24 @@ Begin VB.Form Form1
       TabStop         =   0   'False
       Top             =   5085
       Width           =   5145
-      _ExtentX        =   9075
-      _ExtentY        =   582
-      BackgroundColor =   2367774
-      BorderColor     =   14322034
-      ForeColor       =   14322034
-      MouseOverBackgroundColor=   5913650
-      CaptionBorderColor=   14737632
-      FocusColor      =   0
-      BackgroundColorDisabled=   0
-      BorderColorDisabled=   0
-      ForeColorDisabled=   0
-      CaptionBorderColorDisabled=   0
-      FocusColorDisabled=   0
-      FocusVisible    =   0   'False
-      Caption         =   "Clear"
-      BorderAnimation =   0
-      AlignPictureInCorner=   -1  'True
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Courier"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
+      _extentx        =   9075
+      _extenty        =   582
+      backgroundcolor =   2367774
+      bordercolor     =   14322034
+      forecolor       =   14322034
+      mouseoverbackgroundcolor=   5913650
+      captionbordercolor=   14737632
+      focuscolor      =   0
+      backgroundcolordisabled=   0
+      bordercolordisabled=   0
+      forecolordisabled=   0
+      captionbordercolordisabled=   0
+      focuscolordisabled=   0
+      focusvisible    =   0   'False
+      caption         =   "Clear"
+      borderanimation =   0
+      font            =   "Form1.frx":13AA
+      alignpictureincorner=   -1  'True
    End
    Begin Project1.uListBox List1 
       Height          =   2955
@@ -1602,26 +1242,18 @@ Begin VB.Form Form1
       TabStop         =   0   'False
       Top             =   2040
       Width           =   5145
-      _ExtentX        =   9075
-      _ExtentY        =   5212
-      BackgroundColor =   3551534
-      BorderColor     =   8421504
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Courier"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   16777215
-      Text            =   "uFrame"
-      SelectionBackgroundColor=   3551534
-      SelectionBorderColor=   16777215
-      SelectionForeColor=   8500547
-      ItemHeight      =   48
-      VisibleItems    =   4
+      _extentx        =   9075
+      _extenty        =   5212
+      backgroundcolor =   3551534
+      bordercolor     =   8421504
+      font            =   "Form1.frx":13D2
+      forecolor       =   16777215
+      text            =   "uFrame"
+      selectionbackgroundcolor=   3551534
+      selectionbordercolor=   16777215
+      selectionforecolor=   8500547
+      itemheight      =   48
+      visibleitems    =   4
    End
    Begin Project1.uTextBox Text1 
       Height          =   465
@@ -1630,22 +1262,14 @@ Begin VB.Form Form1
       TabStop         =   0   'False
       Top             =   90
       Width           =   9555
-      _ExtentX        =   16854
-      _ExtentY        =   820
-      BackgroundColor =   3551534
-      BorderColor     =   8421504
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Consolas"
-         Size            =   12
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   16777215
-      MousePointer    =   3
-      ConsoleColors   =   0   'False
+      _extentx        =   16854
+      _extenty        =   820
+      backgroundcolor =   3551534
+      bordercolor     =   8421504
+      font            =   "Form1.frx":13FA
+      forecolor       =   16777215
+      mousepointer    =   3
+      consolecolors   =   0   'False
    End
    Begin Project1.uTextBox Text2 
       Height          =   735
@@ -1654,23 +1278,15 @@ Begin VB.Form Form1
       TabStop         =   0   'False
       Top             =   630
       Width           =   9555
-      _ExtentX        =   16854
-      _ExtentY        =   1296
-      BackgroundColor =   3551534
-      BorderColor     =   8421504
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Consolas"
-         Size            =   12
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   16777215
-      MousePointer    =   3
-      WordWrap        =   -1  'True
-      MultiLine       =   -1  'True
+      _extentx        =   16854
+      _extenty        =   1296
+      backgroundcolor =   3551534
+      bordercolor     =   8421504
+      font            =   "Form1.frx":1422
+      forecolor       =   16777215
+      mousepointer    =   3
+      wordwrap        =   -1  'True
+      multiline       =   -1  'True
    End
    Begin Project1.uTextBox Text3 
       Height          =   510
@@ -1679,24 +1295,16 @@ Begin VB.Form Form1
       TabStop         =   0   'False
       Top             =   1440
       Width           =   9555
-      _ExtentX        =   16854
-      _ExtentY        =   900
-      BackgroundColor =   3551534
-      BorderColor     =   8421504
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Consolas"
-         Size            =   12
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   16777215
-      MousePointer    =   3
-      LineNumberForeColor=   8421504
-      LineNumberBackground=   2367774
-      ConsoleColors   =   0   'False
+      _extentx        =   16854
+      _extenty        =   900
+      backgroundcolor =   3551534
+      bordercolor     =   8421504
+      font            =   "Form1.frx":144A
+      forecolor       =   16777215
+      mousepointer    =   3
+      linenumberforecolor=   8421504
+      linenumberbackground=   2367774
+      consolecolors   =   0   'False
    End
    Begin Project1.uTextBox utxtFunctionList 
       Height          =   3975
@@ -1705,28 +1313,20 @@ Begin VB.Form Form1
       TabStop         =   0   'False
       Top             =   1440
       Width           =   11565
-      _ExtentX        =   20399
-      _ExtentY        =   7011
-      BackgroundColor =   3551534
-      BorderColor     =   8421504
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Consolas"
-         Size            =   12
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   16777215
-      MousePointer    =   3
-      LineNumbers     =   -1  'True
-      LineNumberForeColor=   8421504
-      LineNumberBackground=   2367774
-      ConsoleColors   =   0   'False
-      WordWrap        =   -1  'True
-      MultiLine       =   -1  'True
-      ScrollBars      =   1
+      _extentx        =   20399
+      _extenty        =   7011
+      backgroundcolor =   3551534
+      bordercolor     =   8421504
+      font            =   "Form1.frx":1472
+      forecolor       =   16777215
+      mousepointer    =   3
+      linenumbers     =   -1  'True
+      linenumberforecolor=   8421504
+      linenumberbackground=   2367774
+      consolecolors   =   0   'False
+      wordwrap        =   -1  'True
+      multiline       =   -1  'True
+      scrollbars      =   1
    End
    Begin Project1.uListBox uListErrors 
       Height          =   975
@@ -1734,26 +1334,18 @@ Begin VB.Form Form1
       TabIndex        =   52
       Top             =   6675
       Width           =   12375
-      _ExtentX        =   21828
-      _ExtentY        =   1720
-      BackgroundColor =   3551534
-      BorderColor     =   8421504
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Consolas"
-         Size            =   12
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   16777215
-      Text            =   ""
-      SelectionBackgroundColor=   2367774
-      SelectionBorderColor=   8421504
-      SelectionForeColor=   14737632
-      ItemHeight      =   20
-      VisibleItems    =   3
+      _extentx        =   21828
+      _extenty        =   1720
+      backgroundcolor =   3551534
+      bordercolor     =   8421504
+      font            =   "Form1.frx":149A
+      forecolor       =   16777215
+      text            =   ""
+      selectionbackgroundcolor=   2367774
+      selectionbordercolor=   8421504
+      selectionforecolor=   14737632
+      itemheight      =   20
+      visibleitems    =   3
    End
    Begin Project1.uFrame ufrmErrors 
       Height          =   1590
@@ -1762,21 +1354,13 @@ Begin VB.Form Form1
       TabStop         =   0   'False
       Top             =   6150
       Width           =   12855
-      _ExtentX        =   22675
-      _ExtentY        =   2805
-      BackgroundColor =   2367774
-      BorderColor     =   8421504
-      ForeColor       =   16777215
-      Caption         =   "Code Errors"
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Consolas"
-         Size            =   12
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
+      _extentx        =   22675
+      _extenty        =   2805
+      backgroundcolor =   2367774
+      bordercolor     =   8421504
+      forecolor       =   16777215
+      caption         =   "Code Errors"
+      font            =   "Form1.frx":14C2
       Begin VB.Label lblErrorNames 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
@@ -2078,14 +1662,14 @@ End Sub
 
 Private Sub cmdClearList_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Dim result As Integer
-    Dim i As Long
+    Dim I As Long
     On Error Resume Next
     
     result = MsgBox("Weet je zeker dat je de lijst wilt leeg maken?", vbYesNo, "Lijst Wissen.")
     If result = vbYes Then
-        For i = 0 To List1.ListCount - 1
-            DeleteSetting "Calculator", "Berekeningen", "Row" & i
-        Next i
+        For I = 0 To List1.ListCount - 1
+            DeleteSetting "Calculator", "Berekeningen", "Row" & I
+        Next I
 
         SaveSetting "Calculator", "Berekeningen", "Rows", 0
         
@@ -2143,7 +1727,7 @@ End Sub
 Private Sub cmdNumbers_MouseUp(index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
 Dim tmpTx As String
 Static tmpVal As String
-Dim i As Long
+Dim I As Long
 
 
 Select Case index
@@ -2266,7 +1850,7 @@ End Sub
 Private Function initializeScript() As Boolean
     On Error Resume Next:
     Dim f As String
-    Dim i As Long
+    Dim I As Long
     Dim tmpLines() As String
     Dim t As String
     Dim countFunctions As Long
@@ -2353,21 +1937,21 @@ Private Function initializeScript() As Boolean
     
     'use the getmidtext function of my textboxes to find the function and sub names in the vbs file
     tmpLines = Split(LCase(f), vbCrLf)
-    For i = 0 To UBound(tmpLines)
-        t = Text1.GetMidText(tmpLines(i), "function ", "(")
+    For I = 0 To UBound(tmpLines)
+        t = Text1.GetMidText(tmpLines(I), "function ", "(")
         
         If t <> "" Then
             ReDim Preserve ExternalCustomFunctions(0 To countFunctions) As String
             ExternalCustomFunctions(countFunctions) = t
             countFunctions = countFunctions + 1
         Else
-            t = Text1.GetMidText(tmpLines(i), "sub ", "(")
+            t = Text1.GetMidText(tmpLines(I), "sub ", "(")
             If t <> "" Then
                 ReDim Preserve ExternalCustomFunctions(0 To countFunctions) As String
                 ExternalCustomFunctions(countFunctions) = t
                 countFunctions = countFunctions + 1
             Else
-                t = Text1.GetMidText(tmpLines(i), "const ", "=")
+                t = Text1.GetMidText(tmpLines(I), "const ", "=")
                 If t <> "" Then
                     ReDim Preserve ExternalConstants(0 To countConstants) As String
                     ExternalConstants(countConstants) = Trim$(t)
@@ -2375,7 +1959,7 @@ Private Function initializeScript() As Boolean
                 End If
             End If
         End If
-    Next i
+    Next I
     
     Dim tmpControlNames As String
     Dim d As Control
@@ -2395,16 +1979,16 @@ Private Function initializeScript() As Boolean
     tmpLines = Split(tmpControlNames, ",")
     countFunctions = UBound(ExternalCustomFunctions) + 1
     ReDim Preserve ExternalCustomFunctions(0 To UBound(ExternalCustomFunctions) + UBound(tmpLines))
-    For i = 0 To UBound(tmpLines)
-        ExternalCustomFunctions(countFunctions + i) = tmpLines(i)
-    Next i
+    For I = 0 To UBound(tmpLines)
+        ExternalCustomFunctions(countFunctions + I) = tmpLines(I)
+    Next I
     
     MergeSort ExternalCustomFunctions
     
     
 
     
-    ExternalOperators = Split("xor and or not eqv imp is * - + / ^ : false true if then dim select case end exit function sub for each to next while do wend until else as const mod in class set let null nothing empty private public redim", " ")
+    ExternalOperators = Split("xor and or not eqv imp is * - + / ^ : false true if then dim select case end exit function sub for each to next while do wend until loop else as const mod in class set let null nothing empty private public redim preserve new", " ")
     
     Dim tmpScrollTop As Long
     Dim tmpCursorPos As Long
@@ -2483,7 +2067,7 @@ End Sub
 
 
 Private Sub Form_Load()
-    Dim i As Long
+    Dim I As Long
     Dim TotalRows As Integer
     Dim sKeyName As String
     Dim sKeyValue As String
@@ -2525,9 +2109,9 @@ Private Sub Form_Load()
     ApplyDPI
 
     If TotalRows > -1 Then
-        For i = 0 To TotalRows - 1
-            List1.AddItem GetSetting("Calculator", "Berekeningen", "Row" & i)
-        Next i
+        For I = 0 To TotalRows - 1
+            List1.AddItem GetSetting("Calculator", "Berekeningen", "Row" & I)
+        Next I
     End If
     
     
@@ -2785,7 +2369,7 @@ End Sub
 Sub AddCustomButton(strButtonText As String, strButtonCommand As String, lngWidth As Long)
     Dim buttonIndex As Long
     
-    buttonIndex = cmdCustom.UBound
+    buttonIndex = cmdCustom.ubound
     
     With cmdCustom(buttonIndex)
         If buttonIndex = 0 Then
@@ -2805,11 +2389,11 @@ End Sub
 
 
 Sub ClearButtons()
-    Dim i As Long
+    Dim I As Long
     
-    For i = cmdCustom.UBound To 1 Step -1
-        Unload cmdCustom(i)
-    Next i
+    For I = cmdCustom.ubound To 1 Step -1
+        Unload cmdCustom(I)
+    Next I
     
     cmdCustom(0).Visible = False
 End Sub
@@ -2953,7 +2537,7 @@ Private Sub Form_Resize()
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
-Dim i As Long
+Dim I As Long
 
 RemoveKeyboardHook
 
@@ -2966,9 +2550,9 @@ SaveSetting "Calculator", "Berekeningen", "Text3.Text", Text3.Text
 SaveSetting "Calculator", "Berekeningen", "Text1.SelStart", Text1.SelStart
 SaveSetting "Calculator", "Berekeningen", "Text2.SelStart", Text2.SelStart
 
-For i = 0 To List1.ListCount - 1
-    SaveSetting "Calculator", "Berekeningen", "Row" & i, List1.Cell(i, 0) & Chr(9) & List1.Cell(i, 1)
-Next i
+For I = 0 To List1.ListCount - 1
+    SaveSetting "Calculator", "Berekeningen", "Row" & I, List1.Cell(I, 0) & Chr(9) & List1.Cell(I, 1)
+Next I
 End Sub
 
 
@@ -2986,15 +2570,15 @@ End Sub
 
 Private Sub List1_ItemAdded(itemIndex As Long)
     List1.RedrawPause
-    Dim i As Long
+    Dim I As Long
     
-    For i = 0 To List1.ListCount - 1
-        If i Mod 2 = 0 Then
-            List1.ItemBackColor(i) = &H3F3936
+    For I = 0 To List1.ListCount - 1
+        If I Mod 2 = 0 Then
+            List1.ItemBackColor(I) = &H3F3936
         Else
-            List1.ItemBackColor(i) = -1
+            List1.ItemBackColor(I) = -1
         End If
-    Next i
+    Next I
     
     List1.RedrawResume
 End Sub
@@ -3124,15 +2708,15 @@ End Sub
 
 Private Sub mnuEditFormulesABC_Click()
 Dim a As String
-Dim B As String
+Dim b As String
 Dim c As String
 
 a = InputBox("Geef waarde voor A:")
-B = InputBox("Geef waarde voor B:")
+b = InputBox("Geef waarde voor B:")
 c = InputBox("Geef waarde voor C:")
 
 Text1.Text = """x: "" & iif(d < 0 , ""-"", (-b + sqr(iif(d<0,0,d))) / (2 * a)) & "" OF x:"" & iif(d < 0 , ""-"", (-b - sqr(iif(d<0,0,d))) / (2 * a))"
-Text3.Text = "const a = " & a & ":const b = " & B & ": const c = " & c & ": dim d: d = b^2 - 4*a*c"
+Text3.Text = "const a = " & a & ":const b = " & b & ": const c = " & c & ": dim d: d = b^2 - 4*a*c"
 cmdNumbers_MouseUp 10, 0, 0, 0, 0
 End Sub
 
@@ -3230,15 +2814,15 @@ Private Sub mnuFileReloadFunctions_Click()
 End Sub
 
 Private Sub mnuSettingsPrecision_Click(index As Integer)
-    Dim i As Long
+    Dim I As Long
     
-    For i = 0 To mnuSettingsPrecision.UBound
-        mnuSettingsPrecision(i).Checked = IIf(index = i, True, False)
-    Next i
+    For I = 0 To mnuSettingsPrecision.ubound
+        mnuSettingsPrecision(I).Checked = IIf(index = I, True, False)
+    Next I
 End Sub
 
 Private Sub Text1_KeyDown(KeyCode As Integer, Shift As Integer)
-    Dim i As Long
+    Dim I As Long
     Dim wordNr As Long
     
     If KeyCode = vbKeySpace And Shift = 2 Then
@@ -3286,7 +2870,7 @@ Function RefillAutocomplete() As Long
     Dim wordNr As Long
     Dim wordS As String
     Dim totalText As String
-    Dim i As Long
+    Dim I As Long
     Dim foundCount As Long
     Dim foundLast As Long
     
@@ -3302,16 +2886,16 @@ Function RefillAutocomplete() As Long
     wordS = Mid$(totalText, Text1.getWordStart(wordNr) + 1, Text1.getWordLength(wordNr))
     
     
-    For i = 0 To UBound(ExternalCustomFunctions)
-        If ExternalCustomFunctions(i) <> "" Then
+    For I = 0 To UBound(ExternalCustomFunctions)
+        If ExternalCustomFunctions(I) <> "" Then
         
-            If InStr(1, ExternalCustomFunctions(i), wordS) = 1 And ExternalCustomFunctions(i) <> wordS Then
-                lstComplete.AddItem (ExternalCustomFunctions(i))
+            If InStr(1, ExternalCustomFunctions(I), wordS) = 1 And ExternalCustomFunctions(I) <> wordS Then
+                lstComplete.AddItem (ExternalCustomFunctions(I))
             End If
             
         End If
         
-    Next i
+    Next I
     
     
     If lstComplete.ListCount = 0 Then
@@ -3388,7 +2972,7 @@ Sub formatTextBox(txt As uTextBox, Optional preventRedraw As Boolean = False)
     
     fColors(7) = &H808080    'light gray
     
-    Dim i As Long
+    Dim I As Long
     Dim j As Long
     Dim k As Long
     
@@ -3421,20 +3005,20 @@ Sub formatTextBox(txt As uTextBox, Optional preventRedraw As Boolean = False)
     txt.ReCalculateWords
     'txt.CheckCharSize 0, sl
     
-    For i = 1 To sl
-        t = Mid$(s, i, 1)
-        If i + 1 < sl Then tn = Mid$(s, i + 1, 1)
+    For I = 1 To sl
+        t = Mid$(s, I, 1)
+        If I + 1 < sl Then tn = Mid$(s, I + 1, 1)
         
-        txt.setCharBold i - 1, True
-        txt.setCharBackColor i - 1, -1
-        txt.setCharForeColor i - 1, IIf(CS, fColors(1), IIf(CD, fColors(4), IIf(CH, fColors(4), IIf(cc, fColors(7), -1))))
+        txt.setCharBold I - 1, True
+        txt.setCharBackColor I - 1, -1
+        txt.setCharForeColor I - 1, IIf(CS, fColors(1), IIf(CD, fColors(4), IIf(CH, fColors(4), IIf(cc, fColors(7), -1))))
         'txt.setCharUnderlineColor i - 1, RGB(Rnd * 255, Rnd * 255, Rnd * 255)
         'txt.setCharUnderline i - 1, 0 'Rnd * 5
         
         
         If t = "'" And Not cc And Not CS Then
             cc = Not cc
-            txt.setCharForeColor i - 1, fColors(7)
+            txt.setCharForeColor I - 1, fColors(7)
             GoTo NextChar
         End If
         
@@ -3447,21 +3031,21 @@ Sub formatTextBox(txt As uTextBox, Optional preventRedraw As Boolean = False)
         
         If t = Chr(34) And Not CH And Not CD And Not cc Then
             CS = Not CS
-            txt.setCharForeColor i - 1, fColors(1)
+            txt.setCharForeColor I - 1, fColors(1)
             GoTo NextChar
         End If
         
         
         If (t = "[" Or t = "]") And Not CS And Not CH And Not cc Then
             CD = Not CD
-            txt.setCharForeColor i - 1, fColors(4)
+            txt.setCharForeColor I - 1, fColors(4)
             GoTo NextChar
         End If
         
         
         If ((t = "&" And tn = "h" And Not CH) Or (CH And Not (val("&h" + tn) > 0 Or tn = "0" Or tn = "h" Or tn = "&")) Or (CH And t = "&")) And Not CS And Not CD Then
             CH = Not CH
-            txt.setCharForeColor i - 1, fColors(4)
+            txt.setCharForeColor I - 1, fColors(4)
             GoTo NextChar
         End If
         
@@ -3473,12 +3057,12 @@ Sub formatTextBox(txt As uTextBox, Optional preventRedraw As Boolean = False)
                         OT = OT - 1
                     End If
                     
-                    txt.setCharBold i - 1, True
+                    txt.setCharBold I - 1, True
                     
                     If OT < 0 Then
-                        txt.setCharForeColor i - 1, vbRed
+                        txt.setCharForeColor I - 1, vbRed
                     Else
-                        txt.setCharForeColor i - 1, fColors(OT Mod (UBound(fColors) + 1))
+                        txt.setCharForeColor I - 1, fColors(OT Mod (UBound(fColors) + 1))
                     End If
     
                     If t = "(" Then
@@ -3486,13 +3070,13 @@ Sub formatTextBox(txt As uTextBox, Optional preventRedraw As Boolean = False)
                     End If
     
                 Case "0" To "9", "."
-                    txt.setCharForeColor i - 1, &H4747F0
+                    txt.setCharForeColor I - 1, &H4747F0
                 
                 Case "=", "<", ">"
-                    txt.setCharForeColor i - 1, &H81B543
+                    txt.setCharForeColor I - 1, &H81B543
                     
                 Case "/", "-", "+", "*", "^", "&"
-                    txt.setCharForeColor i - 1, &HFF62AA
+                    txt.setCharForeColor I - 1, &HFF62AA
   
                     
                 Case Else
@@ -3501,7 +3085,7 @@ Sub formatTextBox(txt As uTextBox, Optional preventRedraw As Boolean = False)
         
 NextChar:
         
-    Next i
+    Next I
     
     Dim instrstart As Long
     Dim External() As String
@@ -3526,15 +3110,15 @@ NextChar:
         End If
         
     
-        For i = 0 To UBound(External)
-            If External(i) <> "" Then
-                instrstart = InStr(instrstart + 1, s, External(i))
+        For I = 0 To UBound(External)
+            If External(I) <> "" Then
+                instrstart = InStr(instrstart + 1, s, External(I))
                 
                 While (instrstart > 0)
                     maypaint = True
                     
-                    If instrstart + Len(External(i)) - 1 < sl Then
-                        If txt.getWordFromChar(instrstart - 1) = txt.getWordFromChar(instrstart + Len(External(i)) - 1) Then
+                    If instrstart + Len(External(I)) - 1 < sl Then
+                        If txt.getWordFromChar(instrstart - 1) = txt.getWordFromChar(instrstart + Len(External(I)) - 1) Then
                             maypaint = False
                         End If
                     End If
@@ -3563,16 +3147,16 @@ NextChar:
                     
                     
                     If maypaint And txt.getCharForeColor(instrstart - 1) = -1 Then
-                        For j = 0 To Len(External(i)) - 1
+                        For j = 0 To Len(External(I)) - 1
                             txt.setCharForeColor instrstart - 1 + j, fColors(ExternalColor)
                         Next j
                     End If
                             
-                    instrstart = InStr(instrstart + 1, s, External(i))
+                    instrstart = InStr(instrstart + 1, s, External(I))
                 Wend
                 instrstart = 0
             End If
-        Next i
+        Next I
     Next k
     
     If Not preventRedraw Then
@@ -3609,25 +3193,25 @@ End Sub
 
 Private Sub visualizeErrors()
     If functionListError.errNum <> 0 Then
-        Dim i As Long, j As Long, k As Long
+        Dim I As Long, j As Long, k As Long
         Dim errLine As Long, errColumn As Long
         
         errLine = functionListError.errLine
         errColumn = functionListError.errColumn
         
-        For i = 0 To utxtFunctionList.getRowUbound
-            j = utxtFunctionList.getRealRowNumber(i)
+        For I = 0 To utxtFunctionList.getRowUbound
+            j = utxtFunctionList.getRealRowNumber(I)
             If j = errLine - 1 Then
                 
                 
-                utxtFunctionList.setCharUnderline utxtFunctionList.getRowStartCharacter(i) + errColumn, 2
-                utxtFunctionList.setCharUnderlineColor utxtFunctionList.getRowStartCharacter(i) + errColumn, vbRed
+                utxtFunctionList.setCharUnderline utxtFunctionList.getRowStartCharacter(I) + errColumn, 2
+                utxtFunctionList.setCharUnderlineColor utxtFunctionList.getRowStartCharacter(I) + errColumn, vbRed
                 Exit For
                 
             ElseIf j >= errLine Then
                 Exit For
             End If
-        Next i
+        Next I
     End If
 End Sub
 
