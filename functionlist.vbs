@@ -66,7 +66,7 @@ dim linenumber
 sub main()
 	randomize()
 
-	Me.SetDecimalPrecision 10 '-1 is off
+	Me.SetDecimalPrecision -1 '-1 is off
 	'me.backcolor = me.text1.backgroundcolor
 	Me.ClearButtons 'remove current buttons
 
