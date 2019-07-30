@@ -66,13 +66,17 @@ dim linenumber
 sub main()
 	randomize()
 
-	Me.SetDecimalPrecision 10 '-1 is off
+	Me.SetDecimalPrecision -1 '-1 is off
 	'me.backcolor = me.text1.backgroundcolor
 	Me.ClearButtons 'remove current buttons
 
 	Me.AddCustomButton "LogB","Form1.AddTextAtCursor ""logB("", "")""", 37
 
 	Me.AddCustomButton "SqrN","Form1.AddTextAtCursor ""SqrN("", "", n)""", 37
+	
+	Me.AddCustomButton "e","Form1.AddTextAtCursor ""e"", """"", 37
+	
+	Me.AddCustomButton "( )","Form1.AddTextAtCursor ""("", "")""", 37
 	
 	'linenumber = 1: msgbox("test")
 	'linenumber = 2: test = 1 / 0
@@ -94,13 +98,13 @@ function OpenNotepadAndSendKeys()
 	'me.windowstate = 1 'Minimize the window
 	
 	'Call the ShellExecuteW API with the 6 parameters it operates on.
-	apiExecute.p(0).p("open").p("notepad.exe").p(0).p(SW_SHOWMAXIMIZED).e()
+	apiExecute.p(0).p("open").p("notepad.exe").p(0).p(0).p(SW_SHOWMAXIMIZED).e()
 	
 	'Call the Sleep API and sleep for 300ms
 	apiSleep.p(300).e()
 
 	dim s, i
-	s = "Dit is een test Dit is een test Dit is een test Dit is een test Dit is een test"
+	s = "Dit is een test" & vbcrlf & "Dit is een test Dit is een test Dit is een test Dit is een test"
 	
 	for i = 1 to len(s)
 		SendKeys mid(s,i,1), 100
@@ -225,6 +229,18 @@ function TimeDifference(inpTime1, inpTime2)
 	'next i
 end function
 
+'Shifts a '1' n-amount of places
+function BV(n)
+	BV = 2 ^ n
+end function
+
+Public Function bin2dec(binValue)
+ Dim decValue
+ For i = 0 To Len(binValue) - 1
+  decValue = decValue + Mid(binValue, i + 1, 1) * (2 ^ (Len(binValue) - 1 - i))
+ Next
+ bin2dec = decValue
+End Function
 
 ' Calculate the number of bits needed for n characters
 function BitsForDigit(d)
@@ -296,6 +312,13 @@ function SqrN(inp, power)
 	SqrN = inp ^ (1 / power)
 end function
 
+function cm2inch(inp)
+	cm2inch = inp / 2.54
+end function
+
+function inch2cm(inp)
+	inch2cm = inp * 2.54
+end function
 
 function binary(b)
 	binary = binaryC(b, 30)
@@ -445,8 +468,10 @@ end function
 'Converts capacity in bytes to a readable format like 100.4KB
 function capacity(inp)
 	dim capacityNames
-	dim i
+	dim i, sign
 	
+	sign = (inp < 0)
+	if sign then inp = -inp
 	capacityNames = split(",K,M,G,T,P,E,Z,Y,B,GEOP", ",")
 	
 	i = 0
@@ -456,7 +481,8 @@ function capacity(inp)
 		i = i + 1
 	wend
 	
-	capacity = round(inp,2) & capacityNames(i) & "B"
+	if sign then capacity = "-"
+	capacity = capacity & round(inp,2) & capacityNames(i) & "B"
 
 end function
 
@@ -499,4 +525,77 @@ function speach(num, s)
 	objVoice.Speak s, SVSFlagsAsync
 end function
 
+'Function to filter out duplicated numbers from serial message in clipboard
+function GetDoubleNumbersFromClipboard()
+	dim s, r, i, result, total, resultCount
+	
+	result = ""
+	total = ""
+	resultCount = 0
+	
+	s = split(winapi.GetClipboardText, chr(2))
+	
+	for i = 0 to ubound(s)
+		if len(s(i)) > 0 then
+			r = split(s(i), ";")
+			if r(0) = "4" then
+				if r(1) = "10000" or r(1) = "0" then
+					result = result & r(1) & ";"
+					resultCount = resultCount + 1
+				elseif instr(1, total,";" & r(1) & ";") = 0 then
+					total = total & ";" & r(1) & ";"
+				else 'if r(1) <> "0" then
+					result = result & r(1) & ";"
+					resultCount = resultCount + 1
+				end if
+			end if
+		end if
+	next
+	
+	GetDoubleNumbersFromClipboard = result & " count: " & resultCount & "/" & ubound(s) & "=" & (100 / ubound(s) * (resultCount))
+end function
 
+function ReplaceCalibrationCartNumbers()
+	
+	dim s, r, i, j, found
+	dim carts, numbers
+	
+	'Carts 1 to 13
+	'carts = array(10000,1458,43,123,1306,1391,497,351,1176,900,904,736,1228)
+	'numbers = array(1,2,3,4,5,6,7,8,9,10,11,12,13)
+	
+	'Carts 14 to 26
+	'carts = array(10000,1458,43,123,1306,1391,497,351,1176,900,904,736,1228)
+	'numbers = array(14,15,16,17,18,19,20,21,22,23,24,25,26)
+	
+	'Carts 27 to 40
+	'carts = array(10000,915,1212,430,394,1457,400,1232,916,528,959,1070,140,853)
+	'numbers = array(27,28,29,30,31,32,33,34,35,36,37,38,39,40)
+	
+	'Carts 41 to 47
+	carts = array(10000,178,116,682,1123,1340,1007)
+	numbers = array(41,42,43,44,45,46,47)
+	
+	
+	found = false
+	result = ""
+	
+	s = split(winapi.GetClipboardText, vbcrlf)
+	
+	for i = 0 to ubound(s)
+		found = false
+		for j = 0 to ubound(carts)
+			if instr(1, s(i),";" & carts(j) & ";") > 0 then
+				s(i) = replace(s(i), ";" & carts(j) & ";", ";" & numbers(j) & ";")
+				found = true
+				exit for
+			end if
+		next
+		
+		if found then
+			result = result & s(i) & vbcrlf
+		end if
+	next
+	
+	winapi.setclipboardtext(result)
+end function

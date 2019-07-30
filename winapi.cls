@@ -73,6 +73,14 @@ Attribute commondialog.VB_VarHelpID = -1
 ' CallApiByName2 = CallApiByName(sLib, sMod, Params(0))
 'End Function
 
+Public Function GetClipboardText() As String
+    GetClipboardText = Clipboard.GetText
+End Function
+
+Public Sub SetClipboardText(str As String)
+    Clipboard.Clear
+    Clipboard.SetText str
+End Sub
 
 Public Function GetTickCount() As Long
     GetTickCount = GetTickCountA()
