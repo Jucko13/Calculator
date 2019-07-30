@@ -2833,6 +2833,8 @@ Sub ApplyDPI()
 End Sub
 
 Private Sub Form_Resize()
+On Error Resume Next
+
 '    Dim rows(0 To 6) As Long
 '
 '    Dim buttonSpaceHeight As Long, buttonSpaceTop As Long
@@ -2873,18 +2875,20 @@ Private Sub Form_Resize()
     
     Dim diff As Long
     
-    If Me.ScaleHeight < 364 Then
-        diff = Me.Height - Me.ScaleY(Me.ScaleHeight, vbPixels, vbTwips)
-        Me.Height = Me.ScaleY(364, vbPixels, vbTwips) + diff
-        Exit Sub
-    End If
+    If Me.WindowState = vbNormal Then
     
-    If Me.ScaleWidth < 648 Then
-        diff = Me.Width - Me.ScaleX(Me.ScaleWidth, vbPixels, vbTwips)
-        Me.Width = Me.ScaleX(648, vbPixels, vbTwips) + diff
-        Exit Sub
+        If Me.ScaleHeight < 364 Then
+            diff = Me.Height - Me.ScaleY(Me.ScaleHeight, vbPixels, vbTwips)
+            Me.Height = Me.ScaleY(364, vbPixels, vbTwips) + diff
+            Exit Sub
+        End If
+        
+        If Me.ScaleWidth < 648 Then
+            diff = Me.Width - Me.ScaleX(Me.ScaleWidth, vbPixels, vbTwips)
+            Me.Width = Me.ScaleX(648, vbPixels, vbTwips) + diff
+            Exit Sub
+        End If
     End If
-    
     
     picButtonContainer.Top = Me.ScaleHeight - picButtonContainer.Height - 5
     cmdClearList.Top = Me.ScaleHeight - cmdClearList.Height - 5
@@ -2903,7 +2907,7 @@ Private Sub Form_Resize()
     
     
     
-    On Error Resume Next
+    
     List1.Top = cmdClearList.Top - List1.Height - 5
     
     ufrmErrors.Top = Me.ScaleHeight - ufrmErrors.Height - 5
